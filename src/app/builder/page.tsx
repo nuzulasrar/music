@@ -30,7 +30,7 @@ const page: FC = () => {
                 className={`bg-cover bg-no-repeat min-h-screen ${!opensidebar ? "sm:w-1/12" : "sm:w-1/3 lg:w-1/6 px-[16px] py-4"} bg-black border-r border-cyan-500`}>
 
                 <div className="flex flex-row justify-between mb-[20px]">
-                    <h1 className={`text-[#${theme}] text-[2.6vh] font-bold`}>Fuser</h1>
+                    <h1 className={`text-[2.6vh] font-bold`} style={{ color: `#${theme}` }}>Fuser</h1>
                     <button
                         onClick={() => { setOpenSidebar(!opensidebar) }}
                         className="border-2 px-5 py-2 border-white rounded-xl">
@@ -41,11 +41,11 @@ const page: FC = () => {
                 {/* Menu */}
                 <h2 className='text-white mb-[5px] text-lg font-semibold'>Front End Code Builder</h2>
                 <div className="backdrop-opacity-10 backdrop-invert bg-black/10 p-4 rounded-xl">
-                    <p className={`font-bold text-[#${theme}]`}>Network Request</p>
+                    <p className={`font-bold`} style={{ color: `#${theme}` }}>Network Request</p>
                     <p className={`text-white font-[400] bg-[#${theme}] px-2 py-1 mt-1 rounded-md`}><Link href={"/builder/fetch"}>. Fetch</Link></p>
                     <p className='text-white font-[400]'><Link href={"/builder/axios"}>. Axios</Link></p>
 
-                    <p className={`font-bold text-[#${theme}] mt-3`}>Database Query Tester</p>
+                    <p className={`font-bold mt-3`} style={{ color: `#${theme}` }}>Database Query Tester</p>
                     <p className='text-white font-[400]'>. MySQL</p>
                     <p className='text-white font-[400]'>. PostgreSQL</p>
                     <p className='text-white font-[400]'>. MongoDB</p>
@@ -91,7 +91,7 @@ const page: FC = () => {
                     /> */}
                     {/* <h1 className='text-white font-semibold text-[2.1vh] text-left mb-[20px] mx-10'> */}
                     <div className="flex mb-[10px] px-12">
-                        <h1 className={`bg-[#${theme}] text-white dark:text-slate-900 px-4 py-2 rounded-lg font-semibold text-[2.1vh] text-left`}>
+                        <h1 className={`text-white dark:text-slate-900 px-4 py-2 rounded-lg font-semibold text-[2.1vh] text-left`} style={{ backgroundColor: `#${theme}` }}>
                             Fetch API - Code Builder
                         </h1>
                     </div>
@@ -152,28 +152,36 @@ const page: FC = () => {
                                         onClick={() => {
                                             setMethod("GET")
                                         }}
-                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white mr-3`}>
+                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white mr-3`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         GET
                                     </button>
                                     <button
                                         onClick={() => {
                                             setMethod("POST")
                                         }}
-                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white mr-3`}>
+                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white mr-3`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         POST
                                     </button>
                                     <button
                                         onClick={() => {
                                             setMethod("PUT")
                                         }}
-                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white mr-3`}>
+                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white mr-3`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         PUT
                                     </button>
                                     <button
                                         onClick={() => {
                                             setMethod("DELETE")
                                         }}
-                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white mr-2`}>
+                                        className={`text-white dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white mr-2`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         DELETE
                                     </button>
                                 </div>
@@ -189,10 +197,14 @@ const page: FC = () => {
                                         className={`text-black px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-gray-200 hover:bg-transparent hover:text-white`}>
                                         None
                                     </button>
-                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white`}>
+                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         application/*
                                     </button>
-                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white`}>
+                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         application/json
                                     </button>
                                 </div>
@@ -210,10 +222,14 @@ const page: FC = () => {
                                         className={`text-black px-6 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-gray-200 hover:bg-transparent hover:text-white`}>
                                         None
                                     </button>
-                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white`}>
+                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         Form Data
                                     </button>
-                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white`}>
+                                    <button className={`text-white dark:text-slate-900 px-5 py-2 rounded-xl font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white`}
+                                        style={{ backgroundColor: `#${theme}` }}
+                                    >
                                         Raw
                                     </button>
                                 </div>
@@ -243,15 +259,17 @@ const page: FC = () => {
                                 onClick={() => {
                                     generateCode()
                                 }}
-                                className={`text-white dark:text-slate-900 px-5 py-2 rounded-lg font-semibold border-solid border-white hover:border-2 bg-[#${theme}] hover:bg-transparent hover:text-white mr-2`}>
+                                className={`text-white dark:text-slate-900 px-5 py-2 rounded-lg font-semibold border-solid border-white hover:border-2 hover:bg-transparent hover:text-white mr-2`}
+                                style={{ backgroundColor: `#${theme}` }}
+                            >
                                 Generate Code
                             </button>
                         </div>
 
                         {/* Generated Codes */}
-                        <div className="sm: w-full lg:w-2/3 lg:mx-2 backdrop-opacity-10 backdrop-invert bg-white/100 dark:bg-black/10 rounded-lg pt-4 pb-6 px-4 mb-5">
+                        <div className="w-full lg:mx-2 backdrop-opacity-10 backdrop-invert bg-white/100 dark:bg-black/10 rounded-lg pt-4 pb-6 px-4 mb-5">
                             <h3 className='text-black dark:text-white font-semibold text-[1.8vh] mb-[10px]'>Codes: </h3>
-                            <div className={`backdrop-opacity-10 backdrop-invert bg-white/100 dark:bg-black/10 px-10 py-5 rounded-md border-2 border-gray-200 dark:border-[#${theme}]`}> {/* balik */}
+                            <div className={`backdrop-opacity-10 backdrop-invert bg-white/100 dark:bg-black/10 px-10 py-5 rounded-md border-2 border-gray-200`} style={{ borderColor: `#${theme}` }}> {/* balik */}
 
                                 <p className="text-black dark:text-white">
                                     {code}
