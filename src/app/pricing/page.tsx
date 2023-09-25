@@ -4,6 +4,7 @@ import React, { FC, useState, useEffect, ChangeEventHandler } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import "../globals.css"
+import { CirclePicker } from 'react-color';
 
 const page: FC = () => {
 
@@ -127,6 +128,15 @@ const page: FC = () => {
 
     return (
         <div className="flex flex-row">
+            {/* <iframe
+                width="0"
+                height="0"
+                src={`https://www.youtube.com/embed/o8GrqUSdzi0?autoplay=1`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded youtube"
+            /> */}
             <div
                 style={{ backgroundImage: `url("/bg2.jpg")` }}
                 className={`bg-cover bg-no-repeat min-h-screen ${!opensidebar ? "sm:w-1/12" : "sm:w-1/3 lg:w-1/6 px-[16px] py-4"} bg-black border-r border-cyan-500`}>
@@ -202,7 +212,7 @@ const page: FC = () => {
 
                         {/* Switch */}
                         {/* <h3 className='text-white font-bold text-[2.6vh] mb-[10px]'>Chain - <span className='text-[20px]'>Yes for .then chain</span></h3>
-                        <div className="flex flex-row justify-start mb-[25px]">
+                        <div className="flex flex-row justify-start mb-[22px]">
                             <button className='text-white px-5 py-2 rounded-lg font-semibold border-solid border-white hover:border-2 bg-blue-700 hover:bg-transparent hover:text-white mr-2'>
                                 Yes
                             </button>
@@ -226,12 +236,14 @@ const page: FC = () => {
                                                     onClick={() => {
                                                         AddOrRemoveModule(item.id, item.price)
                                                     }}
-                                                    className={`${selectedModules.includes(item.id) ? "text-black" : "text-black"} dark:text-slate-900 px-6 py-2 rounded-xl font-semibold border-solid hover:scale-105 mt-3`}
+                                                    className={`${selectedModules.includes(item.id) ? "text-white border-l-[6px] border-l-slate-600" : "text-black"} dark:text-slate-900 px-6 py-3 bg-gray-200 rounded-0 font-semibold hover:scale-105 mt-3`}
                                                     style={{
                                                         // backgroundColor: selectedModules.includes(item.id) ? `#${theme}` : "white",
                                                         // borderColor: `#${theme}` 
-                                                        borderColor: selectedModules.includes(item.id) ? `#${theme}` : `rgb(107 114 128)`,
-                                                        borderWidth: selectedModules.includes(item.id) ? 2 : 1
+                                                        // borderColor: selectedModules.includes(item.id) ? `#${theme}` : `rgb(107 114 128)`,
+                                                        // borderWidth: selectedModules.includes(item.id) ? 0 : 0,
+                                                        backgroundColor: selectedModules.includes(item.id) ? `#${theme}` : "rgb(229 231 235)",
+                                                        clipPath: "polygon(0 0, 100% 0, 100% 50%, 90% 100%, 0 100%)"
                                                     }}
                                                 >
                                                     {item.name}
@@ -279,10 +291,10 @@ const page: FC = () => {
                                                             }
                                                         }
                                                     }}
-                                                    className={`${selectedComplexity == item.id ? "text-black" : "text-black"} dark:text-slate-900 px-6 py-2 rounded-lg font-semibold border-solid border-2 hover:scale-105 mt-3`}
+                                                    className={`${selectedComplexity == item.id ? "text-white border-l-[6px] border-l-slate-600" : "text-black"} dark:text-slate-900 px-6 py-3 rounded-0 font-semibold hover:scale-105 mt-3`}
                                                     style={{
-                                                        borderColor: selectedComplexity === item.id ? `#${theme}` : `rgb(107 114 128)`,
-                                                        borderWidth: selectedComplexity === item.id ? 2 : 1
+                                                        backgroundColor: selectedComplexity === item.id ? `#${theme}` : "rgb(229 231 235)",
+                                                        clipPath: "polygon(0 0, 100% 0, 100% 50%, 95% 100%, 0 100%)"
                                                     }}
                                                 >
                                                     <p dangerouslySetInnerHTML={{ __html: item.name }}></p>
@@ -332,10 +344,15 @@ const page: FC = () => {
                                 </select>
                             </div>
                         </div>
+
                         <div className="lg:flex lg:flex-row">
-                            {/* Demo */}
-                            <div className="w-full lg:mx-2 rounded-lg bg-white pt-4 pb-6 px-4 mb-5">
+                            {/* URL */}
+                            {/* <div className="sm:w-full lg:w-2/3 lg:mx-2 backdrop-opacity-10 backdrop-invert bg-black/10 rounded-lg pt-4 pb-6 px-4 mb-5"> */}
+                            <div className="sm:w-full lg:w-2/3 lg:mx-2 backdrop-opacity-10 backdrop-invert bg-white/100 dark:bg-white/10 rounded-lg pt-4 pb-6 px-4 mb-5">
+                                {/* <h3 className='text-white font-semibold text-[1.8vh] mb-[8px]'>URL</h3> */}
                                 <h3 className='text-black dark:text-white font-semibold text-[1.8vh] mb-[8px]'>Application Demo <span className='px-3 py-1 text-white rounded-xl text-[12px]' style={{ backgroundColor: `#${theme}` }}>Your future app.</span></h3>
+                                {/* <input type="text" className='font-semibold bg-white/90 pl-2 w-full rounded-lg h-[35px]' */}
+
                                 <div className="py-2 flex flex-row">
                                     <input type="checkbox" className='mr-2' checked={showDevice ? true : false} onChange={(e) => setShowDevice(!showDevice)} />
                                     <p className="text-[16px]">Show Device</p>
@@ -343,42 +360,42 @@ const page: FC = () => {
                                 <div className="flex flex-wrap justify-start sm:space-x-2 md:space-x-3 mt-5">
 
                                     {/* Login Screen */}
-                                    <div className='flex flex-wrap justify-center items-center hover:scale-125'>
-                                        <div className="flex justify-center items-center" style={{ height: 350, width: 200 }}>
-                                            <div className="rounded-xl relative flex flex-col justify-start items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)]" style={{ height: 340, width: 165, backgroundColor: `#${theme}` }}>
-                                                <p className="text-black font-semibold text-[7px] absolute top-[6px] left-[19px] z-2">12:00</p>
+                                    <div className='flex flex-wrap justify-center items-center xl:hover:scale-110 mb-3'>
+                                        <div className="flex justify-center items-center" style={{ height: 425, width: 250 }}>
+                                            <div className="rounded-[22px] relative flex flex-col justify-start items-center shadow-[0_3px_10px_rgb(0,0,0,0.2)]" style={{ height: 425, width: 200, backgroundColor: `#${theme}` }}>
+                                                <p className="text-black font-semibold text-[10px] absolute top-[6px] left-[19px] z-2">12:00</p>
                                                 <Image alt="" src={"/engineering.png"} width={120} height={120} className='mt-10' />
-                                                <div className="bg-white rounded-t-[15%] rounded-b-xl absolute bottom-0 h-40 flex flex-col justify-start items-center" style={{ width: 165 }}>
-                                                    <p className='text-[10px] justify-self-end text-end mt-3 -ml-16'>Username</p>
-                                                    <input type="text" className='bg-gray-200 w-28 h-4 rounded-[5px] mb-0.5' />
-                                                    <p className='text-[10px] justify-self-end text-end -ml-16'>Password</p>
-                                                    <input type="text" className='bg-gray-200 w-28 h-4 rounded-[5px] mb-3' />
+                                                <div className="bg-white rounded-t-[20%] rounded-b-[22px] absolute bottom-0 h-48 flex flex-col justify-start items-center" style={{ width: 200 }}>
+                                                    <p className='text-[14px] font-semibold justify-self-end text-end mt-4 -ml-20'>Username</p>
+                                                    <input type="text" className='bg-gray-200 w-36 h-5 rounded-[5px] mb-0.5' />
+                                                    <p className='text-[14px] font-semibold justify-self-end text-end -ml-20'>Password</p>
+                                                    <input type="text" className='bg-gray-200 w-36 h-5 rounded-[5px] mb-4' />
 
-                                                    <button className='rounded-lg bg-white w-28 py-1 shadow-sm shadow-gray-600 mb-1.5' style={{ backgroundColor: `#${theme}` }}>
+                                                    <button className='rounded-md bg-white w-36 py-1 shadow-sm shadow-gray-600 mb-2' style={{ backgroundColor: `#${theme}` }}>
                                                         <p className='text-[10px] text-white font-semibold'>Login</p>
                                                     </button>
-                                                    <button className='rounded-lg bg-[rgba(100,100,100,1)] w-28 py-1 shadow-sm shadow-gray-600'>
+                                                    <button className='rounded-md bg-[rgba(100,100,100,1)] w-36 py-1 shadow-sm shadow-gray-600'>
                                                         <p className='text-[10px] text-white font-semibold'>Register</p>
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
                                         {showDevice ?
-                                            <Image alt="" src={"/iphone.png"} width={200} height={100} className='-ml-[200px]' style={{ zIndex: 1 }} />
+                                            <Image alt="" src={"/iphone.png"} width={250} height={100} className='-ml-[250px]' style={{ zIndex: 1 }} />
                                             : null
                                         }
                                     </div>
 
                                     {/* Home Screen */}
-                                    <div className='flex flex-wrap justify-center items-center hover:scale-150 z-50'>
-                                        <div className="flex justify-center items-center" style={{ height: 350, width: 200 }}>
+                                    <div className='flex flex-wrap justify-center items-center xl:hover:scale-110 mb-3'>
+                                        <div className="flex justify-center items-center" style={{ height: 425, width: 250 }}>
 
-                                            <div className="rounded-2xl relative flex flex-col shadow-[0_3px_10px_rgb(0,0,0,0.2)]" style={{ height: 340, width: 165, backgroundColor: `#${theme}` }}>
+                                            <div className="rounded-[22px] relative flex flex-col shadow-[0_3px_10px_rgb(0,0,0,0.2)]" style={{ height: 425, width: 200, backgroundColor: `#${theme}` }}>
 
                                                 {/* <div className="bg-[rgba(40,40,40,1)] rounded-t-xl rounded-b-[50px] absolute top-0 w-full h-40" style={{ zIndex: 1 }}> */}
                                                 {/* <div className="bg-[rgba(40,40,40,0.97)] rounded-t-2xl rounded-b-[50px] absolute top-0 w-full h-40" style={{ zIndex: 1 }}> */}
-                                                <div className="bg-[rgba(255,255,255,0.95)] rounded-t-2xl rounded-b-[50px] absolute top-0 w-full h-40" style={{ zIndex: 1 }}>
-                                                    <p className="text-black font-semibold text-[7px] absolute top-[6px] left-[19px] z-2">12:00</p>
+                                                <div className="bg-[rgba(255,255,255,0.95)] rounded-t-[22px] rounded-b-[50px] absolute top-0 w-full h-40" style={{ zIndex: 1 }}>
+                                                    <p className="text-black font-semibold text-[10px] absolute top-[6px] left-[19px] z-2">12:00</p>
                                                 </div>
 
 
@@ -387,9 +404,9 @@ const page: FC = () => {
                                                 <div className="px-2.5 mt-[30px] z-20">
                                                     {/* <div className='flex flex-row rounded-lg justify-center items-center bg-[rgba(70,70,70,1)] p-2 shadow-[0_3px_10px_rgb(255,255,255,0.)]'> */}
                                                     <div className='flex flex-row rounded-xl justify-center items-center bg-[rgba(0,0,0,0.85)] p-2 shadow-[0_3px_10px_rgb(255,255,255,0.)]'>
-                                                        <p className="text-[10px] text-white"><span className='font-bold text-[16px]' style={{ color: `#${theme}` }}>+37</span> <br /> per month</p>
-                                                        <div className="bg-[rgba(255,255,255,0.3)] p-2 ml-1.5 rounded-lg">
-                                                            <Image alt="" src={"/graph.png"} width={60} height={60} />
+                                                        <p className="text-[12px] text-white"><span className='font-bold text-[20px]' style={{ color: `#${theme}` }}>+37</span> <br /> per month</p>
+                                                        <div className="bg-[rgba(255,255,255,0.3)] p-2 ml-2 rounded-lg">
+                                                            <Image alt="" src={"/graph.png"} width={75} height={60} />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -397,87 +414,103 @@ const page: FC = () => {
                                                 {/* Action Menu */}
                                                 <div className="flex flex-row py-2 overflow-x-auto no-scrollbar px-2 z-20">
                                                     <div className="px-0.5">
-                                                        <div className="bg-[rgba(255,255,255,0.95)] rounded-md w-28 px-1.5 py-1 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-                                                            <Image alt="" src={"/hammer.png"} width={17} height={17} className='mt-1 mb-1' />
-                                                            <p className='text-[10px] font-semibold text-black mb-0.5'>New Defects.</p>
-                                                            <p className='text-[8px] text-slate-500 leading-[10px] mb-1'>Create a new defect checklist.</p>
+                                                        <div className="bg-[rgba(255,255,255,0.95)] rounded-lg w-28 px-1.5 py-1 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                                                            <Image alt="" src={"/hammer.png"} width={20} height={20} className='mt-2 mb-2' />
+                                                            <p className='text-[12px] font-semibold text-black mb-0.5'>New Defects.</p>
+                                                            <p className='text-[10px] text-slate-500 leading-[10px] mb-1'>Create a new defect checklist.</p>
                                                         </div>
                                                     </div>
                                                     <div className="px-0.5">
-                                                        <div className="bg-[rgba(255,255,255,0.95)] rounded-md w-28 px-1.5 py-1 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-                                                            <Image alt="" src={"/hammer.png"} width={17} height={17} className='mt-1 mb-1' />
-                                                            <p className='text-[10px] font-semibold text-black mb-0.5'>Hardware Status.</p>
-                                                            <p className='text-[8px] text-slate-500 leading-[10px] mb-1'>Monitor all hardware status. <span className='invisible'>sdsad</span></p>
+                                                        <div className="bg-[rgba(255,255,255,0.95)] rounded-lg w-28 px-1.5 py-1 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                                                            <Image alt="" src={"/hammer.png"} width={20} height={20} className='mt-2 mb-2' />
+                                                            <p className='text-[12px] font-semibold text-black mb-0.5'>Hardware Status.</p>
+                                                            <p className='text-[10px] text-slate-500 leading-[10px] mb-1'>Monitor all hardware status. <span className='invisible'>sdsad</span></p>
                                                         </div>
                                                     </div>
                                                     <div className="px-0.5">
-                                                        <div className="bg-[rgba(255,255,255,0.95)] rounded-md w-28 px-1.5 py-1 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-                                                            <Image alt="" src={"/hammer.png"} width={17} height={17} className='mt-1 mb-1' />
-                                                            <p className='text-[10px] font-semibold text-black mb-0.5'>Generate Reports.</p>
-                                                            <p className='text-[8px] text-slate-500 leading-[10px] mb-1'>Print and share new report. <span className='invisible'>sdsad</span></p>
+                                                        <div className="bg-[rgba(255,255,255,0.95)] rounded-lg w-28 px-1.5 py-1 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                                                            <Image alt="" src={"/hammer.png"} width={20} height={20} className='mt-2 mb-2' />
+                                                            <p className='text-[12px] font-semibold text-black mb-0.5'>Generate Reports.</p>
+                                                            <p className='text-[10px] text-slate-500 leading-[10px] mb-1'>Print and share new report. <span className='invisible'>sdsad</span></p>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 {/* List */}
                                                 <div className="px-2.5">
-                                                    <div className="bg-[rgba(255,255,255,0.95)] w-full px-2 py-2 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
-                                                        <p className="text-black text-bold text-[10px] mb-1">
+                                                    <div className="bg-[rgba(255,255,255,0.95)] w-full px-2 py-2 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                                                        <p className="text-black font-bold text-[11px] mb-1">
                                                             Defect List
                                                         </p>
                                                         <div className="w-full flex flex-row justify-between items-center">
 
-                                                            <p className="text-black text-semibold text-[9px] mb-1">
+                                                            <p className="text-black text-semibold text-[10px] mb-1">
                                                                 1. Roof
                                                             </p>
-                                                            <p className="text-[8px] font-semibold text-white mb-1 bg-green-500 px-1 rounded-lg">Done</p>
+                                                            <p className="text-[9px] font-semibold text-white mb-1 bg-green-500 px-1.5 rounded-lg">Done</p>
                                                         </div>
                                                         <div className="w-full flex flex-row justify-between items-center">
 
-                                                            <p className="text-black text-semibold text-[9px] mb-1">
+                                                            <p className="text-black text-semibold text-[10px] mb-1">
                                                                 2. Ceiling
                                                             </p>
-                                                            <p className="text-[8px] font-semibold text-white mb-1 bg-teal-500 px-1 rounded-lg">Pending</p>
+                                                            <p className="text-[9px] font-semibold text-white mb-1 bg-teal-500 px-1.5 rounded-lg">Pending</p>
                                                         </div>
                                                         <div className="w-full flex flex-row justify-between items-center">
 
-                                                            <p className="text-black text-bold text-[9px] mb-1">
+                                                            <p className="text-black text-bold text-[10px] mb-1">
                                                                 3. Wall
                                                             </p>
-                                                            <p className="text-[8px] font-semibold text-black mb-1 bg-yellow-300 px-1 rounded-lg">Canceled</p>
+                                                            <p className="text-[9px] font-semibold text-black mb-1 bg-yellow-300 px-1.5 rounded-lg">Canceled</p>
                                                         </div>
 
                                                     </div>
                                                 </div>
 
                                                 {/* Bottom Nav Bar */}
-                                                <div className="bg-white h-8 px-2 w-full absolute bottom-0 rounded-b-xl flex flex-row justify-around items-center">
+                                                <div className="bg-white h-10 px-2 w-full absolute bottom-0 rounded-b-[22px] flex flex-row justify-around items-center">
                                                     <div className="h-4 w-1/4 rounded-md justify-center items-center" style={{}}>
-                                                        <p className="text-white text-[8px] text-center" style={{ color: `#${theme}` }}>Monitor</p>
+                                                        <p className="text-white text-[10px] text-center" style={{ color: `#${theme}` }}>Monitor</p>
                                                     </div>
                                                     <div className="h-4 w-1/4 rounded-md justify-center items-center" style={{}}>
-                                                        <p className="text-white text-[8px] text-center" style={{ color: `#${theme}` }}>Defects</p>
+                                                        <p className="text-white text-[10px] text-center" style={{ color: `#${theme}` }}>Defects</p>
                                                     </div>
                                                     <div className="h-6 w-6 rounded-[50%] flex justify-center items-center" style={{}}>
                                                         <Image alt="" src={"/home2.png"} width={13} height={13} className='' />
                                                     </div>
                                                     <div className="h-4 w-1/4 rounded-md justify-center items-center" style={{}}>
-                                                        <p className="text-white text-[8px] text-center" style={{ color: `#${theme}` }}>Reports</p>
+                                                        <p className="text-white text-[10px] text-center" style={{ color: `#${theme}` }}>Reports</p>
                                                     </div>
                                                     <div className="h-4 w-1/4 rounded-md justify-center items-center" style={{}}>
-                                                        <p className="text-white text-[8px] text-center" style={{ color: `#${theme}` }}>Settings</p>
+                                                        <p className="text-white text-[10px] text-center" style={{ color: `#${theme}` }}>Settings</p>
                                                     </div>
                                                 </div>
 
                                             </div>
                                         </div>
                                         {showDevice ?
-                                            <Image alt="" src={"/iphone.png"} width={200} height={100} className='-ml-[200px]' style={{ zIndex: 99 }} />
+                                            <Image alt="" src={"/iphone.png"} width={250} height={100} className='-ml-[250px]' style={{ zIndex: 99 }} />
                                             : null
                                         }
                                     </div>
 
                                 </div>
+
+                            </div>
+
+                            {/* Endpoint */}
+                            <div className="sm: w-full lg:w-1/3 lg:mx-2 backdrop-opacity-10 backdrop-invert bg-white/100 dark:bg-white/10 rounded-lg pt-4 pb-6 px-4 mb-5">
+                                <h3 className='text-black dark:text-white font-semibold text-[1.8vh] mb-[8px]'>Theme Color</h3>
+                                {/* <SwatchesPicker onChange={(color: any, event: any) => { setTheme(color.hex.substring(1)) }} height={570} /> */}
+                                <CirclePicker onChange={(color: any, event: any) => { setTheme(color.hex.substring(1)) }} />
+                            </div>
+                        </div>
+
+                        <div className="lg:flex lg:flex-row">
+                            {/* Demo */}
+                            <div className="w-full lg:mx-2 rounded-lg bg-white pt-4 pb-6 px-4 mb-5">
+                                <h3 className='text-black dark:text-white font-semibold text-[1.8vh] mb-[8px]'>Application Demo <span className='px-3 py-1 text-white rounded-xl text-[12px]' style={{ backgroundColor: `#${theme}` }}>Your future app.</span></h3>
+
                             </div>
                         </div>
 
