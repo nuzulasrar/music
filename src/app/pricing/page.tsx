@@ -500,7 +500,7 @@ const page: FC = () => {
 
                             {/* Endpoint */}
                             <div className="sm: w-full lg:w-1/3 lg:mx-2 backdrop-opacity-10 backdrop-invert bg-white/100 dark:bg-white/10 rounded-lg pt-4 pb-6 px-4 mb-5">
-                                <h3 className='text-black dark:text-white font-semibold text-[1.8vh] mb-[8px]'>Theme Color</h3>
+                                <h3 className='text-black dark:text-white font-semibold text-[1.8vh] mb-[8px]'>Theme Color (test)</h3>
                                 {/* <SwatchesPicker onChange={(color: any, event: any) => { setTheme(color.hex.substring(1)) }} height={570} /> */}
                                 {/* <CirclePicker onChange={(color: any, event: any) => { setTheme(color.hex.substring(1)) }} /> */}
                             </div>
