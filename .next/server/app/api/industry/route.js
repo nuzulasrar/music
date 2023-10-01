@@ -5,6 +5,13 @@ exports.id = 44;
 exports.ids = [44];
 exports.modules = {
 
+/***/ 3524:
+/***/ ((module) => {
+
+module.exports = require("@prisma/client");
+
+/***/ }),
+
 /***/ 2037:
 /***/ ((module) => {
 
@@ -41,13 +48,18 @@ var node_polyfill_headers = __webpack_require__(2394);
 // EXTERNAL MODULE: ./node_modules/next/dist/server/future/route-modules/app-route/module.js
 var app_route_module = __webpack_require__(9692);
 var module_default = /*#__PURE__*/__webpack_require__.n(app_route_module);
-// EXTERNAL MODULE: ./node_modules/next/dist/server/web/exports/next-response.js
-var next_response = __webpack_require__(9335);
+// EXTERNAL MODULE: external "@prisma/client"
+var client_ = __webpack_require__(3524);
 ;// CONCATENATED MODULE: ./src/app/api/industry/route.tsx
 
 async function GET(request, { params }) {
-    console.log(params);
-    return new next_response/* default */.Z(JSON.stringify("hahaha"));
+    // console.log(params);
+    // return new NextResponse(JSON.stringify("hahaha"))
+    try {
+        const prisma2 = new client_.PrismaClient();
+    } catch (error) {
+        alert(error.message);
+    }
 }
 
 ;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?page=%2Fapi%2Findustry%2Froute&name=app%2Fapi%2Findustry%2Froute&pagePath=private-next-app-dir%2Fapi%2Findustry%2Froute.tsx&appDir=C%3A%5CUsers%5CUser%5CDesktop%5Cnext%5Cmusic%5Csrc%5Capp&appPaths=%2Fapi%2Findustry%2Froute&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!
@@ -88,7 +100,7 @@ async function GET(request, { params }) {
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [697,501,335], () => (__webpack_exec__(3035)));
+var __webpack_exports__ = __webpack_require__.X(0, [697,501], () => (__webpack_exec__(3035)));
 module.exports = __webpack_exports__;
 
 })();

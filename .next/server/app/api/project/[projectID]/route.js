@@ -5,6 +5,13 @@ exports.id = 155;
 exports.ids = [155];
 exports.modules = {
 
+/***/ 3524:
+/***/ ((module) => {
+
+module.exports = require("@prisma/client");
+
+/***/ }),
+
 /***/ 2037:
 /***/ ((module) => {
 
@@ -43,8 +50,8 @@ var app_route_module = __webpack_require__(9692);
 var module_default = /*#__PURE__*/__webpack_require__.n(app_route_module);
 // EXTERNAL MODULE: ./node_modules/next/dist/server/web/exports/next-response.js
 var next_response = __webpack_require__(9335);
-// EXTERNAL MODULE: ./src/app/lib/prisma.ts + 1 modules
-var prisma = __webpack_require__(6936);
+// EXTERNAL MODULE: ./src/app/lib/prisma.ts
+var prisma = __webpack_require__(6156);
 ;// CONCATENATED MODULE: ./src/app/api/project/[projectID]/route.js
 
 
@@ -101,20 +108,15 @@ async function GET(request) {
 
 /***/ }),
 
-/***/ 6936:
+/***/ 6156:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: () => (/* binding */ lib_prisma)
-});
-
-// UNUSED EXPORTS: prisma
-
-;// CONCATENATED MODULE: external "@prisma/client"
-const client_namespaceObject = require("@prisma/client");
-;// CONCATENATED MODULE: ./src/app/lib/prisma.ts
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* unused harmony export prisma */
+/* harmony import */ var _prisma_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3524);
+/* harmony import */ var _prisma_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_prisma_client__WEBPACK_IMPORTED_MODULE_0__);
 
 // PrismaClient is attached to the `global` object in development to prevent
 // exhausting your database connection limit.
@@ -122,9 +124,9 @@ const client_namespaceObject = require("@prisma/client");
 // Learn more:
 // https://pris.ly/d/help/next-js-best-practices
 const globalForPrisma = global;
-const prisma = globalForPrisma.prisma || new client_namespaceObject.PrismaClient();
+const prisma = globalForPrisma.prisma || new _prisma_client__WEBPACK_IMPORTED_MODULE_0__.PrismaClient();
 if (false) {}
-/* harmony default export */ const lib_prisma = (prisma);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (prisma);
 
 
 /***/ })
