@@ -1,64 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
-model Project {
-  id           Int      @id @default(autoincrement())
-  project_name String   @db.Text
-  project_type String   @db.Text
+// model User {
+//   id            String    @id @default(auto()) @map("_id") @db.ObjectId
+//   email         String    @unique
+//   createdAt     DateTime  @default(now())
+//   emailVerified DateTime?
+// }
+
+model project {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  project_name String   @db.String
+  project_type String   @db.String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
 
-model Toll_form {
-  id                   Int      @id @default(autoincrement())
-  project_id           Int
-  plaza_toll_name      String   @db.Text
-  no_of_toll_lanes     String   @db.Text
-  report_for_year      String   @db.Text
-  highway_code         String   @db.Text
-  highway_name         String   @db.Text
-  section              String   @db.Text
-  gps_latitude         String   @db.Text
-  gps_longitude        String   @db.Text
-  prepared_by_name     String   @db.Text
-  prepared_by_position String   @db.Text
-  prepared_by_office   String   @db.Text
+model toll_form {
+  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  project_id           String
+  plaza_toll_name      String   @db.String
+  no_of_toll_lanes     String   @db.String
+  report_for_year      String   @db.String
+  highway_code         String   @db.String
+  highway_name         String   @db.String
+  section              String   @db.String
+  gps_latitude         String   @db.String
+  gps_longitude        String   @db.String
+  prepared_by_name     String   @db.String
+  prepared_by_position String   @db.String
+  prepared_by_office   String   @db.String
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 }
 
-model Span_bridge {
-  id         Int      @id @default(autoincrement())
-  project_id Int
-  span_id    Int
+model span_bridge {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  project_id String
+  span_id    String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
 
-model Bridge_form {
-  id        Int      @id @default(autoincrement())
-  span_id   Int
+model bridge_form {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  span_id   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model Type_of_damage {
-  id        Int      @id @default(autoincrement())
+model type_of_damage {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   code      Int
   name      String   @default("")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model Bridge_list {
-  id        Int      @id @default(autoincrement())
-  structure Json     @db.Json
+// model bridge_list {
+//   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+//   structure String   @db.String
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
+model bridge_list2 {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  structure String   @db.String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
