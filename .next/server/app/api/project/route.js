@@ -33,7 +33,8 @@ __webpack_require__.d(__webpack_exports__, {
 var route_namespaceObject = {};
 __webpack_require__.r(route_namespaceObject);
 __webpack_require__.d(route_namespaceObject, {
-  GET: () => (GET)
+  GET: () => (GET),
+  revalidate: () => (revalidate)
 });
 
 // EXTERNAL MODULE: ./node_modules/next/dist/server/node-polyfill-headers.js
@@ -52,6 +53,7 @@ var prisma = __webpack_require__(6936);
 //     // const team = params.team // '1'
 //     return new NextResponse(JSON.stringify(params.industryID))
 // }
+const revalidate = 0;
 async function GET(request) {
     try {
         const projects = await prisma/* default */.Z.project.findMany();
