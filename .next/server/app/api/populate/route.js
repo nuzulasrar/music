@@ -269,7 +269,7 @@ async function GET(request) {
         });
         // if (create && create2 && create3) {
         if (create3) {
-            return new next_response/* default */.Z("Successfully Populate toll_list_type_of_damage table.");
+            return new next_response/* default */.Z("Successfully Populate bridge_list2 table.");
         } else {
             return new next_response/* default */.Z("Fail");
         }

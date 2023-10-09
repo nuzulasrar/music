@@ -231,7 +231,7 @@ export async function GET(request) {
 
         // if (create && create2 && create3) {
         if (create3) {
-            return new NextResponse("Successfully Populate toll_list_type_of_damage table.");
+            return new NextResponse("Successfully Populate bridge_list2 table.");
         } else {
             return new NextResponse("Fail");
         }
