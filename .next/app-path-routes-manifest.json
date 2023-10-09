@@ -1,0 +1,15 @@
+{
+  "/page": "/",
+  "/favicon.ico/route": "/favicon.ico",
+  "/builder/page": "/builder",
+  "/pricing/page": "/pricing",
+  "/api/bridgelist/route": "/api/bridgelist",
+  "/api/bridge/route": "/api/bridge",
+  "/api/industry/route": "/api/industry",
+  "/api/project/route": "/api/project",
+  "/api/upload/route": "/api/upload",
+  "/api/trymongodb/route": "/api/trymongodb",
+  "/api/populate/route": "/api/populate",
+  "/api/industry/[industryID]/route": "/api/industry/[industryID]",
+  "/api/project/[projectID]/route": "/api/project/[projectID]"
+}
