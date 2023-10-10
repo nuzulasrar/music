@@ -7,6 +7,8 @@ import prisma from "../../lib/prisma"
 //     return new NextResponse(JSON.stringify(params.industryID))
 // }
 
+export const revalidate = 0
+
 export async function GET(request) {
 
     try {

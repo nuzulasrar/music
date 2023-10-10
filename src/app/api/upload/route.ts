@@ -3,6 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import fs from "fs"
 import { time } from 'console';
 
+export const revalidate = 0
+
 // export async function POST(request: NextRequest) {
 //     try {
 //         const data = await request.formData()

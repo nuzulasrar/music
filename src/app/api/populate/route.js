@@ -2,6 +2,8 @@
 import { NextResponse } from "next/server"
 import prisma from "../../lib/prisma"
 
+export const revalidate = 0
+
 // export async function GET(request, { params }) {
 //     // const team = params.team // '1'
 //     return new NextResponse(JSON.stringify(params.industryID))
@@ -221,10 +223,54 @@ export async function GET(request) {
         //     ]
         // })
 
-        const create3 = await prisma.bridge_list2.create({
-            data: {
-                structure: 'elsa@prisma.io',
-            },
+        const create3 = await prisma.bridge_list2.createMany({
+            data: [
+                {
+                    structure: {
+                        component: {
+                            name: "Beam / Grinder (Primary)",
+                            material: [
+                                {
+                                    name: ["Steel"], type_of_damage: [1, 2, 3, 4, 5, 13, 31]
+                                },
+                                {
+                                    name: ["P.Concrete", "R.Concrete"], type_of_damage: [11, 6, 12, 7, 8, 13, 16]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Deck Slab (Primary)",
+                            material: [
+                                {
+                                    name: ["Steel"], type_of_damage: [1, 2, 3, 4, 14, 16, 31]
+                                },
+                                {
+                                    name: ["Concrete"], type_of_damage: [11, 6, 12, 7, 8, 14]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Abutment (Primary)",
+                            material: [
+                                {
+                                    name: ["Concrete", "Masonry"], type_of_damage: [11, 6, 12, 7, 8, 9, 10, 15, 17]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+            ]
         })
 
 

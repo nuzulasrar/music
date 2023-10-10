@@ -2,6 +2,8 @@
 import { NextResponse } from "next/server"
 import prisma from "../../lib/prisma"
 
+export const revalidate = 0
+
 const replaceTypeOfDamageWith1 = async (obj) => {
     if (obj.structure && obj.structure.component && obj.structure.component.material) {
         obj.structure.component.material.forEach(material => {
