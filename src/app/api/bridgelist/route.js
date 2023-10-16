@@ -4,28 +4,44 @@ import prisma from "../../lib/prisma"
 
 export const revalidate = 0
 
-const replaceTypeOfDamageWith1 = async (obj) => {
-    if (obj.structure && obj.structure.component && obj.structure.component.material) {
-        obj.structure.component.material.forEach(material => {
-            if (material.type_of_damage) {
-                material.type_of_damage = material.type_of_damage.map(() => 1);
-            }
-        });
-    }
-}
+// const replaceTypeOfDamageWith1 = async (obj) => {
+//     if (obj.structure && obj.structure.component && obj.structure.component.material) {
+//         obj.structure.component.material.forEach(material => {
+//             if (material.type_of_damage) {
+//                 material.type_of_damage = material.type_of_damage.map(() => 1);
+//             }
+//         });
+//     }
+// }
 
 export async function GET(request, { params }) {
-    // const team = params.team // '1'
+    // const team = params.team 
 
-    // const bridgelist = await prisma.bridge_list.findMany({
-    //     // select: {
-    //     //     createdAt: true
-    //     // }
-    // })
+    try {
+        const bridgelist = await prisma.bridge_list2.findMany({
+            // select: {
+            //     createdAt: true
+            // }
+        })
+
+        var thisdamage = await prisma.type_of_damage.findMany({
+            select: {
+                code: true,
+                name: true
+            }
+        })
+
+        return new NextResponse(JSON.stringify({ bridgelist: bridgelist, thisdamage: thisdamage }))
+        // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }))
+    } catch (error) {
+        return new NextResponse(JSON.stringify({ error: error.message }))
+    }
+
+
 
     // var damage = []
 
-    // // bridgelist.forEach(replaceTypeOfDamageWith1);
+    // bridgelist.forEach(replaceTypeOfDamageWith1);
 
     // bridgelist.forEach(item => {
     //     // damage.push(item.structure.component.material[0].type_of_damage[0])
@@ -71,9 +87,9 @@ export async function GET(request, { params }) {
     //     }
     // })
 
-    // // return new NextResponse(typeof bridgelist)
-    // // return new NextResponse(JSON.stringify(damage))
-    // // return new NextResponse(JSON.stringify(thisdamage))
+    // return new NextResponse(typeof bridgelist)
+    // return new NextResponse(JSON.stringify(damage))
+
     // return new NextResponse(JSON.stringify({ bridgelist: bridgelist, thisdamage: thisdamage }))
-    return new NextResponse(JSON.stringify({ bridgelist: "yeay" }))
+    // return new NextResponse(JSON.stringify({ bridgelist: "yeay" }))
 }

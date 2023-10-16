@@ -37,13 +37,21 @@ export const revalidate = 0
 // }
 
 export async function POST(req: NextRequest, res: Response) {
+
+
+
     try {
+
+        var thisfilename = ""
+
         const formData = await req.formData();
         const formDataEntryValues = Array.from(formData.values());
         for (const formDataEntryValue of formDataEntryValues) {
             if (typeof formDataEntryValue === "object" && "arrayBuffer" in formDataEntryValue) {
                 const file = formDataEntryValue as unknown as Blob;
                 const buffer = Buffer.from(await file.arrayBuffer());
+
+                thisfilename = file.name
 
                 const now = new Date();
 
@@ -59,7 +67,7 @@ export async function POST(req: NextRequest, res: Response) {
                 fs.writeFileSync(`src/app/uploads/${formattedDateTime}-${file.name}`, buffer);
             }
         }
-        return NextResponse.json({ success: true });
+        return NextResponse.json({ success: true, filename: thisfilename });
     } catch (error: any) {
         // console.error('Error uploading files:', error);
         return new NextResponse(JSON.stringify(error.message))

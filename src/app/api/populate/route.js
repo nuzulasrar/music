@@ -270,6 +270,108 @@ export async function GET(request) {
 
                     }
                 },
+                {
+                    structure: {
+                        component: {
+                            name: "Pier No. ____ (Primary)",
+                            material: [
+                                {
+                                    name: ["Concrete", "Masonry"], type_of_damage: [11, 6, 12, 7, 8, 9, 10, 15, 17]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Bearing (Primary)",
+                            material: [
+                                {
+                                    name: ["Steel", "Rubber", "Others"], type_of_damage: [1, 3, 18, 19, 33, 34]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Parapet (Secondary)",
+                            material: [
+                                {
+                                    name: ["Steel", "Concrete", "Others"], type_of_damage: [1, 6, 7, 22, 3]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Surfacing (Secondary)",
+                            material: [
+                                {
+                                    name: ["Asphalt", "Concrete"], type_of_damage: [23, 24, 25, 26, 27]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Expansion Joint (Secondary)",
+                            material: [
+                                {
+                                    name: ["Asp. Plug", "Elastomeric", "Comp. Seal", "Buried", "Others"], type_of_damage: [29, 39, 14, 28, 32]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Drainpipes (Secondary)",
+                            material: [
+                                {
+                                    name: ["Steel", "PVC"], type_of_damage: [1, 20, 14, 21]
+                                }
+                            ]
+                        }
+
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Slope Protection / River Bank (Secondary)",
+                            material: [
+                                {
+                                    name: ["Rble. Pitching", "Gablons", "Others"], type_of_damage: [17, 35, 36]
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    structure: {
+                        component: {
+                            name: "Hydraulic Capacity",
+                            material: [
+                                {
+                                    name: [""], type_of_damage: [38]
+                                }
+                            ]
+                        }
+                    }
+                },
             ]
         })
 
