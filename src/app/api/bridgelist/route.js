@@ -1,8 +1,7 @@
+import { NextResponse } from "next/server";
+import prisma from "../../lib/prisma";
 
-import { NextResponse } from "next/server"
-import prisma from "../../lib/prisma"
-
-export const revalidate = 0
+export const revalidate = 0;
 
 // const replaceTypeOfDamageWith1 = async (obj) => {
 //     if (obj.structure && obj.structure.component && obj.structure.component.material) {
@@ -15,81 +14,25 @@ export const revalidate = 0
 // }
 
 export async function GET(request, { params }) {
-    // const team = params.team 
+  // try {
+  //     const bridgelist = await prisma.bridge_list2.findMany({
+  //         // select: {
+  //         //     createdAt: true
+  //         // }
+  //     })
 
-    try {
-        const bridgelist = await prisma.bridge_list2.findMany({
-            // select: {
-            //     createdAt: true
-            // }
-        })
+  //     var thisdamage = await prisma.type_of_damage.findMany({
+  //         select: {
+  //             code: true,
+  //             name: true
+  //         }
+  //     })
 
-        var thisdamage = await prisma.type_of_damage.findMany({
-            select: {
-                code: true,
-                name: true
-            }
-        })
+  //     return new NextResponse(JSON.stringify({ bridgelist: bridgelist, thisdamage: thisdamage }))
+  //     // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }))
+  // } catch (error) {
+  //     return new NextResponse(JSON.stringify({ error: error.message }))
+  // }
 
-        return new NextResponse(JSON.stringify({ bridgelist: bridgelist, thisdamage: thisdamage }))
-        // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }))
-    } catch (error) {
-        return new NextResponse(JSON.stringify({ error: error.message }))
-    }
-
-
-
-    // var damage = []
-
-    // bridgelist.forEach(replaceTypeOfDamageWith1);
-
-    // bridgelist.forEach(item => {
-    //     // damage.push(item.structure.component.material[0].type_of_damage[0])
-    //     item.structure.component.material.forEach(item2 => {
-
-    //         // item2.haha = "haha"
-
-    //         // damage = []
-
-    //         item2.type_of_damage.forEach(async item3 => {
-    //             const thisdamage = await prisma.type_of_damage.findFirst({
-    //                 where: {
-    //                     id: item3
-    //                 },
-    //                 select: {
-    //                     name: true,
-    //                     code: true
-    //                 },
-    //                 orderBy: {
-    //                     code: 'asc',
-    //                 }
-    //             })
-
-    //             // console.log(thisdamage.name);
-
-    //             thisdamage ? damage.push({ code: thisdamage.code, name: thisdamage.name }) : null
-    //         });
-
-    //         item2.damagenames = damage
-    //     });
-    // });
-
-    // // thisdamage = await prisma.type_of_damage.findUnique({
-    // //     where: {
-    // //         id: 1
-    // //     }
-    // // })\
-
-    // var thisdamage = await prisma.type_of_damage.findMany({
-    //     select: {
-    //         code: true,
-    //         name: true
-    //     }
-    // })
-
-    // return new NextResponse(typeof bridgelist)
-    // return new NextResponse(JSON.stringify(damage))
-
-    // return new NextResponse(JSON.stringify({ bridgelist: bridgelist, thisdamage: thisdamage }))
-    // return new NextResponse(JSON.stringify({ bridgelist: "yeay" }))
+  return new NextResponse(JSON.stringify({ bridgelist: "test" }));
 }
