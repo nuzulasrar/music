@@ -10,7 +10,7 @@ export const revalidate = 0;
 //     return new NextResponse(JSON.stringify(params.industryID))
 // }
 
-export async function GET(request) {
+export async function GET(request: any) {
   try {
     // const create = await prisma.type_of_damage.createMany({
     //     data: [
@@ -393,7 +393,7 @@ export async function GET(request) {
     } else {
       return new NextResponse("Fail");
     }
-  } catch (error) {
+  } catch (error: any) {
     return new NextResponse(error.message);
   }
 }
