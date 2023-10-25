@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import prisma from "../../lib/prisma";
 
+import { Prisma } from "@prisma/client";
+
 export const revalidate = 0;
 
 // export async function GET(request, { params }) {
@@ -220,24 +222,27 @@ export async function GET(request) {
     //     ]
     // })
 
-    const create3 = await prisma.bridge_list2.createMany({
-      data: [
-        {
-          structure: {
+    var json1 = 
+        JSON.parse(JSON.stringify({
             component: {
               name: "Beam / Grinder (Primary)",
               material: [
                 {
                   name: ["Steel"],
-                  type_of_damage: [1, 2, 3, 4, 5, 13, 31],
+                  type_of_damage: [1, 2, 3, 4, 5, 13, 31]
                 },
                 {
                   name: ["P.Concrete", "R.Concrete"],
-                  type_of_damage: [11, 6, 12, 7, 8, 13, 16],
-                },
-              ],
-            },
-          },
+                  type_of_damage: [11, 6, 12, 7, 8, 13, 16]
+                }
+              ]
+            }
+          }))
+
+    const create3 = await prisma.bridge_list2.createMany({
+      data: [
+        {
+          structure: json1
         },
         // {
         //   structure: {

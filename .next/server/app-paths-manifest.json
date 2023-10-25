@@ -1,1 +1,3 @@
-{}
+{
+  "/api/populate/route": "app/api/populate/route.js"
+}
