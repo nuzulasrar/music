@@ -68,7 +68,7 @@ model type_of_damage {
 
 model bridge_list2 {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  structure Json?
+  structure String?  @default("")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

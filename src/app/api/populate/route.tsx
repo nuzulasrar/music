@@ -223,7 +223,7 @@ export async function GET(request) {
     // })
 
     var json1 = 
-        JSON.parse(JSON.stringify({
+        JSON.stringify({
             component: {
               name: "Beam / Grinder (Primary)",
               material: [
@@ -237,7 +237,7 @@ export async function GET(request) {
                 }
               ]
             }
-          }))
+          })
 
     const create3 = await prisma.bridge_list2.createMany({
       data: [
