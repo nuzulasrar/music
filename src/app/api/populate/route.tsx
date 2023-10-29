@@ -222,173 +222,925 @@ export async function GET(request: any) {
     //     ]
     // })
 
-    var json1 = 
-        JSON.stringify({
-            component: {
-              name: "Beam / Grinder (Primary)",
-              material: [
-                {
-                  name: ["Steel"],
-                  type_of_damage: [1, 2, 3, 4, 5, 13, 31]
-                },
-                {
-                  name: ["P.Concrete", "R.Concrete"],
-                  type_of_damage: [11, 6, 12, 7, 8, 13, 16]
-                }
-              ]
-            }
-          })
+    const Bridge_Component_1 = JSON.stringify({
+      component: {
+        component_details: { name: "BEAM/GIRDER (Primary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Steel",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Corrosion of Steel",
+                code: 1,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Fracture of Steel",
+                code: 2,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Loose Connections",
+                code: 3,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Permanent Deformations",
+                code: 4,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Paint Deterioration",
+                code: 5,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Vibration/Deflection",
+                code: 13,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Noise",
+                code: 31,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+            ],
+          },
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "P. Concrete",
+                tick: 0,
+              },
+              {
+                name: "R. Concrete",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Surface Defect",
+                code: 11,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Cracks at Concrete",
+                code: 6,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Delamination",
+                code: 12,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Spalling",
+                code: 7,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Corrosion of Reinforcement",
+                code: 8,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Vibration/Deflection",
+                code: 13,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Movement",
+                code: 16,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+            ],
+          },
+        ],
+      },
+    });
 
-    const create3 = await prisma.bridge_list2.createMany({
+    const Bridge_Component_2 = JSON.stringify({
+      component: {
+        component_details: { name: "DECK SLAB (Primary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Steel",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Corrosion of Steel",
+                code: 1,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Fracture of Steel",
+                code: 2,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Loose Connections",
+                code: 3,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Permanent Deformations",
+                code: 4,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Water Leak",
+                code: 14,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Movement",
+                code: 16,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Noise",
+                code: 31,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+            ],
+          },
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Concrete",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Surface Defect",
+                code: 11,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Cracks at Concrete",
+                code: 6,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Delamination",
+                code: 12,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Spalling",
+                code: 7,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Corrosion of Reinforcement",
+                code: 8,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Water Leak/Free Lime",
+                code: 14,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const Bridge_Component_3 = JSON.stringify({
+      component: {
+        component_details: { name: "ABUTMENT (Primary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Concrete",
+                tick: 0,
+              },
+              {
+                name: "Masonry",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Surface Defect",
+                code: 11,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Cracks at Concrete",
+                code: 6,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Delamination",
+                code: 12,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Spalling",
+                code: 7,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Corrosion of Reinforcement",
+                code: 8,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Wear/Abrasion",
+                code: 9,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Material Deterioration",
+                code: 10,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Tilt/Settlement",
+                code: 15,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Scouring",
+                code: 17,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const Bridge_Component_4 = JSON.stringify({
+      component: {
+        component_details: { name: "PIER NO. (Primary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            pier_no: "",
+            material_details: [
+              {
+                name: "Concrete",
+                tick: 0,
+              },
+              {
+                name: "Masonry",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Surface Defect",
+                code: 11,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Cracks at Concrete",
+                code: 6,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Delamination",
+                code: 12,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Spalling",
+                code: 7,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Corrosion of Reinforcement",
+                code: 8,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Wear/Abrasion",
+                code: 9,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Material Deterioration",
+                code: 10,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Tilt/Settlement",
+                code: 15,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Scouring",
+                code: 17,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const Bridge_Component_5 = JSON.stringify({
+      component: {
+        component_details: { name: "BEARING (Primary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Steel",
+                tick: 0,
+              },
+              {
+                name: "Rubber",
+                tick: 0,
+              },
+              {
+                name: "Others",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Corrosion of Steel",
+                code: 1,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Loose Connections",
+                code: 3,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Pending Water",
+                code: 18,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "If detected, rating = 3",
+              },
+              {
+                tick: 0,
+                name: "Debris/Vegetation",
+                code: 19,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Bulging",
+                code: 33,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Abnormal Displacement",
+                code: 34,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const Bridge_Component_6 = JSON.stringify({
+      component: {
+        component_details: { name: "PARAPET (Secondary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Steel",
+                tick: 0,
+              },
+              {
+                name: "Concrete",
+                tick: 0,
+              },
+              {
+                name: "Others",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Corrosion of Steel",
+                code: 1,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Cracks at Concrete",
+                code: 6,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Spalling",
+                code: 7,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Impact Damage",
+                code: 2,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Loose Connections",
+                code: 3,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+    const Bridge_Component_7 = JSON.stringify({
+      component: {
+        component_details: { name: "SURFACING (Secondary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Asphalt",
+                tick: 0,
+              },
+              {
+                name: "Concrete",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Pot-holes",
+                code: 23,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Wheel Track Rutting",
+                code: 24,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Loss of Bond & Delamination",
+                code: 25,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Rppling",
+                code: 26,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Pavement Crack",
+                code: 27,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+    const Bridge_Component_8 = JSON.stringify({
+      component: {
+        component_details: { name: "EXPANSION JOINT (Secondary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Asp. Plug",
+                tick: 0,
+              },
+              {
+                name: "Elastometric",
+                tick: 0,
+              },
+              {
+                name: "Comp. Seal",
+                tick: 0,
+              },
+              {
+                name: "Buried",
+                tick: 0,
+              },
+              {
+                name: "Others",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Abnormal Spacing",
+                code: 29,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "if detected, rating = 4",
+              },
+              {
+                tick: 0,
+                name: "Difference in Level",
+                code: 30,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Water Leak",
+                code: 14,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Cracking at Exp. Joint",
+                code: 28,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Rupture",
+                code: 32,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+    const Bridge_Component_9 = JSON.stringify({
+      component: {
+        component_details: { name: "DRAINPIPES (Secondary)", tick: 0 },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Steel",
+                tick: 0,
+              },
+              {
+                name: "PVC",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Corrosion of Steel",
+                code: 1,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Blocked Drainage",
+                code: 20,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Water Leak",
+                code: 14,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "No/Inadequate Pipe Length",
+                code: 21,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+    const Bridge_Component_10 = JSON.stringify({
+      component: {
+        component_details: {
+          name: "Slope Protection / River Bank (Secondary)",
+          tick: 0,
+        },
+        material: [
+          {
+            rating_of_member: 0,
+            material_details: [
+              {
+                name: "Rble. Pitching",
+                tick: 0,
+              },
+              {
+                name: "Gablons",
+                tick: 0,
+              },
+              {
+                name: "Others",
+                tick: 0,
+              },
+            ],
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Scouring",
+                code: 17,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Erosion",
+                code: 35,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+              {
+                tick: 0,
+                name: "Material Loss / Disintegration",
+                code: 36,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+    const Bridge_Component_11 = JSON.stringify({
+      component: {
+        component_details: {
+          name: "HYDRAULIC CAPACITY",
+          tick: 0,
+        },
+        material: [
+          {
+            rating_of_member: 0,
+            type_of_damages: [
+              {
+                tick: 0,
+                name: "Inadequate Opening",
+                code: 38,
+                severity_of_damage: 0,
+                percentage_affected: "",
+                remarks: "",
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const createBrideList = await prisma.bridge_list.createMany({
       data: [
         {
-          structure: json1
+          structure: Bridge_Component_1,
         },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Deck Slab (Primary)",
-        //       material: [
-        //         {
-        //           name: ["Steel"],
-        //           type_of_damage: [1, 2, 3, 4, 14, 16, 31],
-        //         },
-        //         {
-        //           name: ["Concrete"],
-        //           type_of_damage: [11, 6, 12, 7, 8, 14],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Abutment (Primary)",
-        //       material: [
-        //         {
-        //           name: ["Concrete", "Masonry"],
-        //           type_of_damage: [11, 6, 12, 7, 8, 9, 10, 15, 17],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Pier No. ____ (Primary)",
-        //       material: [
-        //         {
-        //           name: ["Concrete", "Masonry"],
-        //           type_of_damage: [11, 6, 12, 7, 8, 9, 10, 15, 17],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Bearing (Primary)",
-        //       material: [
-        //         {
-        //           name: ["Steel", "Rubber", "Others"],
-        //           type_of_damage: [1, 3, 18, 19, 33, 34],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Parapet (Secondary)",
-        //       material: [
-        //         {
-        //           name: ["Steel", "Concrete", "Others"],
-        //           type_of_damage: [1, 6, 7, 22, 3],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Surfacing (Secondary)",
-        //       material: [
-        //         {
-        //           name: ["Asphalt", "Concrete"],
-        //           type_of_damage: [23, 24, 25, 26, 27],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Expansion Joint (Secondary)",
-        //       material: [
-        //         {
-        //           name: [
-        //             "Asp. Plug",
-        //             "Elastomeric",
-        //             "Comp. Seal",
-        //             "Buried",
-        //             "Others",
-        //           ],
-        //           type_of_damage: [29, 39, 14, 28, 32],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Drainpipes (Secondary)",
-        //       material: [
-        //         {
-        //           name: ["Steel", "PVC"],
-        //           type_of_damage: [1, 20, 14, 21],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Slope Protection / River Bank (Secondary)",
-        //       material: [
-        //         {
-        //           name: ["Rble. Pitching", "Gablons", "Others"],
-        //           type_of_damage: [17, 35, 36],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
-        // {
-        //   structure: {
-        //     component: {
-        //       name: "Hydraulic Capacity",
-        //       material: [
-        //         {
-        //           name: ["-"],
-        //           type_of_damage: [38],
-        //         },
-        //       ],
-        //     },
-        //   },
-        // },
+        {
+          structure: Bridge_Component_2,
+        },
+        {
+          structure: Bridge_Component_3,
+        },
+        {
+          structure: Bridge_Component_4,
+        },
+        {
+          structure: Bridge_Component_5,
+        },
+        {
+          structure: Bridge_Component_6,
+        },
+        {
+          structure: Bridge_Component_7,
+        },
+        {
+          structure: Bridge_Component_8,
+        },
+        {
+          structure: Bridge_Component_9,
+        },
+        {
+          structure: Bridge_Component_10,
+        },
+        {
+          structure: Bridge_Component_11,
+        },
       ],
     });
 
     // if (create && create2 && create3) {
-    if (create3) {
+    if (createBrideList) {
       return new NextResponse("Successfully Populate bridge_list2 table.");
     } else {
       return new NextResponse("Fail");
