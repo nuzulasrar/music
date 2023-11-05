@@ -45,6 +45,47 @@ import {
   damage39,
   damage40,
 } from "../../../constants/components";
+import {
+  typeOfDamage1,
+  typeOfDamage2,
+  typeOfDamage3,
+  typeOfDamage4,
+  typeOfDamage5,
+  typeOfDamage6,
+  typeOfDamage7,
+  typeOfDamage8,
+  typeOfDamage9,
+  typeOfDamage10,
+  typeOfDamage11,
+  typeOfDamage12,
+  typeOfDamage13,
+  typeOfDamage14,
+  typeOfDamage15,
+  typeOfDamage16,
+  typeOfDamage17,
+  typeOfDamage18,
+  typeOfDamage19,
+  typeOfDamage20,
+  typeOfDamage21,
+  typeOfDamage22,
+  typeOfDamage23,
+  typeOfDamage24,
+  typeOfDamage25,
+  typeOfDamage26,
+  typeOfDamage27,
+  typeOfDamage28,
+  typeOfDamage29,
+  typeOfDamage30,
+  typeOfDamage31,
+  typeOfDamage32,
+  typeOfDamage33,
+  typeOfDamage34,
+  typeOfDamage35,
+  typeOfDamage36,
+  typeOfDamage37,
+  typeOfDamage38,
+  typeOfDamage39,
+} from "../../../constants/typeofdamages";
 
 export const revalidate = 0;
 
@@ -286,6 +327,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage1,
+                type_of_damages_array: typeOfDamage1,
               },
               {
                 tick: 0,
@@ -295,6 +337,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage2,
+                type_of_damages_array: typeOfDamage2,
               },
               {
                 tick: 0,
@@ -304,6 +347,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage3,
+                type_of_damages_array: typeOfDamage3,
               },
               {
                 tick: 0,
@@ -313,6 +357,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage4,
+                type_of_damages_array: typeOfDamage4,
               },
               {
                 tick: 0,
@@ -322,6 +367,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage5,
+                type_of_damages_array: typeOfDamage5,
               },
               {
                 tick: 0,
@@ -331,6 +377,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage13,
+                type_of_damages_array: typeOfDamage13,
               },
               {
                 tick: 0,
@@ -340,6 +387,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage31,
+                type_of_damages_array: typeOfDamage31,
               },
             ],
           },
@@ -364,6 +412,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage11,
+                type_of_damages_array: typeOfDamage11,
               },
               {
                 tick: 0,
@@ -373,6 +422,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage6,
+                type_of_damages_array: typeOfDamage6,
               },
               {
                 tick: 0,
@@ -382,6 +432,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage12,
+                type_of_damages_array: typeOfDamage12,
               },
               {
                 tick: 0,
@@ -391,6 +442,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage7,
+                type_of_damages_array: typeOfDamage7,
               },
               {
                 tick: 0,
@@ -400,6 +452,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage8,
+                type_of_damages_array: typeOfDamage8,
               },
               {
                 tick: 0,
@@ -409,6 +462,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage13,
+                type_of_damages_array: typeOfDamage13,
               },
               {
                 tick: 0,
@@ -418,6 +472,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage16,
+                type_of_damages_array: typeOfDamage16,
               },
             ],
           },
@@ -446,6 +501,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage1,
+                type_of_damages_array: typeOfDamage1,
               },
               {
                 tick: 0,
@@ -455,6 +511,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage2,
+                type_of_damages_array: typeOfDamage2,
               },
               {
                 tick: 0,
@@ -464,6 +521,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage3,
+                type_of_damages_array: typeOfDamage3,
               },
               {
                 tick: 0,
@@ -473,6 +531,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage4,
+                type_of_damages_array: typeOfDamage4,
               },
               {
                 tick: 0,
@@ -482,6 +541,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage14,
+                type_of_damages_array: typeOfDamage14,
               },
               {
                 tick: 0,
@@ -491,6 +551,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage16,
+                type_of_damages_array: typeOfDamage16,
               },
               {
                 tick: 0,
@@ -500,6 +561,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
                 severity_of_damage_list: damage31,
+                type_of_damages_array: typeOfDamage31,
               },
             ],
           },
@@ -520,6 +582,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage11,
+                type_of_damages_array: typeOfDamage11,
               },
               {
                 tick: 0,
@@ -529,6 +592,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage6,
+                type_of_damages_array: typeOfDamage6,
               },
               {
                 tick: 0,
@@ -538,6 +602,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage12,
+                type_of_damages_array: typeOfDamage12,
               },
               {
                 tick: 0,
@@ -547,6 +612,7 @@ export async function GET(request: any) {
                 percentage_affected: "",
                 remarks: "",
                 severity_of_damage_list: damage7,
+                type_of_damages_array: typeOfDamage7,
               },
               {
                 tick: 0,
@@ -555,6 +621,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage8,
+                type_of_damages_array: typeOfDamage8,
               },
               {
                 tick: 0,
@@ -563,6 +631,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage14,
+                type_of_damages_array: typeOfDamage14,
               },
             ],
           },
@@ -594,6 +664,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage11,
+                type_of_damages_array: typeOfDamage11,
               },
               {
                 tick: 0,
@@ -602,6 +674,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage6,
+                type_of_damages_array: typeOfDamage6,
               },
               {
                 tick: 0,
@@ -610,6 +684,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage12,
+                type_of_damages_array: typeOfDamage12,
               },
               {
                 tick: 0,
@@ -618,6 +694,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage7,
+                type_of_damages_array: typeOfDamage7,
               },
               {
                 tick: 0,
@@ -626,6 +704,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage8,
+                type_of_damages_array: typeOfDamage8,
               },
               {
                 tick: 0,
@@ -634,6 +714,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage9,
+                type_of_damages_array: typeOfDamage9,
               },
               {
                 tick: 0,
@@ -642,6 +724,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage10,
+                type_of_damages_array: typeOfDamage10,
               },
               {
                 tick: 0,
@@ -650,6 +734,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
+                severity_of_damage_list: damage15,
+                type_of_damages_array: typeOfDamage15,
               },
               {
                 tick: 0,
@@ -658,6 +744,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage17,
+                type_of_damages_array: typeOfDamage17,
               },
             ],
           },
@@ -690,6 +778,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage11,
+                type_of_damages_array: typeOfDamage11,
               },
               {
                 tick: 0,
@@ -698,6 +788,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage6,
+                type_of_damages_array: typeOfDamage6,
               },
               {
                 tick: 0,
@@ -706,6 +798,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage12,
+                type_of_damages_array: typeOfDamage12,
               },
               {
                 tick: 0,
@@ -714,6 +808,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage7,
+                type_of_damages_array: typeOfDamage7,
               },
               {
                 tick: 0,
@@ -722,6 +818,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage8,
+                type_of_damages_array: typeOfDamage8,
               },
               {
                 tick: 0,
@@ -730,6 +828,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage9,
+                type_of_damages_array: typeOfDamage9,
               },
               {
                 tick: 0,
@@ -738,6 +838,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage10,
+                type_of_damages_array: typeOfDamage10,
               },
               {
                 tick: 0,
@@ -746,6 +848,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "If detected, rating = 4",
+                severity_of_damage_list: damage15,
+                type_of_damages_array: typeOfDamage15,
               },
               {
                 tick: 0,
@@ -754,6 +858,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage17,
+                type_of_damages_array: typeOfDamage17,
               },
             ],
           },
@@ -789,6 +895,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage1,
+                type_of_damages_array: typeOfDamage1,
               },
               {
                 tick: 0,
@@ -797,6 +905,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage3,
+                type_of_damages_array: typeOfDamage3,
               },
               {
                 tick: 0,
@@ -805,6 +915,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "If detected, rating = 3",
+                severity_of_damage_list: damage18,
+                type_of_damages_array: typeOfDamage18,
               },
               {
                 tick: 0,
@@ -813,6 +925,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage19,
+                type_of_damages_array: typeOfDamage19,
               },
               {
                 tick: 0,
@@ -821,6 +935,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage33,
+                type_of_damages_array: typeOfDamage33,
               },
               {
                 tick: 0,
@@ -829,6 +945,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage34,
+                type_of_damages_array: typeOfDamage34,
               },
             ],
           },
@@ -864,6 +982,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage1,
+                type_of_damages_array: typeOfDamage1,
               },
               {
                 tick: 0,
@@ -872,6 +992,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage6,
+                type_of_damages_array: typeOfDamage6,
               },
               {
                 tick: 0,
@@ -880,6 +1002,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage7,
+                type_of_damages_array: typeOfDamage7,
               },
               {
                 tick: 0,
@@ -888,6 +1012,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage2,
+                type_of_damages_array: typeOfDamage2,
               },
               {
                 tick: 0,
@@ -896,6 +1022,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage3,
+                type_of_damages_array: typeOfDamage3,
               },
             ],
           },
@@ -926,6 +1054,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage23,
+                type_of_damages_array: typeOfDamage23,
               },
               {
                 tick: 0,
@@ -934,6 +1064,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage24,
+                type_of_damages_array: typeOfDamage24,
               },
               {
                 tick: 0,
@@ -942,6 +1074,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage25,
+                type_of_damages_array: typeOfDamage25,
               },
               {
                 tick: 0,
@@ -950,6 +1084,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage26,
+                type_of_damages_array: typeOfDamage26,
               },
               {
                 tick: 0,
@@ -958,6 +1094,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage27,
+                type_of_damages_array: typeOfDamage27,
               },
             ],
           },
@@ -1000,6 +1138,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "if detected, rating = 4",
+                severity_of_damage_list: damage29,
+                type_of_damages_array: typeOfDamage29,
               },
               {
                 tick: 0,
@@ -1008,6 +1148,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage30,
+                type_of_damages_array: typeOfDamage30,
               },
               {
                 tick: 0,
@@ -1016,6 +1158,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage14,
+                type_of_damages_array: typeOfDamage14,
               },
               {
                 tick: 0,
@@ -1024,6 +1168,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage28,
+                type_of_damages_array: typeOfDamage28,
               },
               {
                 tick: 0,
@@ -1032,6 +1178,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage32,
+                type_of_damages_array: typeOfDamage32,
               },
             ],
           },
@@ -1062,6 +1210,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage1,
+                type_of_damages_array: typeOfDamage1,
               },
               {
                 tick: 0,
@@ -1070,6 +1220,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage20,
+                type_of_damages_array: typeOfDamage20,
               },
               {
                 tick: 0,
@@ -1078,6 +1230,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage14,
+                type_of_damages_array: typeOfDamage14,
               },
               {
                 tick: 0,
@@ -1086,6 +1240,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage21,
+                type_of_damages_array: typeOfDamage21,
               },
             ],
           },
@@ -1123,6 +1279,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage17,
+                type_of_damages_array: typeOfDamage17,
               },
               {
                 tick: 0,
@@ -1131,6 +1289,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage35,
+                type_of_damages_array: typeOfDamage35,
               },
               {
                 tick: 0,
@@ -1139,6 +1299,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage36,
+                type_of_damages_array: typeOfDamage36,
               },
             ],
           },
@@ -1162,6 +1324,8 @@ export async function GET(request: any) {
                 severity_of_damage: 0,
                 percentage_affected: "",
                 remarks: "",
+                severity_of_damage_list: damage38,
+                type_of_damages_array: typeOfDamage38,
               },
             ],
           },

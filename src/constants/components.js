@@ -59,7 +59,7 @@ export const damage3 = [
   {
     level: "V.SEVERE",
     details: "> 30% of fasteners loose or missing",
-    details: "> 60% of fasteners loose or missing",
+    details_2: "> 60% of fasteners loose or missing",
   },
 ];
 

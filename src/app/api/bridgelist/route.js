@@ -15,13 +15,13 @@ export const revalidate = 0;
 
 export async function GET(request, { params }) {
   try {
-    const bridgelist = await prisma.bridge_list2.findMany({
+    const bridgelist = await prisma.bridge_list.findMany({
       // select: {
       //     createdAt: true
       // }
     });
 
-    var thisdamage = await prisma.type_of_damage.findMany({
+    const thisdamage = await prisma.type_of_damage.findMany({
       select: {
         code: true,
         name: true,
@@ -31,7 +31,7 @@ export async function GET(request, { params }) {
     return new NextResponse(
       JSON.stringify({ bridgelist: bridgelist, thisdamage: thisdamage })
     );
-    // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }))
+    // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }));
   } catch (error) {
     return new NextResponse(JSON.stringify({ error: error.message }));
   }
