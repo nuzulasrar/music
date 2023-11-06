@@ -321,6 +321,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Steel",
                 code: 1,
                 severity_of_damage: 0,
@@ -331,6 +332,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Fracture of Steel",
                 code: 2,
                 severity_of_damage: 0,
@@ -341,6 +343,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Loose Connections",
                 code: 3,
                 severity_of_damage: 0,
@@ -351,6 +354,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Permanent Deformations",
                 code: 4,
                 severity_of_damage: 0,
@@ -361,6 +365,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Paint Deterioration",
                 code: 5,
                 severity_of_damage: 0,
@@ -371,6 +376,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Vibration/Deflection",
                 code: 13,
                 severity_of_damage: 0,
@@ -381,6 +387,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Noise",
                 code: 31,
                 severity_of_damage: 0,
@@ -406,6 +413,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Surface Defect",
                 code: 11,
                 severity_of_damage: 0,
@@ -416,6 +424,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Cracks at Concrete",
                 code: 6,
                 severity_of_damage: 0,
@@ -426,6 +435,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Delamination",
                 code: 12,
                 severity_of_damage: 0,
@@ -436,6 +446,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Spalling",
                 code: 7,
                 severity_of_damage: 0,
@@ -446,6 +457,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Reinforcement",
                 code: 8,
                 severity_of_damage: 0,
@@ -456,6 +468,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Vibration/Deflection",
                 code: 13,
                 severity_of_damage: 0,
@@ -466,6 +479,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Movement",
                 code: 16,
                 severity_of_damage: 0,
@@ -495,6 +509,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Steel",
                 code: 1,
                 severity_of_damage: 0,
@@ -505,6 +520,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Fracture of Steel",
                 code: 2,
                 severity_of_damage: 0,
@@ -515,6 +531,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Loose Connections",
                 code: 3,
                 severity_of_damage: 0,
@@ -525,6 +542,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Permanent Deformations",
                 code: 4,
                 severity_of_damage: 0,
@@ -535,6 +553,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Water Leak",
                 code: 14,
                 severity_of_damage: 0,
@@ -545,6 +564,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Movement",
                 code: 16,
                 severity_of_damage: 0,
@@ -555,6 +575,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Noise",
                 code: 31,
                 severity_of_damage: 0,
@@ -576,6 +597,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Surface Defect",
                 code: 11,
                 severity_of_damage: 0,
@@ -586,6 +608,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Cracks at Concrete",
                 code: 6,
                 severity_of_damage: 0,
@@ -596,6 +619,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Delamination",
                 code: 12,
                 severity_of_damage: 0,
@@ -606,6 +630,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Spalling",
                 code: 7,
                 severity_of_damage: 0,
@@ -616,6 +641,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Reinforcement",
                 code: 8,
                 severity_of_damage: 0,
@@ -626,6 +652,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Water Leak/Free Lime",
                 code: 14,
                 severity_of_damage: 0,
@@ -659,6 +686,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Surface Defect",
                 code: 11,
                 severity_of_damage: 0,
@@ -669,6 +697,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Cracks at Concrete",
                 code: 6,
                 severity_of_damage: 0,
@@ -679,6 +708,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Delamination",
                 code: 12,
                 severity_of_damage: 0,
@@ -689,6 +719,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Spalling",
                 code: 7,
                 severity_of_damage: 0,
@@ -699,6 +730,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Reinforcement",
                 code: 8,
                 severity_of_damage: 0,
@@ -709,6 +741,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Wear/Abrasion",
                 code: 9,
                 severity_of_damage: 0,
@@ -719,6 +752,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Material Deterioration",
                 code: 10,
                 severity_of_damage: 0,
@@ -729,6 +763,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Tilt/Settlement",
                 code: 15,
                 severity_of_damage: 0,
@@ -739,6 +774,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Scouring",
                 code: 17,
                 severity_of_damage: 0,
@@ -773,6 +809,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Surface Defect",
                 code: 11,
                 severity_of_damage: 0,
@@ -783,6 +820,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Cracks at Concrete",
                 code: 6,
                 severity_of_damage: 0,
@@ -793,6 +831,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Delamination",
                 code: 12,
                 severity_of_damage: 0,
@@ -803,6 +842,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Spalling",
                 code: 7,
                 severity_of_damage: 0,
@@ -813,6 +853,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Reinforcement",
                 code: 8,
                 severity_of_damage: 0,
@@ -823,6 +864,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Wear/Abrasion",
                 code: 9,
                 severity_of_damage: 0,
@@ -833,6 +875,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Material Deterioration",
                 code: 10,
                 severity_of_damage: 0,
@@ -843,6 +886,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Tilt/Settlement",
                 code: 15,
                 severity_of_damage: 0,
@@ -853,6 +897,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Scouring",
                 code: 17,
                 severity_of_damage: 0,
@@ -890,6 +935,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Steel",
                 code: 1,
                 severity_of_damage: 0,
@@ -900,6 +946,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Loose Connections",
                 code: 3,
                 severity_of_damage: 0,
@@ -910,6 +957,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Pending Water",
                 code: 18,
                 severity_of_damage: 0,
@@ -920,6 +968,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Debris/Vegetation",
                 code: 19,
                 severity_of_damage: 0,
@@ -930,6 +979,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Bulging",
                 code: 33,
                 severity_of_damage: 0,
@@ -940,6 +990,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Displacement",
                 code: 34,
                 severity_of_damage: 0,
@@ -977,6 +1028,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Steel",
                 code: 1,
                 severity_of_damage: 0,
@@ -987,6 +1039,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Cracks at Concrete",
                 code: 6,
                 severity_of_damage: 0,
@@ -997,6 +1050,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Spalling",
                 code: 7,
                 severity_of_damage: 0,
@@ -1007,6 +1061,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Impact Damage",
                 code: 2,
                 severity_of_damage: 0,
@@ -1017,6 +1072,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Loose Connections",
                 code: 3,
                 severity_of_damage: 0,
@@ -1049,6 +1105,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Pot-holes",
                 code: 23,
                 severity_of_damage: 0,
@@ -1059,6 +1116,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Wheel Track Rutting",
                 code: 24,
                 severity_of_damage: 0,
@@ -1069,6 +1127,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Loss of Bond & Delamination",
                 code: 25,
                 severity_of_damage: 0,
@@ -1079,6 +1138,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Rppling",
                 code: 26,
                 severity_of_damage: 0,
@@ -1089,6 +1149,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Pavement Crack",
                 code: 27,
                 severity_of_damage: 0,
@@ -1133,6 +1194,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Abnormal Spacing",
                 code: 29,
                 severity_of_damage: 0,
@@ -1143,6 +1205,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Difference in Level",
                 code: 30,
                 severity_of_damage: 0,
@@ -1153,6 +1216,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Water Leak",
                 code: 14,
                 severity_of_damage: 0,
@@ -1163,6 +1227,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Cracking at Exp. Joint",
                 code: 28,
                 severity_of_damage: 0,
@@ -1173,6 +1238,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Rupture",
                 code: 32,
                 severity_of_damage: 0,
@@ -1205,6 +1271,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Corrosion of Steel",
                 code: 1,
                 severity_of_damage: 0,
@@ -1215,6 +1282,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Blocked Drainage",
                 code: 20,
                 severity_of_damage: 0,
@@ -1225,6 +1293,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Water Leak",
                 code: 14,
                 severity_of_damage: 0,
@@ -1235,6 +1304,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "No/Inadequate Pipe Length",
                 code: 21,
                 severity_of_damage: 0,
@@ -1274,6 +1344,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Scouring",
                 code: 17,
                 severity_of_damage: 0,
@@ -1284,6 +1355,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Erosion",
                 code: 35,
                 severity_of_damage: 0,
@@ -1294,6 +1366,7 @@ export async function GET(request: any) {
               },
               {
                 tick: 0,
+                active_details: 0,
                 name: "Material Loss / Disintegration",
                 code: 36,
                 severity_of_damage: 0,
@@ -1319,6 +1392,7 @@ export async function GET(request: any) {
             type_of_damages: [
               {
                 tick: 0,
+                active_details: 0,
                 name: "Inadequate Opening",
                 code: 38,
                 severity_of_damage: 0,
