@@ -72,3 +72,11 @@ model bridge_list {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model submitted_form {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  details   String   @default("")
+  formdata  String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

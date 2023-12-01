@@ -958,7 +958,7 @@ export async function GET(request: any) {
               {
                 tick: 0,
                 active_details: 0,
-                name: "Pending Water",
+                name: "Ponding Water",
                 code: 18,
                 severity_of_damage: 0,
                 percentage_affected: "",
