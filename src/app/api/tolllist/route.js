@@ -15,7 +15,7 @@ export const revalidate = 0;
 
 export async function GET(request, { params }) {
   try {
-    const toll_list = await prisma.toll_list.findMany({
+    const bridgelist = await prisma.toll_list.findMany({
       // select: {
       //     createdAt: true
       // }
@@ -29,7 +29,7 @@ export async function GET(request, { params }) {
     });
 
     return new NextResponse(
-      JSON.stringify({ toll_list: toll_list, thisdamage: thisdamage })
+      JSON.stringify({ bridgelist: bridgelist, thisdamage: thisdamage })
     );
     // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }));
   } catch (error) {

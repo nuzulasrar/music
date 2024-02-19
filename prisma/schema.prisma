@@ -83,6 +83,7 @@ model toll_list {
   
 model submitted_form {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  project_type   String   @default("")
   details   String   @default("")
   formdata  String   @default("")
   createdAt DateTime @default(now())
