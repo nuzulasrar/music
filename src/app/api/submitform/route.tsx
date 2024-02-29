@@ -10,11 +10,15 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
 
     const name = formData.get("name");
+    const details = formData.get("details");
+    const project_id = formData.get("project_id");
     const project_type = formData.get("project_type");
 
     const submittedForm = await prisma.submitted_form.create({
       data: {
-        formdata: JSON.stringify(name),
+        formdata: String(name),
+        details: String(details),
+        project_id: String(project_id),
         project_type: String(project_type),
       },
     });
