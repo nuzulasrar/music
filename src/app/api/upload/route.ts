@@ -1,18 +1,16 @@
-import { writeFile } from 'fs/promises'
-import { NextRequest, NextResponse } from 'next/server'
-import fs from "fs"
-import { time } from 'console';
+import { writeFile } from "fs/promises";
+import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import { time } from "console";
 
-export const revalidate = 0
+export const revalidate = 0;
 
 // export async function POST(request: NextRequest) {
 //     try {
 //         const data = await request.formData()
 //         const file: File | null = data.get('file') as unknown as File
 
-
 //         var thisarray = []
-
 
 //         return new NextResponse(JSON.stringify(typeof file))
 
@@ -37,39 +35,43 @@ export const revalidate = 0
 // }
 
 export async function POST(req: NextRequest, res: Response) {
+  try {
+    var thisfilename = "";
 
+    const formData = await req.formData();
+    const formDataEntryValues = Array.from(formData.values());
+    for (const formDataEntryValue of formDataEntryValues) {
+      if (
+        typeof formDataEntryValue === "object" &&
+        "arrayBuffer" in formDataEntryValue
+      ) {
+        const file = formDataEntryValue as unknown as Blob;
+        const buffer = Buffer.from(await file.arrayBuffer());
 
+        thisfilename = file.name;
 
-    try {
+        const now = new Date();
 
-        var thisfilename = ""
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
+        const day = String(now.getDate()).padStart(2, "0");
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
 
-        const formData = await req.formData();
-        const formDataEntryValues = Array.from(formData.values());
-        for (const formDataEntryValue of formDataEntryValues) {
-            if (typeof formDataEntryValue === "object" && "arrayBuffer" in formDataEntryValue) {
-                const file = formDataEntryValue as unknown as Blob;
-                const buffer = Buffer.from(await file.arrayBuffer());
+        const formattedDateTime = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
 
-                thisfilename = file.name
-
-                const now = new Date();
-
-                const year = now.getFullYear();
-                const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-                const day = String(now.getDate()).padStart(2, '0');
-                const hours = String(now.getHours()).padStart(2, '0');
-                const minutes = String(now.getMinutes()).padStart(2, '0');
-                const seconds = String(now.getSeconds()).padStart(2, '0');
-
-                const formattedDateTime = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
-
-                fs.writeFileSync(`src/app/uploads/${formattedDateTime}-${file.name}`, buffer);
-            }
-        }
-        return NextResponse.json({ success: true, filename: thisfilename });
-    } catch (error: any) {
-        // console.error('Error uploading files:', error);
-        return new NextResponse(JSON.stringify(error.message))
+        fs.writeFileSync(
+          `src/app/uploads/${formattedDateTime}-${file.name}`,
+          buffer
+        );
+      }
     }
+    // return NextResponse.json({ success: true, filename: thisfilename });
+
+    return NextResponse.json({ formData: JSON.stringify(thisfilename) });
+  } catch (error: any) {
+    // console.error('Error uploading files:', error);
+    return new NextResponse(JSON.stringify(error.message));
+  }
 }
