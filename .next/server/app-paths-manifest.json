@@ -1,5 +1,4 @@
 {
-  "/api/bridgelist/route": "app/api/bridgelist/route.js",
-  "/api/project/route": "app/api/project/route.js",
-  "/api/viewform/[projectID]/route": "app/api/viewform/[projectID]/route.js"
+  "/page": "app/page.js",
+  "/api/bridgelist/route": "app/api/bridgelist/route.js"
 }
