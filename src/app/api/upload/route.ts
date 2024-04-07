@@ -35,8 +35,11 @@ export const revalidate = 0;
 // }
 
 export async function POST(req: NextRequest, res: Response) {
+  console.log("ok");
+
   try {
     var thisfilename = "";
+    var allfilename = "";
 
     const formData = await req.formData();
     const formDataEntryValues = Array.from(formData.values());
@@ -61,6 +64,11 @@ export async function POST(req: NextRequest, res: Response) {
 
         const formattedDateTime = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
 
+        const lastname = `${formattedDateTime}-${file.name}`;
+
+        if (allfilename) allfilename = allfilename + ", " + lastname;
+        else allfilename = allfilename + lastname;
+
         fs.writeFileSync(
           `src/app/uploads/${formattedDateTime}-${file.name}`,
           buffer
@@ -69,9 +77,19 @@ export async function POST(req: NextRequest, res: Response) {
     }
     // return NextResponse.json({ success: true, filename: thisfilename });
 
-    return NextResponse.json({ formData: JSON.stringify(thisfilename) });
+    if (thisfilename) {
+      return NextResponse.json({
+        success: true,
+        message: "File uploaded successfully",
+        allfilename: allfilename,
+      });
+    } else {
+      return NextResponse.json({
+        success: false,
+        message: "No file uploaded",
+      });
+    }
   } catch (error: any) {
-    // console.error('Error uploading files:', error);
-    return new NextResponse(JSON.stringify(error.message));
+    return NextResponse.json({ success: false, error: error.message });
   }
 }
