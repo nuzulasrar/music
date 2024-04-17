@@ -1,6 +1,6 @@
 {
-  "/api/bridgelist/route": "app/api/bridgelist/route.js",
-  "/api/submitform/route": "app/api/submitform/route.js",
-  "/api/upload/route": "app/api/upload/route.js",
-  "/api/viewform/[projectID]/route": "app/api/viewform/[projectID]/route.js"
+  "/page": "app/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/home/page": "app/home/page.js",
+  "/api/bridgelist/route": "app/api/bridgelist/route.js"
 }
