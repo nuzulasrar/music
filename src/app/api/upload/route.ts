@@ -70,7 +70,7 @@ export async function POST(req: NextRequest, res: Response) {
         else allfilename = allfilename + lastname;
 
         fs.writeFileSync(
-          `src/app/uploads/${formattedDateTime}-${file.name}`,
+          `public/uploads/${formattedDateTime}-${file.name}`,
           buffer
         );
       }

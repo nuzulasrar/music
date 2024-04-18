@@ -5,6 +5,21 @@ import { Prisma } from "@prisma/client";
 
 export const revalidate = 0;
 
+export async function GET(request, { params }) {
+  try {
+    const submitted_form = await prisma.submitted_form.findMany({
+      // select: {
+      //     createdAt: true
+      // }
+    });
+
+    return new NextResponse(JSON.stringify({ submitted_form: submitted_form }));
+    // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }));
+  } catch (error) {
+    return new NextResponse(JSON.stringify({ error: error.message }));
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
