@@ -50,7 +50,7 @@ export default function Home() {
           <div className="mt-2 float-right">
             <button
               onClick={() => {
-                router.push("/home");
+                router.push("/project");
               }}
               className="bg-green-600 rounded-md px-5 py-2 text-white"
             >

@@ -1,9 +1,6 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/project/page": "app/project/page.js",
   "/home/page": "app/home/page.js",
-  "/api/upload/route": "app/api/upload/route.js",
-  "/api/bridgelist/route": "app/api/bridgelist/route.js",
-  "/api/submitform/route": "app/api/submitform/route.js",
-  "/api/viewform/[projectID]/route": "app/api/viewform/[projectID]/route.js",
+  "/api/project/route": "app/api/project/route.js",
   "/api/submitform/[type]/route": "app/api/submitform/[type]/route.js"
 }
