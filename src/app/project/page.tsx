@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Modal from "@/components/Modal";
+import Link from "next/link";
 
 const page = () => {
   const [data, setData] = useState([]);
@@ -93,7 +94,9 @@ const page = () => {
                   <td className="border border-neutral-200 p-2">{kl1}</td>
                   <td className="border border-neutral-200 p-2">
                     <button className="bg-blue-500 px-6 py-2 rounded-lg">
-                      <p className="text-white">View</p>
+                      <Link href={`/project/${item.id}`}>
+                        <p className="text-white">View</p>
+                      </Link>
                     </button>
                   </td>
                 </tr>

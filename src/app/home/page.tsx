@@ -14,7 +14,6 @@ const page = () => {
       }
 
       const result = await response.json();
-      // alert(JSON.stringify(result));
       setData(result);
     } catch (error) {
       // console.log(error);
