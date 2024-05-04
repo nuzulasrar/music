@@ -16,9 +16,9 @@ export const revalidate = 0;
 export async function GET(request, { params }) {
   try {
     const bridgelist = await prisma.toll_list.findMany({
-      // select: {
-      //     createdAt: true
-      // }
+      orderBy: {
+        position: "asc",
+      },
     });
 
     const thisdamage = await prisma.type_of_damage.findMany({

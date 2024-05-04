@@ -66,19 +66,19 @@ export const damage3 = [
 export const damage4 = [
   {
     level: "LIGHT",
-    details: "Up to 10% of fasteners loose or missing",
+    details: "If detected, rating shall be 4",
   },
   {
     level: "MEDIUM",
-    details: "Up to 20% of fasteners loose or missing",
+    details: "If detected, rating shall be 4",
   },
   {
     level: "SEVERE",
-    details: "20 to 30% of fasteners loose or missing",
+    details: "If detected, rating shall be 4",
   },
   {
     level: "V.SEVERE",
-    details: "> 30% of fasteners loose or missing",
+    details: "If detected, rating shall be 4",
   },
 ];
 

@@ -41,6 +41,10 @@ const page = ({ params }) => {
       {data &&
         data.map((item, index) => {
           let thisformdata = JSON.parse(item.formdata);
+
+          thisformdata = thisformdata.sort((a, b) => a.position - b.position);
+          console.log(JSON.stringify(thisformdata, 0, 2));
+
           let images1 = JSON.parse(item.images1);
           let images2 = JSON.parse(item.images2);
           let images3 = JSON.parse(item.images3);
@@ -94,7 +98,14 @@ const page = ({ params }) => {
                 <tbody>
                   {thisformdata.map((formitem, formindex) => {
                     let thisstructure = JSON.parse(formitem.structure);
-                    console.log("thisstructure", JSON.stringify(thisstructure));
+                    if (formindex === 0)
+                      console.log(
+                        "thisstructure",
+                        JSON.stringify(thisstructure)
+                      );
+
+                    let thisposition = JSON.parse(formitem.position);
+                    // console.log("thisposition", JSON.stringify(thisposition));
 
                     let material = thisstructure.component.material;
 
@@ -256,6 +267,36 @@ const page = ({ params }) => {
                   })}
                 </tbody>
               </table>
+              {images1.map((image1item, image1index) => {
+                return (
+                  <img
+                    src={`/uploads/${image1item}`}
+                    alt=""
+                    style={{ width: 400, height: 400 }}
+                  />
+                  // <p>{image1item}</p>
+                );
+              })}
+              {images2.map((image2item, image2index) => {
+                return (
+                  <img
+                    src={`/uploads/${image2item}`}
+                    alt=""
+                    style={{ width: 400, height: 400 }}
+                  />
+                  // <p>{image1item}</p>
+                );
+              })}
+              {images3.map((image3item, image3index) => {
+                return (
+                  <img
+                    src={`/uploads/${image3item}`}
+                    alt=""
+                    style={{ width: 400, height: 400 }}
+                  />
+                  // <p>{image1item}</p>
+                );
+              })}
             </div>
           );
         })}

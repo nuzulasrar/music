@@ -1411,43 +1411,54 @@ export async function GET(request: any) {
       data: [
         {
           structure: Bridge_Component_1,
+          position: 1,
         },
         {
           structure: Bridge_Component_2,
+          position: 2,
         },
         {
           structure: Bridge_Component_3,
+          position: 3,
         },
         {
           structure: Bridge_Component_4,
+          position: 4,
         },
         {
           structure: Bridge_Component_5,
+          position: 5,
         },
         {
           structure: Bridge_Component_6,
+          position: 6,
         },
         {
           structure: Bridge_Component_7,
+          position: 7,
         },
         {
           structure: Bridge_Component_8,
+          position: 8,
         },
         {
           structure: Bridge_Component_9,
+          position: 9,
         },
         {
           structure: Bridge_Component_10,
+          position: 10,
         },
         {
           structure: Bridge_Component_11,
+          position: 11,
         },
       ],
     });
 
     // if (create && create2 && create3) {
     if (createBrideList) {
-      return new NextResponse("Successfully Populate bridge_list2 table.");
+      return new NextResponse("Successfully Populate bridge_list table.");
     } else {
       return new NextResponse("Fail");
     }

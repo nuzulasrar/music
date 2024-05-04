@@ -1087,33 +1087,43 @@ export async function GET(request: any) {
       data: [
         {
           structure: Toll_Component_1,
+          position: 1,
         },
         {
           structure: Toll_Component_2,
+          position: 2,
         },
         {
           structure: Toll_Component_3,
+          position: 3,
         },
         {
           structure: Toll_Component_4,
+          position: 4,
         },
         {
           structure: Toll_Component_5,
+          position: 5,
         },
         {
           structure: Toll_Component_6,
+          position: 6,
         },
         {
           structure: Toll_Component_7,
+          position: 7,
         },
         {
           structure: Toll_Component_8,
+          position: 8,
         },
         {
           structure: Toll_Component_9,
+          position: 9,
         },
         {
           structure: Toll_Component_10,
+          position: 10,
         },
       ],
     });
