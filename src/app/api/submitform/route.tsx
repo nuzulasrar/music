@@ -59,3 +59,37 @@ export async function POST(request: NextRequest) {
     return new NextResponse(error.message);
   }
 }
+
+export async function PUT(request: NextRequest) {
+  try {
+    const formData = await request.formData();
+
+    const form = formData.get("form");
+    const id = formData.get("id");
+
+    let transformform = JSON.parse(form);
+    let transformid = JSON.parse(id);
+
+    const submittedForm = await prisma.submitted_form.update({
+      where: { id: transformid },
+      data: {
+        formdata: JSON.stringify(transformform),
+      },
+    });
+
+    if (submittedForm) {
+      return NextResponse.json({ success: "success" });
+    } else {
+      return NextResponse.json({ fail: "API FAIL" });
+    }
+    // return NextResponse.json({
+    //   form: JSON.stringify(transformform),
+    //   id: transformid,
+    // });
+    // return NextResponse.json({
+    //   submittedForm: submittedForm,
+    // });
+  } catch (error: any) {
+    return new NextResponse(error.message);
+  }
+}
