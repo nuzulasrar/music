@@ -91,6 +91,7 @@ model submitted_form {
   project_type   String   @default("")
   details   String   @default("")
   formdata  String   @default("")
+  properimages  String   @default("[]")
   images1  String   @default("")
   images2  String   @default("")
   images3  String   @default("")

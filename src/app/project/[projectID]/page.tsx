@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Modal from "@/components/Modal";
+import EditRatingMemberModal from "@/components/EditRatingMemberModal";
 
 const page = ({ params }) => {
   const { projectID } = params;
@@ -42,22 +43,394 @@ const page = ({ params }) => {
     setSelectedFiles(files);
   };
 
-  const handleUpload = () => {
-    // Here you can perform file upload logic, such as sending the files to a server
-    console.log(selectedFiles);
-    // Reset selected files after upload if needed
-    setSelectedFiles([]);
+  const handleUpload = async () => {
+    const fd = new FormData();
+
+    let thisarray = [...selectedFiles];
+
+    thisarray.forEach((item, index) => {
+      fd.append(`files${index}`, thisarray[index]);
+    });
+
+    fd.append(`id`, data[0].id);
+
+    try {
+      const response = await fetch("/api/uploadtemplate", {
+        method: "post",
+        body: fd,
+      });
+
+      const json = await response.json();
+
+      if (json.success) {
+        window.location.reload();
+      } else {
+        alert("fail to upload image");
+      }
+    } catch (error) {
+      console.log(error.message);
+      throw error;
+    }
+  };
+
+  const [editForm, setEditForm] = useState(0);
+  const [editComponent, setEditComponent] = useState(0);
+  const [editMaterial, setEditMaterial] = useState(0);
+
+  const [editValue, setEditValue] = useState("");
+  const [editModalVis, setEditModalVis] = useState(false);
+
+  const updateForm = (form, id) => {
+    // console.log(form);
+    // console.log(id);
+
+    var fd = new FormData();
+
+    fd.append("form", JSON.stringify(JSON.parse(form)));
+    fd.append("id", JSON.stringify(id));
+
+    fetch("/api/submitform", {
+      method: "PUT",
+      body: fd,
+      // headers: {
+      //   "Content-Type": "multipart/form-data; ",
+      // },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("json", json);
+
+        if (json?.success === "success") {
+          window.location.reload();
+        } else {
+          alert("Fail to update. Please try again later.");
+        }
+      })
+      .catch((error) => console.log("ERROR", error));
+  };
+
+  const [editCheck, setEditCheck] = useState(false);
+
+  const captureInput = (
+    index,
+    code,
+    whichDetail,
+    component,
+    material,
+    type_of_damages,
+    material_rating
+  ) => {
+    //ambik yg lama
+    let thiss = JSON.parse(data[index].formdata);
+    const thisMaterial = [...thiss];
+
+    //parse structure
+    let thisStructure = JSON.parse(thisMaterial[component].structure);
+
+    console.log(JSON.stringify(thisStructure));
+
+    //x pernah set
+    if (
+      String(
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].tick
+      ) == "0"
+    ) {
+      //set active details
+      thisStructure["component"].material[material].type_of_damages[
+        type_of_damages
+      ].active_details = whichDetail;
+
+      //kalau confirm 4
+      if (
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].remarks.includes("rating = 4")
+      ) {
+        //set rating of damage
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].severity_of_damage = 4;
+
+        //set tick for the material
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].tick = 1;
+
+        //set percentage affected
+        if (whichDetail == 1) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details;
+        } else if (whichDetail == 2) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details_2;
+        } else if (whichDetail == 3) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details_3;
+        }
+      }
+      //kalau confirm 3
+      else if (
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].remarks.includes("rating = 3")
+      ) {
+        //set rating of damage
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].severity_of_damage = 3;
+
+        //set tick for the material
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].tick = 1;
+
+        //set percentage affected
+        if (whichDetail == 1) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details;
+        } else if (whichDetail == 2) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details_2;
+        } else if (whichDetail == 3) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details_3;
+        }
+      } else {
+        //set rating of damage
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].severity_of_damage = material_rating + 1;
+
+        //set tick for the material
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].tick = 1;
+
+        //set percentage affected
+        if (whichDetail == 1) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details;
+        } else if (whichDetail == 2) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details_2;
+        } else if (whichDetail == 3) {
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected =
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage_list[material_rating].details_3;
+        }
+      }
+    }
+    // pernah set
+    else {
+      if (
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].remarks.includes("rating = 4")
+      ) {
+        //set active details
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].active_details = 0;
+        //set rating of damage
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].severity_of_damage = 0;
+
+        //set tick for the material
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].tick = 0;
+
+        //set percentage affected
+        thisStructure["component"].material[material].type_of_damages[
+          type_of_damages
+        ].percentage_affected = "";
+      } else {
+        //sama
+        if (
+          String(
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].severity_of_damage
+          ) == String(Number(material_rating + 1))
+        ) {
+          //set active details
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].active_details = 0;
+          //set rating of damage
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].severity_of_damage = 0;
+
+          //set tick for the material
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].tick = 0;
+
+          //set percentage affected
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].percentage_affected = "";
+        }
+        //x sama
+        else {
+          //set active details
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].active_details = whichDetail;
+          //set rating of damage
+          thisStructure["component"].material[material].type_of_damages[
+            type_of_damages
+          ].severity_of_damage = material_rating + 1;
+
+          //set percentage affected
+          if (whichDetail == 1) {
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].percentage_affected =
+              thisStructure["component"].material[material].type_of_damages[
+                type_of_damages
+              ].severity_of_damage_list[material_rating].details;
+          } else if (whichDetail == 2) {
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].percentage_affected =
+              thisStructure["component"].material[material].type_of_damages[
+                type_of_damages
+              ].severity_of_damage_list[material_rating].details_2;
+          } else if (whichDetail == 3) {
+            thisStructure["component"].material[material].type_of_damages[
+              type_of_damages
+            ].percentage_affected =
+              thisStructure["component"].material[material].type_of_damages[
+                type_of_damages
+              ].severity_of_damage_list[material_rating].details_3;
+          }
+        }
+      }
+    }
+
+    thisStructure.component.material.forEach((item, index) => {
+      let maxSeverity = 0;
+
+      // Iterate through the "type_of_damages" array for each "material" item
+      item.type_of_damages.forEach((damage) => {
+        const severity = damage.severity_of_damage;
+        if (severity > maxSeverity) {
+          maxSeverity = severity;
+        }
+      });
+
+      // Update the "rating_of_member" with the maximum severity
+      item.rating_of_member = maxSeverity;
+    });
+
+    // convert to string to store to DB
+    thisMaterial[component].structure = JSON.stringify(thisStructure);
+
+    // console.log(
+    //   JSON.stringify(JSON.parse(thisMaterial.bridgelist[component].structure))
+    // );
+
+    console.log(
+      JSON.stringify(
+        JSON.parse(thisMaterial[component].structure).component.material[
+          material
+        ].type_of_damages[type_of_damages].severity_of_damage
+      )
+    );
+
+    // set to the original list to FE
+    // setFormList(thisMaterial);
   };
 
   return (
     <div className="flex flex-col p-20 justify-center items-center">
       {/* {data && JSON.stringify(data.length)} */}
+      <div className="w-full mb-8">
+        <div className="flex flex-row items-center w-full bg-red-100">
+          <div className="w-1/2 flex flex-row items-center mb-6 bg-yellow-100">
+            <div className="w-8/12">
+              <p className="font-bold mb-2">Add Template</p>
+              <input
+                className="flex h-9 w-10/12  rounded-md border border-input 
+              bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm 
+              file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                id="picture"
+                name="picture"
+                type="file"
+                multiple
+                onChange={handleFileChange}
+              />
+            </div>
+            <button
+              className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
+              onClick={handleUpload}
+            >
+              Upload
+            </button>
+          </div>
+          <div className="w-1/2 flex flex-row items-center mb-6 bg-yellow-100">
+            <div className="w-8/12">
+              <p className="font-bold mb-2">Edit</p>
+              <label class="inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={editCheck}
+                  onChange={() => setEditCheck(!editCheck)}
+                  class="sr-only peer"
+                />
+                <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                <p class="ml-3">{editCheck ? "Edit Mode" : "View Mode"}</p>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
       {data &&
         data.map((item, index) => {
           let thisformdata = JSON.parse(item.formdata);
 
           thisformdata = thisformdata.sort((a, b) => a.position - b.position);
-          console.log("thisformdata", JSON.stringify(thisformdata, 0, 2));
+          // console.log("thisformdata", JSON.stringify(thisformdata, 0, 2));
 
           let details = JSON.parse(item.details);
           let images1 = JSON.parse(item.images1);
@@ -72,17 +445,32 @@ const page = ({ params }) => {
                 ROUTINE CONDITION INSPECTION - STRUCTURAL CONDITION CHECKLIST
                 (BRIDGE)
               </h1>
-              <input type="file" multiple onChange={handleFileChange} />
-              <button onClick={handleUpload}>Upload</button>
+
               <div className="flex flex-row justify-between items-center mb-2">
-                <p className="font-bold">SPAN: {details?.span_no}</p>
-                <p className="font-bold">ROUTE NO: {details?.route_no}</p>
-                <p className="font-bold">STRUCT NO: {details?.struct_no}</p>
-                <p className="font-bold">BRIDGE NAME: {details?.bridge_name}</p>
                 <p className="font-bold">
-                  NAME OF INSPECTOR: {details?.name_of_inspector}
+                  SPAN: <span className="font-normal">{details?.span_no}</span>
                 </p>
-                <p className="font-bold">DATE: {details?.date}</p>
+                <p className="font-bold">
+                  ROUTE NO:{" "}
+                  <span className="font-normal">{details?.route_no}</span>
+                </p>
+                <p className="font-bold">
+                  STRUCT NO:{" "}
+                  <span className="font-normal">{details?.struct_no}</span>
+                </p>
+                <p className="font-bold">
+                  BRIDGE NAME:{" "}
+                  <span className="font-normal">{details?.bridge_name}</span>
+                </p>
+                <p className="font-bold">
+                  NAME OF INSPECTOR:{" "}
+                  <span className="font-normal">
+                    {details?.name_of_inspector}
+                  </span>
+                </p>
+                <p className="font-bold">
+                  DATE: <span className="font-normal">{details?.date}</span>
+                </p>
               </div>
               <table className="min-w-full border border-neutral-200 text-center mb-5">
                 <thead>
@@ -132,12 +520,12 @@ const page = ({ params }) => {
                 <tbody>
                   {thisformdata.map((formitem, formindex) => {
                     let thisstructure = JSON.parse(formitem.structure);
-                    if (formindex === 0)
-                      console.log(
-                        "thisstructure",
-                        JSON.stringify(thisstructure)
-                      );
-
+                    if (formindex === 0) {
+                      // console.log(
+                      //   "thisstructure",
+                      //   JSON.stringify(thisstructure)
+                      // );
+                    }
                     let thisposition = JSON.parse(formitem.position);
                     // console.log("thisposition", JSON.stringify(thisposition));
 
@@ -204,7 +592,7 @@ const page = ({ params }) => {
                                         <td className="border border-neutral-200">
                                           {toditem?.code}
                                         </td>
-                                        <td className="border border-neutral-200 flex justify-center items-center text-center">
+                                        <td className="border border-neutral-200">
                                           {toditem?.tick == 1 ? (
                                             <Image
                                               src="/check.png"
@@ -212,6 +600,7 @@ const page = ({ params }) => {
                                               width={20}
                                               height={20}
                                               style={{ alignSelf: "center" }}
+                                              className="mx-auto"
                                             />
                                           ) : null}
                                         </td>
@@ -223,10 +612,24 @@ const page = ({ params }) => {
                                               width={20}
                                               height={20}
                                               style={{ alignSelf: "center" }}
+                                              className="mx-auto"
                                             />
                                           ) : null}
                                         </td>
-                                        <td className="border border-neutral-200">
+                                        <td
+                                          onClick={() => {
+                                            captureInput(
+                                              index,
+                                              toditem.code,
+                                              1,
+                                              formindex,
+                                              mtindex,
+                                              todindex,
+                                              0
+                                            );
+                                          }}
+                                          className="border border-neutral-200"
+                                        >
                                           {toditem?.severity_of_damage == 1 ? (
                                             <Image
                                               src="/check.png"
@@ -234,10 +637,24 @@ const page = ({ params }) => {
                                               width={20}
                                               height={20}
                                               style={{ alignSelf: "center" }}
+                                              className="mx-auto"
                                             />
                                           ) : null}
                                         </td>
-                                        <td className="border border-neutral-200">
+                                        <td
+                                          onClick={() => {
+                                            captureInput(
+                                              index,
+                                              toditem.code,
+                                              1,
+                                              formindex,
+                                              mtindex,
+                                              todindex,
+                                              1
+                                            );
+                                          }}
+                                          className="border border-neutral-200"
+                                        >
                                           {toditem?.severity_of_damage == 2 ? (
                                             <Image
                                               src="/check.png"
@@ -245,10 +662,24 @@ const page = ({ params }) => {
                                               width={20}
                                               height={20}
                                               style={{ alignSelf: "center" }}
+                                              className="mx-auto"
                                             />
                                           ) : null}
                                         </td>
-                                        <td className="border border-neutral-200">
+                                        <td
+                                          onClick={() => {
+                                            captureInput(
+                                              index,
+                                              toditem.code,
+                                              1,
+                                              formindex,
+                                              mtindex,
+                                              todindex,
+                                              2
+                                            );
+                                          }}
+                                          className="border border-neutral-200"
+                                        >
                                           {toditem?.severity_of_damage == 3 ? (
                                             <Image
                                               src="/check.png"
@@ -256,10 +687,24 @@ const page = ({ params }) => {
                                               width={20}
                                               height={20}
                                               style={{ alignSelf: "center" }}
+                                              className="mx-auto"
                                             />
                                           ) : null}
                                         </td>
-                                        <td className="border border-neutral-200">
+                                        <td
+                                          onClick={() => {
+                                            captureInput(
+                                              index,
+                                              toditem.code,
+                                              1,
+                                              formindex,
+                                              mtindex,
+                                              todindex,
+                                              3
+                                            );
+                                          }}
+                                          className="border border-neutral-200"
+                                        >
                                           {toditem?.severity_of_damage == 4 ? (
                                             <Image
                                               src="/check.png"
@@ -267,6 +712,7 @@ const page = ({ params }) => {
                                               width={20}
                                               height={20}
                                               style={{ alignSelf: "center" }}
+                                              className="mx-auto"
                                             />
                                           ) : null}
                                         </td>
@@ -281,13 +727,25 @@ const page = ({ params }) => {
                                         {todindex === 0 ? (
                                           <td
                                             rowSpan={type_of_damages.length}
-                                            className="border border-neutral-200"
+                                            className="border border-neutral-200 cursor-pointer"
+                                            onClick={() => {
+                                              setEditForm(index);
+                                              setEditComponent(formindex);
+                                              setEditMaterial(mtindex);
+                                              setEditValue(
+                                                material[mtindex]
+                                                  ?.rating_of_member
+                                              );
+                                              setEditModalVis(true);
+                                            }}
                                           >
-                                            {material[mtindex]
-                                              ?.rating_of_member == 0
-                                              ? "-"
-                                              : material[mtindex]
-                                                  ?.rating_of_member}
+                                            <p>
+                                              {material[mtindex]
+                                                ?.rating_of_member == 0
+                                                ? "-"
+                                                : material[mtindex]
+                                                    ?.rating_of_member}
+                                            </p>
                                           </td>
                                         ) : null}
                                       </tr>
@@ -437,6 +895,90 @@ const page = ({ params }) => {
             </div>
           );
         })}
+
+      {/* {JSON.parse(data[0]?.properimages).map((item, index) => {
+        return (
+          <>
+            <img
+              src={`/uploads/${item}`}
+              alt=""
+              style={{
+                width: window.innerWidth / 2,
+                height: window.innerWidth / 2,
+              }}
+            />
+          </>
+        );
+      })} */}
+
+      {data[0] &&
+        JSON.parse(data[0]?.properimages).map((item, index) => {
+          return (
+            <>
+              <img
+                src={`/uploads/${item}`}
+                alt=""
+                style={{
+                  width: window.innerWidth / 2,
+                  height: window.innerWidth / 2,
+                  objectFit: "contain",
+                }}
+              />
+              <div className="w-full border-b-2 border-b-gray-400"></div>
+            </>
+          );
+        })}
+
+      {editModalVis && (
+        <EditRatingMemberModal
+          value={editValue}
+          pressOK={(value) => {
+            let thisform = [...data];
+
+            let thisstructure = JSON.parse(
+              JSON.parse(thisform[editForm].formdata)[editComponent].structure
+            );
+
+            thisstructure.component.material[editMaterial].rating_of_member =
+              value;
+
+            let thisformdata = JSON.parse(thisform[editForm].formdata);
+
+            thisformdata[editComponent].structure =
+              JSON.stringify(thisstructure);
+
+            thisform[editForm].formdata = JSON.stringify(thisformdata);
+
+            // console.log(thisformdata[editComponent].structure);
+
+            // console.log(thisform[editForm].formdata);
+
+            updateForm(thisform[editForm].formdata, thisform[editForm].id);
+
+            // console.log(
+            //   JSON.parse(
+            //     JSON.parse(thisform[editForm].formdata)[editComponent].structure
+            //   ).component.material[editMaterial]?.rating_of_member
+            // );
+            // console.log(thisform[editForm].id);
+
+            // console.log(
+            //   JSON.stringify(JSON.parse(data[editForm].formdata), 0, 5)
+            // );
+            // console.log(data[editForm].id);
+
+            // console.log(
+            //   JSON.parse(
+            //     JSON.parse(data[editForm].formdata)[editComponent].structure
+            //   ).component.material[editMaterial]?.rating_of_member
+            // );
+            // updateForm();
+          }}
+          pressCancel={(option) => {
+            setEditModalVis(option);
+          }}
+        />
+      )}
     </div>
   );
 };
