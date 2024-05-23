@@ -122,6 +122,7 @@ const page = ({ params }: any) => {
     material_rating: any
   ) => {
     //ambik yg lama
+    let thisdata = [...data];
     let thiss = JSON.parse(data[index].formdata);
     const thisMaterial = [...thiss];
 
@@ -371,13 +372,20 @@ const page = ({ params }: any) => {
     //   JSON.stringify(JSON.parse(thisMaterial.bridgelist[component].structure))
     // );
 
-    console.log(
-      JSON.stringify(
-        JSON.parse(thisMaterial[component].structure).component.material[
-          material
-        ].type_of_damages[type_of_damages].severity_of_damage
-      )
-    );
+    // console.log(
+    //   JSON.stringify(
+    //     JSON.parse(thisMaterial[component].structure).component.material[
+    //       material
+    //     ].type_of_damages[type_of_damages].severity_of_damage
+    //   )
+    // );
+
+    thisdata[index].formdata = JSON.stringify(thisMaterial);
+    //balik
+
+    updateForm(thisdata[index].formdata, thisdata[index].id);
+    // console.log(thisdata[index]);
+    // console.log(JSON.stringify(thisMaterial));
 
     // set to the original list to FE
     // setFormList(thisMaterial);
