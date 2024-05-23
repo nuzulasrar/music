@@ -5,7 +5,7 @@ import { Prisma } from "@prisma/client";
 
 export const revalidate = 0;
 
-export async function GET(request, { params }) {
+export async function GET(request: any, { params }: any) {
   try {
     const submitted_form = await prisma.submitted_form.findMany({
       // select: {
@@ -15,7 +15,7 @@ export async function GET(request, { params }) {
 
     return new NextResponse(JSON.stringify({ submitted_form: submitted_form }));
     // return new NextResponse(JSON.stringify({ bridgelist: bridgelist }));
-  } catch (error) {
+  } catch (error: any) {
     return new NextResponse(JSON.stringify({ error: error.message }));
   }
 }
@@ -64,8 +64,8 @@ export async function PUT(request: NextRequest) {
   try {
     const formData = await request.formData();
 
-    const form = formData.get("form");
-    const id = formData.get("id");
+    const form: any = formData.get("form");
+    const id: any = formData.get("id");
 
     let transformform = JSON.parse(form);
     let transformid = JSON.parse(id);
