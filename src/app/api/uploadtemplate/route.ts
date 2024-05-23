@@ -18,7 +18,7 @@ export async function POST(req: NextRequest, res: Response) {
     const formData = await req.formData();
     const formDataEntryValues = Array.from(formData.values());
 
-    const id: string = formData.get("id");
+    const id = formData.get("id") as string | null;
 
     const getFirstForm = await prisma.submitted_form.findUnique({
       where: {
