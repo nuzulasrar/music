@@ -5,21 +5,21 @@ import Modal from "@/components/Modal";
 import Link from "next/link";
 
 const page = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
 
   const getProjects = async () => {
     try {
       const response = await fetch("/api/project");
 
       if (!response.ok) {
-        throw new Error("Failed to fetch data");
+        alert("Failed to fetch data");
       }
 
       const result = await response.json();
       setData(result);
     } catch (error) {
-      // console.log(error);
-      throw new Error(error);
+      console.log(error);
+      // throw new Error(error);
     }
   };
 
@@ -57,7 +57,7 @@ const page = () => {
         </thead>
         <tbody>
           {data &&
-            data.map((item, index) => {
+            data.map((item: any, index: any) => {
               const u1 = item?.updatedAt;
               const u11 = new Date(u1);
               const kl1 = u11.toLocaleString("en-GB", {
