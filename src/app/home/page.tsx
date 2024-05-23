@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<any>({});
 
   const getProjects = async () => {
     try {
@@ -33,7 +33,7 @@ const page = () => {
       {/* home {data.bridgelist && JSON.stringify(data.bridgelist[0])} */}
       {data.submitted_form && data.submitted_form.length}
       {data.submitted_form &&
-        data.submitted_form.map((item, index) => {
+        data.submitted_form.map((item: any, index: any) => {
           let thisformdata = JSON.parse(item.formdata);
           let images1 = JSON.parse(item.images1);
           let images2 = JSON.parse(item.images2);
@@ -256,7 +256,7 @@ const page = () => {
                 </tbody> */}
 
                 <tbody>
-                  {thisformdata.map((formitem, formindex) => {
+                  {thisformdata.map((formitem: any, formindex: any) => {
                     let thisstructure = JSON.parse(formitem.structure);
                     console.log("thisstructure", JSON.stringify(thisstructure));
 
@@ -266,152 +266,161 @@ const page = () => {
                     first++;
                     let theserow = 0;
 
-                    material.map((mtelement) => {
+                    material.map((mtelement: any) => {
                       mtelement.type_of_damages &&
-                        mtelement.type_of_damages.map((mdelement) => {
+                        mtelement.type_of_damages.map((mdelement: any) => {
                           theserow = theserow + 1;
                         });
                     });
                     return (
                       <>
                         {material &&
-                          material.map((mtitem, mtindex) => {
+                          material.map((mtitem: any, mtindex: any) => {
                             let material_details = mtitem.material_details;
                             let type_of_damages = mtitem.type_of_damages;
                             return (
                               <>
                                 {type_of_damages &&
-                                  type_of_damages.map((toditem, todindex) => {
-                                    return (
-                                      <tr className="border-4 border-neutral-200">
-                                        {mtindex === 0 && todindex === 0 ? (
-                                          <td
-                                            rowSpan={theserow}
-                                            className="border border-neutral-200"
-                                          >
-                                            <p>
-                                              {
-                                                thisstructure.component
-                                                  .component_details.name
-                                              }
-                                            </p>
-                                          </td>
-                                        ) : null}
-                                        {todindex === 0 ? (
-                                          <td
-                                            rowSpan={type_of_damages.length}
-                                            className="border border-neutral-200"
-                                          >
-                                            {material[mtindex]
-                                              .material_details &&
-                                              material[
-                                                mtindex
-                                              ].material_details.map(
-                                                (mditem, mdindex) => {
-                                                  return (
-                                                    <>
-                                                      <p>{mditem.name}</p>
-                                                    </>
-                                                  );
+                                  type_of_damages.map(
+                                    (toditem: any, todindex: any) => {
+                                      return (
+                                        <tr className="border-4 border-neutral-200">
+                                          {mtindex === 0 && todindex === 0 ? (
+                                            <td
+                                              rowSpan={theserow}
+                                              className="border border-neutral-200"
+                                            >
+                                              <p>
+                                                {
+                                                  thisstructure.component
+                                                    .component_details.name
                                                 }
-                                              )}
+                                              </p>
+                                            </td>
+                                          ) : null}
+                                          {todindex === 0 ? (
+                                            <td
+                                              rowSpan={type_of_damages.length}
+                                              className="border border-neutral-200"
+                                            >
+                                              {material[mtindex]
+                                                .material_details &&
+                                                material[
+                                                  mtindex
+                                                ].material_details.map(
+                                                  (
+                                                    mditem: any,
+                                                    mdindex: any
+                                                  ) => {
+                                                    return (
+                                                      <>
+                                                        <p>{mditem.name}</p>
+                                                      </>
+                                                    );
+                                                  }
+                                                )}
+                                            </td>
+                                          ) : null}
+                                          <td className="border border-neutral-200">
+                                            {toditem?.name}
                                           </td>
-                                        ) : null}
-                                        <td className="border border-neutral-200">
-                                          {toditem?.name}
-                                        </td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.code}
-                                        </td>
-                                        <td className="border border-neutral-200 flex justify-center items-center text-center">
-                                          {toditem?.tick == 1 ? (
-                                            <Image
-                                              src="/check.png"
-                                              alt=""
-                                              width={20}
-                                              height={20}
-                                              style={{ alignSelf: "center" }}
-                                            />
-                                          ) : null}
-                                        </td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.tick == 0 ? (
-                                            <Image
-                                              src="/check.png"
-                                              alt=""
-                                              width={20}
-                                              height={20}
-                                              style={{ alignSelf: "center" }}
-                                            />
-                                          ) : null}
-                                        </td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.severity_of_damage == 1 ? (
-                                            <Image
-                                              src="/check.png"
-                                              alt=""
-                                              width={20}
-                                              height={20}
-                                              style={{ alignSelf: "center" }}
-                                            />
-                                          ) : null}
-                                        </td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.severity_of_damage == 2 ? (
-                                            <Image
-                                              src="/check.png"
-                                              alt=""
-                                              width={20}
-                                              height={20}
-                                              style={{ alignSelf: "center" }}
-                                            />
-                                          ) : null}
-                                        </td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.severity_of_damage == 3 ? (
-                                            <Image
-                                              src="/check.png"
-                                              alt=""
-                                              width={20}
-                                              height={20}
-                                              style={{ alignSelf: "center" }}
-                                            />
-                                          ) : null}
-                                        </td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.severity_of_damage == 4 ? (
-                                            <Image
-                                              src="/check.png"
-                                              alt=""
-                                              width={20}
-                                              height={20}
-                                              style={{ alignSelf: "center" }}
-                                            />
-                                          ) : null}
-                                        </td>
-                                        <td className="border border-neutral-200"></td>
-                                        <td className="border border-neutral-200"></td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.remarks}
-                                        </td>
-                                        <td className="border border-neutral-200">
-                                          {toditem?.severity_of_damage}
-                                        </td>
-                                        {todindex === 0 ? (
-                                          <td
-                                            rowSpan={type_of_damages.length}
-                                            className="border border-neutral-200"
-                                          >
-                                            {material[mtindex]
-                                              ?.rating_of_member == 0
-                                              ? "-"
-                                              : material[mtindex]
-                                                  ?.rating_of_member}
+                                          <td className="border border-neutral-200">
+                                            {toditem?.code}
                                           </td>
-                                        ) : null}
-                                      </tr>
-                                    );
-                                  })}
+                                          <td className="border border-neutral-200 flex justify-center items-center text-center">
+                                            {toditem?.tick == 1 ? (
+                                              <Image
+                                                src="/check.png"
+                                                alt=""
+                                                width={20}
+                                                height={20}
+                                                style={{ alignSelf: "center" }}
+                                              />
+                                            ) : null}
+                                          </td>
+                                          <td className="border border-neutral-200">
+                                            {toditem?.tick == 0 ? (
+                                              <Image
+                                                src="/check.png"
+                                                alt=""
+                                                width={20}
+                                                height={20}
+                                                style={{ alignSelf: "center" }}
+                                              />
+                                            ) : null}
+                                          </td>
+                                          <td className="border border-neutral-200">
+                                            {toditem?.severity_of_damage ==
+                                            1 ? (
+                                              <Image
+                                                src="/check.png"
+                                                alt=""
+                                                width={20}
+                                                height={20}
+                                                style={{ alignSelf: "center" }}
+                                              />
+                                            ) : null}
+                                          </td>
+                                          <td className="border border-neutral-200">
+                                            {toditem?.severity_of_damage ==
+                                            2 ? (
+                                              <Image
+                                                src="/check.png"
+                                                alt=""
+                                                width={20}
+                                                height={20}
+                                                style={{ alignSelf: "center" }}
+                                              />
+                                            ) : null}
+                                          </td>
+                                          <td className="border border-neutral-200">
+                                            {toditem?.severity_of_damage ==
+                                            3 ? (
+                                              <Image
+                                                src="/check.png"
+                                                alt=""
+                                                width={20}
+                                                height={20}
+                                                style={{ alignSelf: "center" }}
+                                              />
+                                            ) : null}
+                                          </td>
+                                          <td className="border border-neutral-200">
+                                            {toditem?.severity_of_damage ==
+                                            4 ? (
+                                              <Image
+                                                src="/check.png"
+                                                alt=""
+                                                width={20}
+                                                height={20}
+                                                style={{ alignSelf: "center" }}
+                                              />
+                                            ) : null}
+                                          </td>
+                                          <td className="border border-neutral-200"></td>
+                                          <td className="border border-neutral-200"></td>
+                                          <td className="border border-neutral-200">
+                                            {toditem?.remarks}
+                                          </td>
+                                          <td className="border border-neutral-200">
+                                            {toditem?.severity_of_damage}
+                                          </td>
+                                          {todindex === 0 ? (
+                                            <td
+                                              rowSpan={type_of_damages.length}
+                                              className="border border-neutral-200"
+                                            >
+                                              {material[mtindex]
+                                                ?.rating_of_member == 0
+                                                ? "-"
+                                                : material[mtindex]
+                                                    ?.rating_of_member}
+                                            </td>
+                                          ) : null}
+                                        </tr>
+                                      );
+                                    }
+                                  )}
                               </>
                             );
                           })}
@@ -421,7 +430,7 @@ const page = () => {
                 </tbody>
               </table>
 
-              {images1.map((image1item, image1index) => {
+              {images1.map((image1item: any, image1index: any) => {
                 return (
                   <img
                     src={`/uploads/${image1item}`}
@@ -431,7 +440,7 @@ const page = () => {
                   // <p>{image1item}</p>
                 );
               })}
-              {images2.map((image2item, image2index) => {
+              {images2.map((image2item: any, image2index: any) => {
                 return (
                   <img
                     src={`/uploads/${image2item}`}
@@ -441,7 +450,7 @@ const page = () => {
                   // <p>{image1item}</p>
                 );
               })}
-              {images3.map((image3item, image3index) => {
+              {images3.map((image3item: any, image3index: any) => {
                 return (
                   <img
                     src={`/uploads/${image3item}`}
