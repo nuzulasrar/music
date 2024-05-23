@@ -21,8 +21,8 @@ const page = ({ params }: any) => {
       console.log(JSON.stringify(result));
       setData(result.data);
     } catch (error: any) {
-      // console.log(error);
-      throw new Error(error);
+      console.log(error);
+      // throw new Error(error);
     }
   };
 
