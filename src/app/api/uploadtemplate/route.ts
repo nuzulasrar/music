@@ -18,11 +18,11 @@ export async function POST(req: NextRequest, res: Response) {
     const formData = await req.formData();
     const formDataEntryValues = Array.from(formData.values());
 
-    const id = formData.get("id") as string | null;
+    const id: any = formData.get("id");
 
     const getFirstForm = await prisma.submitted_form.findUnique({
       where: {
-        id: id,
+        id: String(id),
       },
     });
 
