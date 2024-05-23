@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Modal from "@/components/Modal";
 import EditRatingMemberModal from "@/components/EditRatingMemberModal";
+import EditPhotoDetailModal from "@/components/EditPhotoDetailModal";
+import { log } from "console";
 
 const page = ({ params }: any) => {
   const { projectID } = params;
@@ -80,6 +82,12 @@ const page = ({ params }: any) => {
 
   const [editValue, setEditValue] = useState("");
   const [editModalVis, setEditModalVis] = useState(false);
+  const [editModalVis2, setEditModalVis2] = useState(false);
+
+  const [editForm2, setEditForm2] = useState(0);
+  const [editImageArrayIndex, setEditImageArrayIndex] = useState(0);
+  const [editImageIndex, setEditImageIndex] = useState(0);
+  const [editValue2, setEditValue2] = useState({});
 
   const updateForm = (form: any, id: any) => {
     // console.log(form);
@@ -100,6 +108,34 @@ const page = ({ params }: any) => {
       .then((res) => res.json())
       .then((json) => {
         console.log("json", json);
+
+        if (json?.success === "success") {
+          window.location.reload();
+        } else {
+          alert("Fail to update. Please try again later.");
+        }
+      })
+      .catch((error) => console.log("ERROR", error));
+  };
+
+  const updateForm2 = (imageIndex: any, form: any, id: any) => {
+    console.log(JSON.stringify(imageIndex));
+    console.log(form);
+    console.log(JSON.stringify(id));
+
+    var fd = new FormData();
+
+    fd.append("imageIndex", JSON.stringify(imageIndex));
+    fd.append("form", form);
+    fd.append("id", JSON.stringify(id));
+
+    fetch("/api/updatephotodetail", {
+      method: "PUT",
+      body: fd,
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("json", JSON.stringify(json, null, 2));
 
         if (json?.success === "success") {
           window.location.reload();
@@ -395,10 +431,10 @@ const page = ({ params }: any) => {
     <div className="flex flex-col p-20 justify-center items-center">
       {/* {data && JSON.stringify(data.length)} */}
       <div className="w-full mb-8">
-        <div className="flex flex-row items-center w-full bg-red-100">
-          <div className="w-1/2 flex flex-row items-center mb-6 bg-yellow-100">
+        <div className="flex flex-row items-center w-full">
+          <div className="w-1/2 flex flex-row items-center mb-6">
             <div className="w-8/12">
-              <p className="font-bold mb-2">Add Template</p>
+              <p className="font-bold mb-2">Add Defect Mapping</p>
               <input
                 className="flex h-9 w-10/12  rounded-md border border-input 
               bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm 
@@ -417,7 +453,7 @@ const page = ({ params }: any) => {
               Upload
             </button>
           </div>
-          <div className="w-1/2 flex flex-row items-center mb-6 bg-yellow-100">
+          <div className="w-1/2 flex flex-row items-center mb-6">
             <div className="w-8/12">
               <p className="font-bold mb-2">Edit</p>
               <label className="inline-flex items-center cursor-pointer">
@@ -790,9 +826,25 @@ const page = ({ params }: any) => {
                         height: "50%",
                         marginBottom: 20,
                       }}
+                      className="hover:scale-150"
                     />
                     <table style={{ width: "50%" }}>
-                      <tr style={{ borderWidth: 1, borderColor: "black" }}>
+                      <tr
+                        onClick={() => {
+                          setEditForm2(index);
+                          setEditImageArrayIndex(1);
+                          setEditImageIndex(image1index);
+                          setEditValue2({
+                            location: images_detail1[image1index]?.location,
+                            mapping_no: images_detail1[image1index]?.mapping_no,
+                            description:
+                              images_detail1[image1index]?.description,
+                            remarks: images_detail1[image1index]?.remarks,
+                          });
+                          setEditModalVis2(true);
+                        }}
+                        style={{ borderWidth: 1, borderColor: "black" }}
+                      >
                         <td style={{ borderWidth: 1, borderColor: "black" }}>
                           <p>Location:</p>
                         </td>
@@ -996,6 +1048,100 @@ const page = ({ params }: any) => {
           }}
           pressCancel={(option: any) => {
             setEditModalVis(option);
+          }}
+        />
+      )}
+
+      {editModalVis2 && (
+        <EditPhotoDetailModal
+          arrayIndex={editImageArrayIndex}
+          imageIndex={editImageIndex}
+          value={editValue2}
+          pressOK={(value: any) => {
+            // console.log(value);
+
+            let thisform = [...data];
+
+            let thisdetail = [];
+
+            if (editImageArrayIndex === 1) {
+              thisform[editForm2].images_detail1;
+
+              thisdetail = JSON.parse(thisform[editForm2].images_detail1);
+
+              // console.log("thisdetail 1", JSON.stringify(thisdetail));
+
+              thisdetail[editImageIndex] = value;
+
+              // console.log("thisdetail 2", JSON.stringify(thisdetail));
+
+              thisform[editForm2].images_detail1 = JSON.stringify(thisdetail);
+
+              // console.log("thisform", JSON.stringify(thisform[editForm2]));
+
+              updateForm2(
+                editImageArrayIndex,
+                thisform[editForm2].images_detail1,
+                thisform[editForm2].id
+              );
+            } else if (editImageArrayIndex === 2) {
+              thisform[editForm2].images_detail2;
+
+              thisdetail = JSON.parse(thisform[editForm2].images_detail2);
+
+              // console.log("thisdetail 1", JSON.stringify(thisdetail));
+
+              thisdetail[editImageIndex] = value;
+
+              // console.log("thisdetail 2", JSON.stringify(thisdetail));
+
+              thisform[editForm2].images_detail2 = thisdetail;
+
+              // console.log("thisform", JSON.stringify(thisform[editForm2]));
+
+              updateForm2(
+                editImageArrayIndex,
+                thisform[editForm2].images_detail2,
+                thisform[editForm2].id
+              );
+            } else if (editImageArrayIndex === 3) {
+              thisform[editForm2].images_detail3;
+
+              thisdetail = JSON.parse(thisform[editForm2].images_detail3);
+
+              // console.log("thisdetail 1", JSON.stringify(thisdetail));
+
+              thisdetail[editImageIndex] = value;
+
+              // console.log("thisdetail 2", JSON.stringify(thisdetail));
+
+              thisform[editForm2].images_detail3 = thisdetail;
+
+              // console.log("thisform", JSON.stringify(thisform[editForm2]));
+
+              updateForm2(
+                editImageArrayIndex,
+                thisform[editForm2].images_detail3,
+                thisform[editForm2].id
+              );
+            }
+
+            // let thisstructure = JSON.parse(
+            //   JSON.parse(thisform[editForm2].formdata)[editComponent].structure
+            // );
+
+            // thisstructure.component.material[editMaterial].rating_of_member =
+            //   value;
+
+            // let thisformdata = JSON.parse(thisform[editForm].formdata);
+
+            // thisformdata[editComponent].structure =
+            //   JSON.stringify(thisstructure);
+
+            // thisform[editForm].formdata = JSON.stringify(thisformdata);
+          }}
+          pressCancel={(option: any) => {
+            setEditModalVis2(option);
           }}
         />
       )}
