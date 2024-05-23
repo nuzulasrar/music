@@ -36,7 +36,7 @@ const page = () => {
   return (
     <div
       className="flex flex-col overflow-y-scroll p-20 justify-center items-center"
-      style={{ width: window.innerWidth, height: window.innerHeight }}
+      style={{ width: "100%", height: "100%" }}
     >
       <button
         onClick={() => setModalVis(true)}

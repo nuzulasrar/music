@@ -778,12 +778,12 @@ const page = ({ params }: any) => {
                       src={`/uploads/${image1item}`}
                       alt=""
                       style={{
-                        width: window.innerWidth / 2,
-                        height: window.innerWidth / 2,
+                        width: "50%",
+                        height: "50%",
                         marginBottom: 20,
                       }}
                     />
-                    <table style={{ width: window.innerWidth / 2 }}>
+                    <table style={{ width: "50%" }}>
                       <tr style={{ borderWidth: 1, borderColor: "black" }}>
                         <td style={{ borderWidth: 1, borderColor: "black" }}>
                           <p>Location:</p>
@@ -834,12 +834,12 @@ const page = ({ params }: any) => {
                       src={`/uploads/${image2item}`}
                       alt=""
                       style={{
-                        width: window.innerWidth / 2,
-                        height: window.innerWidth / 2,
+                        width: "50%",
+                        height: "50%",
                         marginBottom: 20,
                       }}
                     />
-                    <table style={{ width: window.innerWidth / 2 }}>
+                    <table style={{ width: "50%" }}>
                       <tr style={{ borderWidth: 1, borderColor: "black" }}>
                         <td style={{ borderWidth: 1, borderColor: "black" }}>
                           <p>Location:</p>
@@ -890,8 +890,8 @@ const page = ({ params }: any) => {
                       src={`/uploads/${image3item}`}
                       alt=""
                       style={{
-                        width: window.innerWidth / 2,
-                        height: window.innerWidth / 2,
+                        width: "50%",
+                        height: "50%",
                       }}
                     />
                     <p>Location: {images_detail3[image3index]?.location}</p>
@@ -915,8 +915,8 @@ const page = ({ params }: any) => {
               src={`/uploads/${item}`}
               alt=""
               style={{
-                width: window.innerWidth / 2,
-                height: window.innerWidth / 2,
+                width:"50%",
+                height:"50%",
               }}
             />
           </>
@@ -931,8 +931,8 @@ const page = ({ params }: any) => {
                 src={`/uploads/${item}`}
                 alt=""
                 style={{
-                  width: window.innerWidth / 2,
-                  height: window.innerWidth / 2,
+                  width: "50%",
+                  height: "50%",
                   objectFit: "contain",
                 }}
               />
