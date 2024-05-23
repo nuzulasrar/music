@@ -10,14 +10,15 @@ const page = () => {
       const response = await fetch("/api/submitform/Bridge");
 
       if (!response.ok) {
-        throw new Error("Failed to fetch data");
+        // throw new Error("Failed to fetch data");
+        alert"Failed to fetch data"()
       }
 
       const result = await response.json();
       setData(result);
     } catch (error) {
-      // console.log(error);
-      throw new Error(error);
+      console.log(error);
+      // throw new Error(error);
     }
   };
 

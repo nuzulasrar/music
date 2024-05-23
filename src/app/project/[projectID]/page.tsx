@@ -14,7 +14,8 @@ const page = ({ params }: any) => {
       const response = await fetch(`/api/project/${projectID}`);
 
       if (!response.ok) {
-        throw new Error("Failed to fetch data");
+        // throw new Error("Failed to fetch data");
+        alert("Failed to fetch data");
       }
 
       const result = await response.json();
@@ -69,7 +70,7 @@ const page = ({ params }: any) => {
       }
     } catch (error: any) {
       console.log(error.message);
-      throw error;
+      // throw error;
     }
   };
 
