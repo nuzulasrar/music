@@ -470,6 +470,53 @@ const page = ({ params }: any) => {
           </div>
         </div>
       </div>
+      <div className="w-full mb-4">
+        <h1 className="font-bold text-center">ROUTINE CONDITION INSPECTION</h1>
+        <p className="font-bold text-center">Summary Report Form</p>
+        <div className="mt-4">
+
+        <p className="font-semibold mb-3">Summary Report Form</p>
+        <table className="w-full">
+          <thead>
+            <tr className="border border-black">
+              <th rowSpan={2} className="border border-black">
+                <p className="font-bold">BRIDGE MEMBER</p>
+              </th>
+              <th colSpan={2} className="border border-black">
+                <p className="font-bold">RATING</p>
+              </th>
+              <th rowSpan={2} className="border border-black">
+                <p className="font-bold">MAJOR DAMAGES</p>
+              </th>
+              <th rowSpan={2} className="border border-black">
+                <p className="font-bold">MAINTENANCE WORK REQUIRED</p>
+              </th>
+            </tr>
+            <tr className="border border-black">
+              <th className="border border-black">
+                <p className="font-bold">OLD</p>
+              </th>
+              <th className="border border-black">
+                <p className="font-bold">NEW</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+          {data &&
+        data.map((item: any, index: any) => {
+          console.log("item " + index, JSON.parse(item.formdata));
+          
+          return (
+            <tr className="border border-black">
+              <td className="border border-black">
+                <p></p>
+              </td>
+            </tr>
+          )})}
+          </tbody>
+        </table>
+        </div>
+      </div>
       {data &&
         data.map((item: any, index: any) => {
           let thisformdata = JSON.parse(item.formdata);
