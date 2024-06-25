@@ -21,8 +21,31 @@ const page = ({ params }: any) => {
       }
 
       const result = await response.json();
-      console.log(JSON.stringify(result));
+      // console.log("result data", JSON.stringify(result));
+      
+      
+      let testString = "a";
+
+      if(result.data){
+        // alert("testt")
+
+        result.data.forEach((item: any, index: any) => {
+          let eachformdata = JSON.parse(item.formdata)
+            eachformdata.forEach((item2: any, index2: any) => {
+              // let name = item2.structure.component.component_details.name;
+
+              console.log(`index ${index} | index2 ${index2}: `, JSON.parse(item2.structure).component.component_details.name)
+              // testString = testString + name;
+            });
+          // testString = testString + index + " ";
+
+        });
+
+        // alert(testString);
+      }
+
       setData(result.data);
+
     } catch (error: any) {
       console.log(error);
       // throw new Error(error);
@@ -504,7 +527,7 @@ const page = ({ params }: any) => {
           <tbody>
           {data &&
         data.map((item: any, index: any) => {
-          console.log("item " + index, JSON.parse(item.formdata));
+          // console.log("item " + index, JSON.parse(item.formdata));
           
           return (
             <tr className="border border-black">
