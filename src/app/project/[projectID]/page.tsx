@@ -591,9 +591,19 @@ const page = ({ params }: any) => {
         <p className="font-bold text-center">Summary Report Form</p>
         <div className="mt-4">
 
-        <p className="font-semibold mb-3">Summary Report Form 
-          {/* {JSON.stringify(maxRating)} */}
-        </p>
+        <p className="font-semibold mb-3">Summary Report:</p>
+
+        <table>
+          <tbody>
+            <tr className="border border-black">
+              <td colSpan={2} className="border border-black bg-gray-300">
+                <p className="font-bold">BRIDGE MEMBER</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p className="font-semibold mb-3">Summary Report:</p>
         <table className="w-full">
           <thead>
             <tr className="border border-black">
