@@ -591,19 +591,33 @@ const page = ({ params }: any) => {
         <p className="font-bold text-center">Summary Report Form</p>
         <div className="mt-4">
 
-        <p className="font-semibold mb-3">Summary Report:</p>
+        <p className="font-semibold mb-1">Location Data:</p>
 
-        <table>
+        <table className="w-full mb-3">
           <tbody>
             <tr className="border border-black">
-              <td colSpan={2} className="border border-black bg-gray-300">
-                <p className="font-bold">BRIDGE MEMBER</p>
+              <td className="border border-black p-2">
+                <p className="">Route No: <span className="font-bold">Example E9</span></p>
+              </td>
+              <td colSpan={2} className="border border-black p-2">
+                <p className="">River/Bridge Name: <span className="font-bold">BRIDGE 1 - E9/000</span></p>
+              </td>
+            </tr>
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p className="">Structure No: <span className="font-bold">Example E9</span></p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="">Disctrict: <span className="font-bold">BRIDGE 1 - E9/000</span></p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="">State: <span className="font-bold">BRIDGE 1 - E9/000</span></p>
               </td>
             </tr>
           </tbody>
         </table>
 
-        <p className="font-semibold mb-3">Summary Report:</p>
+        <p className="font-semibold mb-1">Summary Report:</p>
         <table className="w-full">
           <thead>
             <tr className="border border-black">
