@@ -597,24 +597,24 @@ const page = ({ params }: any) => {
         <table className="w-full">
           <thead>
             <tr className="border border-black">
-              <th rowSpan={2} colSpan={2} className="border border-black">
+              <th rowSpan={2} colSpan={2} className="border border-black bg-gray-300">
                 <p className="font-bold">BRIDGE MEMBER</p>
               </th>
-              <th colSpan={2} className="border border-black">
+              <th colSpan={2} className="border border-black bg-gray-300">
                 <p className="font-bold">RATING</p>
               </th>
-              <th rowSpan={2} className="border border-black">
+              <th rowSpan={2} className="border border-black bg-gray-300">
                 <p className="font-bold">MAJOR DAMAGES</p>
               </th>
-              <th rowSpan={2} className="border border-black">
+              <th rowSpan={2} className="border border-black bg-gray-300">
                 <p className="font-bold">MAINTENANCE WORK REQUIRED</p>
               </th>
             </tr>
             <tr className="border border-black">
-              <th className="border border-black">
+              <th className="border border-black bg-gray-300">
                 <p className="font-bold">OLD</p>
               </th>
-              <th className="border border-black">
+              <th className="border border-black bg-gray-300">
                 <p className="font-bold">NEW</p>
               </th>
             </tr>
