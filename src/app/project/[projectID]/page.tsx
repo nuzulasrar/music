@@ -592,7 +592,6 @@ const page = ({ params }: any) => {
         <div className="mt-4">
 
         <p className="font-semibold mb-1">Location Data:</p>
-
         <table className="w-full mb-3">
           <tbody>
             <tr className="border border-black">
@@ -612,6 +611,20 @@ const page = ({ params }: any) => {
               </td>
               <td className="border border-black p-2">
                 <p className="">State: <span className="font-bold">BRIDGE 1 - E9/000</span></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p className="font-semibold mb-1">Bridge Type:</p>
+        <table className="w-full mb-3">
+          <tbody>
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p className="">System Type: </p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="font-bold">SIMPLY SUPPORTED</p>
               </td>
             </tr>
           </tbody>
