@@ -29,19 +29,30 @@ const page = ({ params }: any) => {
       if(result.data){
         // alert("testt")
 
+        let maxComponent1 = 0; 
+
         result.data.forEach((item: any, index: any) => {
           let eachformdata = JSON.parse(item.formdata)
             eachformdata.forEach((item2: any, index2: any) => {
-              // let name = item2.structure.component.component_details.name;
+              let eachcomponent = JSON.parse(item2.structure).component;
+              
+              let material_array = eachcomponent.material;
 
-              console.log(`index ${index} | index2 ${index2}: `, JSON.parse(item2.structure).component.component_details.name)
+              if(index2 === 0){
+                material_array.forEach((mtitem: any, mtindex: any) => {
+                  // console.log(`index ${index} | index2 ${index2}: `, mtitem.rating_of_member)
+                  maxComponent1 = Math.max(maxComponent1, mtitem.rating_of_member)
+                });
+              }
+              
+              // console.log(`index ${index} | index2 ${index2}: `, JSON.stringify(JSON.parse(item2.structure).component))
               // testString = testString + name;
             });
           // testString = testString + index + " ";
 
         });
 
-        // alert(testString);
+        alert(maxComponent1);
       }
 
       setData(result.data);
