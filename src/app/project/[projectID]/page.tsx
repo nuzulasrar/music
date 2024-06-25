@@ -567,11 +567,13 @@ const page = ({ params }: any) => {
         <p className="font-bold text-center">Summary Report Form</p>
         <div className="mt-4">
 
-        <p className="font-semibold mb-3">Summary Report Form</p>
+        <p className="font-semibold mb-3">Summary Report Form 
+          {/* {JSON.stringify(maxRating)} */}
+        </p>
         <table className="w-full">
           <thead>
             <tr className="border border-black">
-              <th rowSpan={2} className="border border-black">
+              <th rowSpan={2} colSpan={2} className="border border-black">
                 <p className="font-bold">BRIDGE MEMBER</p>
               </th>
               <th colSpan={2} className="border border-black">
@@ -594,7 +596,7 @@ const page = ({ params }: any) => {
             </tr>
           </thead>
           <tbody>
-          {data &&
+          {/* {data &&
         data.map((item: any, index: any) => {
           // console.log("item " + index, JSON.parse(item.formdata));
           
@@ -604,7 +606,184 @@ const page = ({ params }: any) => {
                 <p></p>
               </td>
             </tr>
-          )})}
+          )})} */}
+
+            {/* Component 0 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Beam/Girder</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent0}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent0}</p>
+              </td>
+            </tr>
+
+            {/* Component 1 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Deck/Slab</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent1}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent1}</p>
+              </td>
+            </tr>
+
+            {/* Component 2 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Pier</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent3}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent3}</p>
+              </td>
+            </tr>
+
+            {/* Component 3 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Abutment</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent2}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent2}</p>
+              </td>
+            </tr>
+
+            {/* Component 4 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Bearing</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent4}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent4}</p>
+              </td>
+            </tr>
+
+            {/* Component 5 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Drainpipe</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent8}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent8}</p>
+              </td>
+            </tr>
+
+            {/* Component 6 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Parapet</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent5}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent5}</p>
+              </td>
+            </tr>
+
+            {/* Component 7 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Surfacing</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent6}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent6}</p>
+              </td>
+            </tr>
+
+            {/* Component 8 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Expansion Joint</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent7}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent7}</p>
+              </td>
+            </tr>
+
+            {/* Component 9 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Slope Protection</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent9}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent9}</p>
+              </td>
+            </tr>
+
+            {/* Component 10 */}
+            <tr className="border border-black">
+              <td className="border border-black p-2">
+                <p>Culvert</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">Test</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent10}</p>
+              </td>
+              <td className="border border-black p-2">
+                <p className="text-center">{maxRating.maxComponent10}</p>
+              </td>
+            </tr>
+
           </tbody>
         </table>
         </div>
