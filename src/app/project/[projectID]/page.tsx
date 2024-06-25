@@ -11,6 +11,20 @@ const page = ({ params }: any) => {
   const { projectID } = params;
   const [data, setData] = useState<any>([]);
 
+  const [maxRating, setMaxRating] = useState<any>({
+    maxComponent0: 0,
+    maxComponent1: 0,
+    maxComponent2: 0,
+    maxComponent3: 0,
+    maxComponent4: 0,
+    maxComponent5: 0,
+    maxComponent6: 0,
+    maxComponent7: 0,
+    maxComponent8: 0,
+    maxComponent9: 0,
+    maxComponent10: 0,
+  });
+
   const getSubmittedForms = async () => {
     try {
       const response = await fetch(`/api/project/${projectID}`);
@@ -29,7 +43,17 @@ const page = ({ params }: any) => {
       if(result.data){
         // alert("testt")
 
+        let maxComponent0 = 0; 
         let maxComponent1 = 0; 
+        let maxComponent2 = 0; 
+        let maxComponent3 = 0; 
+        let maxComponent4 = 0; 
+        let maxComponent5 = 0; 
+        let maxComponent6 = 0; 
+        let maxComponent7 = 0; 
+        let maxComponent8 = 0; 
+        let maxComponent9 = 0; 
+        let maxComponent10 = 0;
 
         result.data.forEach((item: any, index: any) => {
           let eachformdata = JSON.parse(item.formdata)
@@ -38,12 +62,22 @@ const page = ({ params }: any) => {
               
               let material_array = eachcomponent.material;
 
-              if(index2 === 0){
+              // if(index2 === 0){
                 material_array.forEach((mtitem: any, mtindex: any) => {
                   // console.log(`index ${index} | index2 ${index2}: `, mtitem.rating_of_member)
-                  maxComponent1 = Math.max(maxComponent1, mtitem.rating_of_member)
+                  if(index2 === 0) maxComponent0 = Math.max(maxComponent0, mtitem.rating_of_member)
+                  if(index2 === 1) maxComponent1 = Math.max(maxComponent1, mtitem.rating_of_member)
+                  if(index2 === 2) maxComponent2 = Math.max(maxComponent2, mtitem.rating_of_member)
+                  if(index2 === 3) maxComponent3 = Math.max(maxComponent3, mtitem.rating_of_member)
+                  if(index2 === 4) maxComponent4 = Math.max(maxComponent4, mtitem.rating_of_member)
+                  if(index2 === 5) maxComponent5 = Math.max(maxComponent5, mtitem.rating_of_member)
+                  if(index2 === 6) maxComponent6 = Math.max(maxComponent6, mtitem.rating_of_member)
+                  if(index2 === 7) maxComponent7 = Math.max(maxComponent7, mtitem.rating_of_member)
+                  if(index2 === 8) maxComponent8 = Math.max(maxComponent8, mtitem.rating_of_member)
+                  if(index2 === 9) maxComponent9 = Math.max(maxComponent9, mtitem.rating_of_member)
+                  if(index2 === 10) maxComponent10 = Math.max(maxComponent10, mtitem.rating_of_member)
                 });
-              }
+              // }
               
               // console.log(`index ${index} | index2 ${index2}: `, JSON.stringify(JSON.parse(item2.structure).component))
               // testString = testString + name;
@@ -52,7 +86,31 @@ const page = ({ params }: any) => {
 
         });
 
-        alert(maxComponent1);
+        console.log("maxComponent0 : ", maxComponent0);
+        console.log("maxComponent1 : ", maxComponent1);
+        console.log("maxComponent2 : ", maxComponent2);
+        console.log("maxComponent3 : ", maxComponent3);
+        console.log("maxComponent4 : ", maxComponent4);
+        console.log("maxComponent5 : ", maxComponent5);
+        console.log("maxComponent6 : ", maxComponent6);
+        console.log("maxComponent7 : ", maxComponent7);
+        console.log("maxComponent8 : ", maxComponent8);
+        console.log("maxComponent9 : ", maxComponent9);
+        console.log("maxComponent10 : ", maxComponent10);
+      
+        setMaxRating({
+          maxComponent0: maxComponent0,
+          maxComponent1: maxComponent1,
+          maxComponent2: maxComponent2,
+          maxComponent3: maxComponent3,
+          maxComponent4: maxComponent4,
+          maxComponent5: maxComponent5,
+          maxComponent6: maxComponent6,
+          maxComponent7: maxComponent7,
+          maxComponent8: maxComponent8,
+          maxComponent9: maxComponent9,
+          maxComponent10: maxComponent10
+        })
       }
 
       setData(result.data);
