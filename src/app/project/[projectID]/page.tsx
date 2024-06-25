@@ -519,6 +519,30 @@ const page = ({ params }: any) => {
     // setFormList(thisMaterial);
   };
 
+  const [majorDamageBeam, setMajorDamageBeam] = useState("Water Stain");
+  const [majorDamageDeck, setMajorDamageDeck] = useState("A1");
+  const [majorDamageAbutment, setMajorDamageAbutment] = useState("A2");
+  const [majorDamagePier, setMajorDamagePier] = useState("A3");
+  const [majorDamageBearing, setMajorDamageBearing] = useState("A4");
+  const [majorDamageParapet, setMajorDamageParapet] = useState("A5");
+  const [majorDamageSurfacing, setMajorDamageSurfacing] = useState("A6");
+  const [majorDamageExpansionJoint, setMajorDamageExpansionJoint] = useState("A7");
+  const [majorDamageDrainpipe, setMajorDamageDrainpipe] = useState("A8");
+  const [majorDamageSlopeProtection, setMajorDamageSlopeProtection] = useState("A9");
+  const [majorDamageHydraulic, setMajorDamageHydraulic] = useState("A10");
+  
+  const [maintenanceBeam, setMaintenanceBeam] = useState("Regular Monitoring");
+  const [maintenanceDeck, setMaintenanceDeck] = useState("B1");
+  const [maintenanceAbutment, setMaintenanceAbutment] = useState("B2");
+  const [maintenancePier, setMaintenancePier] = useState("B3");
+  const [maintenanceBearing, setMaintenanceBearing] = useState("B4");
+  const [maintenanceParapet, setMaintenanceParapet] = useState("B5");
+  const [maintenanceSurfacing, setMaintenanceSurfacing] = useState("B6");
+  const [maintenanceExpansionJoint, setMaintenanceExpansionJoint] = useState("B7");
+  const [maintenanceDrainpipe, setMaintenanceDrainpipe] = useState("B8");
+  const [maintenanceSlopeProtection, setMaintenanceSlopeProtection] = useState("B9");
+  const [maintenanceHydraulic, setMaintenanceHydraulic] = useState("B10");
+
   return (
     <div className="flex flex-col p-20 justify-center items-center">
       {/* {data && JSON.stringify(data.length)} */}
@@ -622,6 +646,22 @@ const page = ({ params }: any) => {
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent0}</p>
               </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageBeam} 
+                  onChange={(e)=>setMajorDamageBeam(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+              <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceBeam} 
+                  onChange={(e)=>setMaintenanceBeam(e.target.value)}
+                />
+              </td>
             </tr>
 
             {/* Component 1 */}
@@ -637,6 +677,22 @@ const page = ({ params }: any) => {
               </td>
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent1}</p>
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageDeck} 
+                  onChange={(e)=>setMajorDamageDeck(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+              <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceDeck} 
+                  onChange={(e)=>setMaintenanceDeck(e.target.value)}
+                />
               </td>
             </tr>
 
@@ -654,6 +710,22 @@ const page = ({ params }: any) => {
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent3}</p>
               </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamagePier} 
+                  onChange={(e)=>setMajorDamagePier(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+              <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenancePier} 
+                  onChange={(e)=>setMaintenancePier(e.target.value)}
+                />
+              </td>
             </tr>
 
             {/* Component 3 */}
@@ -669,6 +741,22 @@ const page = ({ params }: any) => {
               </td>
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent2}</p>
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageAbutment} 
+                  onChange={(e)=>setMajorDamageAbutment(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+              <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceAbutment} 
+                  onChange={(e)=>setMaintenanceAbutment(e.target.value)}
+                />
               </td>
             </tr>
 
