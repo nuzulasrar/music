@@ -774,6 +774,22 @@ const page = ({ params }: any) => {
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent4}</p>
               </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageBearing} 
+                  onChange={(e)=>setMajorDamageBearing(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+              <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceBearing} 
+                  onChange={(e)=>setMaintenanceBearing(e.target.value)}
+                />
+              </td>
             </tr>
 
             {/* Component 5 */}
@@ -789,6 +805,22 @@ const page = ({ params }: any) => {
               </td>
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent8}</p>
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageDrainpipe} 
+                  onChange={(e)=>setMajorDamageDrainpipe(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+              <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceDrainpipe} 
+                  onChange={(e)=>setMaintenanceDrainpipe(e.target.value)}
+                />
               </td>
             </tr>
 
@@ -806,6 +838,22 @@ const page = ({ params }: any) => {
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent5}</p>
               </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageParapet} 
+                  onChange={(e)=>setMajorDamageParapet(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+              <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceParapet} 
+                  onChange={(e)=>setMaintenanceParapet(e.target.value)}
+                />
+              </td>
             </tr>
 
             {/* Component 7 */}
@@ -821,6 +869,22 @@ const page = ({ params }: any) => {
               </td>
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent6}</p>
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageSurfacing} 
+                  onChange={(e)=>setMajorDamageSurfacing(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceSurfacing} 
+                  onChange={(e)=>setMaintenanceSurfacing(e.target.value)}
+                />
               </td>
             </tr>
 
@@ -838,6 +902,22 @@ const page = ({ params }: any) => {
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent7}</p>
               </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageExpansionJoint} 
+                  onChange={(e)=>setMajorDamageExpansionJoint(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceExpansionJoint} 
+                  onChange={(e)=>setMaintenanceExpansionJoint(e.target.value)}
+                />
+              </td>
             </tr>
 
             {/* Component 9 */}
@@ -854,6 +934,22 @@ const page = ({ params }: any) => {
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent9}</p>
               </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageSlopeProtection} 
+                  onChange={(e)=>setMajorDamageSlopeProtection(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceSlopeProtection} 
+                  onChange={(e)=>setMaintenanceSlopeProtection(e.target.value)}
+                />
+              </td>
             </tr>
 
             {/* Component 10 */}
@@ -869,6 +965,22 @@ const page = ({ params }: any) => {
               </td>
               <td className="border border-black p-2">
                 <p className="text-center">{maxRating.maxComponent10}</p>
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={majorDamageHydraulic} 
+                  onChange={(e)=>setMajorDamageHydraulic(e.target.value)}
+                />
+              </td>
+              <td className="border border-black p-2">
+                <input 
+                  className="w-full text-center"
+                  type="text" 
+                  value={maintenanceHydraulic} 
+                  onChange={(e)=>setMaintenanceHydraulic(e.target.value)}
+                />
               </td>
             </tr>
 
