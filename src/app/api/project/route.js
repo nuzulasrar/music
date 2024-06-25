@@ -33,6 +33,9 @@ export async function POST(request, response) {
       data: {
         project_name: projectName,
         project_type: projectType,
+        location_data: "{}",
+        bridge_type: "{}",
+        structured_data: "{}",
       },
     });
     if (createProject) {
