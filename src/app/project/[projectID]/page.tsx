@@ -7,6 +7,8 @@ import EditRatingMemberModal from "@/components/EditRatingMemberModal";
 import EditPhotoDetailModal from "@/components/EditPhotoDetailModal";
 import { log } from "console";
 
+import "./styles.css";
+
 const page = ({ params }: any) => {
   const { projectID } = params;
   const [data, setData] = useState<any>([]);
@@ -36,54 +38,96 @@ const page = ({ params }: any) => {
 
       const result = await response.json();
       // console.log("result data", JSON.stringify(result));
-      
-      
+
       let testString = "a";
 
-      if(result.data){
+      if (result.data) {
         // alert("testt")
 
-        let maxComponent0 = 0; 
-        let maxComponent1 = 0; 
-        let maxComponent2 = 0; 
-        let maxComponent3 = 0; 
-        let maxComponent4 = 0; 
-        let maxComponent5 = 0; 
-        let maxComponent6 = 0; 
-        let maxComponent7 = 0; 
-        let maxComponent8 = 0; 
-        let maxComponent9 = 0; 
+        let maxComponent0 = 0;
+        let maxComponent1 = 0;
+        let maxComponent2 = 0;
+        let maxComponent3 = 0;
+        let maxComponent4 = 0;
+        let maxComponent5 = 0;
+        let maxComponent6 = 0;
+        let maxComponent7 = 0;
+        let maxComponent8 = 0;
+        let maxComponent9 = 0;
         let maxComponent10 = 0;
 
         result.data.forEach((item: any, index: any) => {
-          let eachformdata = JSON.parse(item.formdata)
-            eachformdata.forEach((item2: any, index2: any) => {
-              let eachcomponent = JSON.parse(item2.structure).component;
-              
-              let material_array = eachcomponent.material;
+          let eachformdata = JSON.parse(item.formdata);
+          eachformdata.forEach((item2: any, index2: any) => {
+            let eachcomponent = JSON.parse(item2.structure).component;
 
-              // if(index2 === 0){
-                material_array.forEach((mtitem: any, mtindex: any) => {
-                  // console.log(`index ${index} | index2 ${index2}: `, mtitem.rating_of_member)
-                  if(index2 === 0) maxComponent0 = Math.max(maxComponent0, mtitem.rating_of_member)
-                  if(index2 === 1) maxComponent1 = Math.max(maxComponent1, mtitem.rating_of_member)
-                  if(index2 === 2) maxComponent2 = Math.max(maxComponent2, mtitem.rating_of_member)
-                  if(index2 === 3) maxComponent3 = Math.max(maxComponent3, mtitem.rating_of_member)
-                  if(index2 === 4) maxComponent4 = Math.max(maxComponent4, mtitem.rating_of_member)
-                  if(index2 === 5) maxComponent5 = Math.max(maxComponent5, mtitem.rating_of_member)
-                  if(index2 === 6) maxComponent6 = Math.max(maxComponent6, mtitem.rating_of_member)
-                  if(index2 === 7) maxComponent7 = Math.max(maxComponent7, mtitem.rating_of_member)
-                  if(index2 === 8) maxComponent8 = Math.max(maxComponent8, mtitem.rating_of_member)
-                  if(index2 === 9) maxComponent9 = Math.max(maxComponent9, mtitem.rating_of_member)
-                  if(index2 === 10) maxComponent10 = Math.max(maxComponent10, mtitem.rating_of_member)
-                });
-              // }
-              
-              // console.log(`index ${index} | index2 ${index2}: `, JSON.stringify(JSON.parse(item2.structure).component))
-              // testString = testString + name;
+            let material_array = eachcomponent.material;
+
+            // if(index2 === 0){
+            material_array.forEach((mtitem: any, mtindex: any) => {
+              // console.log(`index ${index} | index2 ${index2}: `, mtitem.rating_of_member)
+              if (index2 === 0)
+                maxComponent0 = Math.max(
+                  maxComponent0,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 1)
+                maxComponent1 = Math.max(
+                  maxComponent1,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 2)
+                maxComponent2 = Math.max(
+                  maxComponent2,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 3)
+                maxComponent3 = Math.max(
+                  maxComponent3,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 4)
+                maxComponent4 = Math.max(
+                  maxComponent4,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 5)
+                maxComponent5 = Math.max(
+                  maxComponent5,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 6)
+                maxComponent6 = Math.max(
+                  maxComponent6,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 7)
+                maxComponent7 = Math.max(
+                  maxComponent7,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 8)
+                maxComponent8 = Math.max(
+                  maxComponent8,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 9)
+                maxComponent9 = Math.max(
+                  maxComponent9,
+                  mtitem.rating_of_member
+                );
+              if (index2 === 10)
+                maxComponent10 = Math.max(
+                  maxComponent10,
+                  mtitem.rating_of_member
+                );
             });
-          // testString = testString + index + " ";
+            // }
 
+            // console.log(`index ${index} | index2 ${index2}: `, JSON.stringify(JSON.parse(item2.structure).component))
+            // testString = testString + name;
+          });
+          // testString = testString + index + " ";
         });
 
         console.log("maxComponent0 : ", maxComponent0);
@@ -97,7 +141,7 @@ const page = ({ params }: any) => {
         console.log("maxComponent8 : ", maxComponent8);
         console.log("maxComponent9 : ", maxComponent9);
         console.log("maxComponent10 : ", maxComponent10);
-      
+
         setMaxRating({
           maxComponent0: maxComponent0,
           maxComponent1: maxComponent1,
@@ -109,12 +153,11 @@ const page = ({ params }: any) => {
           maxComponent7: maxComponent7,
           maxComponent8: maxComponent8,
           maxComponent9: maxComponent9,
-          maxComponent10: maxComponent10
-        })
+          maxComponent10: maxComponent10,
+        });
       }
 
       setData(result.data);
-
     } catch (error: any) {
       console.log(error);
       // throw new Error(error);
@@ -151,6 +194,36 @@ const page = ({ params }: any) => {
 
     try {
       const response = await fetch("/api/uploadtemplate", {
+        method: "post",
+        body: fd,
+      });
+
+      const json = await response.json();
+
+      if (json.success) {
+        window.location.reload();
+      } else {
+        alert("fail to upload image");
+      }
+    } catch (error: any) {
+      console.log(error.message);
+      // throw error;
+    }
+  };
+
+  const handleUploadPDF = async () => {
+    const fd = new FormData();
+
+    let thisarray = [...selectedFiles];
+
+    thisarray.forEach((item, index) => {
+      fd.append(`files${index}`, thisarray[index]);
+    });
+
+    fd.append(`id`, data[0]?.id);
+
+    try {
+      const response = await fetch("/api/uploadtemplatepdf", {
         method: "post",
         body: fd,
       });
@@ -526,11 +599,13 @@ const page = ({ params }: any) => {
   const [majorDamageBearing, setMajorDamageBearing] = useState("A4");
   const [majorDamageParapet, setMajorDamageParapet] = useState("A5");
   const [majorDamageSurfacing, setMajorDamageSurfacing] = useState("A6");
-  const [majorDamageExpansionJoint, setMajorDamageExpansionJoint] = useState("A7");
+  const [majorDamageExpansionJoint, setMajorDamageExpansionJoint] =
+    useState("A7");
   const [majorDamageDrainpipe, setMajorDamageDrainpipe] = useState("A8");
-  const [majorDamageSlopeProtection, setMajorDamageSlopeProtection] = useState("A9");
+  const [majorDamageSlopeProtection, setMajorDamageSlopeProtection] =
+    useState("A9");
   const [majorDamageHydraulic, setMajorDamageHydraulic] = useState("A10");
-  
+
   const [maintenanceBeam, setMaintenanceBeam] = useState("Regular Monitoring");
   const [maintenanceDeck, setMaintenanceDeck] = useState("B1");
   const [maintenanceAbutment, setMaintenanceAbutment] = useState("B2");
@@ -538,9 +613,11 @@ const page = ({ params }: any) => {
   const [maintenanceBearing, setMaintenanceBearing] = useState("B4");
   const [maintenanceParapet, setMaintenanceParapet] = useState("B5");
   const [maintenanceSurfacing, setMaintenanceSurfacing] = useState("B6");
-  const [maintenanceExpansionJoint, setMaintenanceExpansionJoint] = useState("B7");
+  const [maintenanceExpansionJoint, setMaintenanceExpansionJoint] =
+    useState("B7");
   const [maintenanceDrainpipe, setMaintenanceDrainpipe] = useState("B8");
-  const [maintenanceSlopeProtection, setMaintenanceSlopeProtection] = useState("B9");
+  const [maintenanceSlopeProtection, setMaintenanceSlopeProtection] =
+    useState("B9");
   const [maintenanceHydraulic, setMaintenanceHydraulic] = useState("B10");
 
   return (
@@ -548,28 +625,52 @@ const page = ({ params }: any) => {
       {/* {data && JSON.stringify(data.length)} */}
       <div className="w-full mb-8">
         <div className="flex flex-row items-center w-full">
-          <div className="w-1/2 flex flex-row items-center mb-6">
-            <div className="w-8/12">
-              <p className="font-bold mb-2">Add Defect Mapping</p>
-              <input
-                className="flex h-9 w-10/12  rounded-md border border-input 
+          <div className="w-1/2 flex flex-row items-center mb-6 no-print">
+            <div className="w-8/12 flex-row justify-between items-center">
+              <div className="flex-row justify-between items-center mb-4">
+                <p className="font-bold mb-2 no-print">
+                  Add Defect Mapping (Image)
+                </p>
+                <input
+                  className="flex h-9 w-10/12  rounded-md border border-input 
               bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm 
               file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                id="picture"
-                name="picture"
-                type="file"
-                multiple
-                onChange={handleFileChange}
-              />
+                  id="picture"
+                  name="picture"
+                  type="file"
+                  multiple
+                  onChange={handleFileChange}
+                />
+                <button
+                  className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
+                  onClick={handleUpload}
+                >
+                  Upload Image
+                </button>
+              </div>
+
+              <div className="flex-row justify-between items-center">
+                <p className="font-bold mb-2">Add Defect Mapping (PDF)</p>
+                <input
+                  className="flex h-9 w-10/12  rounded-md border border-input 
+              bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm 
+              file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  id="picture"
+                  name="picture"
+                  type="file"
+                  multiple
+                  onChange={handleFileChange}
+                />
+                <button
+                  className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
+                  onClick={handleUpload}
+                >
+                  Upload PDF
+                </button>
+              </div>
             </div>
-            <button
-              className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
-              onClick={handleUpload}
-            >
-              Upload
-            </button>
           </div>
-          <div className="w-1/2 flex flex-row items-center mb-6">
+          <div className="w-1/2 flex flex-row items-center mb-6 no-print">
             <div className="w-8/12">
               <p className="font-bold mb-2">Edit</p>
               <label className="inline-flex items-center cursor-pointer">
@@ -590,74 +691,89 @@ const page = ({ params }: any) => {
         <h1 className="font-bold text-center">ROUTINE CONDITION INSPECTION</h1>
         <p className="font-bold text-center">Summary Report Form</p>
         <div className="mt-4">
+          <p className="font-semibold mb-1">Location Data:</p>
+          <table className="w-full mb-3">
+            <tbody>
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p className="">
+                    Route No: <span className="font-bold">Example E9</span>
+                  </p>
+                </td>
+                <td colSpan={2} className="border border-black p-2">
+                  <p className="">
+                    River/Bridge Name:{" "}
+                    <span className="font-bold">BRIDGE 1 - E9/000</span>
+                  </p>
+                </td>
+              </tr>
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p className="">
+                    Structure No: <span className="font-bold">Example E9</span>
+                  </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="">
+                    Disctrict:{" "}
+                    <span className="font-bold">BRIDGE 1 - E9/000</span>
+                  </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="">
+                    State: <span className="font-bold">BRIDGE 1 - E9/000</span>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-        <p className="font-semibold mb-1">Location Data:</p>
-        <table className="w-full mb-3">
-          <tbody>
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p className="">Route No: <span className="font-bold">Example E9</span></p>
-              </td>
-              <td colSpan={2} className="border border-black p-2">
-                <p className="">River/Bridge Name: <span className="font-bold">BRIDGE 1 - E9/000</span></p>
-              </td>
-            </tr>
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p className="">Structure No: <span className="font-bold">Example E9</span></p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="">Disctrict: <span className="font-bold">BRIDGE 1 - E9/000</span></p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="">State: <span className="font-bold">BRIDGE 1 - E9/000</span></p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <p className="font-semibold mb-1">Bridge Type:</p>
+          <table className="w-full mb-3">
+            <tbody>
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p className="">System Type: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">SIMPLY SUPPORTED</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-        <p className="font-semibold mb-1">Bridge Type:</p>
-        <table className="w-full mb-3">
-          <tbody>
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p className="">System Type: </p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="font-bold">SIMPLY SUPPORTED</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p className="font-semibold mb-1">Summary Report:</p>
-        <table className="w-full">
-          <thead>
-            <tr className="border border-black">
-              <th rowSpan={2} colSpan={2} className="border border-black bg-gray-300">
-                <p className="font-bold">BRIDGE MEMBER</p>
-              </th>
-              <th colSpan={2} className="border border-black bg-gray-300">
-                <p className="font-bold">RATING</p>
-              </th>
-              <th rowSpan={2} className="border border-black bg-gray-300">
-                <p className="font-bold">MAJOR DAMAGES</p>
-              </th>
-              <th rowSpan={2} className="border border-black bg-gray-300">
-                <p className="font-bold">MAINTENANCE WORK REQUIRED</p>
-              </th>
-            </tr>
-            <tr className="border border-black">
-              <th className="border border-black bg-gray-300">
-                <p className="font-bold">OLD</p>
-              </th>
-              <th className="border border-black bg-gray-300">
-                <p className="font-bold">NEW</p>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-          {/* {data &&
+          <p className="font-semibold mb-1">Summary Report:</p>
+          <table className="w-full bottom-space1">
+            <thead>
+              <tr className="border border-black">
+                <th
+                  rowSpan={2}
+                  colSpan={2}
+                  className="border border-black bg-gray-300"
+                >
+                  <p className="font-bold">BRIDGE MEMBER</p>
+                </th>
+                <th colSpan={2} className="border border-black bg-gray-300">
+                  <p className="font-bold">RATING</p>
+                </th>
+                <th rowSpan={2} className="border border-black bg-gray-300">
+                  <p className="font-bold">MAJOR DAMAGES</p>
+                </th>
+                <th rowSpan={2} className="border border-black bg-gray-300">
+                  <p className="font-bold">MAINTENANCE WORK REQUIRED</p>
+                </th>
+              </tr>
+              <tr className="border border-black">
+                <th className="border border-black bg-gray-300">
+                  <p className="font-bold">OLD</p>
+                </th>
+                <th className="border border-black bg-gray-300">
+                  <p className="font-bold">NEW</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* {data &&
         data.map((item: any, index: any) => {
           // console.log("item " + index, JSON.parse(item.formdata));
           
@@ -669,360 +785,367 @@ const page = ({ params }: any) => {
             </tr>
           )})} */}
 
-            {/* Component 0 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Beam/Girder</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent0}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent0}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageBeam} 
-                  onChange={(e)=>setMajorDamageBeam(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-              <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceBeam} 
-                  onChange={(e)=>setMaintenanceBeam(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 0 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Beam/Girder</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent0}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent0}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageBeam}
+                    onChange={(e) => setMajorDamageBeam(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceBeam}
+                    onChange={(e) => setMaintenanceBeam(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 1 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Deck/Slab</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent1}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent1}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageDeck} 
-                  onChange={(e)=>setMajorDamageDeck(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-              <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceDeck} 
-                  onChange={(e)=>setMaintenanceDeck(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 1 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Deck/Slab</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent1}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent1}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageDeck}
+                    onChange={(e) => setMajorDamageDeck(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceDeck}
+                    onChange={(e) => setMaintenanceDeck(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 2 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Pier</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent3}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent3}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamagePier} 
-                  onChange={(e)=>setMajorDamagePier(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-              <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenancePier} 
-                  onChange={(e)=>setMaintenancePier(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 2 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Pier</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent3}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent3}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamagePier}
+                    onChange={(e) => setMajorDamagePier(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenancePier}
+                    onChange={(e) => setMaintenancePier(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 3 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Abutment</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent2}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent2}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageAbutment} 
-                  onChange={(e)=>setMajorDamageAbutment(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-              <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceAbutment} 
-                  onChange={(e)=>setMaintenanceAbutment(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 3 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Abutment</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent2}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent2}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageAbutment}
+                    onChange={(e) => setMajorDamageAbutment(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceAbutment}
+                    onChange={(e) => setMaintenanceAbutment(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 4 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Bearing</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent4}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent4}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageBearing} 
-                  onChange={(e)=>setMajorDamageBearing(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-              <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceBearing} 
-                  onChange={(e)=>setMaintenanceBearing(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 4 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Bearing</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent4}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent4}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageBearing}
+                    onChange={(e) => setMajorDamageBearing(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceBearing}
+                    onChange={(e) => setMaintenanceBearing(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 5 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Drainpipe</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent8}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent8}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageDrainpipe} 
-                  onChange={(e)=>setMajorDamageDrainpipe(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-              <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceDrainpipe} 
-                  onChange={(e)=>setMaintenanceDrainpipe(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 5 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Drainpipe</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent8}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent8}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageDrainpipe}
+                    onChange={(e) => setMajorDamageDrainpipe(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceDrainpipe}
+                    onChange={(e) => setMaintenanceDrainpipe(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 6 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Parapet</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent5}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent5}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageParapet} 
-                  onChange={(e)=>setMajorDamageParapet(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-              <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceParapet} 
-                  onChange={(e)=>setMaintenanceParapet(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 6 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Parapet</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent5}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent5}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageParapet}
+                    onChange={(e) => setMajorDamageParapet(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceParapet}
+                    onChange={(e) => setMaintenanceParapet(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 7 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Surfacing</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent6}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent6}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageSurfacing} 
-                  onChange={(e)=>setMajorDamageSurfacing(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceSurfacing} 
-                  onChange={(e)=>setMaintenanceSurfacing(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 7 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Surfacing</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent6}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent6}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageSurfacing}
+                    onChange={(e) => setMajorDamageSurfacing(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceSurfacing}
+                    onChange={(e) => setMaintenanceSurfacing(e.target.value)}
+                  />
+                </td>
+              </tr>
 
-            {/* Component 8 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Expansion Joint</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent7}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent7}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageExpansionJoint} 
-                  onChange={(e)=>setMajorDamageExpansionJoint(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceExpansionJoint} 
-                  onChange={(e)=>setMaintenanceExpansionJoint(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 8 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Expansion Joint</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent7}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent7}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageExpansionJoint}
+                    onChange={(e) =>
+                      setMajorDamageExpansionJoint(e.target.value)
+                    }
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceExpansionJoint}
+                    onChange={(e) =>
+                      setMaintenanceExpansionJoint(e.target.value)
+                    }
+                  />
+                </td>
+              </tr>
 
-            {/* Component 9 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Slope Protection</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent9}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent9}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageSlopeProtection} 
-                  onChange={(e)=>setMajorDamageSlopeProtection(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceSlopeProtection} 
-                  onChange={(e)=>setMaintenanceSlopeProtection(e.target.value)}
-                />
-              </td>
-            </tr>
+              {/* Component 9 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Slope Protection</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent9}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent9}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageSlopeProtection}
+                    onChange={(e) =>
+                      setMajorDamageSlopeProtection(e.target.value)
+                    }
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceSlopeProtection}
+                    onChange={(e) =>
+                      setMaintenanceSlopeProtection(e.target.value)
+                    }
+                  />
+                </td>
+              </tr>
 
-            {/* Component 10 */}
-            <tr className="border border-black">
-              <td className="border border-black p-2">
-                <p>Culvert</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">Test</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent10}</p>
-              </td>
-              <td className="border border-black p-2">
-                <p className="text-center">{maxRating.maxComponent10}</p>
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={majorDamageHydraulic} 
-                  onChange={(e)=>setMajorDamageHydraulic(e.target.value)}
-                />
-              </td>
-              <td className="border border-black p-2">
-                <input 
-                  className="w-full text-center"
-                  type="text" 
-                  value={maintenanceHydraulic} 
-                  onChange={(e)=>setMaintenanceHydraulic(e.target.value)}
-                />
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
+              {/* Component 10 */}
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p>Culvert</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">Test</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent10}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="text-center">{maxRating.maxComponent10}</p>
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={majorDamageHydraulic}
+                    onChange={(e) => setMajorDamageHydraulic(e.target.value)}
+                  />
+                </td>
+                <td className="border border-black p-2">
+                  <input
+                    className="w-full text-center"
+                    type="text"
+                    value={maintenanceHydraulic}
+                    onChange={(e) => setMaintenanceHydraulic(e.target.value)}
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
       {data &&
@@ -1077,7 +1200,10 @@ const page = ({ params }: any) => {
               <table className="min-w-full border border-neutral-200 text-center mb-5">
                 <thead>
                   <tr className="border border-neutral-200">
-                    <th colSpan={2} className="border border-neutral-200">
+                    <th
+                      colSpan={2}
+                      className="border border-neutral-200 font-th-1"
+                    >
                       Bridge Member
                     </th>
                     <th rowSpan={2} className="border border-neutral-200">
@@ -1538,6 +1664,20 @@ const page = ({ params }: any) => {
         );
       })} */}
 
+      <object
+        data="https://pdfobject.com/pdf/sample.pdf"
+        type="application/pdf"
+        width="100%"
+        height="500"
+      >
+        <p>
+          Alternative text - include a link{" "}
+          <a href="https://pdfobject.com/pdf/sample.pdf">to the PDF!</a>
+        </p>
+      </object>
+
+      <p className="mt-3">2024-05-20-06-54-41-0template.jpg</p>
+
       {data[0] &&
         JSON.parse(data[0]?.properimages).map((item: any, index: any) => {
           return (
@@ -1551,7 +1691,9 @@ const page = ({ params }: any) => {
                   objectFit: "contain",
                 }}
               />
-              <div className="w-full border-b-2 border-b-gray-400"></div>
+              <div className="w-full border-b-2 border-b-gray-400">
+                <p className="text-center mb-2">{item}</p>
+              </div>
             </>
           );
         })}

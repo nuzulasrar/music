@@ -1,0 +1,14 @@
+/* styles.css */
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .bottom-space1 {
+    margin-bottom: 600px;
+  }
+
+  .font-th-1 {
+    font-size: 10px;
+  }
+}
