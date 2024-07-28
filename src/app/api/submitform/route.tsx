@@ -1,6 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import prisma from "../../lib/prisma";
 
+import fs from "fs";
 import { Prisma } from "@prisma/client";
 
 export const revalidate = 0;
@@ -64,11 +65,19 @@ export async function PUT(request: NextRequest) {
   try {
     const formData = await request.formData();
 
+    const deleteImages: any = formData.get("deleteImages");
     const form: any = formData.get("form");
     const id: any = formData.get("id");
 
+    let transformdeleteImages = JSON.parse(deleteImages);
     let transformform = JSON.parse(form);
     let transformid = JSON.parse(id);
+
+    console.log(transformdeleteImages);
+
+    transformdeleteImages.forEach((item: any) => {
+      fs.unlinkSync(`public/uploads/${item}`);
+    });
 
     const submittedForm = await prisma.submitted_form.update({
       where: { id: transformid },
