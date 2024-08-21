@@ -73,21 +73,44 @@ export async function PUT(request: NextRequest) {
     let transformform = JSON.parse(form);
     let transformid = JSON.parse(id);
 
-    console.log(transformdeleteImages);
+    // console.log(transformdeleteImages);
 
-    transformdeleteImages.forEach((item: any) => {
-      fs.unlinkSync(`public/uploads/${item}`);
-    });
-
-    const submittedForm = await prisma.submitted_form.update({
+    const soonToDelete = await prisma.submitted_form.findUnique({
       where: { id: transformid },
-      data: {
-        formdata: JSON.stringify(transformform),
+      select: {
+        images1: true,
+        images2: true,
+        images3: true,
       },
     });
 
-    if (submittedForm) {
-      return NextResponse.json({ success: "success" });
+    console.log(JSON.parse(soonToDelete?.images1) instanceof Array);
+
+    let existingImages1 = JSON.parse(soonToDelete?.images1);
+    let existingImages2 = JSON.parse(soonToDelete?.images2);
+    let existingImages3 = JSON.parse(soonToDelete?.images3);
+
+    let futureimages1 = [];
+
+    transformdeleteImages.forEach((item: any) => {
+      // fs.unlinkSync(`public/uploads/${item}`);
+      if (existingImages1.includes(item)) {
+        futureimages1 = existingImages1.filter((item2) => item2 !== item);
+      }
+    });
+
+    // const submittedForm = await prisma.submitted_form.update({
+    //   where: { id: transformid },
+    //   data: {
+    //     formdata: JSON.stringify(transformform),
+    //   },
+    // });
+
+    if (soonToDelete) {
+      return NextResponse.json({
+        success: "success",
+        soonToDelete: soonToDelete,
+      });
     } else {
       return NextResponse.json({ fail: "API FAIL" });
     }
@@ -99,6 +122,7 @@ export async function PUT(request: NextRequest) {
     //   submittedForm: submittedForm,
     // });
   } catch (error: any) {
-    return new NextResponse(error.message);
+    console.log(error.message);
+    return NextResponse.json(error.message);
   }
 }
