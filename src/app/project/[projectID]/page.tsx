@@ -1165,13 +1165,13 @@ const page = ({ params }: any) => {
           let images_detail2 = JSON.parse(item.images_detail2);
           let images_detail3 = JSON.parse(item.images_detail3);
           return (
-            <div className="mb-10 w-11/12">
-              <h1 className="text-center font-bold mb-2">
+            <div className="mb-10 screen:w-12/12 print:w-12/12 bg-yellow-200">
+              <h1 className="text-center font-bold mb-2 print:text-[8px]">
                 ROUTINE CONDITION INSPECTION - STRUCTURAL CONDITION CHECKLIST
                 (BRIDGE)
               </h1>
 
-              <div className="flex flex-row justify-between items-center mb-2">
+              <div className="flex flex-row justify-between items-center mb-2 print:text-[5px]">
                 <p className="font-bold">
                   SPAN: <span className="font-normal">{details?.span_no}</span>
                 </p>
@@ -1197,319 +1197,323 @@ const page = ({ params }: any) => {
                   DATE: <span className="font-normal">{details?.date}</span>
                 </p>
               </div>
-              <table className="min-w-full border border-neutral-200 text-center mb-5">
-                <thead>
-                  <tr className="border border-neutral-200">
-                    <th
-                      colSpan={2}
-                      className="border border-neutral-200 font-th-1"
-                    >
-                      Bridge Member
-                    </th>
-                    <th rowSpan={2} className="border border-neutral-200">
-                      TYPE OF DAMAGES
-                    </th>
-                    <th rowSpan={2} className="border border-neutral-200">
-                      CODE
-                    </th>
-                    <th colSpan={2} className="border border-neutral-200">
-                      DEFECTS
-                    </th>
-                    <th colSpan={4} className="border border-neutral-200">
-                      SEVERITY OF DAMAGE
-                    </th>
-                    <th colSpan={2} className="border border-neutral-200">
-                      PERCENTAGE AFFECTED
-                    </th>
-                    <th rowSpan={2} className="border border-neutral-200">
-                      REMARKS
-                    </th>
-                    <th rowSpan={2} className="border border-neutral-200">
-                      RATING OF DAMAGE
-                    </th>
-                    <th rowSpan={2} className="border border-neutral-200">
-                      RATING OF MEMBER
-                    </th>
-                  </tr>
-                  <tr className="border border-neutral-200">
-                    <th className="border border-neutral-200">Component</th>
-                    <th className="border border-neutral-200">Material</th>
-                    <th className="border border-neutral-200">Yes</th>
-                    <th className="border border-neutral-200">No</th>
-                    <th className="border border-neutral-200">Light</th>
-                    <th className="border border-neutral-200">Medium</th>
-                    <th className="border border-neutral-200">Severe</th>
-                    <th className="border border-neutral-200">V. Severe</th>
-                    <th className="border border-neutral-200">*</th>
-                    <th className="border border-neutral-200"></th>
-                  </tr>
-                </thead>
+              <div className="">
+                <table className="min-w-full border-[0.1px] border-neutral-200 text-center mb-5 self-center">
+                  <thead>
+                    <tr className="border-[0.1px] border-neutral-200">
+                      <th
+                        colSpan={2}
+                        className="border-[0.1px] border-neutral-200 print:text-[5px]"
+                      >
+                        Bridge Member
+                      </th>
+                      <th rowSpan={2} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        TYPE OF DAMAGES
+                      </th>
+                      <th rowSpan={2} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        CODE
+                      </th>
+                      <th colSpan={2} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        DEFECTS
+                      </th>
+                      <th colSpan={4} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        SEVERITY OF DAMAGE
+                      </th>
+                      <th colSpan={2} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        PERCENTAGE AFFECTED
+                      </th>
+                      <th rowSpan={2} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        REMARKS
+                      </th>
+                      <th rowSpan={2} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        RATING OF DAMAGE
+                      </th>
+                      <th rowSpan={2} className="border-[0.1px] border-neutral-200 print:text-[5px]">
+                        RATING OF MEMBER
+                      </th>
+                    </tr>
+                    <tr className="border-[0.1px] border-neutral-200">
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">Component</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">Material</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">Yes</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">No</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">Light</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">Medium</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">Severe</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">V. Severe</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]">*</th>
+                      <th className="border-[0.1px] border-neutral-200 print:text-[5px]"></th>
+                    </tr>
+                  </thead>
 
-                <tbody>
-                  {thisformdata.map((formitem: any, formindex: any) => {
-                    let thisstructure = JSON.parse(formitem.structure);
-                    if (formindex === 0) {
-                      // console.log(
-                      //   "thisstructure",
-                      //   JSON.stringify(thisstructure)
-                      // );
-                    }
-                    let thisposition = JSON.parse(formitem.position);
-                    // console.log("thisposition", JSON.stringify(thisposition));
+                  <tbody>
+                    {thisformdata.map((formitem: any, formindex: any) => {
+                      let thisstructure = JSON.parse(formitem.structure);
+                      if (formindex === 0) {
+                        // console.log(
+                        //   "thisstructure",
+                        //   JSON.stringify(thisstructure)
+                        // );
+                      }
+                      let thisposition = JSON.parse(formitem.position);
+                      // console.log("thisposition", JSON.stringify(thisposition));
 
-                    let material = thisstructure.component.material;
+                      let material = thisstructure.component.material;
 
-                    let first = 0;
-                    first++;
-                    let theserow = 0;
+                      let first = 0;
+                      first++;
+                      let theserow = 0;
 
-                    material.map((mtelement: any) => {
-                      mtelement.type_of_damages &&
-                        mtelement.type_of_damages.map((mdelement: any) => {
-                          theserow = theserow + 1;
-                        });
-                    });
-                    return (
-                      <>
-                        {material &&
-                          material.map((mtitem: any, mtindex: any) => {
-                            let material_details = mtitem.material_details;
-                            let type_of_damages = mtitem.type_of_damages;
-                            return (
-                              <>
-                                {type_of_damages &&
-                                  type_of_damages.map(
-                                    (toditem: any, todindex: any) => {
-                                      return (
-                                        <tr className="border-4 border-neutral-200">
-                                          {mtindex === 0 && todindex === 0 ? (
-                                            <td
-                                              rowSpan={theserow}
-                                              className="border border-neutral-200"
-                                            >
-                                              <p>
-                                                {
-                                                  thisstructure.component
-                                                    .component_details.name
-                                                }
-                                              </p>
-                                            </td>
-                                          ) : null}
-                                          {todindex === 0 ? (
-                                            <td
-                                              rowSpan={type_of_damages.length}
-                                              className="border border-neutral-200"
-                                            >
-                                              {material[mtindex]
-                                                .material_details &&
-                                                material[
-                                                  mtindex
-                                                ].material_details.map(
-                                                  (
-                                                    mditem: any,
-                                                    mdindex: any
-                                                  ) => {
-                                                    return (
-                                                      <>
-                                                        <p>{mditem.name}</p>
-                                                      </>
-                                                    );
+                      material.map((mtelement: any) => {
+                        mtelement.type_of_damages &&
+                          mtelement.type_of_damages.map((mdelement: any) => {
+                            theserow = theserow + 1;
+                          });
+                      });
+                      return (
+                        <>
+                          {material &&
+                            material.map((mtitem: any, mtindex: any) => {
+                              let material_details = mtitem.material_details;
+                              let type_of_damages = mtitem.type_of_damages;
+                              return (
+                                <>
+                                  {type_of_damages &&
+                                    type_of_damages.map(
+                                      (toditem: any, todindex: any) => {
+                                        return (
+                                          <tr className="border-[0.1px] border-green-200">
+                                            {mtindex === 0 && todindex === 0 ? (
+                                              <td
+                                                rowSpan={theserow}
+                                                className="border-[0.1px] border-neutral-200 print:text-[5px]"
+                                              >
+                                                <p>
+                                                  {
+                                                    thisstructure.component
+                                                      .component_details.name
                                                   }
-                                                )}
-                                            </td>
-                                          ) : null}
-                                          <td className="border border-neutral-200">
-                                            {toditem?.name}
-                                          </td>
-                                          <td className="border border-neutral-200">
-                                            {toditem?.code}
-                                          </td>
-                                          <td className="border border-neutral-200">
-                                            {toditem?.tick == 1 ? (
-                                              <Image
-                                                src="/check.png"
-                                                alt=""
-                                                width={20}
-                                                height={20}
-                                                style={{ alignSelf: "center" }}
-                                                className="mx-auto"
-                                              />
+                                                </p>
+                                              </td>
                                             ) : null}
-                                          </td>
-                                          <td className="border border-neutral-200">
-                                            {toditem?.tick == 0 ? (
-                                              <Image
-                                                src="/check.png"
-                                                alt=""
-                                                width={20}
-                                                height={20}
-                                                style={{ alignSelf: "center" }}
-                                                className="mx-auto"
-                                              />
-                                            ) : null}
-                                          </td>
-                                          <td
-                                            onClick={() => {
-                                              captureInput(
-                                                index,
-                                                toditem.code,
-                                                1,
-                                                formindex,
-                                                mtindex,
-                                                todindex,
-                                                0
-                                              );
-                                            }}
-                                            className="border border-neutral-200"
-                                          >
-                                            {toditem?.severity_of_damage ==
-                                            1 ? (
-                                              <Image
-                                                src="/check.png"
-                                                alt=""
-                                                width={20}
-                                                height={20}
-                                                style={{ alignSelf: "center" }}
-                                                className="mx-auto"
-                                              />
-                                            ) : null}
-                                          </td>
-                                          <td
-                                            onClick={() => {
-                                              captureInput(
-                                                index,
-                                                toditem.code,
-                                                1,
-                                                formindex,
-                                                mtindex,
-                                                todindex,
-                                                1
-                                              );
-                                            }}
-                                            className="border border-neutral-200"
-                                          >
-                                            {toditem?.severity_of_damage ==
-                                            2 ? (
-                                              <Image
-                                                src="/check.png"
-                                                alt=""
-                                                width={20}
-                                                height={20}
-                                                style={{ alignSelf: "center" }}
-                                                className="mx-auto"
-                                              />
-                                            ) : null}
-                                          </td>
-                                          <td
-                                            onClick={() => {
-                                              captureInput(
-                                                index,
-                                                toditem.code,
-                                                1,
-                                                formindex,
-                                                mtindex,
-                                                todindex,
-                                                2
-                                              );
-                                            }}
-                                            className="border border-neutral-200"
-                                          >
-                                            {toditem?.severity_of_damage ==
-                                            3 ? (
-                                              <Image
-                                                src="/check.png"
-                                                alt=""
-                                                width={20}
-                                                height={20}
-                                                style={{ alignSelf: "center" }}
-                                                className="mx-auto"
-                                              />
-                                            ) : null}
-                                          </td>
-                                          <td
-                                            onClick={() => {
-                                              captureInput(
-                                                index,
-                                                toditem.code,
-                                                1,
-                                                formindex,
-                                                mtindex,
-                                                todindex,
-                                                3
-                                              );
-                                            }}
-                                            className="border border-neutral-200"
-                                          >
-                                            {toditem?.severity_of_damage ==
-                                            4 ? (
-                                              <Image
-                                                src="/check.png"
-                                                alt=""
-                                                width={20}
-                                                height={20}
-                                                style={{ alignSelf: "center" }}
-                                                className="mx-auto"
-                                              />
-                                            ) : null}
-                                          </td>
-                                          <td className="border border-neutral-200"></td>
-                                          <td className="border border-neutral-200"></td>
-                                          <td className="border border-neutral-200">
-                                            {toditem?.remarks}
-                                          </td>
-                                          <td className="border border-neutral-200">
-                                            {toditem?.severity_of_damage}
-                                          </td>
-                                          {todindex === 0 ? (
-                                            <td
-                                              rowSpan={type_of_damages.length}
-                                              className="border border-neutral-200 cursor-pointer"
-                                              onClick={() => {
-                                                setEditForm(index);
-                                                setEditComponent(formindex);
-                                                setEditMaterial(mtindex);
-                                                setEditValue(
-                                                  material[mtindex]
-                                                    ?.rating_of_member
-                                                );
-                                                setEditModalVis(true);
-                                              }}
-                                            >
-                                              <p>
+                                            {todindex === 0 ? (
+                                              <td
+                                                rowSpan={type_of_damages.length}
+                                                className="border border-neutral-200 print:text-[5px]"
+                                              >
                                                 {material[mtindex]
-                                                  ?.rating_of_member == 0
-                                                  ? "-"
-                                                  : material[mtindex]
-                                                      ?.rating_of_member}
-                                              </p>
+                                                  .material_details &&
+                                                  material[
+                                                    mtindex
+                                                  ].material_details.map(
+                                                    (
+                                                      mditem: any,
+                                                      mdindex: any
+                                                    ) => {
+                                                      return (
+                                                        <>
+                                                          <p>{mditem.name}</p>
+                                                        </>
+                                                      );
+                                                    }
+                                                  )}
+                                              </td>
+                                            ) : null}
+                                            <td className="border border-neutral-200 print:text-[5px]">
+                                              {toditem?.name}
                                             </td>
-                                          ) : null}
-                                        </tr>
-                                      );
-                                    }
-                                  )}
-                              </>
-                            );
-                          })}
-                      </>
-                    );
-                  })}
-                </tbody>
-              </table>
+                                            <td className="border border-neutral-200 print:text-[5px]">
+                                              {toditem?.code}
+                                            </td>
+                                            <td className="border border-neutral-200 print:text-[5px]">
+                                              {toditem?.tick == 1 ? (
+                                                <Image
+                                                  src="/check.png"
+                                                  alt=""
+                                                  width={20}
+                                                  height={20}
+                                                  style={{ alignSelf: "center" }}
+                                                  className="mx-auto print:w-[5px] print:h-[5px]"
+                                                />
+                                              ) : null}
+                                            </td>
+                                            <td className="border border-neutral-200 print:text-[5px]">
+                                              {toditem?.tick == 0 ? (
+                                                <Image
+                                                  src="/check.png"
+                                                  alt=""
+                                                  width={20}
+                                                  height={20}
+                                                  style={{ alignSelf: "center" }}
+                                                  className="mx-auto print:w-[5px] print:h-[5px]"
+                                                />
+                                              ) : null}
+                                            </td>
+                                            <td
+                                              onClick={() => {
+                                                captureInput(
+                                                  index,
+                                                  toditem.code,
+                                                  1,
+                                                  formindex,
+                                                  mtindex,
+                                                  todindex,
+                                                  0
+                                                );
+                                              }}
+                                              className="border border-neutral-200 print:text-[5px]"
+                                            >
+                                              {toditem?.severity_of_damage ==
+                                              1 ? (
+                                                <Image
+                                                  src="/check.png"
+                                                  alt=""
+                                                  width={20}
+                                                  height={20}
+                                                  style={{ alignSelf: "center" }}
+                                                  className="mx-auto print:w-[5px] print:h-[5px]"
+                                                />
+                                              ) : null}
+                                            </td>
+                                            <td
+                                              onClick={() => {
+                                                captureInput(
+                                                  index,
+                                                  toditem.code,
+                                                  1,
+                                                  formindex,
+                                                  mtindex,
+                                                  todindex,
+                                                  1
+                                                );
+                                              }}
+                                              className="border border-neutral-200 print:text-[5px]"
+                                            >
+                                              {toditem?.severity_of_damage ==
+                                              2 ? (
+                                                <Image
+                                                  src="/check.png"
+                                                  alt=""
+                                                  width={20}
+                                                  height={20}
+                                                  style={{ alignSelf: "center" }}
+                                                  className="mx-auto print:w-[5px] print:h-[5px]"
+                                                />
+                                              ) : null}
+                                            </td>
+                                            <td
+                                              onClick={() => {
+                                                captureInput(
+                                                  index,
+                                                  toditem.code,
+                                                  1,
+                                                  formindex,
+                                                  mtindex,
+                                                  todindex,
+                                                  2
+                                                );
+                                              }}
+                                              className="border border-neutral-200 print:text-[5px]"
+                                            >
+                                              {toditem?.severity_of_damage ==
+                                              3 ? (
+                                                <Image
+                                                  src="/check.png"
+                                                  alt=""
+                                                  width={20}
+                                                  height={20}
+                                                  style={{ alignSelf: "center" }}
+                                                  className="mx-auto print:w-[5px] print:h-[5px]"
+                                                />
+                                              ) : null}
+                                            </td>
+                                            <td
+                                              onClick={() => {
+                                                captureInput(
+                                                  index,
+                                                  toditem.code,
+                                                  1,
+                                                  formindex,
+                                                  mtindex,
+                                                  todindex,
+                                                  3
+                                                );
+                                              }}
+                                              className="border border-neutral-200 print:text-[5px]"
+                                            >
+                                              {toditem?.severity_of_damage ==
+                                              4 ? (
+                                                <Image
+                                                  src="/check.png"
+                                                  alt=""
+                                                  width={20}
+                                                  height={20}
+                                                  style={{ alignSelf: "center" }}
+                                                  className="mx-auto print:w-[5px] print:h-[5px]"
+                                                />
+                                              ) : null}
+                                            </td>
+                                            <td className="border border-neutral-200 print:text-[5px]"></td>
+                                            <td className="border border-neutral-200 print:text-[5px]"></td>
+                                            <td className="border border-neutral-200 print:text-[5px]">
+                                              {toditem?.remarks}
+                                            </td>
+                                            <td className="border border-neutral-200 print:text-[5px]">
+                                              {toditem?.severity_of_damage}
+                                            </td>
+                                            {todindex === 0 ? (
+                                              <td
+                                                rowSpan={type_of_damages.length}
+                                                className="border border-neutral-200 print:text-[5px] cursor-pointer"
+                                                onClick={() => {
+                                                  setEditForm(index);
+                                                  setEditComponent(formindex);
+                                                  setEditMaterial(mtindex);
+                                                  setEditValue(
+                                                    material[mtindex]
+                                                      ?.rating_of_member
+                                                  );
+                                                  setEditModalVis(true);
+                                                }}
+                                              >
+                                                <p>
+                                                  {material[mtindex]
+                                                    ?.rating_of_member == 0
+                                                    ? "-"
+                                                    : material[mtindex]
+                                                        ?.rating_of_member}
+                                                </p>
+                                              </td>
+                                            ) : null}
+                                          </tr>
+                                        );
+                                      }
+                                    )}
+                                </>
+                              );
+                            })}
+                        </>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
               {images1.map((image1item: any, image1index: any) => {
                 return (
-                  <>
-                    <img
-                      src={`/uploads/${image1item}`}
-                      alt=""
-                      style={{
-                        width: "50%",
-                        height: "50%",
-                        marginBottom: 20,
-                      }}
-                      className="hover:scale-150"
-                    />
-                    <table style={{ width: "50%" }}>
+                  <div className="bg-green-200 ">
+                    <div className="p-2 bg-red-600">
+                      <img
+                        src={`/uploads/${image1item}`}
+                        alt=""
+                        style={{
+                          // width: "50%",
+                          // height: "50%",
+                          marginBottom: 20,
+                        }}
+                        className="print:w-[100vw] print:h-auto bg-red-100"
+                        />
+                    </div>
+                    <table style={{ width: "100vw"}}>
                       <tr
                         onClick={() => {
                           setEditForm2(index);
@@ -1564,7 +1568,7 @@ const page = ({ params }: any) => {
                         </td>
                       </tr>
                     </table>
-                  </>
+                  </div>
                   // <p>{image1item}</p>
                 );
               })}

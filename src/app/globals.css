@@ -76,3 +76,9 @@ body {
   scrollbar-width: none;
   /* Firefox */
 }
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}

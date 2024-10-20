@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en" className="">
       <body className="bg-white flex-1">
         <div className="" style={{ height: "100vh" }}>
-          <div className="h-[100px] flex flex-row justify-center items-center gap-x-7">
+          <div className="h-[100px] flex flex-row justify-center items-center gap-x-7 no-print">
             <h2 className="font-semibold text-[2vh]">Projects</h2>
             <h2 className="font-semibold text-[2vh]">Forms</h2>
             <h2 className="font-semibold text-[2vh]">Report</h2>
