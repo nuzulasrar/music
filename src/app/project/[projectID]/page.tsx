@@ -1165,7 +1165,7 @@ const page = ({ params }: any) => {
           let images_detail2 = JSON.parse(item.images_detail2);
           let images_detail3 = JSON.parse(item.images_detail3);
           return (
-            <div className="mb-10 screen:w-12/12 print:w-12/12 bg-yellow-200">
+            <div className="mb-10 screen:w-11/12 print:w-12/12">
               <h1 className="text-center font-bold mb-2 print:text-[8px]">
                 ROUTINE CONDITION INSPECTION - STRUCTURAL CONDITION CHECKLIST
                 (BRIDGE)
@@ -1500,20 +1500,19 @@ const page = ({ params }: any) => {
               </div>
               {images1.map((image1item: any, image1index: any) => {
                 return (
-                  <div className="bg-green-200 ">
-                    <div className="p-2 bg-red-600">
+                  <div className="print:h-[48vh] mb-1">
                       <img
                         src={`/uploads/${image1item}`}
                         alt=""
                         style={{
                           // width: "50%",
                           // height: "50%",
-                          marginBottom: 20,
+                          marginBottom: 2,
                         }}
-                        className="print:w-[100vw] print:h-auto bg-red-100"
+                        className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
                         />
-                    </div>
-                    <table style={{ width: "100vw"}}>
+                    <p className="text-black">{image1item}</p>
+                    <table style={{ }}>
                       <tr
                         onClick={() => {
                           setEditForm2(index);
@@ -1530,16 +1529,16 @@ const page = ({ params }: any) => {
                         }}
                         style={{ borderWidth: 1, borderColor: "black" }}
                       >
-                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
                           <p>Location:</p>
                         </td>
-                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
                           <p>{images_detail1[image1index]?.location}</p>
                         </td>
-                        <td>
+                        <td style={{width: "25%"}}>
                           <p>Mapping Tag No:</p>
                         </td>
-                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
                           <p>{images_detail1[image1index]?.mapping_no}</p>
                         </td>
                       </tr>
@@ -1574,28 +1573,29 @@ const page = ({ params }: any) => {
               })}
               {images2.map((image2item: any, image2index: any) => {
                 return (
-                  <>
+                  <div className="print:h-[48vh] mb-1">
                     <img
                       src={`/uploads/${image2item}`}
                       alt=""
                       style={{
-                        width: "50%",
-                        height: "50%",
+                        // width: "50%",
+                        // height: "50%",
                         marginBottom: 20,
                       }}
+                      className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
                     />
-                    <table style={{ width: "50%" }}>
+                    <table style={{ }}>
                       <tr style={{ borderWidth: 1, borderColor: "black" }}>
-                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
                           <p>Location:</p>
                         </td>
-                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
                           <p>{images_detail2[image2index]?.location}</p>
                         </td>
-                        <td>
+                        <td style={{width: "25%"}}>
                           <p>Mapping Tag No:</p>
                         </td>
-                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
                           <p>{images_detail2[image2index]?.mapping_no}</p>
                         </td>
                       </tr>
@@ -1624,28 +1624,64 @@ const page = ({ params }: any) => {
                         </td>
                       </tr>
                     </table>
-                  </>
+                  </div>
                   // <p>{image1item}</p>
                 );
               })}
               {images3.map((image3item: any, image3index: any) => {
                 return (
-                  <>
+                  <div className="print:h-[48vh] mb-1">
                     <img
                       src={`/uploads/${image3item}`}
                       alt=""
                       style={{
-                        width: "50%",
-                        height: "50%",
+                        // width: "50%",
+                        // height: "50%",
+                        marginBottom: 2,
                       }}
+                      className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
                     />
-                    <p>Location: {images_detail3[image3index]?.location}</p>
-                    <p>
-                      Description: {images_detail3[image3index]?.description}
-                    </p>
-                    <p>Mapping No: {images_detail3[image3index]?.mapping_no}</p>
-                    <p>Remarks: {images_detail3[image3index]?.remarks}</p>
-                  </>
+                    <table style={{ }}>
+                      <tr style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
+                          <p>Location:</p>
+                        </td>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
+                          <p>{images_detail3[image3index]?.location}</p>
+                        </td>
+                        <td style={{width: "25%"}}>
+                          <p>Mapping Tag No:</p>
+                        </td>
+                        <td style={{ borderWidth: 1, borderColor: "black", width: "25%" }}>
+                          <p>{images_detail3[image3index]?.mapping_no}</p>
+                        </td>
+                      </tr>
+
+                      <tr style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                          <p>Description:</p>
+                        </td>
+                        <td
+                          colSpan={3}
+                          style={{ borderWidth: 1, borderColor: "black" }}
+                        >
+                          <p>{images_detail3[image3index]?.description}</p>
+                        </td>
+                      </tr>
+
+                      <tr style={{ borderWidth: 1, borderColor: "black" }}>
+                        <td style={{ borderWidth: 1, borderColor: "black" }}>
+                          <p>Remarks: </p>
+                        </td>
+                        <td
+                          colSpan={3}
+                          style={{ borderWidth: 1, borderColor: "black" }}
+                        >
+                          <p>{images_detail3[image3index]?.remarks}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
                   // <p>{image1item}</p>
                 );
               })}
