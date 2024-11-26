@@ -75,7 +75,7 @@ export async function PUT(request: NextRequest) {
 
     // console.log(transformdeleteImages);
 
-    const soonToDelete = await prisma.submitted_form.findUnique({
+    const soonToDelete: any = await prisma.submitted_form.findUnique({
       where: { id: transformid },
       select: {
         images1: true,
