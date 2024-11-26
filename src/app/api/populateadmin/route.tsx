@@ -8,18 +8,18 @@ export const revalidate = 0;
 export async function GET(request: any) {
   try {
 
-    const createBrideList = await prisma.user.createMany({
-      data: {
+    // const createBrideList = await prisma.createMany({
+    //   data: {
 
-      }
-    });
+    //   }
+    // });
 
-    // if (create && create2 && create3) {
-    if (createBrideList) {
-      return new NextResponse("Successfully Populate bridge_list table.");
-    } else {
-      return new NextResponse("Fail");
-    }
+    // // if (create && create2 && create3) {
+    // if (createBrideList) {
+    //   return new NextResponse("Successfully Populate bridge_list table.");
+    // } else {
+    //   return new NextResponse("Fail");
+    // }
   } catch (error: any) {
     return new NextResponse(error.message);
   }
