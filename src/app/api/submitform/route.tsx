@@ -95,7 +95,7 @@ export async function PUT(request: NextRequest) {
     transformdeleteImages.forEach((item: any) => {
       // fs.unlinkSync(`public/uploads/${item}`);
       if (existingImages1.includes(item)) {
-        futureimages1 = existingImages1.filter((item2) => item2 !== item);
+        futureimages1 = existingImages1.filter((item2: any) => item2 !== item);
       }
     });
 
