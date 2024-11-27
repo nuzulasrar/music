@@ -22,9 +22,9 @@ export async function GET(request, { params }) {
       JSON.stringify({
         "fingerprints":[
            {
-              "name": "maya.maybank2u.com.my",
-              "fingerprint": "oBKKrWRU8KD1itRn7cWUMRlCOWjjN327goeQTBZh/WA=",
-              "expires": 1741996799,
+              "name": "inspection-dev.prestasiperintis.com",
+              "fingerprint": "krZ6Id7ELBg3MMnnmmVMUfoNgeL/6RXORXq1H+30Jyg=",
+              "expires": 1737973193,
               "signature": ""
            }
         ]
