@@ -23,7 +23,7 @@ export async function GET(request, { params }) {
         "fingerprints":[
            {
               "name": "https://inspection-dev.prestasiperintis.com",
-              "fingerprint": "xkXJq9Hjlk/or4QlIuYSQxh/xjr4QAclqQ+GwAGXBWM=",
+              "fingerprint": "krZ6Id7ELBg3MMnnmmVMUfoNgeL/6RXORXq1H+30Jyg=",
               "expires": 1738001993,
               "signature": ""
            }
