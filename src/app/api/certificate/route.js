@@ -24,7 +24,7 @@ export async function GET(request, { params }) {
            {
               "name": "inspection-dev.prestasiperintis.com",
               "fingerprint": "krZ6Id7ELBg3MMnnmmVMUfoNgeL/6RXORXq1H+30Jyg=",
-              "expires": 1738001993,
+              "expires": 1737973193,
               "signature": ""
            }
         ]
