@@ -19,7 +19,7 @@ const page = ({ params }: any) => {
 
   useEffect(() => {
     const handleMessage = (event: any) => {
-      alert('Message received from React Native: ' + event.data)
+      alert('Message received from React Native: ' + JSON.stringify(event.data))
     }
 
     window.addEventListener('message', handleMessage)
