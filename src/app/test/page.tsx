@@ -8,9 +8,13 @@ import EditRatingMemberModal from '@/components/EditRatingMemberModal'
 import EditPhotoDetailModal from '@/components/EditPhotoDetailModal'
 import { log } from 'console'
 
+import { useRouter } from 'next/navigation'
+
 declare const window: any
 
 const page = ({ params }: any) => {
+  const router = useRouter()
+
   function sendMessage() {
     const message = { message: 'Hello from WebViewssss!', newURL: '/profile' }
     // alert("sadasd");
@@ -20,6 +24,7 @@ const page = ({ params }: any) => {
   useEffect(() => {
     const handleMessage = (event: any) => {
       alert('Message received from React Native: ' + JSON.stringify(event.data))
+      router.push('/signup')
     }
 
     window.addEventListener('message', handleMessage)
