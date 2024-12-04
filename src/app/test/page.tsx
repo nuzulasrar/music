@@ -12,10 +12,22 @@ declare const window: any
 
 const page = ({ params }: any) => {
   function sendMessage() {
-    const message = { message: 'Hello from WebViewssss!' }
+    const message = { message: 'Hello from WebViewssss!', newURL: '/profile' }
     // alert("sadasd");
     window.ReactNativeWebView.postMessage(JSON.stringify(message))
   }
+
+  useEffect(() => {
+    const handleMessage = (event: any) => {
+      alert('Message received from React Native: ' + event.data)
+    }
+
+    window.addEventListener('message', handleMessage)
+
+    return () => {
+      window.removeEventListener('message', handleMessage)
+    }
+  }, [])
 
   return (
     <div
