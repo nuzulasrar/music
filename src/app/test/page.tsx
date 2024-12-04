@@ -32,7 +32,7 @@ const page = ({ params }: any) => {
       <button
         // style={{width="500px", font-size: "100"}}
         style={{ width: '500px', fontSize: '100px' }}
-        onclick={sendMessage()}
+        onClick={() => sendMessage()}
       >
         Send Message to React Native
       </button>
