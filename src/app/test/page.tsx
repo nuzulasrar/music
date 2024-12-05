@@ -24,7 +24,12 @@ const page = ({ params }: any) => {
   useEffect(() => {
     const handleMessage = (event: any) => {
       alert('Message received from React Native: ' + JSON.stringify(event.data))
-      router.push('/signup')
+      const message = {
+        message: 'Hello from WebViewssss!',
+        newURL: 'https://inspection-dev.prestasiperintis.com/home',
+      }
+      window.ReactNativeWebView.postMessage(JSON.stringify(message))
+      // router.push('/signup')
     }
 
     window.addEventListener('message', handleMessage)
