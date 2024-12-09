@@ -6,10 +6,14 @@ import Modal from '@/components/Modal'
 import EditRatingMemberModal from '@/components/EditRatingMemberModal'
 import EditPhotoDetailModal from '@/components/EditPhotoDetailModal'
 import { log } from 'console'
+import PdfToImage from './PdfToImage'
 
 import './styles.css'
 
 const page = ({ params }: any) => {
+  const pdfUrl = '/uploads/2024-12-09-13-35-10-0pdf.pdf'
+  // const pdfUrl =
+  //   'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
   const { projectID } = params
   const [data, setData] = useState<any>([])
 
@@ -615,7 +619,7 @@ const page = ({ params }: any) => {
                   className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
                   onClick={handleUpload}
                 >
-                  Upload Image
+                  Upload Image {JSON.stringify(selectedFiles)}
                 </button>
               </div>
 
@@ -633,9 +637,9 @@ const page = ({ params }: any) => {
                 />
                 <button
                   className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
-                  onClick={handleUpload}
+                  onClick={handleUploadPDF}
                 >
-                  Upload PDF
+                  Upload PDF {JSON.stringify(selectedFiles)}
                 </button>
               </div>
             </div>
@@ -1135,7 +1139,7 @@ const page = ({ params }: any) => {
           let images_detail2 = JSON.parse(item.images_detail2)
           let images_detail3 = JSON.parse(item.images_detail3)
           return (
-            <div className="mb-10 screen:w-11/12 print:w-12/12">
+            <div className="mb-10 screen:w-11/12 print:w-full print:bg-yellow-100">
               <h1 className="text-center font-bold mb-2 print:text-[8px]">
                 ROUTINE CONDITION INSPECTION - STRUCTURAL CONDITION CHECKLIST
                 (BRIDGE)
@@ -1522,6 +1526,49 @@ const page = ({ params }: any) => {
                   </tbody>
                 </table>
               </div>
+              <div className="justify-center items-center bg-red-100">
+                {data[0] &&
+                  JSON.parse(data[0]?.properimages).map(
+                    (item: any, index: any) => {
+                      if (item.slice(-3) === 'pdf') {
+                        return (
+                          <div className="justify-center items-center">
+                            <center>
+                              {/* <embed
+                                src={`/uploads/${item}`}
+                                width={'550px'}
+                                height="948.4px"
+                              /> */}
+                              <PdfToImage pdfUrl={pdfUrl} />
+                            </center>
+                            <div className="w-full border-b-2 border-b-gray-400">
+                              <a href={`/uploads/${item}`}>
+                                <p className="text-center mb-2">{item}</p>
+                              </a>
+                            </div>
+                          </div>
+                        )
+                      } else {
+                        return (
+                          <>
+                            <img
+                              src={`/uploads/${item}`}
+                              alt=""
+                              style={{
+                                width: '100%',
+                                height: '50%',
+                                objectFit: 'contain',
+                              }}
+                            />
+                            <div className="w-full border-b-2 border-b-gray-400">
+                              <p className="text-center mb-2">{item}</p>
+                            </div>
+                          </>
+                        )
+                      }
+                    }
+                  )}
+              </div>
               {images1.map((image1item: any, image1index: any) => {
                 return (
                   <div className="print:h-[48vh] mb-1">
@@ -1781,40 +1828,6 @@ const page = ({ params }: any) => {
           </>
         );
       })} */}
-
-      <object
-        data="https://pdfobject.com/pdf/sample.pdf"
-        type="application/pdf"
-        width="100%"
-        height="500"
-      >
-        <p>
-          Alternative text - include a link{' '}
-          <a href="https://pdfobject.com/pdf/sample.pdf">to the PDF!</a>
-        </p>
-      </object>
-
-      <p className="mt-3">2024-05-20-06-54-41-0template.jpg</p>
-
-      {data[0] &&
-        JSON.parse(data[0]?.properimages).map((item: any, index: any) => {
-          return (
-            <>
-              <img
-                src={`/uploads/${item}`}
-                alt=""
-                style={{
-                  width: '50%',
-                  height: '50%',
-                  objectFit: 'contain',
-                }}
-              />
-              <div className="w-full border-b-2 border-b-gray-400">
-                <p className="text-center mb-2">{item}</p>
-              </div>
-            </>
-          )
-        })}
 
       {editModalVis && (
         <EditRatingMemberModal

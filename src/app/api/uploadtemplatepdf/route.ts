@@ -52,7 +52,7 @@ export async function POST(req: NextRequest, res: Response) {
 
         const formattedDateTime = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
 
-        const lastname = `${formattedDateTime}-${count}template.jpg`;
+        const lastname = `${formattedDateTime}-${count}pdf.pdf`;
 
         if (allfilename) allfilename = allfilename + ", " + lastname;
         else allfilename = allfilename + lastname;
@@ -80,19 +80,6 @@ export async function POST(req: NextRequest, res: Response) {
     } else {
       return NextResponse.json({ success: false });
     }
-
-    // if (thisfilename) {
-    //   return NextResponse.json({
-    //     success: true,
-    //     message: "File uploaded successfully",
-    //     allfilename: allfilename,
-    //   });
-    // } else {
-    //   return NextResponse.json({
-    //     success: false,
-    //     message: "No file uploaded",
-    //   });
-    // }
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message });
   }
