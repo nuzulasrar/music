@@ -12,26 +12,6 @@ import 'pdfjs-dist/build/pdf.worker.mjs'
 const PdfToImage = ({ pdfUrl }) => {
   const [thisImage, setThisImage] = useState('')
   const pdfinit = async () => {
-    // pdfjsLib.getDocument(pdfUrl).promise.then((pdf) => {
-    //   pdf.getPage(1).then((page) => {
-    //     const scale = 1
-    //     const canvas = document.createElement('canvas')
-    //     const context = canvas.getContext('2d')
-    //     const viewport = page.getViewport({ scale })
-    //     canvas.width = viewport.width
-    //     canvas.height = viewport.height
-
-    //     const renderContext = {
-    //       canvasContext: context,
-    //       viewport: viewport,
-    //     }
-    //     page.render(renderContext)
-
-    //     const jpgImage = canvas.toDataURL('image/jpeg')
-    //     setThisImage(jpgImage)
-    //     console.log('thejpgimage', jpgImage)
-    //   })
-    // })
     const loadingTask = pdfjsLib.getDocument(pdfUrl)
     const pdfDocument = await loadingTask.promise
     // Request a first page
@@ -52,9 +32,7 @@ const PdfToImage = ({ pdfUrl }) => {
     pdfinit()
   }, [])
 
-  //   return <h1>{thisImage}</h1>
   return <canvas id="theCanvas"></canvas>
-  //   return <Image src={thisImage} width={100} height={100} />
 }
 
 export default PdfToImage

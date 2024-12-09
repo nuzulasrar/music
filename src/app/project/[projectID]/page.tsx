@@ -1539,7 +1539,7 @@ const page = ({ params }: any) => {
                                 width={'550px'}
                                 height="948.4px"
                               /> */}
-                              <PdfToImage pdfUrl={pdfUrl} />
+                              <PdfToImage pdfUrl={`/uploads/${item}`} />
                             </center>
                             <div className="w-full border-b-2 border-b-gray-400">
                               <a href={`/uploads/${item}`}>
