@@ -1526,7 +1526,7 @@ const page = ({ params }: any) => {
                   </tbody>
                 </table>
               </div>
-              <div className="justify-center items-center bg-red-100">
+              <div className="justify-center items-center">
                 {data[0] &&
                   JSON.parse(data[0]?.properimages).map(
                     (item: any, index: any) => {
@@ -1541,16 +1541,16 @@ const page = ({ params }: any) => {
                               /> */}
                               <PdfToImage pdfUrl={`/uploads/${item}`} />
                             </center>
-                            <div className="w-full border-b-2 border-b-gray-400">
+                            {/* <div className="w-full border-b-2 border-b-gray-400">
                               <a href={`/uploads/${item}`}>
                                 <p className="text-center mb-2">{item}</p>
                               </a>
-                            </div>
+                            </div> */}
                           </div>
                         )
                       } else {
                         return (
-                          <>
+                          <div className="justify-center items-center">
                             <img
                               src={`/uploads/${item}`}
                               alt=""
@@ -1560,256 +1560,259 @@ const page = ({ params }: any) => {
                                 objectFit: 'contain',
                               }}
                             />
-                            <div className="w-full border-b-2 border-b-gray-400">
+                            {/* <div className="w-full border-b-2 border-b-gray-400">
                               <p className="text-center mb-2">{item}</p>
-                            </div>
-                          </>
+                            </div> */}
+                          </div>
                         )
                       }
                     }
                   )}
               </div>
-              {images1.map((image1item: any, image1index: any) => {
-                return (
-                  <div className="print:h-[48vh] mb-1">
-                    <img
-                      src={`/uploads/${image1item}`}
-                      alt=""
-                      style={{
-                        // width: "50%",
-                        // height: "50%",
-                        marginBottom: 2,
-                      }}
-                      className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
-                    />
-                    <p className="text-black">{image1item}</p>
-                    <table style={{}}>
-                      <tr
-                        onClick={() => {
-                          setEditForm2(index)
-                          setEditImageArrayIndex(1)
-                          setEditImageIndex(image1index)
-                          setEditValue2({
-                            location: images_detail1[image1index]?.location,
-                            mapping_no: images_detail1[image1index]?.mapping_no,
-                            description:
-                              images_detail1[image1index]?.description,
-                            remarks: images_detail1[image1index]?.remarks,
-                          })
-                          setEditModalVis2(true)
+              <center className="bg-red-100">
+                {images1.map((image1item: any, image1index: any) => {
+                  return (
+                    <div className="print:h-[48vh] mb-1">
+                      <img
+                        src={`/uploads/${image1item}`}
+                        alt=""
+                        style={{
+                          // width: "50%",
+                          // height: "50%",
+                          marginBottom: 2,
                         }}
-                        style={{ borderWidth: 1, borderColor: 'black' }}
-                      >
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
+                        className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
+                      />
+                      <p className="text-black">{image1item}</p>
+                      <table style={{}}>
+                        <tr
+                          onClick={() => {
+                            setEditForm2(index)
+                            setEditImageArrayIndex(1)
+                            setEditImageIndex(image1index)
+                            setEditValue2({
+                              location: images_detail1[image1index]?.location,
+                              mapping_no:
+                                images_detail1[image1index]?.mapping_no,
+                              description:
+                                images_detail1[image1index]?.description,
+                              remarks: images_detail1[image1index]?.remarks,
+                            })
+                            setEditModalVis2(true)
                           }}
-                        >
-                          <p>Location:</p>
-                        </td>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>{images_detail1[image1index]?.location}</p>
-                        </td>
-                        <td style={{ width: '25%' }}>
-                          <p>Mapping Tag No:</p>
-                        </td>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>{images_detail1[image1index]?.mapping_no}</p>
-                        </td>
-                      </tr>
-
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td style={{ borderWidth: 1, borderColor: 'black' }}>
-                          <p>Description:</p>
-                        </td>
-                        <td
-                          colSpan={3}
                           style={{ borderWidth: 1, borderColor: 'black' }}
                         >
-                          <p>{images_detail1[image1index]?.description}</p>
-                        </td>
-                      </tr>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>Location:</p>
+                          </td>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>{images_detail1[image1index]?.location}</p>
+                          </td>
+                          <td style={{ width: '25%' }}>
+                            <p>Mapping Tag No:</p>
+                          </td>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>{images_detail1[image1index]?.mapping_no}</p>
+                          </td>
+                        </tr>
 
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td style={{ borderWidth: 1, borderColor: 'black' }}>
-                          <p>Remarks: </p>
-                        </td>
-                        <td
-                          colSpan={3}
-                          style={{ borderWidth: 1, borderColor: 'black' }}
-                        >
-                          <p>{images_detail1[image1index]?.remarks}</p>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  // <p>{image1item}</p>
-                )
-              })}
-              {images2.map((image2item: any, image2index: any) => {
-                return (
-                  <div className="print:h-[48vh] mb-1">
-                    <img
-                      src={`/uploads/${image2item}`}
-                      alt=""
-                      style={{
-                        // width: "50%",
-                        // height: "50%",
-                        marginBottom: 20,
-                      }}
-                      className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
-                    />
-                    <table style={{}}>
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>Location:</p>
-                        </td>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>{images_detail2[image2index]?.location}</p>
-                        </td>
-                        <td style={{ width: '25%' }}>
-                          <p>Mapping Tag No:</p>
-                        </td>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>{images_detail2[image2index]?.mapping_no}</p>
-                        </td>
-                      </tr>
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td style={{ borderWidth: 1, borderColor: 'black' }}>
+                            <p>Description:</p>
+                          </td>
+                          <td
+                            colSpan={3}
+                            style={{ borderWidth: 1, borderColor: 'black' }}
+                          >
+                            <p>{images_detail1[image1index]?.description}</p>
+                          </td>
+                        </tr>
 
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td style={{ borderWidth: 1, borderColor: 'black' }}>
-                          <p>Description:</p>
-                        </td>
-                        <td
-                          colSpan={3}
-                          style={{ borderWidth: 1, borderColor: 'black' }}
-                        >
-                          <p>{images_detail2[image2index]?.description}</p>
-                        </td>
-                      </tr>
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td style={{ borderWidth: 1, borderColor: 'black' }}>
+                            <p>Remarks: </p>
+                          </td>
+                          <td
+                            colSpan={3}
+                            style={{ borderWidth: 1, borderColor: 'black' }}
+                          >
+                            <p>{images_detail1[image1index]?.remarks}</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    // <p>{image1item}</p>
+                  )
+                })}
+                {images2.map((image2item: any, image2index: any) => {
+                  return (
+                    <div className="print:h-[48vh] mb-1">
+                      <img
+                        src={`/uploads/${image2item}`}
+                        alt=""
+                        style={{
+                          // width: "50%",
+                          // height: "50%",
+                          marginBottom: 20,
+                        }}
+                        className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
+                      />
+                      <table style={{}}>
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>Location:</p>
+                          </td>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>{images_detail2[image2index]?.location}</p>
+                          </td>
+                          <td style={{ width: '25%' }}>
+                            <p>Mapping Tag No:</p>
+                          </td>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>{images_detail2[image2index]?.mapping_no}</p>
+                          </td>
+                        </tr>
 
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td style={{ borderWidth: 1, borderColor: 'black' }}>
-                          <p>Remarks: </p>
-                        </td>
-                        <td
-                          colSpan={3}
-                          style={{ borderWidth: 1, borderColor: 'black' }}
-                        >
-                          <p>{images_detail2[image2index]?.remarks}</p>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  // <p>{image1item}</p>
-                )
-              })}
-              {images3.map((image3item: any, image3index: any) => {
-                return (
-                  <div className="print:h-[48vh] mb-1">
-                    <img
-                      src={`/uploads/${image3item}`}
-                      alt=""
-                      style={{
-                        // width: "50%",
-                        // height: "50%",
-                        marginBottom: 2,
-                      }}
-                      className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
-                    />
-                    <table style={{}}>
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>Location:</p>
-                        </td>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>{images_detail3[image3index]?.location}</p>
-                        </td>
-                        <td style={{ width: '25%' }}>
-                          <p>Mapping Tag No:</p>
-                        </td>
-                        <td
-                          style={{
-                            borderWidth: 1,
-                            borderColor: 'black',
-                            width: '25%',
-                          }}
-                        >
-                          <p>{images_detail3[image3index]?.mapping_no}</p>
-                        </td>
-                      </tr>
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td style={{ borderWidth: 1, borderColor: 'black' }}>
+                            <p>Description:</p>
+                          </td>
+                          <td
+                            colSpan={3}
+                            style={{ borderWidth: 1, borderColor: 'black' }}
+                          >
+                            <p>{images_detail2[image2index]?.description}</p>
+                          </td>
+                        </tr>
 
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td style={{ borderWidth: 1, borderColor: 'black' }}>
-                          <p>Description:</p>
-                        </td>
-                        <td
-                          colSpan={3}
-                          style={{ borderWidth: 1, borderColor: 'black' }}
-                        >
-                          <p>{images_detail3[image3index]?.description}</p>
-                        </td>
-                      </tr>
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td style={{ borderWidth: 1, borderColor: 'black' }}>
+                            <p>Remarks: </p>
+                          </td>
+                          <td
+                            colSpan={3}
+                            style={{ borderWidth: 1, borderColor: 'black' }}
+                          >
+                            <p>{images_detail2[image2index]?.remarks}</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    // <p>{image1item}</p>
+                  )
+                })}
+                {images3.map((image3item: any, image3index: any) => {
+                  return (
+                    <div className="print:h-[48vh] mb-1">
+                      <img
+                        src={`/uploads/${image3item}`}
+                        alt=""
+                        style={{
+                          // width: "50%",
+                          // height: "50%",
+                          marginBottom: 2,
+                        }}
+                        className="screen:w-[100%] screen:h-auto print:w-auto print:h-[40vh]"
+                      />
+                      <table style={{}}>
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>Location:</p>
+                          </td>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>{images_detail3[image3index]?.location}</p>
+                          </td>
+                          <td style={{ width: '25%' }}>
+                            <p>Mapping Tag No:</p>
+                          </td>
+                          <td
+                            style={{
+                              borderWidth: 1,
+                              borderColor: 'black',
+                              width: '25%',
+                            }}
+                          >
+                            <p>{images_detail3[image3index]?.mapping_no}</p>
+                          </td>
+                        </tr>
 
-                      <tr style={{ borderWidth: 1, borderColor: 'black' }}>
-                        <td style={{ borderWidth: 1, borderColor: 'black' }}>
-                          <p>Remarks: </p>
-                        </td>
-                        <td
-                          colSpan={3}
-                          style={{ borderWidth: 1, borderColor: 'black' }}
-                        >
-                          <p>{images_detail3[image3index]?.remarks}</p>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                  // <p>{image1item}</p>
-                )
-              })}
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td style={{ borderWidth: 1, borderColor: 'black' }}>
+                            <p>Description:</p>
+                          </td>
+                          <td
+                            colSpan={3}
+                            style={{ borderWidth: 1, borderColor: 'black' }}
+                          >
+                            <p>{images_detail3[image3index]?.description}</p>
+                          </td>
+                        </tr>
+
+                        <tr style={{ borderWidth: 1, borderColor: 'black' }}>
+                          <td style={{ borderWidth: 1, borderColor: 'black' }}>
+                            <p>Remarks: </p>
+                          </td>
+                          <td
+                            colSpan={3}
+                            style={{ borderWidth: 1, borderColor: 'black' }}
+                          >
+                            <p>{images_detail3[image3index]?.remarks}</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    // <p>{image1item}</p>
+                  )
+                })}
+              </center>
             </div>
           )
         })}
