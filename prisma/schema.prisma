@@ -7,103 +7,16 @@ generator client {
 } 
 
 datasource db {
-  provider = "mongodb"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 } 
 
 model user {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  id            Int      @id @default(autoincrement())
   email         String    @unique
+  name          String    
   password      String    
   sessionToken  String?
   createdAt     DateTime  @default(now())
   updatedAt    DateTime @updatedAt
 }
-
-model project {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
-  project_name String   @db.String
-  project_type String   @db.String
-  location_data     String   @db.String
-  bridge_type     String   @db.String
-  structured_data     String   @db.String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  submitted_form submitted_form[]
-}
-
-model toll_form {
-  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
-  project_id           String
-  plaza_toll_name      String   @db.String
-  no_of_toll_lanes     String   @db.String
-  report_for_year      String   @db.String
-  highway_code         String   @db.String
-  highway_name         String   @db.String
-  section              String   @db.String
-  gps_latitude         String   @db.String
-  gps_longitude        String   @db.String
-  prepared_by_name     String   @db.String
-  prepared_by_position String   @db.String
-  prepared_by_office   String   @db.String
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
-}
-
-model span_bridge {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  project_id String
-  span_id    String
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-}
-
-model bridge_form {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  span_id   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model type_of_damage {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  code      Int
-  name      String   @default("")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model bridge_list {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  structure String?  @default("")
-  position  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model toll_list {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  structure String?  @default("")
-  position  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-} 
-  
-model submitted_form {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  project_id String @db.ObjectId
-  project project @relation(fields: [project_id], references: [id])
-  project_type   String   @default("")
-  details   String   @default("")
-  formdata  String   @default("")
-  properimages  String   @default("[]")
-  images1  String   @default("")
-  images2  String   @default("")
-  images3  String   @default("")
-  images_detail1  String   @default("")
-  images_detail2  String   @default("")
-  images_detail3  String   @default("")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-} 
-  
