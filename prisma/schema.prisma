@@ -206,10 +206,182 @@ model bridgeform {
   beamGirder_steel_abnormalNoise_remarks      String    @db.Text
   beamGirder_steel_abnormalNoise_ratingOfDamage      String    @db.Text
   
+  // C - Beam/Girder | M - P. Concrete
+  beamGirder_pConcrete_tick      String    @db.Text
+  // C - Beam/Girder | M - R. Concrete
+  beamGirder_rConcrete_tick      String    @db.Text
+  
+  // C - Beam/Girder | M - P. Concrete and R. Concrete (Rating of Member)
+  beamGirder_pConcreteAndRConcrete_ratingOfMember      String    @db.Text
 
+  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Surface Defect
+  beamGirder_pConcreteAndRConcrete_surfaceDefect_tick      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_surfaceDefect_severity      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_surfaceDefect_percentageAffected1   String    @db.Text
+  beamGirder_pConcreteAndRConcrete_surfaceDefect_percentageAffected2   String    @db.Text
+  beamGirder_pConcreteAndRConcrete_surfaceDefect_remarks      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_surfaceDefect_ratingOfDamage      String    @db.Text
+
+  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Cracks at Concrete
+  beamGirder_pConcreteAndRConcrete_cracksAtConcrete_tick      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_cracksAtConcrete_severity      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_cracksAtConcrete_percentageAffected1  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_cracksAtConcrete_remarks      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_cracksAtConcrete_ratingOfDamage      String    @db.Text
+
+  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Delamination
+  beamGirder_pConcreteAndRConcrete_delamination_tick      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_delamination_severity      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_delamination_percentageAffected1  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_delamination_percentageAffected2  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_delamination_remarks      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_delamination_ratingOfDamage      String    @db.Text
+
+  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Spalling
+  beamGirder_pConcreteAndRConcrete_spalling_tick      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_spalling_severity      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_spalling_percentageAffected1  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_spalling_percentageAffected2  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_spalling_remarks      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_spalling_ratingOfDamage      String    @db.Text
+
+  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Corrosion of Reinforcement
+  beamGirder_pConcreteAndRConcrete_corrossionOfReinforcement_tick      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_corrossionOfReinforcement_severity      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_corrossionOfReinforcement_percentageAffected1  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_corrossionOfReinforcement_percentageAffected2  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_corrossionOfReinforcement_remarks      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_corrossionOfReinforcement_ratingOfDamage      String    @db.Text
+
+  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Abnormal Vibration/Deflection
+  beamGirder_pConcreteAndRConcrete_abnormalVibrationOrDeflection_tick      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalVibrationOrDeflection_severity      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalVibrationOrDeflection_percentageAffected1  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalVibrationOrDeflection_remarks      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalVibrationOrDeflection_ratingOfDamage      String    @db.Text
+
+  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Abnormal Movement
+  beamGirder_pConcreteAndRConcrete_abnormalMovement_tick      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalMovement_severity      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalMovement_percentageAffected1  String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalMovement_remarks      String    @db.Text
+  beamGirder_pConcreteAndRConcrete_abnormalMovement_ratingOfDamage      String    @db.Text
+
+// C - Deck Slab
+  deckSlab_tick      String    @db.Text
+
+  // C - Deck Slab | M - Steel
+  deckSlab_steel_tick      String    @db.Text
+  
+  // C - Deck Slab | M - Steel (Rating of Member)
+  deckSlab_steel_ratingOfMember      String    @db.Text
+
+   // C - Deck Slab | M - Steel | T - Corrosion of Steel
+  deckSlab_steel_corrosionOfSteel_tick      String    @db.Text
+  deckSlab_steel_corrosionOfSteel_severity      String    @db.Text
+  deckSlab_steel_corrosionOfSteel_percentageAffected1      String    @db.Text
+  deckSlab_steel_corrosionOfSteel_percentageAffected2      String    @db.Text
+  deckSlab_steel_corrosionOfSteel_remarks      String    @db.Text
+  deckSlab_steel_corrosionOfSteel_ratingOfDamage      String    @db.Text
+
+   // C - Deck Slab | M - Steel | T - Fracture of Steel
+  deckSlab_steel_fractureAtSteel_tick      String    @db.Text
+  deckSlab_steel_fractureAtSteel_severity      String    @db.Text
+  deckSlab_steel_fractureAtSteel_percentageAffected1     String    @db.Text
+  deckSlab_steel_fractureAtSteel_remarks      String    @db.Text
+  deckSlab_steel_fractureAtSteel_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Steel | T - Loose Connections
+  deckSlab_steel_looseConnections_tick      String    @db.Text
+  deckSlab_steel_looseConnections_severity      String    @db.Text
+  deckSlab_steel_looseConnections_percentageAffected1     String    @db.Text
+  deckSlab_steel_looseConnections_percentageAffected2     String    @db.Text
+  deckSlab_steel_looseConnections_remarks      String    @db.Text
+  deckSlab_steel_looseConnections_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Steel | T - Permanent Deformations
+  deckSlab_steel_perManentDeformations_tick      String    @db.Text
+  deckSlab_steel_perManentDeformations_severity      String    @db.Text
+  deckSlab_steel_perManentDeformations_percentageAffected1    String    @db.Text
+  deckSlab_steel_perManentDeformations_remarks      String    @db.Text
+  deckSlab_steel_perManentDeformations_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Steel | T - Water Leark
+  deckSlab_steel_waterLeak_tick      String    @db.Text
+  deckSlab_steel_waterLeak_severity      String    @db.Text
+  deckSlab_steel_waterLeak_percentageAffected1    String    @db.Text
+  deckSlab_steel_waterLeak_percentageAffected2    String    @db.Text
+  deckSlab_steel_waterLeak_remarks      String    @db.Text
+  deckSlab_steel_waterLeak_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Steel | T - Abnormal Movement
+  deckSlab_steel_abnormalMovement_tick      String    @db.Text
+  deckSlab_steel_abnormalMovement_severity      String    @db.Text
+  deckSlab_steel_abnormalMovement_percentageAffected1    String    @db.Text
+  deckSlab_steel_abnormalMovement_remarks      String    @db.Text
+  deckSlab_steel_abnormalMovement_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Steel | T - Abnormal Noise
+  deckSlab_steel_abnormalNoise_tick      String    @db.Text
+  deckSlab_steel_abnormalNoise_severity      String    @db.Text
+  deckSlab_steel_abnormalNoise_percentageAffected1    String    @db.Text
+  deckSlab_steel_abnormalNoise_remarks      String    @db.Text
+  deckSlab_steel_abnormalNoise_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Concrete
+  deckSlab_concrete_tick      String    @db.Text
+  
+  // C - Deck Slab | M - Concrete | T - Surface Defect
+  deckSlab_concrete_surfaceDefect_tick      String    @db.Text
+  deckSlab_concrete_surfaceDefect_severity      String    @db.Text
+  deckSlab_concrete_surfaceDefect_percentageAffected1    String    @db.Text
+  deckSlab_concrete_abnormalNoise_percentageAffected2    String    @db.Text
+  deckSlab_concrete_surfaceDefect_remarks      String    @db.Text
+  deckSlab_concrete_surfaceDefect_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Concrete | T - Cracks at Concrete
+  deckSlab_concrete_cracksAtConcrete_tick      String    @db.Text
+  deckSlab_concrete_cracksAtConcrete_severity      String    @db.Text
+  deckSlab_concrete_cracksAtConcrete_percentageAffected1    String    @db.Text
+  deckSlab_concrete_cracksAtConcrete_remarks      String    @db.Text
+  deckSlab_concrete_cracksAtConcrete_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Concrete | T - Delamination
+  deckSlab_concrete_delamination_tick      String    @db.Text
+  deckSlab_concrete_delamination_severity      String    @db.Text
+  deckSlab_concrete_delamination_percentageAffected1    String    @db.Text
+  deckSlab_concrete_delamination_percentageAffected2    String    @db.Text
+  deckSlab_concrete_delamination_remarks      String    @db.Text
+  deckSlab_concrete_delamination_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Concrete | T - Spalling
+  deckSlab_concrete_spalling_tick      String    @db.Text
+  deckSlab_concrete_spalling_severity      String    @db.Text
+  deckSlab_concrete_spalling_percentageAffected1    String    @db.Text
+  deckSlab_concrete_spalling_percentageAffected2    String    @db.Text
+  deckSlab_concrete_spalling_remarks      String    @db.Text
+  deckSlab_concrete_spalling_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Concrete | T - Corrosion of Reinforcement
+  deckSlab_concrete_corrosionOfReinforcement_tick      String    @db.Text
+  deckSlab_concrete_corrosionOfReinforcement_severity      String    @db.Text
+  deckSlab_concrete_corrosionOfReinforcement_percentageAffected1    String    @db.Text
+  deckSlab_concrete_corrosionOfReinforcement_percentageAffected2    String    @db.Text
+  deckSlab_concrete_corrosionOfReinforcement_remarks      String    @db.Text
+  deckSlab_concrete_corrosionOfReinforcement_ratingOfDamage      String    @db.Text
+  
+  // C - Deck Slab | M - Concrete | T - Water Leak/Free Lime
+  deckSlab_concrete_waterLeakOrFreeLime_tick      String    @db.Text
+  deckSlab_concrete_waterLeakOrFreeLime_severity      String    @db.Text
+  deckSlab_concrete_waterLeakOrFreeLime_percentageAffected1    String    @db.Text
+  deckSlab_concrete_waterLeakOrFreeLime_percentageAffected2    String    @db.Text
+  deckSlab_concrete_waterLeakOrFreeLime_remarks      String    @db.Text
+  deckSlab_concrete_waterLeakOrFreeLime_ratingOfDamage      String    @db.Text
+  
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
+
 model bridgeuploadedfiles {
   id            Int       @id @default(autoincrement())
   filename          String    @db.Text
