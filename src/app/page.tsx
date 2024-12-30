@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter()
 
   const [email, setEmail] = useState('nuzulasrar@gmail.com')
-  const [password, setPassword] = useState('abc1234')
+  const [password, setPassword] = useState('abc123')
 
   const login = async () => {
     try {

@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server'
 import prisma from '../../lib/prisma'
-import * as CryptoJS from 'crypto-js'
+import CryptoJS from 'crypto-js'
+var jwt = require('jsonwebtoken');
 
 export const revalidate = 0
 
-// export async function GET(request, { params }) {
-//     // const team = params.team // '1'
-//     return new NextResponse(JSON.stringify(params.industryID))
-// }
+const SECRET_KEY = process.env.JWT_SECRET
 
 export async function POST(request: any) {
   try {
@@ -18,22 +16,14 @@ export async function POST(request: any) {
       where: { email: email, password: hashedPassword },
     })
 
-    let newToken = ''
-
-    const characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    const charactersLength = characters.length
-
-    for (let i = 0; i < 64; i++) {
-      newToken += characters.charAt(
-        Math.floor(Math.random() * charactersLength)
-      )
-    }
+    
 
     if (createAccount) {
+      const newToken = jwt.sign({ email: email }, SECRET_KEY, { expiresIn: '1h' });
+      
       const createNewToken = await prisma.user.update({
         where: {
-          email: email,
+          id: createAccount.id,
         },
         data: {
           sessionToken: newToken,

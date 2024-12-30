@@ -12,11 +12,35 @@ datasource db {
 } 
 
 model user {
-  id            Int      @id @default(autoincrement())
-  email         String    @unique
-  name          String    
-  password      String    
-  sessionToken  String?
+  id            Int       @id @default(autoincrement())
+  email         String    @db.Text
+  name          String    @db.Text
+  password      String    @db.Text
+  sessionToken  String?   @db.Text
+  role          String    @db.Text
   createdAt     DateTime  @default(now())
-  updatedAt    DateTime @updatedAt
+  updatedAt     DateTime  @updatedAt
+}
+
+model project {
+  id              Int       @id @default(autoincrement())
+  type            String    @db.Text
+  l_routeNo         String    @db.Text
+  l_structureNo     String    @db.Text
+  l_riverOrBridgeNo  String?   @db.Text
+  l_district        String    @db.Text
+  l_state           String    @db.Text
+  b_systemType           String    @db.Text
+  b_deckType           String    @db.Text
+  b_abutmentType           String    @db.Text
+  b_pierType           String    @db.Text
+  s_roadWidth           String    @db.Text
+  s_bridgeWidth           String    @db.Text
+  s_skewAngle           String    @db.Text
+  s_noOfSpan           String    @db.Text
+  s_spans           String    @db.Text
+  s_yearBuilt           String    @db.Text
+  s_bridgeLength           String    @db.Text
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
 }
