@@ -22,7 +22,7 @@ model user {
   updatedAt     DateTime  @updatedAt
 }
 
-model project {
+model projectBridge {
   id              Int       @id @default(autoincrement())
   type            String    @db.Text
   l_routeNo         String    @db.Text
@@ -108,6 +108,118 @@ model project {
   expansionJoint_newRating           String    @db.Text
   expansionJoint_majorDamages           String    @db.Text
   expansionJoint_maintenanceWorkRequired           String    @db.Text
+  slopeProtection_tick           String    @db.Text
+  slopeProtection_rubblePitching_tick          String    @db.Text
+  slopeProtection_gabions_tick           String    @db.Text
+  slopeProtection_others_tick           String    @db.Text
+  slopeProtection_oldRating           String    @db.Text
+  slopeProtection_newRating           String    @db.Text
+  slopeProtection_majorDamages           String    @db.Text
+  slopeProtection_maintenanceWorkRequired           String    @db.Text
+  culvert_tick           String    @db.Text
+  culvert_steel_tick          String    @db.Text
+  culvert_concrete_tick           String    @db.Text
+  culvert_masonry_tick           String    @db.Text
+  culvert_oldRating           String    @db.Text
+  culvert_newRating           String    @db.Text
+  culvert_majorDamages           String    @db.Text
+  culvert_maintenanceWorkRequired           String    @db.Text
+  inspectorComment           String    @db.Text
+  detailedInspection           String    @db.Text
+  noOfPages           String    @db.Text
+  nameOfInspector           String    @db.Text
+  inspectionDate           String    @db.Text
+  previousInspectionDate           String    @db.Text
+  date           String    @db.Text
+  signature           String    @db.Text
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
+}
+
+model bridgeform {
+  id            Int       @id @default(autoincrement())
+  pageOfSpan          String    @db.Text
+  routeNo      String    @db.Text
+  structNo      String    @db.Text
+  bridgeName      String    @db.Text
+  nameOfInspector      String    @db.Text
+  date      String    @db.Text
+
+  // C - Beam/Girder 
+  beamGirder_tick      String    @db.Text
+
+  // C - Beam/Girder | M - Steel
+  beamGirder_steel_tick      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel (Rating of Member)
+  beamGirder_steel_ratingOfMember      String    @db.Text
+
+  // C - Beam/Girder | M - Steel | T - Corrosion of Steel
+  beamGirder_steel_corrosionOfSteel_tick      String    @db.Text
+  beamGirder_steel_corrosionOfSteel_severity      String    @db.Text
+  beamGirder_steel_corrosionOfSteel_percentageAffected1      String    @db.Text
+  beamGirder_steel_corrosionOfSteel_percentageAffected2      String    @db.Text
+  beamGirder_steel_corrosionOfSteel_remarks      String    @db.Text
+  beamGirder_steel_corrosionOfSteel_ratingOfDamage      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel | T - Fracture at Steel
+  beamGirder_steel_fractureAtSteel_tick      String    @db.Text
+  beamGirder_steel_fractureAtSteel_severity      String    @db.Text
+  beamGirder_steel_fractureAtSteel_percentageAffected1     String    @db.Text
+  beamGirder_steel_fractureAtSteel_remarks      String    @db.Text
+  beamGirder_steel_fractureAtSteel_ratingOfDamage      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel | T - Loose Connections
+  beamGirder_steel_looseConnections_tick      String    @db.Text
+  beamGirder_steel_looseConnections_severity      String    @db.Text
+  beamGirder_steel_looseConnections_percentageAffected1     String    @db.Text
+  beamGirder_steel_looseConnections_percentageAffected2     String    @db.Text
+  beamGirder_steel_looseConnections_remarks      String    @db.Text
+  beamGirder_steel_looseConnections_ratingOfDamage      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel | T - Permanent Deformations
+  beamGirder_steel_perManentDeformations_tick      String    @db.Text
+  beamGirder_steel_perManentDeformations_severity      String    @db.Text
+  beamGirder_steel_perManentDeformations_percentageAffected1    String    @db.Text
+  beamGirder_steel_perManentDeformations_remarks      String    @db.Text
+  beamGirder_steel_perManentDeformations_ratingOfDamage      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel | T - Paint Deterioration
+  beamGirder_steel_paintDeterioration_tick      String    @db.Text
+  beamGirder_steel_paintDeterioration_severity      String    @db.Text
+  beamGirder_steel_paintDeterioration_percentageAffected1    String    @db.Text
+  beamGirder_steel_paintDeterioration_percentageAffected2    String    @db.Text
+  beamGirder_steel_paintDeterioration_remarks      String    @db.Text
+  beamGirder_steel_paintDeterioration_ratingOfDamage      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel | T - Abnormal Vibration/Deflection
+  beamGirder_steel_abnormalVibrationOrDeflection_tick      String    @db.Text
+  beamGirder_steel_abnormalVibrationOrDeflection_severity      String    @db.Text
+  beamGirder_steel_abnormalVibrationOrDeflection_percentageAffected1   String    @db.Text
+  beamGirder_steel_abnormalVibrationOrDeflection_remarks      String    @db.Text
+  beamGirder_steel_abnormalVibrationOrDeflection_ratingOfDamage      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel | T - Abnormal Noise
+  beamGirder_steel_abnormalNoise_tick      String    @db.Text
+  beamGirder_steel_abnormalNoise_severity      String    @db.Text
+  beamGirder_steel_abnormalNoise_percentageAffected1   String    @db.Text
+  beamGirder_steel_abnormalNoise_remarks      String    @db.Text
+  beamGirder_steel_abnormalNoise_ratingOfDamage      String    @db.Text
+  
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+model bridgeuploadedfiles {
+  id            Int       @id @default(autoincrement())
+  filename          String    @db.Text
+  filetype      String    @db.Text
+  categorytype      String    @db.Text
+  customdatetime      String    @db.Text
+  location      String    @db.Text
+  mappingTagNo      String    @db.Text
+  description      String    @db.Text
+  remarks      String    @db.Text
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 }
