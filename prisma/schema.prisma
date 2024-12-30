@@ -378,6 +378,287 @@ model bridgeform {
   deckSlab_concrete_waterLeakOrFreeLime_remarks      String    @db.Text
   deckSlab_concrete_waterLeakOrFreeLime_ratingOfDamage      String    @db.Text
   
+  // C - Abutment
+  abutment_tick      String    @db.Text
+  
+  // C - Abutment | M - Concrete
+  abutment_concrete_tick      String    @db.Text
+
+  // C - Abutment | M - Masonry
+  abutment_masonry_tick      String    @db.Text
+  
+  // C - Beam/Girder | M - Steel (Rating of Member)
+  abutment_concreteAndMasonry_ratingOfMember      String    @db.Text
+
+  // C - Abutment | M - Concrete And Masonry | T - Surface Defect
+  abutment_concreteAndMasonry_surfaceDefect_tick      String    @db.Text
+  abutment_concreteAndMasonry_surfaceDefect_severity      String    @db.Text
+  abutment_concreteAndMasonry_surfaceDefect_percentageAffected1    String    @db.Text
+  abutment_concreteAndMasonry_surfaceDefect_percentageAffected2    String    @db.Text
+  abutment_concreteAndMasonry_surfaceDefect_remarks      String    @db.Text
+  abutment_concreteAndMasonry_surfaceDefect_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Cracks at Concrete
+  abutment_concreteAndMasonry_cracksAtConcrete_tick      String    @db.Text
+  abutment_concreteAndMasonry_cracksAtConcrete_severity      String    @db.Text
+  abutment_concreteAndMasonry_cracksAtConcrete_percentageAffected1    String    @db.Text
+  abutment_concreteAndMasonry_cracksAtConcrete_remarks      String    @db.Text
+  abutment_concreteAndMasonry_cracksAtConcrete_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Delamination
+  abutment_concreteAndMasonry_delamination_tick      String    @db.Text
+  abutment_concreteAndMasonry_delamination_severity      String    @db.Text
+  abutment_concreteAndMasonry_delamination_percentageAffected1    String    @db.Text
+  abutment_concreteAndMasonry_delamination_percentageAffected2    String    @db.Text
+  abutment_concreteAndMasonry_delamination_remarks      String    @db.Text
+  abutment_concreteAndMasonry_delamination_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Spalling
+  abutment_concreteAndMasonry_spalling_tick      String    @db.Text
+  abutment_concreteAndMasonry_spalling_severity      String    @db.Text
+  abutment_concreteAndMasonry_spalling_percentageAffected1    String    @db.Text
+  abutment_concreteAndMasonry_spalling_percentageAffected2    String    @db.Text
+  abutment_concreteAndMasonry_spalling_remarks      String    @db.Text
+  abutment_concreteAndMasonry_spalling_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Corrosion of Reinforcement
+  abutment_concreteAndMasonry_corrosionOfReinforcement_tick      String    @db.Text
+  abutment_concreteAndMasonry_corrosionOfReinforcement_severity      String    @db.Text
+  abutment_concreteAndMasonry_corrosionOfReinforcement_percentageAffected1    String    @db.Text
+  abutment_concreteAndMasonry_corrosionOfReinforcement_percentageAffected2    String    @db.Text
+  abutment_concreteAndMasonry_corrosionOfReinforcement_remarks      String    @db.Text
+  abutment_concreteAndMasonry_corrosionOfReinforcement_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Wear/Abrasion
+  abutment_concreteAndMasonry_wearOrAbrasion_tick      String    @db.Text
+  abutment_concreteAndMasonry_wearOrAbrasion_severity      String    @db.Text
+  abutment_concreteAndMasonry_wearOrAbrasion_percentageAffected1    String    @db.Text
+  abutment_concreteAndMasonry_wearOrAbrasion_percentageAffected2    String    @db.Text
+  abutment_concreteAndMasonry_wearOrAbrasion_remarks      String    @db.Text
+  abutment_concreteAndMasonry_wearOrAbrasion_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Material Deterioration
+  abutment_concreteAndMasonry_materialDeterioration_tick      String    @db.Text
+  abutment_concreteAndMasonry_materialDeterioration_severity      String    @db.Text
+  abutment_concreteAndMasonry_materialDeterioration_percentageAffected1    String    @db.Text
+  abutment_concreteAndMasonry_materialDeterioration_percentageAffected2    String    @db.Text
+  abutment_concreteAndMasonry_materialDeterioration_remarks      String    @db.Text
+  abutment_concreteAndMasonry_materialDeterioration_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Tilt/Settlement
+  abutment_concreteAndMasonry_tiltOrSettlement_tick      String    @db.Text
+  abutment_concreteAndMasonry_tiltOrSettlement_severity      String    @db.Text
+  abutment_concreteAndMasonry_tiltOrSettlement_percentageAffected1   String    @db.Text
+  abutment_concreteAndMasonry_tiltOrSettlement_remarks      String    @db.Text
+  abutment_concreteAndMasonry_tiltOrSettlement_ratingOfDamage      String    @db.Text
+  
+  // C - Abutment | M - Concrete And Masonry | T - Scouring
+  abutment_concreteAndMasonry_scouring_tick      String    @db.Text
+  abutment_concreteAndMasonry_scouring_severity      String    @db.Text
+  abutment_concreteAndMasonry_scouring_percentageAffected1   String    @db.Text
+  abutment_concreteAndMasonry_scouring_remarks      String    @db.Text
+  abutment_concreteAndMasonry_scouring_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No
+  pierNo__tick      String    @db.Text
+
+  // C - Pier No (Fill in Number of Pier)
+  pierNo_number     String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry
+  pierNo_concrete_tick      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry
+  pierNo_masonry_tick      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry (Rating of Member)
+  pierNo_concreteAndMasonry_ratingOfMember      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Surface Defect
+  pierNo_concreteAndMasonry_surfaceDefect_tick      String    @db.Text
+  pierNo_concreteAndMasonry_surfaceDefect_severity      String    @db.Text
+  pierNo_concreteAndMasonry_surfaceDefect_percentageAffected1   String    @db.Text
+  pierNo_concreteAndMasonry_surfaceDefect_percentageAffected2   String    @db.Text
+  pierNo_concreteAndMasonry_surfaceDefect_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_surfaceDefect_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Cracks at Concrete
+  pierNo_concreteAndMasonry_cracksAtConcrete_tick      String    @db.Text
+  pierNo_concreteAndMasonry_cracksAtConcrete_severity      String    @db.Text
+  pierNo_concreteAndMasonry_cracksAtConcrete_percentageAffected1   String    @db.Text
+  pierNo_concreteAndMasonry_cracksAtConcrete_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_cracksAtConcrete_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Delamination
+  pierNo_concreteAndMasonry_delamination_tick      String    @db.Text
+  pierNo_concreteAndMasonry_delamination_severity      String    @db.Text
+  pierNo_concreteAndMasonry_delamination_percentageAffected1   String    @db.Text
+  pierNo_concreteAndMasonry_delamination_percentageAffected2   String    @db.Text
+  pierNo_concreteAndMasonry_delamination_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_delamination_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Spalling
+  pierNo_concreteAndMasonry_spalling_tick      String    @db.Text
+  pierNo_concreteAndMasonry_spalling_severity      String    @db.Text
+  pierNo_concreteAndMasonry_spalling_percentageAffected1   String    @db.Text
+  pierNo_concreteAndMasonry_spalling_percentageAffected2   String    @db.Text
+  pierNo_concreteAndMasonry_spalling_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_spalling_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Corrosion of Reinforcement
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_tick      String    @db.Text
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_severity      String    @db.Text
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_percentageAffected1   String    @db.Text
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_percentageAffected2   String    @db.Text
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Wear/Abrasion
+  pierNo_concreteAndMasonry_wearOrAbrasion_tick      String    @db.Text
+  pierNo_concreteAndMasonry_wearOrAbrasion_severity      String    @db.Text
+  pierNo_concreteAndMasonry_wearOrAbrasion_percentageAffected1    String    @db.Text
+  pierNo_concreteAndMasonry_wearOrAbrasion_percentageAffected2    String    @db.Text
+  pierNo_concreteAndMasonry_wearOrAbrasion_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_wearOrAbrasion_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Material Deterioration
+  pierNo_concreteAndMasonry_materialDeterioration_tick      String    @db.Text
+  pierNo_concreteAndMasonry_materialDeterioration_severity      String    @db.Text
+  pierNo_concreteAndMasonry_materialDeterioration_percentageAffected1    String    @db.Text
+  pierNo_concreteAndMasonry_materialDeterioration_percentageAffected2    String    @db.Text
+  pierNo_concreteAndMasonry_materialDeterioration_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_materialDeterioration_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Tilt/Settlement
+  pierNo_concreteAndMasonry_tiltOrSettlement_tick      String    @db.Text
+  pierNo_concreteAndMasonry_tiltOrSettlement_severity      String    @db.Text
+  pierNo_concreteAndMasonry_tiltOrSettlement_percentageAffected1   String    @db.Text
+  pierNo_concreteAndMasonry_tiltOrSettlement_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_tiltOrSettlement_ratingOfDamage      String    @db.Text
+  
+  // C - Pier No | M - Concrete And Masonry | T - Scouring
+  pierNo_concreteAndMasonry_scouring_tick      String    @db.Text
+  pierNo_concreteAndMasonry_scouring_severity      String    @db.Text
+  pierNo_concreteAndMasonry_scouring_percentageAffected1   String    @db.Text
+  pierNo_concreteAndMasonry_scouring_remarks      String    @db.Text
+  pierNo_concreteAndMasonry_scouring_ratingOfDamage      String    @db.Text
+  
+  // C - Bearing
+  bearing__tick      String    @db.Text
+  
+  // C - Bearing | M - Steel
+  bearing_steel_tick      String    @db.Text
+  
+  // C - Bearing | M - Rubber
+  bearing_rubber_tick      String    @db.Text
+  
+  // C - Bearing | M - Others
+  bearing_others_tick      String    @db.Text
+  
+  // C - Bearing | M - Concrete And Masonry (Rating of Member)
+  bearing_steelAndRubberAndOthers_ratingOfMember      String    @db.Text
+
+  // C - Bearing | M - Steel, Rubber, and Others | T - Corrosion of Steel
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_tick      String    @db.Text
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_severity      String    @db.Text
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_percentageAffected1      String    @db.Text
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_percentageAffected2      String    @db.Text
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_remarks      String    @db.Text
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_ratingOfDamage      String    @db.Text
+  
+  // C - Bearing | M - Steel, Rubber, and Others | T - Loose Connections
+  bearing_steelAndRubberAndOthers_looseConnections_tick      String    @db.Text
+  bearing_steelAndRubberAndOthers_looseConnections_severity      String    @db.Text
+  bearing_steelAndRubberAndOthers_looseConnections_percentageAffected1      String    @db.Text
+  bearing_steelAndRubberAndOthers_looseConnections_percentageAffected2      String    @db.Text
+  bearing_steelAndRubberAndOthers_looseConnections_remarks      String    @db.Text
+  bearing_steelAndRubberAndOthers_looseConnections_ratingOfDamage      String    @db.Text
+  
+  // C - Bearing | M - Steel, Rubber, and Others | T - Pending Water
+  bearing_steelAndRubberAndOthers_pendingWater_tick      String    @db.Text
+  bearing_steelAndRubberAndOthers_pendingWater_severity      String    @db.Text
+  bearing_steelAndRubberAndOthers_pendingWater_percentageAffected1      String    @db.Text
+  bearing_steelAndRubberAndOthers_pendingWater_remarks      String    @db.Text
+  bearing_steelAndRubberAndOthers_pendingWater_ratingOfDamage      String    @db.Text
+  
+  // C - Bearing | M - Steel, Rubber, and Others | T - Debris/Vegetation
+  bearing_steelAndRubberAndOthers_debrisOrVegetation_tick      String    @db.Text
+  bearing_steelAndRubberAndOthers_debrisOrVegetation_severity      String    @db.Text
+  bearing_steelAndRubberAndOthers_debrisOrVegetation_percentageAffected1      String    @db.Text
+  bearing_steelAndRubberAndOthers_debrisOrVegetation_remarks      String    @db.Text
+  bearing_steelAndRubberAndOthers_debrisOrVegetation_ratingOfDamage      String    @db.Text
+  
+  // C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Bulging
+  bearing_steelAndRubberAndOthers_abnormalBulging_tick      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalBulging_severity      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalBulging_percentageAffected1      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalBulging_remarks      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalBulging_ratingOfDamage      String    @db.Text
+  
+  // C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Displacement
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_tick      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_severity      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_percentageAffected1      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_percentageAffected2      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_remarks      String    @db.Text
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_ratingOfDamage      String    @db.Text
+  
+  // C - Parapet
+  parapet__tick      String    @db.Text
+  
+  // C - Parapet | M - Steel
+  parapet_steel_tick      String    @db.Text
+  
+  // C - Parapet | M - Rubber
+  parapet_concrete_tick      String    @db.Text
+  
+  // C - Parapet | M - Others
+  parapet_others_tick      String    @db.Text
+  
+  // C - Parapet | M - Concrete And Masonry (Rating of Member)
+  parapet_steelAndConcreteAndOthers_ratingOfMember      String    @db.Text
+
+  // C - Parapet | M - Steel, Concrete, and Others | T - Corrosion of Steel
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick      String    @db.Text
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity      String    @db.Text
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_percentageAffected1      String    @db.Text
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_percentageAffected2      String    @db.Text
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_remarks      String    @db.Text
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_ratingOfDamage      String    @db.Text
+  
+  // C - Parapet | M - Steel, Concrete, and Others | T - Cracks at Concrete
+  parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick      String    @db.Text
+  parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity      String    @db.Text
+  parapet_steelAndConcreteAndOthers_cracksAtConcrete_percentageAffected1      String    @db.Text
+  parapet_steelAndConcreteAndOthers_cracksAtConcrete_remarks      String    @db.Text
+  parapet_steelAndConcreteAndOthers_cracksAtConcrete_ratingOfDamage      String    @db.Text
+  
+  // C - Parapet | M - Steel, Concrete, and Others | T - Spalling
+  parapet_steelAndConcreteAndOthers_spalling_tick      String    @db.Text
+  parapet_steelAndConcreteAndOthers_spalling_severity      String    @db.Text
+  parapet_steelAndConcreteAndOthers_spalling_percentageAffected1      String    @db.Text
+  parapet_steelAndConcreteAndOthers_spalling_percentageAffected2      String    @db.Text
+  parapet_steelAndConcreteAndOthers_spalling_remarks      String    @db.Text
+  parapet_steelAndConcreteAndOthers_spalling_ratingOfDamage      String    @db.Text
+  
+  // C - Parapet | M - Steel, Concrete, and Others | T - Impact Damage
+  parapet_steelAndConcreteAndOthers_impactDamage_tick      String    @db.Text
+  parapet_steelAndConcreteAndOthers_impactDamage_severity      String    @db.Text
+  parapet_steelAndConcreteAndOthers_impactDamage_percentageAffected1      String    @db.Text
+  parapet_steelAndConcreteAndOthers_impactDamage_percentageAffected2      String    @db.Text
+  parapet_steelAndConcreteAndOthers_impactDamage_remarks      String    @db.Text
+  parapet_steelAndConcreteAndOthers_impactDamage_ratingOfDamage      String    @db.Text
+  
+  // C - Parapet | M - Steel, Concrete, and Others | T - Loose Connections
+  parapet_steelAndConcreteAndOthers_looseConnections_tick      String    @db.Text
+  parapet_steelAndConcreteAndOthers_looseConnections_severity      String    @db.Text
+  parapet_steelAndConcreteAndOthers_looseConnections_percentageAffected1      String    @db.Text
+  parapet_steelAndConcreteAndOthers_looseConnections_percentageAffected2      String    @db.Text
+  parapet_steelAndConcreteAndOthers_looseConnections_remarks      String    @db.Text
+  parapet_steelAndConcreteAndOthers_looseConnections_ratingOfDamage      String    @db.Text
+  
+
+
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
