@@ -41,6 +41,73 @@ model project {
   s_spans           String    @db.Text
   s_yearBuilt           String    @db.Text
   s_bridgeLength           String    @db.Text
+  s_yearRepaired           String    @db.Text
+  beamGirder_tick           String    @db.Text
+  beamGirder_steel_tick           String    @db.Text
+  beamGirder_pconcrete_tick           String    @db.Text
+  beamGirder_rconcrete_tick           String    @db.Text
+  beamGirder_oldRating           String    @db.Text
+  beamGirder_newRating           String    @db.Text
+  beamGirder_majorDamages           String    @db.Text
+  beamGirder_maintenanceWorkRequired           String    @db.Text
+  deckSlab_tick           String    @db.Text
+  deckSlab_steel_tick           String    @db.Text
+  deckSlab_concrete_tick          String    @db.Text
+  deckSlab_oldRating           String    @db.Text
+  deckSlab_newRating           String    @db.Text
+  deckSlab_majorDamages           String    @db.Text
+  deckSlab_maintenanceWorkRequired           String    @db.Text
+  pier_tick           String    @db.Text
+  pier_concrete_tick          String    @db.Text
+  pier_masonry_tick           String    @db.Text
+  pier_oldRating           String    @db.Text
+  pier_newRating           String    @db.Text
+  pier_majorDamages           String    @db.Text
+  pier_maintenanceWorkRequired           String    @db.Text
+  abutment_tick           String    @db.Text
+  abutment_concrete_tick          String    @db.Text
+  abutment_masonry_tick           String    @db.Text
+  abutment_oldRating           String    @db.Text
+  abutment_newRating           String    @db.Text
+  abutment_majorDamages           String    @db.Text
+  abutment_maintenanceWorkRequired           String    @db.Text
+  bearing_tick           String    @db.Text
+  bearing_steel_tick          String    @db.Text
+  bearing_rubber_tick           String    @db.Text
+  bearing_oldRating           String    @db.Text
+  bearing_newRating           String    @db.Text
+  bearing_majorDamages           String    @db.Text
+  bearing_maintenanceWorkRequired           String    @db.Text
+  drainpipe_tick           String    @db.Text
+  drainpipe_steel_tick          String    @db.Text
+  drainpipe_pvc_tick           String    @db.Text
+  drainpipe_oldRating           String    @db.Text
+  drainpipe_newRating           String    @db.Text
+  drainpipe_majorDamages           String    @db.Text
+  drainpipe_maintenanceWorkRequired           String    @db.Text
+  parapet_tick           String    @db.Text
+  parapet_steel_tick          String    @db.Text
+  parapet_concrete_tick           String    @db.Text
+  parapet_others_tick           String    @db.Text
+  parapet_oldRating           String    @db.Text
+  parapet_newRating           String    @db.Text
+  parapet_majorDamages           String    @db.Text
+  parapet_maintenanceWorkRequired           String    @db.Text
+  surfacing_tick           String    @db.Text
+  surfacing_asphalt_tick          String    @db.Text
+  surfacing_concrete_tick           String    @db.Text
+  surfacing_oldRating           String    @db.Text
+  surfacing_newRating           String    @db.Text
+  surfacing_majorDamages           String    @db.Text
+  surfacing_maintenanceWorkRequired           String    @db.Text
+  expansionJoint_tick           String    @db.Text
+  expansionJoint_asphaltPlug_tick          String    @db.Text
+  expansionJoint_elastomeric_tick           String    @db.Text
+  expansionJoint_others_tick           String    @db.Text
+  expansionJoint_oldRating           String    @db.Text
+  expansionJoint_newRating           String    @db.Text
+  expansionJoint_majorDamages           String    @db.Text
+  expansionJoint_maintenanceWorkRequired           String    @db.Text
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
 }
