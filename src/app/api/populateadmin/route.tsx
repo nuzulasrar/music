@@ -1,26 +1,26 @@
-import { NextResponse } from "next/server";
-import prisma from "../../lib/prisma";
+// import { NextResponse } from "next/server";
+// import prisma from "../../lib/prisma";
 
-import { Prisma } from "@prisma/client";
+// import { Prisma } from "@prisma/client";
 
-export const revalidate = 0;
+// export const revalidate = 0;
 
-export async function GET(request: any) {
-  try {
+// export async function GET(request: any) {
+//   try {
 
-    // const createBrideList = await prisma.createMany({
-    //   data: {
+//     // const createBrideList = await prisma.createMany({
+//     //   data: {
 
-    //   }
-    // });
+//     //   }
+//     // });
 
-    // // if (create && create2 && create3) {
-    // if (createBrideList) {
-    //   return new NextResponse("Successfully Populate bridge_list table.");
-    // } else {
-    //   return new NextResponse("Fail");
-    // }
-  } catch (error: any) {
-    return new NextResponse(error.message);
-  }
-}
+//     // // if (create && create2 && create3) {
+//     // if (createBrideList) {
+//     //   return new NextResponse("Successfully Populate bridge_list table.");
+//     // } else {
+//     //   return new NextResponse("Fail");
+//     // }
+//   } catch (error: any) {
+//     return new NextResponse(error.message);
+//   }
+// }
