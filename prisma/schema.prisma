@@ -713,20 +713,43 @@ model bridgeform {
   // C - Expansion Joint | M - Asp. Plug
   expansionJoint_aspPlug_tick      String    @db.Text
   
-  // C - Surfacing | M - Elastomeric
+  // C - Expansion Joint | M - Elastomeric
   expansionJoint_elastomeric_tick      String    @db.Text
   
-  // C - Surfacing | M - Comp Seal
+  // C - Expansion Joint | M - Comp Seal
   expansionJoint_compSeal_tick      String    @db.Text
   
-  // C - Surfacing | M - Buried
+  // C - Expansion Joint | M - Buried
   expansionJoint_buried_tick      String    @db.Text
   
-  // C - Surfacing | M - Others
+  // C - Expansion Joint | M - Others
   expansionJoint_others_tick      String    @db.Text
   
-  // C - Surfacing | M - All (Rating of Member)
+  // C - Expansion Joint | M - All (Rating of Member)
   expansionJoint_all_ratingOfMember      String    @db.Text
+
+  // C - Expansion Joint | M - Alls | T - Abnormal Spacing
+  expansionJoint_all_abnormalSpacing_tick      String    @db.Text
+  expansionJoint_all_abnormalSpacing_severity      String    @db.Text
+  expansionJoint_all_abnormalSpacing_percentageAffected1     String    @db.Text
+  expansionJoint_all_abnormalSpacing_remarks      String    @db.Text
+  expansionJoint_all_abnormalSpacing_ratingOfDamage      String    @db.Text
+
+  // C - Expansion Joint | M - Alls | T - Difference in Level
+  expansionJoint_all_differenceInLevel_tick      String    @db.Text
+  expansionJoint_all_differenceInLevel_severity      String    @db.Text
+  expansionJoint_all_differenceInLevel_percentageAffected1     String    @db.Text
+  expansionJoint_all_differenceInLevel_percentageAffected2     String    @db.Text
+  expansionJoint_all_differenceInLevel_remarks      String    @db.Text
+  expansionJoint_all_differenceInLevel_ratingOfDamage      String    @db.Text
+
+  // C - Expansion Joint | M - Alls | T - Water Leak
+  expansionJoint_all_waterLeak_tick      String    @db.Text
+  expansionJoint_all_waterLeak_severity      String    @db.Text
+  expansionJoint_all_waterLeak_percentageAffected1     String    @db.Text
+  expansionJoint_all_waterLeak_percentageAffected2     String    @db.Text
+  expansionJoint_all_waterLeak_remarks      String    @db.Text
+  expansionJoint_all_waterLeak_ratingOfDamage      String    @db.Text
 
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
