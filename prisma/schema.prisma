@@ -707,6 +707,27 @@ model bridgeform {
   surfacing_asphaltAndConcrete_pavementCrack_remarks      String    @db.Text
   surfacing_asphaltAndConcrete_pavementCrack_ratingOfDamage      String    @db.Text
 
+  // C - Expansion Joint
+  expansionJoint__tick      String    @db.Text
+  
+  // C - Expansion Joint | M - Asp. Plug
+  expansionJoint_aspPlug_tick      String    @db.Text
+  
+  // C - Surfacing | M - Elastomeric
+  expansionJoint_elastomeric_tick      String    @db.Text
+  
+  // C - Surfacing | M - Comp Seal
+  expansionJoint_compSeal_tick      String    @db.Text
+  
+  // C - Surfacing | M - Buried
+  expansionJoint_buried_tick      String    @db.Text
+  
+  // C - Surfacing | M - Others
+  expansionJoint_others_tick      String    @db.Text
+  
+  // C - Surfacing | M - All (Rating of Member)
+  expansionJoint_all_ratingOfMember      String    @db.Text
+
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
