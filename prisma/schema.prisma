@@ -657,7 +657,33 @@ model bridgeform {
   parapet_steelAndConcreteAndOthers_looseConnections_remarks      String    @db.Text
   parapet_steelAndConcreteAndOthers_looseConnections_ratingOfDamage      String    @db.Text
   
+// C - Surfacing
+  surfacing__tick      String    @db.Text
+  
+  // C - Surfacing | M - Asphalt
+  surfacing_asphalt_tick      String    @db.Text
+  
+  // C - Surfacing | M - Concrete
+  surfacing_concrete_tick      String    @db.Text
+  
+  // C - Surfacing | M - Asphalt And Concrete (Rating of Member)
+  surfacing_asphaltAndConcrete_ratingOfMember      String    @db.Text
 
+  // C - Surfacing | M - Steel, Concrete, and Others | T - Pot-holes
+  surfacing_asphaltAndConcrete_potHoles_tick      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_severity      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_percentageAffected1      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_percentageAffected2      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_remarks      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_ratingOfDamage      String    @db.Text
+
+  // C - Surfacing | M - Steel, Concrete, and Others | T - Wheel Track Rutting
+  surfacing_asphaltAndConcrete_potHoles_tick      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_severity      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_percentageAffected1      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_percentageAffected2      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_remarks      String    @db.Text
+  surfacing_asphaltAndConcrete_potHoles_ratingOfDamage      String    @db.Text
 
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
