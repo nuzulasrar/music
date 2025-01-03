@@ -678,12 +678,34 @@ model bridgeform {
   surfacing_asphaltAndConcrete_potHoles_ratingOfDamage      String    @db.Text
 
   // C - Surfacing | M - Steel, Concrete, and Others | T - Wheel Track Rutting
-  surfacing_asphaltAndConcrete_potHoles_tick      String    @db.Text
-  surfacing_asphaltAndConcrete_potHoles_severity      String    @db.Text
-  surfacing_asphaltAndConcrete_potHoles_percentageAffected1      String    @db.Text
-  surfacing_asphaltAndConcrete_potHoles_percentageAffected2      String    @db.Text
-  surfacing_asphaltAndConcrete_potHoles_remarks      String    @db.Text
-  surfacing_asphaltAndConcrete_potHoles_ratingOfDamage      String    @db.Text
+  surfacing_asphaltAndConcrete_wheelTrackRutting_tick      String    @db.Text
+  surfacing_asphaltAndConcrete_wheelTrackRutting_severity      String    @db.Text
+  surfacing_asphaltAndConcrete_wheelTrackRutting_percentageAffected1      String    @db.Text
+  surfacing_asphaltAndConcrete_wheelTrackRutting_percentageAffected2      String    @db.Text
+  surfacing_asphaltAndConcrete_wheelTrackRutting_remarks      String    @db.Text
+  surfacing_asphaltAndConcrete_wheelTrackRutting_ratingOfDamage      String    @db.Text
+
+  // C - Surfacing | M - Steel, Concrete, and Others | T - Loss of Bond & Delamination
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick      String    @db.Text
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity      String    @db.Text
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_percentageAffected1      String    @db.Text
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_percentageAffected2      String    @db.Text
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_remarks      String    @db.Text
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_ratingOfDamage      String    @db.Text
+
+  // C - Surfacing | M - Steel, Concrete, and Others | T - Rippling
+  surfacing_asphaltAndConcrete_rippling_tick      String    @db.Text
+  surfacing_asphaltAndConcrete_rippling_severity      String    @db.Text
+  surfacing_asphaltAndConcrete_rippling_percentageAffected1     String    @db.Text
+  surfacing_asphaltAndConcrete_rippling_remarks      String    @db.Text
+  surfacing_asphaltAndConcrete_rippling_ratingOfDamage      String    @db.Text
+
+  // C - Surfacing | M - Steel, Concrete, and Others | T - Pavement Crack
+  surfacing_asphaltAndConcrete_pavementCrack_tick      String    @db.Text
+  surfacing_asphaltAndConcrete_pavementCrack_severity      String    @db.Text
+  surfacing_asphaltAndConcrete_pavementCrack_percentageAffected1     String    @db.Text
+  surfacing_asphaltAndConcrete_pavementCrack_remarks      String    @db.Text
+  surfacing_asphaltAndConcrete_pavementCrack_ratingOfDamage      String    @db.Text
 
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
