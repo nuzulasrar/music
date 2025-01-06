@@ -48,7 +48,7 @@ export default function Home() {
             <Image src="/logo.png" alt="" width={75} height={75} />
           </div>
           <h1 className="text-white font-semibold text-[25px]">
-            44- Prestasi Perintis Inspection System
+            45- Prestasi Perintis Inspection System
           </h1>
           <div className="">
             <Image
