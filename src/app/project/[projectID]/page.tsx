@@ -47,6 +47,7 @@ const page = ({ params }: any) => {
 
       if (result.data) {
         // alert("testt")
+        console.log('result.data', JSON.stringify(result.data))
 
         let maxComponent0 = 0
         let maxComponent1 = 0
@@ -246,10 +247,11 @@ const page = ({ params }: any) => {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log('json', json)
+        console.log('json', JSON.stringify(json.newdata))
 
         if (json?.success === 'success') {
-          window.location.reload()
+          // window.location.reload()
+          setData([json?.newdata])
         } else {
           alert('Fail to update. Please try again later.')
         }

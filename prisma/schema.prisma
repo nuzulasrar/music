@@ -751,6 +751,31 @@ model bridgeform {
   expansionJoint_all_waterLeak_remarks      String    @db.Text
   expansionJoint_all_waterLeak_ratingOfDamage      String    @db.Text
 
+  // C - Expansion Joint | M - Alls | T - Cracking at Exp. Joint
+  expansionJoint_all_crackingAtExpJoint_tick      String    @db.Text
+  expansionJoint_all_crackingAtExpJoint_severity      String    @db.Text
+  expansionJoint_all_crackingAtExpJoint_percentageAffected1     String    @db.Text
+  expansionJoint_all_crackingAtExpJoint_percentageAffected2     String    @db.Text
+  expansionJoint_all_crackingAtExpJoint_remarks      String    @db.Text
+  expansionJoint_all_crackingAtExpJoint_ratingOfDamage      String    @db.Text
+
+  // C - Expansion Joint | M - Alls | T - Rupture
+  expansionJoint_all_rupture_tick      String    @db.Text
+  expansionJoint_all_rupture_severity      String    @db.Text
+  expansionJoint_all_rupture_percentageAffected1     String    @db.Text
+  expansionJoint_all_rupture_percentageAffected2     String    @db.Text
+  expansionJoint_all_rupture_remarks      String    @db.Text
+  expansionJoint_all_rupture_ratingOfDamage      String    @db.Text
+
+  // C - Drain Pipe
+  drainPipe__tick      String    @db.Text
+  
+  // C - Drain Pipe | M - Steel
+  drainPipe_steel_tick      String    @db.Text
+  
+  // C - Drain Pipe | M - PVC
+  drainPipe_pvc_tick      String    @db.Text
+
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
