@@ -13,7 +13,7 @@ datasource db {
 
 model User {
   id            Int       @id @default(autoincrement())
-  email         String    @db.Text
+  email         String    @unique
   name          String    @db.Text
   password      String    @db.Text
   sessionToken  String?   @db.Text
@@ -24,6 +24,7 @@ model User {
 
 model ProjectBridge {
   id              Int       @id @default(autoincrement())
+  name            String    @db.Text
   type            String    @db.Text
   l_routeNo         String    @db.Text
   l_structureNo     String    @db.Text
@@ -134,10 +135,17 @@ model ProjectBridge {
   signature           String    @db.Text
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
+
+  Bridgeformone Bridgeformone[]
+  Bridgeuploadedfiles Bridgeuploadedfiles[]
 }
 
 model Bridgeformone {
   id            Int       @id @default(autoincrement())
+
+  projectBridgeId    Int
+  projectbridge      ProjectBridge    @relation(fields: [projectBridgeId], references: [id])
+
   pageOfSpan          String    @db.Text
   routeNo      String    @db.Text
   structNo      String    @db.Text
@@ -887,6 +895,10 @@ model Bridgeformtwo {
 
 model Bridgeuploadedfiles {
   id            Int       @id @default(autoincrement())
+
+  projectBridgeId    Int
+  projectbridge      ProjectBridge    @relation(fields: [projectBridgeId], references: [id])
+
   filename          String    @db.Text
   filetype      String    @db.Text
   categorytype      String    @db.Text

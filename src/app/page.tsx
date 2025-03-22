@@ -1,46 +1,46 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
 
-  const [email, setEmail] = useState('nuzulasrar@gmail.com')
-  const [password, setPassword] = useState('abc123')
+  const [email, setEmail] = useState("nuzulasrar@gmail.com");
+  const [password, setPassword] = useState("abc123");
 
   const login = async () => {
     try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: email,
           password: password,
         }),
-      })
+      });
 
-      const result = await response.json()
+      const result = await response.json();
 
       if (result) {
-        console.log(JSON.stringify(result, null, 2))
+        console.log(JSON.stringify(result, null, 2));
         if (result.success) {
-          localStorage.setItem('sessionToken', result.token)
-          router.push('/project')
+          localStorage.setItem("sessionToken", result.token);
+          router.push("/project");
         }
       } else {
-        alert('Error')
+        alert("Error");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <div
       className="flex-col flex-1 h-full overflow-hidden"
-      style={{ height: '100vh' }}
+      style={{ height: "100vh" }}
     >
       <div className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500">
         <div className="flex items-center justify-between">
@@ -85,7 +85,7 @@ export default function Home() {
           <div className="mt-2 float-right">
             <button
               onClick={() => {
-                router.push('/signup')
+                router.push("/signup");
               }}
               className="bg-blue-500 rounded-md px-5 py-2 text-white"
             >
@@ -94,7 +94,7 @@ export default function Home() {
             <button
               onClick={() => {
                 // router.push('/project')
-                login()
+                login();
               }}
               className="bg-green-600 rounded-md px-5 py-2 text-white ml-2"
             >
@@ -104,5 +104,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }

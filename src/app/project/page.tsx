@@ -9,14 +9,14 @@ const page = () => {
 
   const getProjects = async () => {
     try {
-      const response = await fetch("/api/project");
+      const response = await fetch("/api/projectlist");
 
       if (!response.ok) {
         alert("Failed to fetch data");
       }
 
       const result = await response.json();
-      setData(result);
+      setData(result.projectlist);
     } catch (error) {
       console.log(error);
       // throw new Error(error);
@@ -85,10 +85,10 @@ const page = () => {
                 <tr className="border border-neutral-200">
                   <td className="border border-neutral-200 p-2">{index + 1}</td>
                   <td className="border border-neutral-200 p-2">
-                    {item?.project_name}
+                    {item?.name}
                   </td>
                   <td className="border border-neutral-200 p-2">
-                    {item?.project_type}
+                    {item?.type}
                   </td>
                   <td className="border border-neutral-200 p-2">{k22}</td>
                   <td className="border border-neutral-200 p-2">{kl1}</td>
