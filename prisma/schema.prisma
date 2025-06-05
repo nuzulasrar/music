@@ -143,6 +143,8 @@ model ProjectBridge {
 model Bridgeformone {
   id            Int       @id @default(autoincrement())
 
+  page          Int       @db.Int
+
   projectBridgeId    Int
   projectbridge      ProjectBridge    @relation(fields: [projectBridgeId], references: [id])
 
@@ -558,6 +560,8 @@ model Bridgeformone {
 }
 model Bridgeformtwo {
   id            Int       @id @default(autoincrement())
+
+  page          Int       @db.Int
 
   bridgeFormOneId    Int
   bridgeformone      Bridgeformone    @relation(fields: [bridgeFormOneId], references: [id])
