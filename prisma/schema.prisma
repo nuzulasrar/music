@@ -28,7 +28,7 @@ model ProjectBridge {
   type            String    @db.Text
   l_routeNo         String    @db.Text
   l_structureNo     String    @db.Text
-  l_riverOrBridgeNo  String?   @db.Text
+  l_riverOrBridgeName  String?   @db.Text
   l_district        String    @db.Text
   l_state           String    @db.Text
   b_systemType           String    @db.Text

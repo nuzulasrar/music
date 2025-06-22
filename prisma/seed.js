@@ -33,7 +33,7 @@ async function main() {
       type: "Bridge",
       l_routeNo: "",
       l_structureNo: "",
-      l_riverOrBridgeNo: "",
+      l_riverOrBridgeName: "",
       l_district: "",
       l_state: "",
       b_systemType: "",
