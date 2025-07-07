@@ -43,99 +43,97 @@ model ProjectBridge {
   s_yearBuilt           String    @db.Text
   s_bridgeLength           String    @db.Text
   s_yearRepaired           String    @db.Text
-  beamGirder_tick           String    @db.Text
-  beamGirder_steel_tick           String    @db.Text
-  beamGirder_pconcrete_tick           String    @db.Text
-  beamGirder_rconcrete_tick           String    @db.Text
+  beamGirder_tick           Boolean   @default(false)
+  beamGirder_steel_tick            Boolean   @default(false)
+  beamGirder_pconcrete_tick            Boolean   @default(false)
+  beamGirder_rconcrete_tick            Boolean   @default(false)
   beamGirder_oldRating           String    @db.Text
   beamGirder_newRating           String    @db.Text
   beamGirder_majorDamages           String    @db.Text
   beamGirder_maintenanceWorkRequired           String    @db.Text
-  deckSlab_tick           String    @db.Text
-  deckSlab_steel_tick           String    @db.Text
-  deckSlab_concrete_tick          String    @db.Text
+  deckSlab_tick            Boolean   @default(false)
+  deckSlab_steel_tick            Boolean   @default(false)
+  deckSlab_concrete_tick           Boolean   @default(false)
   deckSlab_oldRating           String    @db.Text
   deckSlab_newRating           String    @db.Text
   deckSlab_majorDamages           String    @db.Text
   deckSlab_maintenanceWorkRequired           String    @db.Text
-  pier_tick           String    @db.Text
-  pier_concrete_tick          String    @db.Text
-  pier_masonry_tick           String    @db.Text
+  pier_tick            Boolean   @default(false)
+  pier_concrete_tick          Boolean   @default(false)
+  pier_masonry_tick           Boolean   @default(false)
   pier_oldRating           String    @db.Text
   pier_newRating           String    @db.Text
   pier_majorDamages           String    @db.Text
   pier_maintenanceWorkRequired           String    @db.Text
-  abutment_tick           String    @db.Text
-  abutment_concrete_tick          String    @db.Text
-  abutment_masonry_tick           String    @db.Text
+  abutment_tick            Boolean   @default(false)
+  abutment_concrete_tick           Boolean   @default(false)
+  abutment_masonry_tick            Boolean   @default(false)
   abutment_oldRating           String    @db.Text
   abutment_newRating           String    @db.Text
   abutment_majorDamages           String    @db.Text
   abutment_maintenanceWorkRequired           String    @db.Text
-  bearing_tick           String    @db.Text
-  bearing_steel_tick          String    @db.Text
-  bearing_rubber_tick           String    @db.Text
+  bearing_tick            Boolean   @default(false)
+  bearing_steel_tick           Boolean   @default(false)
+  bearing_rubber_tick            Boolean   @default(false)
   bearing_oldRating           String    @db.Text
   bearing_newRating           String    @db.Text
   bearing_majorDamages           String    @db.Text
   bearing_maintenanceWorkRequired           String    @db.Text
-  drainpipe_tick           String    @db.Text
-  drainpipe_steel_tick          String    @db.Text
-  drainpipe_pvc_tick           String    @db.Text
+  drainpipe_tick            Boolean   @default(false)
+  drainpipe_steel_tick           Boolean   @default(false)
+  drainpipe_pvc_tick            Boolean   @default(false)
   drainpipe_oldRating           String    @db.Text
   drainpipe_newRating           String    @db.Text
   drainpipe_majorDamages           String    @db.Text
   drainpipe_maintenanceWorkRequired           String    @db.Text
-  parapet_tick           String    @db.Text
-  parapet_steel_tick          String    @db.Text
-  parapet_concrete_tick           String    @db.Text
-  parapet_others_tick           String    @db.Text
+  parapet_tick            Boolean   @default(false)
+  parapet_steel_tick           Boolean   @default(false)
+  parapet_concrete_tick            Boolean   @default(false)
+  parapet_others_tick            Boolean   @default(false)
   parapet_oldRating           String    @db.Text
   parapet_newRating           String    @db.Text
   parapet_majorDamages           String    @db.Text
   parapet_maintenanceWorkRequired           String    @db.Text
-  surfacing_tick           String    @db.Text
-  surfacing_asphalt_tick          String    @db.Text
-  surfacing_concrete_tick           String    @db.Text
+  surfacing_tick            Boolean   @default(false)
+  surfacing_asphalt_tick           Boolean   @default(false)
+  surfacing_concrete_tick            Boolean   @default(false)
   surfacing_oldRating           String    @db.Text
   surfacing_newRating           String    @db.Text
   surfacing_majorDamages           String    @db.Text
   surfacing_maintenanceWorkRequired           String    @db.Text
-  expansionJoint_tick           String    @db.Text
-  expansionJoint_asphaltPlug_tick          String    @db.Text
-  expansionJoint_elastomeric_tick           String    @db.Text
-  expansionJoint_others_tick           String    @db.Text
+  expansionJoint_tick           Boolean   @default(false)
+  expansionJoint_asphaltPlug_tick          Boolean   @default(false)
+  expansionJoint_elastomeric_tick            Boolean   @default(false)
+  expansionJoint_others_tick           Boolean   @default(false)
   expansionJoint_oldRating           String    @db.Text
   expansionJoint_newRating           String    @db.Text
   expansionJoint_majorDamages           String    @db.Text
   expansionJoint_maintenanceWorkRequired           String    @db.Text
-  slopeProtection_tick           String    @db.Text
-  slopeProtection_rubblePitching_tick          String    @db.Text
-  slopeProtection_gabions_tick           String    @db.Text
-  slopeProtection_others_tick           String    @db.Text
+  slopeProtection_tick            Boolean   @default(false)
+  slopeProtection_rubblePitching_tick           Boolean   @default(false)
+  slopeProtection_gabions_tick           Boolean   @default(false)
+  slopeProtection_others_tick           Boolean   @default(false)
   slopeProtection_oldRating           String    @db.Text
   slopeProtection_newRating           String    @db.Text
   slopeProtection_majorDamages           String    @db.Text
   slopeProtection_maintenanceWorkRequired           String    @db.Text
-  culvert_tick           String    @db.Text
-  culvert_steel_tick          String    @db.Text
-  culvert_concrete_tick           String    @db.Text
-  culvert_masonry_tick           String    @db.Text
+  culvert_tick           Boolean   @default(false)
+  culvert_steel_tick           Boolean   @default(false)
+  culvert_concrete_tick           Boolean   @default(false)
+  culvert_masonry_tick            Boolean   @default(false)
   culvert_oldRating           String    @db.Text
   culvert_newRating           String    @db.Text
   culvert_majorDamages           String    @db.Text
   culvert_maintenanceWorkRequired           String    @db.Text
   inspectorComment           String    @db.Text
-  detailedInspection           String    @db.Text
+  detailedInspection           Boolean   @default(false)
   noOfPages           String    @db.Text
   nameOfInspector           String    @db.Text
   inspectionDate           String    @db.Text
   previousInspectionDate           String    @db.Text
-  date           String    @db.Text
   signature           String    @db.Text
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
-
   Bridgeformone Bridgeformone[]
   Bridgeuploadedfiles Bridgeuploadedfiles[]
 }
