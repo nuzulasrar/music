@@ -154,399 +154,399 @@ model Bridgeformone {
   date      String    @db.Text
 
   // C - Beam/Girder 
-  beamGirder_tick      String    @db.Text
+  beamGirder_tick      Boolean    @default(false)
 
   // C - Beam/Girder | M - Steel
-  beamGirder_steel_tick      String    @db.Text
+  beamGirder_steel_tick      Boolean    @default(false)
   
   // C - Beam/Girder | M - Steel (Rating of Member)
   beamGirder_steel_ratingOfMember      String    @db.Text
 
-  // C - Beam/Girder | M - Steel | T - Corrosion of Steel
-  beamGirder_steel_corrosionOfSteel_tick      String    @db.Text
-  beamGirder_steel_corrosionOfSteel_severity      String    @db.Text
+  // (1) C - Beam/Girder | M - Steel | T - Corrosion of Steel
+  beamGirder_steel_corrosionOfSteel_tick      Boolean    @default(false)
+  beamGirder_steel_corrosionOfSteel_severity      Int       @db.Int
   beamGirder_steel_corrosionOfSteel_pctgAff1      String    @db.Text
   beamGirder_steel_corrosionOfSteel_pctgAff2      String    @db.Text
   beamGirder_steel_corrosionOfSteel_remarks      String    @db.Text
   beamGirder_steel_corrosionOfSteel_rod      String    @db.Text
   
-  // C - Beam/Girder | M - Steel | T - Fracture at Steel
-  beamGirder_steel_fractureAtSteel_tick      String    @db.Text
-  beamGirder_steel_fractureAtSteel_severity      String    @db.Text
+  // (2) C - Beam/Girder | M - Steel | T - Fracture at Steel
+  beamGirder_steel_fractureAtSteel_tick      Boolean    @default(false)
+  beamGirder_steel_fractureAtSteel_severity      Int       @db.Int
   beamGirder_steel_fractureAtSteel_pctgAff1     String    @db.Text
   beamGirder_steel_fractureAtSteel_remarks      String    @db.Text
   beamGirder_steel_fractureAtSteel_rod      String    @db.Text
   
-  // C - Beam/Girder | M - Steel | T - Loose Connections
-  beamGirder_steel_looseConnections_tick      String    @db.Text
-  beamGirder_steel_looseConnections_severity      String    @db.Text
+  // (3) C - Beam/Girder | M - Steel | T - Loose Connections
+  beamGirder_steel_looseConnections_tick      Boolean    @default(false)
+  beamGirder_steel_looseConnections_severity      Int       @db.Int
   beamGirder_steel_looseConnections_pctgAff1     String    @db.Text
   beamGirder_steel_looseConnections_pctgAff2     String    @db.Text
   beamGirder_steel_looseConnections_remarks      String    @db.Text
   beamGirder_steel_looseConnections_rod      String    @db.Text
   
-  // C - Beam/Girder | M - Steel | T - Permanent Deformations
-  beamGirder_steel_perManentDeformations_tick      String    @db.Text
-  beamGirder_steel_perManentDeformations_severity      String    @db.Text
+  // (4) C - Beam/Girder | M - Steel | T - Permanent Deformations
+  beamGirder_steel_perManentDeformations_tick      Boolean    @default(false)
+  beamGirder_steel_perManentDeformations_severity      Int       @db.Int
   beamGirder_steel_perManentDeformations_pctgAff1    String    @db.Text
   beamGirder_steel_perManentDeformations_remarks      String    @db.Text
   beamGirder_steel_perManentDeformations_rod      String    @db.Text
   
-  // C - Beam/Girder | M - Steel | T - Paint Deterioration
-  beamGirder_steel_paintDeterioration_tick      String    @db.Text
-  beamGirder_steel_paintDeterioration_severity      String    @db.Text
+  // (5) C - Beam/Girder | M - Steel | T - Paint Deterioration
+  beamGirder_steel_paintDeterioration_tick      Boolean    @default(false)
+  beamGirder_steel_paintDeterioration_severity      Int       @db.Int
   beamGirder_steel_paintDeterioration_pctgAff1    String    @db.Text
   beamGirder_steel_paintDeterioration_pctgAff2    String    @db.Text
   beamGirder_steel_paintDeterioration_remarks      String    @db.Text
   beamGirder_steel_paintDeterioration_rod      String    @db.Text
   
-  // C - Beam/Girder | M - Steel | T - Abnormal Vibration/Deflection
-  beamGirder_steel_abnormalVibration_tick      String    @db.Text
-  beamGirder_steel_abnormalVibration_severity      String    @db.Text
+  // (6) C - Beam/Girder | M - Steel | T - Abnormal Vibration/Deflection
+  beamGirder_steel_abnormalVibration_tick      Boolean    @default(false)
+  beamGirder_steel_abnormalVibration_severity      Int       @db.Int
   beamGirder_steel_abnormalVibration_pctgAff1   String    @db.Text
   beamGirder_steel_abnormalVibration_remarks      String    @db.Text
   beamGirder_steel_abnormalVibration_rod      String    @db.Text
   
-  // C - Beam/Girder | M - Steel | T - Abnormal Noise
-  beamGirder_steel_abnormalNoise_tick      String    @db.Text
-  beamGirder_steel_abnormalNoise_severity      String    @db.Text
+  // (7) C - Beam/Girder | M - Steel | T - Abnormal Noise
+  beamGirder_steel_abnormalNoise_tick      Boolean    @default(false)
+  beamGirder_steel_abnormalNoise_severity      Int       @db.Int
   beamGirder_steel_abnormalNoise_pctgAff1   String    @db.Text
   beamGirder_steel_abnormalNoise_remarks      String    @db.Text
   beamGirder_steel_abnormalNoise_rod      String    @db.Text
   
   // C - Beam/Girder | M - P. Concrete
-  beamGirder_pConcrete_tick      String    @db.Text
+  beamGirder_pConcrete_tick      Boolean    @default(false)
   // C - Beam/Girder | M - R. Concrete
-  beamGirder_rConcrete_tick      String    @db.Text
+  beamGirder_rConcrete_tick      Boolean    @default(false)
   
   // C - Beam/Girder | M - P. Concrete and R. Concrete (Rating of Member)
   beamGirder_pAndRConcrete_ratingOfMember      String    @db.Text
 
-  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Surface Defect
-  beamGirder_pAndRConcrete_surfaceDefect_tick      String    @db.Text
-  beamGirder_pAndRConcrete_surfaceDefect_severity      String    @db.Text
+  // (8) C - Beam/Girder | M - P. Concrete and R. Concrete | T - Surface Defect
+  beamGirder_pAndRConcrete_surfaceDefect_tick      Boolean    @default(false)
+  beamGirder_pAndRConcrete_surfaceDefect_severity      Int       @db.Int
   beamGirder_pAndRConcrete_surfaceDefect_pctgAff1   String    @db.Text
   beamGirder_pAndRConcrete_surfaceDefect_pctgAff2   String    @db.Text
   beamGirder_pAndRConcrete_surfaceDefect_remarks      String    @db.Text
   beamGirder_pAndRConcrete_surfaceDefect_rod      String    @db.Text
 
-  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Cracks at Concrete
-  beamGirder_pAndRConcrete_cracksAtConcrete_tick      String    @db.Text
-  beamGirder_pAndRConcrete_cracksAtConcrete_severity      String    @db.Text
+  // (9) C - Beam/Girder | M - P. Concrete and R. Concrete | T - Cracks at Concrete
+  beamGirder_pAndRConcrete_cracksAtConcrete_tick      Boolean    @default(false)
+  beamGirder_pAndRConcrete_cracksAtConcrete_severity      Int       @db.Int
   beamGirder_pAndRConcrete_cracksAtConcrete_pctgAff1  String    @db.Text
   beamGirder_pAndRConcrete_cracksAtConcrete_remarks      String    @db.Text
   beamGirder_pAndRConcrete_cracksAtConcrete_rod      String    @db.Text
 
-  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Delamination
-  beamGirder_pAndRConcrete_delamination_tick      String    @db.Text
-  beamGirder_pAndRConcrete_delamination_severity      String    @db.Text
+  // (10) C - Beam/Girder | M - P. Concrete and R. Concrete | T - Delamination
+  beamGirder_pAndRConcrete_delamination_tick      Boolean    @default(false)
+  beamGirder_pAndRConcrete_delamination_severity      Int       @db.Int
   beamGirder_pAndRConcrete_delamination_pctgAff1  String    @db.Text
   beamGirder_pAndRConcrete_delamination_pctgAff2  String    @db.Text
   beamGirder_pAndRConcrete_delamination_remarks      String    @db.Text
   beamGirder_pAndRConcrete_delamination_rod      String    @db.Text
 
-  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Spalling
-  beamGirder_pAndRConcrete_spalling_tick      String    @db.Text
-  beamGirder_pAndRConcrete_spalling_severity      String    @db.Text
+  // (11) C - Beam/Girder | M - P. Concrete and R. Concrete | T - Spalling
+  beamGirder_pAndRConcrete_spalling_tick      Boolean    @default(false)
+  beamGirder_pAndRConcrete_spalling_severity      Int       @db.Int
   beamGirder_pAndRConcrete_spalling_pctgAff1  String    @db.Text
   beamGirder_pAndRConcrete_spalling_pctgAff2  String    @db.Text
   beamGirder_pAndRConcrete_spalling_remarks      String    @db.Text
   beamGirder_pAndRConcrete_spalling_rod      String    @db.Text
 
-  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Corrosion of Reinforcement
-  beamGirder_pAndRConcrete_corrossionOfReinforcement_tick      String    @db.Text
-  beamGirder_pAndRConcrete_corrossionOfReinforcement_severity      String    @db.Text
+  // (12) C - Beam/Girder | M - P. Concrete and R. Concrete | T - Corrosion of Reinforcement
+  beamGirder_pAndRConcrete_corrossionOfReinforcement_tick      Boolean    @default(false)
+  beamGirder_pAndRConcrete_corrossionOfReinforcement_severity      Int       @db.Int
   beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff1  String    @db.Text
   beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff2  String    @db.Text
   beamGirder_pAndRConcrete_corrossionOfReinforcement_remarks      String    @db.Text
   beamGirder_pAndRConcrete_corrossionOfReinforcement_rod      String    @db.Text
 
-  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Abnormal Vibration/Deflection
-  beamGirder_pAndRConcrete_abnormalVibration_tick      String    @db.Text
-  beamGirder_pAndRConcrete_abnormalVibration_severity      String    @db.Text
+  // (13) C - Beam/Girder | M - P. Concrete and R. Concrete | T - Abnormal Vibration/Deflection
+  beamGirder_pAndRConcrete_abnormalVibration_tick      Boolean    @default(false)
+  beamGirder_pAndRConcrete_abnormalVibration_severity      Int       @db.Int
   beamGirder_pAndRConcrete_abnormalVibration_pctgAff1  String    @db.Text
   beamGirder_pAndRConcrete_abnormalVibration_remarks      String    @db.Text
   beamGirder_pAndRConcrete_abnormalVibration_rod      String    @db.Text
 
-  // C - Beam/Girder | M - P. Concrete and R. Concrete | T - Abnormal Movement
-  beamGirder_pAndRConcrete_abnormalMovement_tick      String    @db.Text
-  beamGirder_pAndRConcrete_abnormalMovement_severity      String    @db.Text
+  // (14) C - Beam/Girder | M - P. Concrete and R. Concrete | T - Abnormal Movement
+  beamGirder_pAndRConcrete_abnormalMovement_tick      Boolean    @default(false)
+  beamGirder_pAndRConcrete_abnormalMovement_severity      Int       @db.Int
   beamGirder_pAndRConcrete_abnormalMovement_pctgAff1  String    @db.Text
   beamGirder_pAndRConcrete_abnormalMovement_remarks      String    @db.Text
   beamGirder_pAndRConcrete_abnormalMovement_rod      String    @db.Text
 
 // C - Deck Slab
-  deckSlab_tick      String    @db.Text
+  deckSlab_tick      Boolean    @default(false)
 
   // C - Deck Slab | M - Steel
-  deckSlab_steel_tick      String    @db.Text
+  deckSlab_steel_tick      Boolean    @default(false)
   
   // C - Deck Slab | M - Steel (Rating of Member)
   deckSlab_steel_ratingOfMember      String    @db.Text
 
-   // C - Deck Slab | M - Steel | T - Corrosion of Steel
-  deckSlab_steel_corrosionOfSteel_tick      String    @db.Text
-  deckSlab_steel_corrosionOfSteel_severity      String    @db.Text
+   // (15) C - Deck Slab | M - Steel | T - Corrosion of Steel
+  deckSlab_steel_corrosionOfSteel_tick      Boolean    @default(false)
+  deckSlab_steel_corrosionOfSteel_severity      Int       @db.Int
   deckSlab_steel_corrosionOfSteel_pctgAff1      String    @db.Text
   deckSlab_steel_corrosionOfSteel_pctgAff2      String    @db.Text
   deckSlab_steel_corrosionOfSteel_remarks      String    @db.Text
   deckSlab_steel_corrosionOfSteel_rod      String    @db.Text
 
-   // C - Deck Slab | M - Steel | T - Fracture of Steel
-  deckSlab_steel_fractureAtSteel_tick      String    @db.Text
-  deckSlab_steel_fractureAtSteel_severity      String    @db.Text
+   // (16) C - Deck Slab | M - Steel | T - Fracture of Steel
+  deckSlab_steel_fractureAtSteel_tick      Boolean    @default(false)
+  deckSlab_steel_fractureAtSteel_severity      Int       @db.Int
   deckSlab_steel_fractureAtSteel_pctgAff1     String    @db.Text
   deckSlab_steel_fractureAtSteel_remarks      String    @db.Text
   deckSlab_steel_fractureAtSteel_rod      String    @db.Text
   
-  // C - Deck Slab | M - Steel | T - Loose Connections
-  deckSlab_steel_looseConnections_tick      String    @db.Text
-  deckSlab_steel_looseConnections_severity      String    @db.Text
+  // (17) C - Deck Slab | M - Steel | T - Loose Connections
+  deckSlab_steel_looseConnections_tick      Boolean    @default(false)
+  deckSlab_steel_looseConnections_severity      Int       @db.Int
   deckSlab_steel_looseConnections_pctgAff1     String    @db.Text
   deckSlab_steel_looseConnections_pctgAff2     String    @db.Text
   deckSlab_steel_looseConnections_remarks      String    @db.Text
   deckSlab_steel_looseConnections_rod      String    @db.Text
   
-  // C - Deck Slab | M - Steel | T - Permanent Deformations
-  deckSlab_steel_perManentDeformations_tick      String    @db.Text
-  deckSlab_steel_perManentDeformations_severity      String    @db.Text
+  // (18) C - Deck Slab | M - Steel | T - Permanent Deformations
+  deckSlab_steel_perManentDeformations_tick      Boolean    @default(false)
+  deckSlab_steel_perManentDeformations_severity      Int       @db.Int
   deckSlab_steel_perManentDeformations_pctgAff1    String    @db.Text
   deckSlab_steel_perManentDeformations_remarks      String    @db.Text
   deckSlab_steel_perManentDeformations_rod      String    @db.Text
   
-  // C - Deck Slab | M - Steel | T - Water Leark
-  deckSlab_steel_waterLeak_tick      String    @db.Text
-  deckSlab_steel_waterLeak_severity      String    @db.Text
+  // (19) C - Deck Slab | M - Steel | T - Water Leark
+  deckSlab_steel_waterLeak_tick      Boolean    @default(false)
+  deckSlab_steel_waterLeak_severity      Int       @db.Int
   deckSlab_steel_waterLeak_pctgAff1    String    @db.Text
   deckSlab_steel_waterLeak_pctgAff2    String    @db.Text
   deckSlab_steel_waterLeak_remarks      String    @db.Text
   deckSlab_steel_waterLeak_rod      String    @db.Text
   
-  // C - Deck Slab | M - Steel | T - Abnormal Movement
-  deckSlab_steel_abnormalMovement_tick      String    @db.Text
-  deckSlab_steel_abnormalMovement_severity      String    @db.Text
+  // (20) C - Deck Slab | M - Steel | T - Abnormal Movement
+  deckSlab_steel_abnormalMovement_tick      Boolean    @default(false)
+  deckSlab_steel_abnormalMovement_severity      Int       @db.Int
   deckSlab_steel_abnormalMovement_pctgAff1    String    @db.Text
   deckSlab_steel_abnormalMovement_remarks      String    @db.Text
   deckSlab_steel_abnormalMovement_rod      String    @db.Text
   
-  // C - Deck Slab | M - Steel | T - Abnormal Noise
-  deckSlab_steel_abnormalNoise_tick      String    @db.Text
-  deckSlab_steel_abnormalNoise_severity      String    @db.Text
+  // (21) C - Deck Slab | M - Steel | T - Abnormal Noise
+  deckSlab_steel_abnormalNoise_tick      Boolean    @default(false)
+  deckSlab_steel_abnormalNoise_severity      Int       @db.Int
   deckSlab_steel_abnormalNoise_pctgAff1    String    @db.Text
   deckSlab_steel_abnormalNoise_remarks      String    @db.Text
   deckSlab_steel_abnormalNoise_rod      String    @db.Text
   
   // C - Deck Slab | M - Concrete
-  deckSlab_concrete_tick      String    @db.Text
+  deckSlab_concrete_tick      Boolean    @default(false)
   
-  // C - Deck Slab | M - Concrete | T - Surface Defect
-  deckSlab_concrete_surfaceDefect_tick      String    @db.Text
-  deckSlab_concrete_surfaceDefect_severity      String    @db.Text
+  // (22) C - Deck Slab | M - Concrete | T - Surface Defect
+  deckSlab_concrete_surfaceDefect_tick      Boolean    @default(false)
+  deckSlab_concrete_surfaceDefect_severity      Int       @db.Int
   deckSlab_concrete_surfaceDefect_pctgAff1    String    @db.Text
   deckSlab_concrete_abnormalNoise_pctgAff2    String    @db.Text
   deckSlab_concrete_surfaceDefect_remarks      String    @db.Text
   deckSlab_concrete_surfaceDefect_rod      String    @db.Text
   
-  // C - Deck Slab | M - Concrete | T - Cracks at Concrete
-  deckSlab_concrete_cracksAtConcrete_tick      String    @db.Text
-  deckSlab_concrete_cracksAtConcrete_severity      String    @db.Text
+  // (23) C - Deck Slab | M - Concrete | T - Cracks at Concrete
+  deckSlab_concrete_cracksAtConcrete_tick      Boolean    @default(false)
+  deckSlab_concrete_cracksAtConcrete_severity      Int       @db.Int
   deckSlab_concrete_cracksAtConcrete_pctgAff1    String    @db.Text
   deckSlab_concrete_cracksAtConcrete_remarks      String    @db.Text
   deckSlab_concrete_cracksAtConcrete_rod      String    @db.Text
   
-  // C - Deck Slab | M - Concrete | T - Delamination
-  deckSlab_concrete_delamination_tick      String    @db.Text
-  deckSlab_concrete_delamination_severity      String    @db.Text
+  // (24) C - Deck Slab | M - Concrete | T - Delamination
+  deckSlab_concrete_delamination_tick      Boolean    @default(false)
+  deckSlab_concrete_delamination_severity      Int       @db.Int
   deckSlab_concrete_delamination_pctgAff1    String    @db.Text
   deckSlab_concrete_delamination_pctgAff2    String    @db.Text
   deckSlab_concrete_delamination_remarks      String    @db.Text
   deckSlab_concrete_delamination_rod      String    @db.Text
   
-  // C - Deck Slab | M - Concrete | T - Spalling
-  deckSlab_concrete_spalling_tick      String    @db.Text
-  deckSlab_concrete_spalling_severity      String    @db.Text
+  // (25) C - Deck Slab | M - Concrete | T - Spalling
+  deckSlab_concrete_spalling_tick      Boolean    @default(false)
+  deckSlab_concrete_spalling_severity      Int       @db.Int
   deckSlab_concrete_spalling_pctgAff1    String    @db.Text
   deckSlab_concrete_spalling_pctgAff2    String    @db.Text
   deckSlab_concrete_spalling_remarks      String    @db.Text
   deckSlab_concrete_spalling_rod      String    @db.Text
   
-  // C - Deck Slab | M - Concrete | T - Corrosion of Reinforcement
-  deckSlab_concrete_corrosionOfReinforcement_tick      String    @db.Text
-  deckSlab_concrete_corrosionOfReinforcement_severity      String    @db.Text
+  // (26) C - Deck Slab | M - Concrete | T - Corrosion of Reinforcement
+  deckSlab_concrete_corrosionOfReinforcement_tick      Boolean    @default(false)
+  deckSlab_concrete_corrosionOfReinforcement_severity      Int       @db.Int
   deckSlab_concrete_corrosionOfReinforcement_pctgAff1    String    @db.Text
   deckSlab_concrete_corrosionOfReinforcement_pctgAff2    String    @db.Text
   deckSlab_concrete_corrosionOfReinforcement_remarks      String    @db.Text
   deckSlab_concrete_corrosionOfReinforcement_rod      String    @db.Text
   
-  // C - Deck Slab | M - Concrete | T - Water Leak/Free Lime
-  deckSlab_concrete_waterLeakOrFreeLime_tick      String    @db.Text
-  deckSlab_concrete_waterLeakOrFreeLime_severity      String    @db.Text
+  // (27) C - Deck Slab | M - Concrete | T - Water Leak/Free Lime
+  deckSlab_concrete_waterLeakOrFreeLime_tick      Boolean    @default(false)
+  deckSlab_concrete_waterLeakOrFreeLime_severity      Int       @db.Int
   deckSlab_concrete_waterLeakOrFreeLime_pctgAff1    String    @db.Text
   deckSlab_concrete_waterLeakOrFreeLime_pctgAff2    String    @db.Text
   deckSlab_concrete_waterLeakOrFreeLime_remarks      String    @db.Text
   deckSlab_concrete_waterLeakOrFreeLime_rod      String    @db.Text
   
   // C - Abutment
-  abutment_tick      String    @db.Text
+  abutment_tick      Boolean    @default(false)
   
   // C - Abutment | M - Concrete
-  abutment_concrete_tick      String    @db.Text
+  abutment_concrete_tick      Boolean    @default(false)
 
   // C - Abutment | M - Masonry
-  abutment_masonry_tick      String    @db.Text
+  abutment_masonry_tick      Boolean    @default(false)
   
   // C - Beam/Girder | M - Steel (Rating of Member)
   abutment_concreteAndMasonry_ratingOfMember      String    @db.Text
 
-  // C - Abutment | M - Concrete And Masonry | T - Surface Defect
-  abutment_concreteAndMasonry_surfaceDefect_tick      String    @db.Text
-  abutment_concreteAndMasonry_surfaceDefect_severity      String    @db.Text
+  // (28) C - Abutment | M - Concrete And Masonry | T - Surface Defect
+  abutment_concreteAndMasonry_surfaceDefect_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_surfaceDefect_severity      Int       @db.Int
   abutment_concreteAndMasonry_surfaceDefect_pctgAff1    String    @db.Text
   abutment_concreteAndMasonry_surfaceDefect_pctgAff2    String    @db.Text
   abutment_concreteAndMasonry_surfaceDefect_remarks      String    @db.Text
   abutment_concreteAndMasonry_surfaceDefect_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Cracks at Concrete
-  abutment_concreteAndMasonry_cracksAtConcrete_tick      String    @db.Text
-  abutment_concreteAndMasonry_cracksAtConcrete_severity      String    @db.Text
+  // (29) C - Abutment | M - Concrete And Masonry | T - Cracks at Concrete
+  abutment_concreteAndMasonry_cracksAtConcrete_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_cracksAtConcrete_severity      Int       @db.Int
   abutment_concreteAndMasonry_cracksAtConcrete_pctgAff1    String    @db.Text
   abutment_concreteAndMasonry_cracksAtConcrete_remarks      String    @db.Text
   abutment_concreteAndMasonry_cracksAtConcrete_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Delamination
-  abutment_concreteAndMasonry_delamination_tick      String    @db.Text
-  abutment_concreteAndMasonry_delamination_severity      String    @db.Text
+  // (30) C - Abutment | M - Concrete And Masonry | T - Delamination
+  abutment_concreteAndMasonry_delamination_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_delamination_severity      Int       @db.Int
   abutment_concreteAndMasonry_delamination_pctgAff1    String    @db.Text
   abutment_concreteAndMasonry_delamination_pctgAff2    String    @db.Text
   abutment_concreteAndMasonry_delamination_remarks      String    @db.Text
   abutment_concreteAndMasonry_delamination_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Spalling
-  abutment_concreteAndMasonry_spalling_tick      String    @db.Text
-  abutment_concreteAndMasonry_spalling_severity      String    @db.Text
+  // (31) C - Abutment | M - Concrete And Masonry | T - Spalling
+  abutment_concreteAndMasonry_spalling_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_spalling_severity      Int       @db.Int
   abutment_concreteAndMasonry_spalling_pctgAff1    String    @db.Text
   abutment_concreteAndMasonry_spalling_pctgAff2    String    @db.Text
   abutment_concreteAndMasonry_spalling_remarks      String    @db.Text
   abutment_concreteAndMasonry_spalling_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Corrosion of Reinforcement
-  abutment_concreteAndMasonry_corrosionOfReinforcement_tick      String    @db.Text
-  abutment_concreteAndMasonry_corrosionOfReinforcement_severity      String    @db.Text
+  // (32) C - Abutment | M - Concrete And Masonry | T - Corrosion of Reinforcement
+  abutment_concreteAndMasonry_corrosionOfReinforcement_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_corrosionOfReinforcement_severity      Int       @db.Int
   abutment_concreteAndMasonry_corrosionOfReinforcement_pctgAff1    String    @db.Text
   abutment_concreteAndMasonry_corrosionOfReinforcement_pctgAff2    String    @db.Text
   abutment_concreteAndMasonry_corrosionOfReinforcement_remarks      String    @db.Text
   abutment_concreteAndMasonry_corrosionOfReinforcement_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Wear/Abrasion
-  abutment_concreteAndMasonry_wearOrAbrasion_tick      String    @db.Text
-  abutment_concreteAndMasonry_wearOrAbrasion_severity      String    @db.Text
+  // (33) C - Abutment | M - Concrete And Masonry | T - Wear/Abrasion
+  abutment_concreteAndMasonry_wearOrAbrasion_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_wearOrAbrasion_severity      Int       @db.Int
   abutment_concreteAndMasonry_wearOrAbrasion_pctgAff1    String    @db.Text
   abutment_concreteAndMasonry_wearOrAbrasion_pctgAff2    String    @db.Text
   abutment_concreteAndMasonry_wearOrAbrasion_remarks      String    @db.Text
   abutment_concreteAndMasonry_wearOrAbrasion_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Material Deterioration
-  abutment_concreteAndMasonry_materialDeterioration_tick      String    @db.Text
-  abutment_concreteAndMasonry_materialDeterioration_severity      String    @db.Text
+  // (34) C - Abutment | M - Concrete And Masonry | T - Material Deterioration
+  abutment_concreteAndMasonry_materialDeterioration_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_materialDeterioration_severity      Int       @db.Int
   abutment_concreteAndMasonry_materialDeterioration_pctgAff1    String    @db.Text
   abutment_concreteAndMasonry_materialDeterioration_pctgAff2    String    @db.Text
   abutment_concreteAndMasonry_materialDeterioration_remarks      String    @db.Text
   abutment_concreteAndMasonry_materialDeterioration_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Tilt/Settlement
-  abutment_concreteAndMasonry_tiltOrSettlement_tick      String    @db.Text
-  abutment_concreteAndMasonry_tiltOrSettlement_severity      String    @db.Text
+  // (35) C - Abutment | M - Concrete And Masonry | T - Tilt/Settlement
+  abutment_concreteAndMasonry_tiltOrSettlement_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_tiltOrSettlement_severity      Int       @db.Int
   abutment_concreteAndMasonry_tiltOrSettlement_pctgAff1   String    @db.Text
   abutment_concreteAndMasonry_tiltOrSettlement_remarks      String    @db.Text
   abutment_concreteAndMasonry_tiltOrSettlement_rod      String    @db.Text
   
-  // C - Abutment | M - Concrete And Masonry | T - Scouring
-  abutment_concreteAndMasonry_scouring_tick      String    @db.Text
-  abutment_concreteAndMasonry_scouring_severity      String    @db.Text
+  // (36) C - Abutment | M - Concrete And Masonry | T - Scouring
+  abutment_concreteAndMasonry_scouring_tick      Boolean    @default(false)
+  abutment_concreteAndMasonry_scouring_severity      Int       @db.Int
   abutment_concreteAndMasonry_scouring_pctgAff1   String    @db.Text
   abutment_concreteAndMasonry_scouring_remarks      String    @db.Text
   abutment_concreteAndMasonry_scouring_rod      String    @db.Text
   
   // C - Pier No
-  pierNo__tick      String    @db.Text
+  pierNo__tick      Boolean    @default(false)
 
   // C - Pier No (Fill in Number of Pier)
   pierNo_number     String    @db.Text
   
   // C - Pier No | M - Concrete And Masonry
-  pierNo_concrete_tick      String    @db.Text
+  pierNo_concrete_tick      Boolean    @default(false)
   
   // C - Pier No | M - Concrete And Masonry
-  pierNo_masonry_tick      String    @db.Text
+  pierNo_masonry_tick      Boolean    @default(false)
   
   // C - Pier No | M - Concrete And Masonry (Rating of Member)
   pierNo_concreteAndMasonry_ratingOfMember      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Surface Defect
-  pierNo_concreteAndMasonry_surfaceDefect_tick      String    @db.Text
-  pierNo_concreteAndMasonry_surfaceDefect_severity      String    @db.Text
+  // (37) C - Pier No | M - Concrete And Masonry | T - Surface Defect
+  pierNo_concreteAndMasonry_surfaceDefect_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_surfaceDefect_severity      Int       @db.Int
   pierNo_concreteAndMasonry_surfaceDefect_pctgAff1   String    @db.Text
   pierNo_concreteAndMasonry_surfaceDefect_pctgAff2   String    @db.Text
   pierNo_concreteAndMasonry_surfaceDefect_remarks      String    @db.Text
   pierNo_concreteAndMasonry_surfaceDefect_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Cracks at Concrete
-  pierNo_concreteAndMasonry_cracksAtConcrete_tick      String    @db.Text
-  pierNo_concreteAndMasonry_cracksAtConcrete_severity      String    @db.Text
+  // (38) C - Pier No | M - Concrete And Masonry | T - Cracks at Concrete
+  pierNo_concreteAndMasonry_cracksAtConcrete_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_cracksAtConcrete_severity      Int       @db.Int
   pierNo_concreteAndMasonry_cracksAtConcrete_pctgAff1   String    @db.Text
   pierNo_concreteAndMasonry_cracksAtConcrete_remarks      String    @db.Text
   pierNo_concreteAndMasonry_cracksAtConcrete_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Delamination
-  pierNo_concreteAndMasonry_delamination_tick      String    @db.Text
-  pierNo_concreteAndMasonry_delamination_severity      String    @db.Text
+  // (39) C - Pier No | M - Concrete And Masonry | T - Delamination
+  pierNo_concreteAndMasonry_delamination_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_delamination_severity      Int       @db.Int
   pierNo_concreteAndMasonry_delamination_pctgAff1   String    @db.Text
   pierNo_concreteAndMasonry_delamination_pctgAff2   String    @db.Text
   pierNo_concreteAndMasonry_delamination_remarks      String    @db.Text
   pierNo_concreteAndMasonry_delamination_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Spalling
-  pierNo_concreteAndMasonry_spalling_tick      String    @db.Text
-  pierNo_concreteAndMasonry_spalling_severity      String    @db.Text
+  // (40) C - Pier No | M - Concrete And Masonry | T - Spalling
+  pierNo_concreteAndMasonry_spalling_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_spalling_severity      Int       @db.Int
   pierNo_concreteAndMasonry_spalling_pctgAff1   String    @db.Text
   pierNo_concreteAndMasonry_spalling_pctgAff2   String    @db.Text
   pierNo_concreteAndMasonry_spalling_remarks      String    @db.Text
   pierNo_concreteAndMasonry_spalling_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Corrosion of Reinforcement
-  pierNo_concreteAndMasonry_corrosionOfReinforcement_tick      String    @db.Text
-  pierNo_concreteAndMasonry_corrosionOfReinforcement_severity      String    @db.Text
+  // (41) C - Pier No | M - Concrete And Masonry | T - Corrosion of Reinforcement
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_corrosionOfReinforcement_severity      Int       @db.Int
   pierNo_concreteAndMasonry_corrosionOfReinforcement_pctgAff1   String    @db.Text
   pierNo_concreteAndMasonry_corrosionOfReinforcement_pctgAff2   String    @db.Text
   pierNo_concreteAndMasonry_corrosionOfReinforcement_remarks      String    @db.Text
   pierNo_concreteAndMasonry_corrosionOfReinforcement_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Wear/Abrasion
-  pierNo_concreteAndMasonry_wearOrAbrasion_tick      String    @db.Text
-  pierNo_concreteAndMasonry_wearOrAbrasion_severity      String    @db.Text
+  // (42) C - Pier No | M - Concrete And Masonry | T - Wear/Abrasion
+  pierNo_concreteAndMasonry_wearOrAbrasion_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_wearOrAbrasion_severity      Int       @db.Int
   pierNo_concreteAndMasonry_wearOrAbrasion_pctgAff1    String    @db.Text
   pierNo_concreteAndMasonry_wearOrAbrasion_pctgAff2    String    @db.Text
   pierNo_concreteAndMasonry_wearOrAbrasion_remarks      String    @db.Text
   pierNo_concreteAndMasonry_wearOrAbrasion_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Material Deterioration
-  pierNo_concreteAndMasonry_materialDeterioration_tick      String    @db.Text
-  pierNo_concreteAndMasonry_materialDeterioration_severity      String    @db.Text
+  // (43) C - Pier No | M - Concrete And Masonry | T - Material Deterioration
+  pierNo_concreteAndMasonry_materialDeterioration_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_materialDeterioration_severity      Int       @db.Int
   pierNo_concreteAndMasonry_materialDeterioration_pctgAff1    String    @db.Text
   pierNo_concreteAndMasonry_materialDeterioration_pctgAff2    String    @db.Text
   pierNo_concreteAndMasonry_materialDeterioration_remarks      String    @db.Text
   pierNo_concreteAndMasonry_materialDeterioration_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Tilt/Settlement
-  pierNo_concreteAndMasonry_tiltOrSettlement_tick      String    @db.Text
-  pierNo_concreteAndMasonry_tiltOrSettlement_severity      String    @db.Text
+  // (44) C - Pier No | M - Concrete And Masonry | T - Tilt/Settlement
+  pierNo_concreteAndMasonry_tiltOrSettlement_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_tiltOrSettlement_severity      Int       @db.Int
   pierNo_concreteAndMasonry_tiltOrSettlement_pctgAff1   String    @db.Text
   pierNo_concreteAndMasonry_tiltOrSettlement_remarks      String    @db.Text
   pierNo_concreteAndMasonry_tiltOrSettlement_rod      String    @db.Text
   
-  // C - Pier No | M - Concrete And Masonry | T - Scouring
-  pierNo_concreteAndMasonry_scouring_tick      String    @db.Text
-  pierNo_concreteAndMasonry_scouring_severity      String    @db.Text
+  // (45) C - Pier No | M - Concrete And Masonry | T - Scouring
+  pierNo_concreteAndMasonry_scouring_tick      Boolean    @default(false)
+  pierNo_concreteAndMasonry_scouring_severity      Int       @db.Int
   pierNo_concreteAndMasonry_scouring_pctgAff1   String    @db.Text
   pierNo_concreteAndMasonry_scouring_remarks      String    @db.Text
   pierNo_concreteAndMasonry_scouring_rod      String    @db.Text
@@ -565,315 +565,315 @@ model Bridgeformtwo {
   bridgeformone      Bridgeformone    @relation(fields: [bridgeFormOneId], references: [id])
   
     // C - Bearing
-  bearing__tick      String    @db.Text
+  bearing_tick      Boolean    @default(false)
   
   // C - Bearing | M - Steel
-  bearing_steel_tick      String    @db.Text
+  bearing_steel_tick      Boolean    @default(false)
   
   // C - Bearing | M - Rubber
-  bearing_rubber_tick      String    @db.Text
+  bearing_rubber_tick      Boolean    @default(false)
   
   // C - Bearing | M - Others
-  bearing_others_tick      String    @db.Text
+  bearing_others_tick      Boolean    @default(false)
   
   // C - Bearing | M - Concrete And Masonry (Rating of Member)
   bearing_steelAndRubberAndOthers_ratingOfMember      String    @db.Text
 
-  // C - Bearing | M - Steel, Rubber, and Others | T - Corrosion of Steel
-  bearing_steelAndRubberAndOthers_corrosionOfSteel_tick      String    @db.Text
-  bearing_steelAndRubberAndOthers_corrosionOfSteel_severity      String    @db.Text
+  // (46) C - Bearing | M - Steel, Rubber, and Others | T - Corrosion of Steel
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_tick      Boolean    @default(false)
+  bearing_steelAndRubberAndOthers_corrosionOfSteel_severity      Int       @db.Int
   bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff1      String    @db.Text
   bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff2      String    @db.Text
   bearing_steelAndRubberAndOthers_corrosionOfSteel_remarks      String    @db.Text
   bearing_steelAndRubberAndOthers_corrosionOfSteel_rod      String    @db.Text
   
-  // C - Bearing | M - Steel, Rubber, and Others | T - Loose Connections
-  bearing_steelAndRubberAndOthers_looseConnections_tick      String    @db.Text
-  bearing_steelAndRubberAndOthers_looseConnections_severity      String    @db.Text
+  // (47) C - Bearing | M - Steel, Rubber, and Others | T - Loose Connections
+  bearing_steelAndRubberAndOthers_looseConnections_tick      Boolean    @default(false)
+  bearing_steelAndRubberAndOthers_looseConnections_severity      Int       @db.Int
   bearing_steelAndRubberAndOthers_looseConnections_pctgAff1      String    @db.Text
   bearing_steelAndRubberAndOthers_looseConnections_pctgAff2      String    @db.Text
   bearing_steelAndRubberAndOthers_looseConnections_remarks      String    @db.Text
   bearing_steelAndRubberAndOthers_looseConnections_rod      String    @db.Text
   
-  // C - Bearing | M - Steel, Rubber, and Others | T - Pending Water
-  bearing_steelAndRubberAndOthers_pendingWater_tick      String    @db.Text
-  bearing_steelAndRubberAndOthers_pendingWater_severity      String    @db.Text
+  // (48) C - Bearing | M - Steel, Rubber, and Others | T - Pending Water
+  bearing_steelAndRubberAndOthers_pendingWater_tick      Boolean    @default(false)
+  bearing_steelAndRubberAndOthers_pendingWater_severity      Int       @db.Int
   bearing_steelAndRubberAndOthers_pendingWater_pctgAff1      String    @db.Text
   bearing_steelAndRubberAndOthers_pendingWater_remarks      String    @db.Text
   bearing_steelAndRubberAndOthers_pendingWater_rod      String    @db.Text
   
-  // C - Bearing | M - Steel, Rubber, and Others | T - Debris/Vegetation
-  bearing_steelAndRubberAndOthers_debrisOrVegetation_tick      String    @db.Text
-  bearing_steelAndRubberAndOthers_debrisOrVegetation_severity      String    @db.Text
+  // (49) C - Bearing | M - Steel, Rubber, and Others | T - Debris/Vegetation
+  bearing_steelAndRubberAndOthers_debrisOrVegetation_tick      Boolean    @default(false)
+  bearing_steelAndRubberAndOthers_debrisOrVegetation_severity      Int       @db.Int
   bearing_steelAndRubberAndOthers_debrisOrVegetation_pctgAff1      String    @db.Text
   bearing_steelAndRubberAndOthers_debrisOrVegetation_remarks      String    @db.Text
   bearing_steelAndRubberAndOthers_debrisOrVegetation_rod      String    @db.Text
   
-  // C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Bulging
-  bearing_steelAndRubberAndOthers_abnormalBulging_tick      String    @db.Text
-  bearing_steelAndRubberAndOthers_abnormalBulging_severity      String    @db.Text
+  // (50) C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Bulging
+  bearing_steelAndRubberAndOthers_abnormalBulging_tick      Boolean    @default(false)
+  bearing_steelAndRubberAndOthers_abnormalBulging_severity      Int       @db.Int
   bearing_steelAndRubberAndOthers_abnormalBulging_pctgAff1      String    @db.Text
   bearing_steelAndRubberAndOthers_abnormalBulging_remarks      String    @db.Text
   bearing_steelAndRubberAndOthers_abnormalBulging_rod      String    @db.Text
   
-  // C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Displacement
-  bearing_steelAndRubberAndOthers_abnormalDisplacement_tick      String    @db.Text
-  bearing_steelAndRubberAndOthers_abnormalDisplacement_severity      String    @db.Text
+  // (51) C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Displacement
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_tick      Boolean    @default(false)
+  bearing_steelAndRubberAndOthers_abnormalDisplacement_severity      Int       @db.Int
   bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff1      String    @db.Text
   bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff2      String    @db.Text
   bearing_steelAndRubberAndOthers_abnormalDisplacement_remarks      String    @db.Text
   bearing_steelAndRubberAndOthers_abnormalDisplacement_rod      String    @db.Text
   
   // C - Parapet
-  parapet__tick      String    @db.Text
+  parapet_tick      Boolean    @default(false)
   
   // C - Parapet | M - Steel
-  parapet_steel_tick      String    @db.Text
+  parapet_steel_tick      Boolean    @default(false)
   
   // C - Parapet | M - Rubber
-  parapet_concrete_tick      String    @db.Text
+  parapet_concrete_tick      Boolean    @default(false)
   
   // C - Parapet | M - Others
-  parapet_others_tick      String    @db.Text
+  parapet_others_tick      Boolean    @default(false)
   
   // C - Parapet | M - Concrete And Masonry (Rating of Member)
   parapet_steelAndConcreteAndOthers_ratingOfMember      String    @db.Text
 
-  // C - Parapet | M - Steel, Concrete, and Others | T - Corrosion of Steel
-  parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick      String    @db.Text
-  parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity      String    @db.Text
+  // (52) C - Parapet | M - Steel, Concrete, and Others | T - Corrosion of Steel
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick      Boolean    @default(false)
+  parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity      Int       @db.Int
   parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff1      String    @db.Text
   parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff2      String    @db.Text
   parapet_steelAndConcreteAndOthers_corrosionOfSteel_remarks      String    @db.Text
   parapet_steelAndConcreteAndOthers_corrosionOfSteel_rod      String    @db.Text
   
-  // C - Parapet | M - Steel, Concrete, and Others | T - Cracks at Concrete
-  parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick      String    @db.Text
-  parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity      String    @db.Text
+  // (53) C - Parapet | M - Steel, Concrete, and Others | T - Cracks at Concrete
+  parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick      Boolean    @default(false)
+  parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity      Int       @db.Int
   parapet_steelAndConcreteAndOthers_cracksAtConcrete_pctgAff1      String    @db.Text
   parapet_steelAndConcreteAndOthers_cracksAtConcrete_remarks      String    @db.Text
   parapet_steelAndConcreteAndOthers_cracksAtConcrete_rod      String    @db.Text
   
-  // C - Parapet | M - Steel, Concrete, and Others | T - Spalling
-  parapet_steelAndConcreteAndOthers_spalling_tick      String    @db.Text
-  parapet_steelAndConcreteAndOthers_spalling_severity      String    @db.Text
+  // (54) C - Parapet | M - Steel, Concrete, and Others | T - Spalling
+  parapet_steelAndConcreteAndOthers_spalling_tick      Boolean    @default(false)
+  parapet_steelAndConcreteAndOthers_spalling_severity      Int       @db.Int
   parapet_steelAndConcreteAndOthers_spalling_pctgAff1      String    @db.Text
   parapet_steelAndConcreteAndOthers_spalling_pctgAff2      String    @db.Text
   parapet_steelAndConcreteAndOthers_spalling_remarks      String    @db.Text
   parapet_steelAndConcreteAndOthers_spalling_rod      String    @db.Text
   
-  // C - Parapet | M - Steel, Concrete, and Others | T - Impact Damage
-  parapet_steelAndConcreteAndOthers_impactDamage_tick      String    @db.Text
-  parapet_steelAndConcreteAndOthers_impactDamage_severity      String    @db.Text
+  // (55) C - Parapet | M - Steel, Concrete, and Others | T - Impact Damage
+  parapet_steelAndConcreteAndOthers_impactDamage_tick      Boolean    @default(false)
+  parapet_steelAndConcreteAndOthers_impactDamage_severity      Int       @db.Int
   parapet_steelAndConcreteAndOthers_impactDamage_pctgAff1      String    @db.Text
   parapet_steelAndConcreteAndOthers_impactDamage_pctgAff2      String    @db.Text
   parapet_steelAndConcreteAndOthers_impactDamage_remarks      String    @db.Text
   parapet_steelAndConcreteAndOthers_impactDamage_rod      String    @db.Text
   
-  // C - Parapet | M - Steel, Concrete, and Others | T - Loose Connections
-  parapet_steelAndConcreteAndOthers_looseConnections_tick      String    @db.Text
-  parapet_steelAndConcreteAndOthers_looseConnections_severity      String    @db.Text
+  // (56) C - Parapet | M - Steel, Concrete, and Others | T - Loose Connections
+  parapet_steelAndConcreteAndOthers_looseConnections_tick      Boolean    @default(false)
+  parapet_steelAndConcreteAndOthers_looseConnections_severity      Int       @db.Int
   parapet_steelAndConcreteAndOthers_looseConnections_pctgAff1      String    @db.Text
   parapet_steelAndConcreteAndOthers_looseConnections_pctgAff2      String    @db.Text
   parapet_steelAndConcreteAndOthers_looseConnections_remarks      String    @db.Text
   parapet_steelAndConcreteAndOthers_looseConnections_rod      String    @db.Text
   
 // C - Surfacing
-  surfacing__tick      String    @db.Text
+  surfacing__tick      Boolean    @default(false)
   
   // C - Surfacing | M - Asphalt
-  surfacing_asphalt_tick      String    @db.Text
+  surfacing_asphalt_tick      Boolean    @default(false)
   
   // C - Surfacing | M - Concrete
-  surfacing_concrete_tick      String    @db.Text
+  surfacing_concrete_tick      Boolean    @default(false)
   
   // C - Surfacing | M - Asphalt And Concrete (Rating of Member)
   surfacing_asphaltAndConcrete_ratingOfMember      String    @db.Text
 
-  // C - Surfacing | M - Steel, Concrete, and Others | T - Pot-holes
-  surfacing_asphaltAndConcrete_potHoles_tick      String    @db.Text
-  surfacing_asphaltAndConcrete_potHoles_severity      String    @db.Text
+  // (57) C - Surfacing | M - Steel, Concrete, and Others | T - Pot-holes
+  surfacing_asphaltAndConcrete_potHoles_tick      Boolean    @default(false)
+  surfacing_asphaltAndConcrete_potHoles_severity      Int       @db.Int
   surfacing_asphaltAndConcrete_potHoles_pctgAff1      String    @db.Text
   surfacing_asphaltAndConcrete_potHoles_pctgAff2      String    @db.Text
   surfacing_asphaltAndConcrete_potHoles_remarks      String    @db.Text
   surfacing_asphaltAndConcrete_potHoles_rod      String    @db.Text
 
-  // C - Surfacing | M - Steel, Concrete, and Others | T - Wheel Track Rutting
-  surfacing_asphaltAndConcrete_wheelTrackRutting_tick      String    @db.Text
-  surfacing_asphaltAndConcrete_wheelTrackRutting_severity      String    @db.Text
+  // (58) C - Surfacing | M - Steel, Concrete, and Others | T - Wheel Track Rutting
+  surfacing_asphaltAndConcrete_wheelTrackRutting_tick      Boolean    @default(false)
+  surfacing_asphaltAndConcrete_wheelTrackRutting_severity      Int       @db.Int
   surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff1      String    @db.Text
   surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff2      String    @db.Text
   surfacing_asphaltAndConcrete_wheelTrackRutting_remarks      String    @db.Text
   surfacing_asphaltAndConcrete_wheelTrackRutting_rod      String    @db.Text
 
-  // C - Surfacing | M - Steel, Concrete, and Others | T - Loss of Bond & Delamination
-  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick      String    @db.Text
-  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity      String    @db.Text
+  // (59) C - Surfacing | M - Steel, Concrete, and Others | T - Loss of Bond & Delamination
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick      Boolean    @default(false)
+  surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity      Int       @db.Int
   surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff1      String    @db.Text
   surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff2      String    @db.Text
   surfacing_asphaltAndConcrete_lostOfBondAndDelamination_remarks      String    @db.Text
   surfacing_asphaltAndConcrete_lostOfBondAndDelamination_rod      String    @db.Text
 
-  // C - Surfacing | M - Steel, Concrete, and Others | T - Rippling
-  surfacing_asphaltAndConcrete_rippling_tick      String    @db.Text
-  surfacing_asphaltAndConcrete_rippling_severity      String    @db.Text
+  // (60) C - Surfacing | M - Steel, Concrete, and Others | T - Rippling
+  surfacing_asphaltAndConcrete_rippling_tick      Boolean    @default(false)
+  surfacing_asphaltAndConcrete_rippling_severity      Int       @db.Int
   surfacing_asphaltAndConcrete_rippling_pctgAff1     String    @db.Text
   surfacing_asphaltAndConcrete_rippling_remarks      String    @db.Text
   surfacing_asphaltAndConcrete_rippling_rod      String    @db.Text
 
-  // C - Surfacing | M - Steel, Concrete, and Others | T - Pavement Crack
-  surfacing_asphaltAndConcrete_pavementCrack_tick      String    @db.Text
-  surfacing_asphaltAndConcrete_pavementCrack_severity      String    @db.Text
+  // (61) C - Surfacing | M - Steel, Concrete, and Others | T - Pavement Crack
+  surfacing_asphaltAndConcrete_pavementCrack_tick      Boolean    @default(false)
+  surfacing_asphaltAndConcrete_pavementCrack_severity      Int       @db.Int
   surfacing_asphaltAndConcrete_pavementCrack_pctgAff1     String    @db.Text
   surfacing_asphaltAndConcrete_pavementCrack_remarks      String    @db.Text
   surfacing_asphaltAndConcrete_pavementCrack_rod      String    @db.Text
 
   // C - Expansion Joint
-  expansionJoint__tick      String    @db.Text
+  expansionJoint__tick      Boolean    @default(false)
   
   // C - Expansion Joint | M - Asp. Plug
-  expansionJoint_aspPlug_tick      String    @db.Text
+  expansionJoint_aspPlug_tick      Boolean    @default(false)
   
   // C - Expansion Joint | M - Elastomeric
-  expansionJoint_elastomeric_tick      String    @db.Text
+  expansionJoint_elastomeric_tick      Boolean    @default(false)
   
   // C - Expansion Joint | M - Comp Seal
-  expansionJoint_compSeal_tick      String    @db.Text
+  expansionJoint_compSeal_tick      Boolean    @default(false)
   
   // C - Expansion Joint | M - Buried
-  expansionJoint_buried_tick      String    @db.Text
+  expansionJoint_buried_tick      Boolean    @default(false)
   
   // C - Expansion Joint | M - Others
-  expansionJoint_others_tick      String    @db.Text
+  expansionJoint_others_tick      Boolean    @default(false)
   
   // C - Expansion Joint | M - All (Rating of Member)
   expansionJoint_all_ratingOfMember      String    @db.Text
 
-  // C - Expansion Joint | M - Alls | T - Abnormal Spacing
-  expansionJoint_all_abnormalSpacing_tick      String    @db.Text
-  expansionJoint_all_abnormalSpacing_severity      String    @db.Text
+  // (62) C - Expansion Joint | M - Alls | T - Abnormal Spacing
+  expansionJoint_all_abnormalSpacing_tick      Boolean    @default(false)
+  expansionJoint_all_abnormalSpacing_severity      Int       @db.Int
   expansionJoint_all_abnormalSpacing_pctgAff1     String    @db.Text
   expansionJoint_all_abnormalSpacing_remarks      String    @db.Text
   expansionJoint_all_abnormalSpacing_rod      String    @db.Text
 
-  // C - Expansion Joint | M - Alls | T - Difference in Level
-  expansionJoint_all_differenceInLevel_tick      String    @db.Text
-  expansionJoint_all_differenceInLevel_severity      String    @db.Text
+  // (63) C - Expansion Joint | M - Alls | T - Difference in Level
+  expansionJoint_all_differenceInLevel_tick      Boolean    @default(false)
+  expansionJoint_all_differenceInLevel_severity      Int       @db.Int
   expansionJoint_all_differenceInLevel_pctgAff1     String    @db.Text
   expansionJoint_all_differenceInLevel_pctgAff2     String    @db.Text
   expansionJoint_all_differenceInLevel_remarks      String    @db.Text
   expansionJoint_all_differenceInLevel_rod      String    @db.Text
 
-  // C - Expansion Joint | M - Alls | T - Water Leak
-  expansionJoint_all_waterLeak_tick      String    @db.Text
-  expansionJoint_all_waterLeak_severity      String    @db.Text
+  // (64) C - Expansion Joint | M - Alls | T - Water Leak
+  expansionJoint_all_waterLeak_tick      Boolean    @default(false)
+  expansionJoint_all_waterLeak_severity      Int       @db.Int
   expansionJoint_all_waterLeak_pctgAff1     String    @db.Text
   expansionJoint_all_waterLeak_pctgAff2     String    @db.Text
   expansionJoint_all_waterLeak_remarks      String    @db.Text
   expansionJoint_all_waterLeak_rod      String    @db.Text
 
-  // C - Expansion Joint | M - Alls | T - Cracking at Exp. Joint
-  expansionJoint_all_crackingAtExpJoint_tick      String    @db.Text
-  expansionJoint_all_crackingAtExpJoint_severity      String    @db.Text
+  // (65) C - Expansion Joint | M - Alls | T - Cracking at Exp. Joint
+  expansionJoint_all_crackingAtExpJoint_tick      Boolean    @default(false)
+  expansionJoint_all_crackingAtExpJoint_severity      Int       @db.Int
   expansionJoint_all_crackingAtExpJoint_pctgAff1     String    @db.Text
   expansionJoint_all_crackingAtExpJoint_pctgAff2     String    @db.Text
   expansionJoint_all_crackingAtExpJoint_remarks      String    @db.Text
   expansionJoint_all_crackingAtExpJoint_rod      String    @db.Text
 
-  // C - Expansion Joint | M - Alls | T - Rupture
-  expansionJoint_all_rupture_tick      String    @db.Text
-  expansionJoint_all_rupture_severity      String    @db.Text
+  // (66) C - Expansion Joint | M - Alls | T - Rupture
+  expansionJoint_all_rupture_tick      Boolean    @default(false)
+  expansionJoint_all_rupture_severity      Int       @db.Int
   expansionJoint_all_rupture_pctgAff1     String    @db.Text
   expansionJoint_all_rupture_pctgAff2     String    @db.Text
   expansionJoint_all_rupture_remarks      String    @db.Text
   expansionJoint_all_rupture_rod      String    @db.Text
 
   // C - Drain Pipe
-  drainPipe_tick      String    @db.Text
+  drainPipe_tick      Boolean    @default(false)
   
   // C - Drain Pipe | M - Steel
-  drainPipe_steel_tick      String    @db.Text
+  drainPipe_steel_tick      Boolean    @default(false)
   
   // C - Drain Pipe | M - PVC
-  drainPipe_pvc_tick      String    @db.Text
+  drainPipe_pvc_tick      Boolean    @default(false)
 
   // C - Expansion Joint | M - All (Rating of Member)
   drainPipe_all_ratingOfMember      String    @db.Text
 
-  // C - Drain Pipe | M - Steel and PVC | T - Corrosion of Steel
-  drainPipe_steelPVC_corrosionOfSteel_tick      String    @db.Text
-  drainPipe_steelPVC_corrosionOfSteel_severity      String    @db.Text
+  // (67) C - Drain Pipe | M - Steel and PVC | T - Corrosion of Steel
+  drainPipe_steelPVC_corrosionOfSteel_tick      Boolean    @default(false)
+  drainPipe_steelPVC_corrosionOfSteel_severity      Int       @db.Int
   drainPipe_steelPVC_corrosionOfSteel_pctgAff1     String    @db.Text
   drainPipe_steelPVC_corrosionOfSteel_pctgAff2     String    @db.Text
   drainPipe_steelPVC_corrosionOfSteel_remarks      String    @db.Text
   drainPipe_steelPVC_corrosionOfSteel_rod      String    @db.Text
   
-  // C - Drain Pipe | M - Steel and PVC | T - Blocked Drainage
-  drainPipe_steelPVC_blockedDrainage_tick      String    @db.Text
-  drainPipe_steelPVC_blockedDrainage_severity      String    @db.Text
+  // (68) C - Drain Pipe | M - Steel and PVC | T - Blocked Drainage
+  drainPipe_steelPVC_blockedDrainage_tick      Boolean    @default(false)
+  drainPipe_steelPVC_blockedDrainage_severity      Int       @db.Int
   drainPipe_steelPVC_blockedDrainage_pctgAff1     String    @db.Text
   drainPipe_steelPVC_blockedDrainage_pctgAff2     String    @db.Text
   drainPipe_steelPVC_blockedDrainage_remarks      String    @db.Text
   drainPipe_steelPVC_blockedDrainage_rod      String    @db.Text
   
-  // C - Drain Pipe | M - Steel and PVC | T - Water Leak
-  drainPipe_steelPVC_waterLeak_tick      String    @db.Text
-  drainPipe_steelPVC_waterLeak_severity      String    @db.Text
+  // (69) C - Drain Pipe | M - Steel and PVC | T - Water Leak
+  drainPipe_steelPVC_waterLeak_tick      Boolean    @default(false)
+  drainPipe_steelPVC_waterLeak_severity      Int       @db.Int
   drainPipe_steelPVC_waterLeak_pctgAff1     String    @db.Text
   drainPipe_steelPVC_waterLeak_pctgAff2     String    @db.Text
   drainPipe_steelPVC_waterLeak_remarks      String    @db.Text
   drainPipe_steelPVC_waterLeak_rod      String    @db.Text
   
-  // C - Drain Pipe | M - Steel and PVC | T - No/Inadequate Pipe Length
-  drainPipe_steelPVC_inadequatePipeLength_tick      String    @db.Text
-  drainPipe_steelPVC_inadequatePipeLength_severity      String    @db.Text
+  // (70) C - Drain Pipe | M - Steel and PVC | T - No/Inadequate Pipe Length
+  drainPipe_steelPVC_inadequatePipeLength_tick      Boolean    @default(false)
+  drainPipe_steelPVC_inadequatePipeLength_severity      Int       @db.Int
   drainPipe_steelPVC_inadequatePipeLength_pctgAff1     String    @db.Text
   drainPipe_steelPVC_inadequatePipeLength_pctgAff2     String    @db.Text
   drainPipe_steelPVC_inadequatePipeLength_remarks      String    @db.Text
   drainPipe_steelPVC_inadequatePipeLength_rod      String    @db.Text
 
   // C - Slope Protection / River Bank
-  slopeProtection_tick      String    @db.Text
+  slopeProtection_tick      Boolean    @default(false)
   
   // C - Slope Protection / River Bank | M - Rble. Pithching
-  slopeProtection_rblePitching_tick      String    @db.Text
+  slopeProtection_rblePitching_tick      Boolean    @default(false)
   
   // C - Slope Protection / River Bank | M - Gablons
-  slopeProtection_gablons_tick      String    @db.Text
+  slopeProtection_gablons_tick      Boolean    @default(false)
   
   // C - Slope Protection / River Bank | M - Others
-  slopeProtection_others_tick      String    @db.Text
+  slopeProtection_others_tick      Boolean    @default(false)
 
   // C - Slope Protection / River Bank | M - All (Rating of Member)
   slopeProtection_all_ratingOfMember      String    @db.Text
 
-  // C - Slope Protection / River Bank | M - All | T - Scouring
-  slopeProtection_all_scouring_tick      String    @db.Text
-  slopeProtection_all_scouring_severity      String    @db.Text
+  // (71) C - Slope Protection / River Bank | M - All | T - Scouring
+  slopeProtection_all_scouring_tick      Boolean    @default(false)
+  slopeProtection_all_scouring_severity      Int       @db.Int
   slopeProtection_all_scouring_pctgAff1     String    @db.Text
   slopeProtection_all_scouring_remarks      String    @db.Text
   slopeProtection_all_scouring_rod      String    @db.Text
   
-  // C - Slope Protection / River Bank | M - All | T - Erosion
-  slopeProtection_all_erosion_tick      String    @db.Text
-  slopeProtection_all_erosion_severity      String    @db.Text
+  // (72) C - Slope Protection / River Bank | M - All | T - Erosion
+  slopeProtection_all_erosion_tick      Boolean    @default(false)
+  slopeProtection_all_erosion_severity      Int       @db.Int
   slopeProtection_all_erosion_pctgAff1     String    @db.Text
   slopeProtection_all_erosion_pctgAff2     String    @db.Text
   slopeProtection_all_erosion_remarks      String    @db.Text
   slopeProtection_all_erosion_rod      String    @db.Text
   
-  // C - Slope Protection / River Bank | M - All | T - Material Loss / Disintegration
-  slopeProtection_all_materialLoss_tick      String    @db.Text
-  slopeProtection_all_materialLoss_severity      String    @db.Text
+  // (73) C - Slope Protection / River Bank | M - All | T - Material Loss / Disintegration
+  slopeProtection_all_materialLoss_tick      Boolean    @default(false)
+  slopeProtection_all_materialLoss_severity      Int       @db.Int
   slopeProtection_all_materialLoss_pctgAff1     String    @db.Text
   slopeProtection_all_materialLoss_pctgAff2     String    @db.Text
   slopeProtection_all_materialLoss_remarks      String    @db.Text
   slopeProtection_all_materialLoss_rod      String    @db.Text
   
-  // C - Slope Protection / River Bank | M - All | T - Blank
+  // (74) C - Slope Protection / River Bank | M - All | T - Blank
   slopeProtection_all_blank_name      String    @db.Text
-  slopeProtection_all_blank_tick      String    @db.Text
-  slopeProtection_all_blank_severity      String    @db.Text
+  slopeProtection_all_blank_tick      Boolean    @default(false)
+  slopeProtection_all_blank_severity      Int       @db.Int
   slopeProtection_all_blank_pctgAff1     String    @db.Text
   slopeProtection_all_blank_pctgAff2     String    @db.Text
   slopeProtection_all_blank_remarks      String    @db.Text
@@ -882,14 +882,14 @@ model Bridgeformtwo {
   // C -  Hydraulic Capacity | M - (EMPTY)
   hydraulicCapacity_inadequateOpening_ratingOfMember      String    @db.Text
 
-  // C - Hydraulic Capacity | M- (EMPTY) | T - Inadequate Opening
-  hydraulicCapacity_inadequateOpening_tick      String    @db.Text
-  hydraulicCapacity_inadequateOpening_severity      String    @db.Text
+  // (75) C - Hydraulic Capacity | M- (EMPTY) | T - Inadequate Opening
+  hydraulicCapacity_inadequateOpening_tick      Boolean    @default(false)
+  hydraulicCapacity_inadequateOpening_severity      Int       @db.Int
   hydraulicCapacity_inadequateOpening_pctgAff1     String    @db.Text
   hydraulicCapacity_inadequateOpening_remarks      String    @db.Text
   hydraulicCapacity_inadequateOpening_rod      String    @db.Text
 
-  allComponentsInspected      String    @db.Text
+  allComponentsInspected      Boolean    @default(false)
   
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
