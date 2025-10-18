@@ -18,10 +18,21 @@ export async function GET(
     });
 
     if (formdata) {
-      return NextResponse.json({
-        success: true,
-        dataa: formdata,
+      const formdata2 = await prisma.bridgeformtwo.findFirst({
+        where: {
+          bridgeFormOneId: Number(formdata.id),
+          page: Number(formPageNo),
+        },
       });
+
+      if (formdata2) {
+        return NextResponse.json({
+          success: true,
+          dataa: formdata,
+          dataa2: formdata2,
+        });
+      } else {
+      }
     } else {
       return NextResponse.json({ error: "Tak Jumpa" }, { status: 404 });
     }
@@ -596,10 +607,435 @@ export async function POST(
 
       // IF UPDATE bridgeformone SUCCESS
       if (UPDATE_formdata) {
-        return NextResponse.json({
-          success: true,
-          message: "Data updated successfully to database",
+        const formdata2 = await prisma.bridgeformtwo.findFirst({
+          where: {
+            bridgeFormOneId: UPDATE_formdata.id,
+            page: Number(formPageNo),
+          },
         });
+        if (formdata2) {
+          try {
+            //UPDATE bridgeformtwo
+            const UPDATE_formdata_2 = await prisma.bridgeformtwo.update({
+              where: {
+                id: formdata2.id,
+                bridgeFormOneId: UPDATE_formdata.id,
+                page: Number(formPageNo),
+              },
+              data: {
+                page: formdataa.page,
+                bridgeFormOneId: UPDATE_formdata.id,
+                bearing_tick: formdataa.bearing_tick,
+                bearing_steel_tick: formdataa.bearing_steel_tick,
+                bearing_rubber_tick: formdataa.bearing_rubber_tick,
+                bearing_others_tick: formdataa.bearing_others_tick,
+                bearing_steelAndRubberAndOthers_ratingOfMember:
+                  formdataa.bearing_steelAndRubberAndOthers_ratingOfMember,
+                bearing_steelAndRubberAndOthers_corrosionOfSteel_tick:
+                  formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_tick,
+                bearing_steelAndRubberAndOthers_corrosionOfSteel_severity:
+                  formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_severity,
+                bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff1:
+                  formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff1,
+                bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff2:
+                  formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff2,
+                bearing_steelAndRubberAndOthers_corrosionOfSteel_remarks:
+                  formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_remarks,
+                bearing_steelAndRubberAndOthers_corrosionOfSteel_rod:
+                  formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_rod,
+                bearing_steelAndRubberAndOthers_looseConnections_tick:
+                  formdataa.bearing_steelAndRubberAndOthers_looseConnections_tick,
+                bearing_steelAndRubberAndOthers_looseConnections_severity:
+                  formdataa.bearing_steelAndRubberAndOthers_looseConnections_severity,
+                bearing_steelAndRubberAndOthers_looseConnections_pctgAff1:
+                  formdataa.bearing_steelAndRubberAndOthers_looseConnections_pctgAff1,
+                bearing_steelAndRubberAndOthers_looseConnections_pctgAff2:
+                  formdataa.bearing_steelAndRubberAndOthers_looseConnections_pctgAff2,
+                bearing_steelAndRubberAndOthers_looseConnections_remarks:
+                  formdataa.bearing_steelAndRubberAndOthers_looseConnections_remarks,
+                bearing_steelAndRubberAndOthers_looseConnections_rod:
+                  formdataa.bearing_steelAndRubberAndOthers_looseConnections_rod,
+                bearing_steelAndRubberAndOthers_pendingWater_tick:
+                  formdataa.bearing_steelAndRubberAndOthers_pendingWater_tick,
+                bearing_steelAndRubberAndOthers_pendingWater_severity:
+                  formdataa.bearing_steelAndRubberAndOthers_pendingWater_severity,
+                bearing_steelAndRubberAndOthers_pendingWater_pctgAff1:
+                  formdataa.bearing_steelAndRubberAndOthers_pendingWater_pctgAff1,
+                bearing_steelAndRubberAndOthers_pendingWater_remarks:
+                  formdataa.bearing_steelAndRubberAndOthers_pendingWater_remarks,
+                bearing_steelAndRubberAndOthers_pendingWater_rod:
+                  formdataa.bearing_steelAndRubberAndOthers_pendingWater_rod,
+                bearing_steelAndRubberAndOthers_debrisOrVegetation_tick:
+                  formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_tick,
+                bearing_steelAndRubberAndOthers_debrisOrVegetation_severity:
+                  formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_severity,
+                bearing_steelAndRubberAndOthers_debrisOrVegetation_pctgAff1:
+                  formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_pctgAff1,
+                bearing_steelAndRubberAndOthers_debrisOrVegetation_remarks:
+                  formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_remarks,
+                bearing_steelAndRubberAndOthers_debrisOrVegetation_rod:
+                  formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_rod,
+                bearing_steelAndRubberAndOthers_abnormalBulging_tick:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_tick,
+                bearing_steelAndRubberAndOthers_abnormalBulging_severity:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_severity,
+                bearing_steelAndRubberAndOthers_abnormalBulging_pctgAff1:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_pctgAff1,
+                bearing_steelAndRubberAndOthers_abnormalBulging_remarks:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_remarks,
+                bearing_steelAndRubberAndOthers_abnormalBulging_rod:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_rod,
+                bearing_steelAndRubberAndOthers_abnormalDisplacement_tick:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_tick,
+                bearing_steelAndRubberAndOthers_abnormalDisplacement_severity:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_severity,
+                bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff1:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff1,
+                bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff2:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff2,
+                bearing_steelAndRubberAndOthers_abnormalDisplacement_remarks:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_remarks,
+                bearing_steelAndRubberAndOthers_abnormalDisplacement_rod:
+                  formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_rod,
+                parapet_tick: formdataa.parapet_tick,
+                parapet_steel_tick: formdataa.parapet_steel_tick,
+                parapet_concrete_tick: formdataa.parapet_concrete_tick,
+                parapet_others_tick: formdataa.parapet_others_tick,
+                parapet_steelAndConcreteAndOthers_ratingOfMember:
+                  formdataa.parapet_steelAndConcreteAndOthers_ratingOfMember,
+                parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick:
+                  formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick,
+                parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity:
+                  formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity,
+                parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff1:
+                  formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff1,
+                parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff2:
+                  formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff2,
+                parapet_steelAndConcreteAndOthers_corrosionOfSteel_remarks:
+                  formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_remarks,
+                parapet_steelAndConcreteAndOthers_corrosionOfSteel_rod:
+                  formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_rod,
+                parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick:
+                  formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick,
+                parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity:
+                  formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity,
+                parapet_steelAndConcreteAndOthers_cracksAtConcrete_pctgAff1:
+                  formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_pctgAff1,
+                parapet_steelAndConcreteAndOthers_cracksAtConcrete_remarks:
+                  formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_remarks,
+                parapet_steelAndConcreteAndOthers_cracksAtConcrete_rod:
+                  formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_rod,
+                parapet_steelAndConcreteAndOthers_spalling_tick:
+                  formdataa.parapet_steelAndConcreteAndOthers_spalling_tick,
+                parapet_steelAndConcreteAndOthers_spalling_severity:
+                  formdataa.parapet_steelAndConcreteAndOthers_spalling_severity,
+                parapet_steelAndConcreteAndOthers_spalling_pctgAff1:
+                  formdataa.parapet_steelAndConcreteAndOthers_spalling_pctgAff1,
+                parapet_steelAndConcreteAndOthers_spalling_pctgAff2:
+                  formdataa.parapet_steelAndConcreteAndOthers_spalling_pctgAff2,
+                parapet_steelAndConcreteAndOthers_spalling_remarks:
+                  formdataa.parapet_steelAndConcreteAndOthers_spalling_remarks,
+                parapet_steelAndConcreteAndOthers_spalling_rod:
+                  formdataa.parapet_steelAndConcreteAndOthers_spalling_rod,
+                parapet_steelAndConcreteAndOthers_impactDamage_tick:
+                  formdataa.parapet_steelAndConcreteAndOthers_impactDamage_tick,
+                parapet_steelAndConcreteAndOthers_impactDamage_severity:
+                  formdataa.parapet_steelAndConcreteAndOthers_impactDamage_severity,
+                parapet_steelAndConcreteAndOthers_impactDamage_pctgAff1:
+                  formdataa.parapet_steelAndConcreteAndOthers_impactDamage_pctgAff1,
+                parapet_steelAndConcreteAndOthers_impactDamage_pctgAff2:
+                  formdataa.parapet_steelAndConcreteAndOthers_impactDamage_pctgAff2,
+                parapet_steelAndConcreteAndOthers_impactDamage_remarks:
+                  formdataa.parapet_steelAndConcreteAndOthers_impactDamage_remarks,
+                parapet_steelAndConcreteAndOthers_impactDamage_rod:
+                  formdataa.parapet_steelAndConcreteAndOthers_impactDamage_rod,
+                parapet_steelAndConcreteAndOthers_looseConnections_tick:
+                  formdataa.parapet_steelAndConcreteAndOthers_looseConnections_tick,
+                parapet_steelAndConcreteAndOthers_looseConnections_severity:
+                  formdataa.parapet_steelAndConcreteAndOthers_looseConnections_severity,
+                parapet_steelAndConcreteAndOthers_looseConnections_pctgAff1:
+                  formdataa.parapet_steelAndConcreteAndOthers_looseConnections_pctgAff1,
+                parapet_steelAndConcreteAndOthers_looseConnections_pctgAff2:
+                  formdataa.parapet_steelAndConcreteAndOthers_looseConnections_pctgAff2,
+                parapet_steelAndConcreteAndOthers_looseConnections_remarks:
+                  formdataa.parapet_steelAndConcreteAndOthers_looseConnections_remarks,
+                parapet_steelAndConcreteAndOthers_looseConnections_rod:
+                  formdataa.parapet_steelAndConcreteAndOthers_looseConnections_rod,
+                surfacing__tick: formdataa.surfacing__tick,
+                surfacing_asphalt_tick: formdataa.surfacing_asphalt_tick,
+                surfacing_concrete_tick: formdataa.surfacing_concrete_tick,
+                surfacing_asphaltAndConcrete_ratingOfMember:
+                  formdataa.surfacing_asphaltAndConcrete_ratingOfMember,
+                surfacing_asphaltAndConcrete_potHoles_tick:
+                  formdataa.surfacing_asphaltAndConcrete_potHoles_tick,
+                surfacing_asphaltAndConcrete_potHoles_severity:
+                  formdataa.surfacing_asphaltAndConcrete_potHoles_severity,
+                surfacing_asphaltAndConcrete_potHoles_pctgAff1:
+                  formdataa.surfacing_asphaltAndConcrete_potHoles_pctgAff1,
+                surfacing_asphaltAndConcrete_potHoles_pctgAff2:
+                  formdataa.surfacing_asphaltAndConcrete_potHoles_pctgAff2,
+                surfacing_asphaltAndConcrete_potHoles_remarks:
+                  formdataa.surfacing_asphaltAndConcrete_potHoles_remarks,
+                surfacing_asphaltAndConcrete_potHoles_rod:
+                  formdataa.surfacing_asphaltAndConcrete_potHoles_rod,
+                surfacing_asphaltAndConcrete_wheelTrackRutting_tick:
+                  formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_tick,
+                surfacing_asphaltAndConcrete_wheelTrackRutting_severity:
+                  formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_severity,
+                surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff1:
+                  formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff1,
+                surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff2:
+                  formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff2,
+                surfacing_asphaltAndConcrete_wheelTrackRutting_remarks:
+                  formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_remarks,
+                surfacing_asphaltAndConcrete_wheelTrackRutting_rod:
+                  formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_rod,
+                surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick:
+                  formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick,
+                surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity:
+                  formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity,
+                surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff1:
+                  formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff1,
+                surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff2:
+                  formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff2,
+                surfacing_asphaltAndConcrete_lostOfBondAndDelamination_remarks:
+                  formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_remarks,
+                surfacing_asphaltAndConcrete_lostOfBondAndDelamination_rod:
+                  formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_rod,
+                surfacing_asphaltAndConcrete_rippling_tick:
+                  formdataa.surfacing_asphaltAndConcrete_rippling_tick,
+                surfacing_asphaltAndConcrete_rippling_severity:
+                  formdataa.surfacing_asphaltAndConcrete_rippling_severity,
+                surfacing_asphaltAndConcrete_rippling_pctgAff1:
+                  formdataa.surfacing_asphaltAndConcrete_rippling_pctgAff1,
+                surfacing_asphaltAndConcrete_rippling_remarks:
+                  formdataa.surfacing_asphaltAndConcrete_rippling_remarks,
+                surfacing_asphaltAndConcrete_rippling_rod:
+                  formdataa.surfacing_asphaltAndConcrete_rippling_rod,
+                surfacing_asphaltAndConcrete_pavementCrack_tick:
+                  formdataa.surfacing_asphaltAndConcrete_pavementCrack_tick,
+                surfacing_asphaltAndConcrete_pavementCrack_severity:
+                  formdataa.surfacing_asphaltAndConcrete_pavementCrack_severity,
+                surfacing_asphaltAndConcrete_pavementCrack_pctgAff1:
+                  formdataa.surfacing_asphaltAndConcrete_pavementCrack_pctgAff1,
+                surfacing_asphaltAndConcrete_pavementCrack_remarks:
+                  formdataa.surfacing_asphaltAndConcrete_pavementCrack_remarks,
+                surfacing_asphaltAndConcrete_pavementCrack_rod:
+                  formdataa.surfacing_asphaltAndConcrete_pavementCrack_rod,
+                expansionJoint__tick: formdataa.expansionJoint__tick,
+                expansionJoint_aspPlug_tick:
+                  formdataa.expansionJoint_aspPlug_tick,
+                expansionJoint_elastomeric_tick:
+                  formdataa.expansionJoint_elastomeric_tick,
+                expansionJoint_compSeal_tick:
+                  formdataa.expansionJoint_compSeal_tick,
+                expansionJoint_buried_tick:
+                  formdataa.expansionJoint_buried_tick,
+                expansionJoint_others_tick:
+                  formdataa.expansionJoint_others_tick,
+                expansionJoint_all_ratingOfMember:
+                  formdataa.expansionJoint_all_ratingOfMember,
+                expansionJoint_all_abnormalSpacing_tick:
+                  formdataa.expansionJoint_all_abnormalSpacing_tick,
+                expansionJoint_all_abnormalSpacing_severity:
+                  formdataa.expansionJoint_all_abnormalSpacing_severity,
+                expansionJoint_all_abnormalSpacing_pctgAff1:
+                  formdataa.expansionJoint_all_abnormalSpacing_pctgAff1,
+                expansionJoint_all_abnormalSpacing_remarks:
+                  formdataa.expansionJoint_all_abnormalSpacing_remarks,
+                expansionJoint_all_abnormalSpacing_rod:
+                  formdataa.expansionJoint_all_abnormalSpacing_rod,
+                expansionJoint_all_differenceInLevel_tick:
+                  formdataa.expansionJoint_all_differenceInLevel_tick,
+                expansionJoint_all_differenceInLevel_severity:
+                  formdataa.expansionJoint_all_differenceInLevel_severity,
+                expansionJoint_all_differenceInLevel_pctgAff1:
+                  formdataa.expansionJoint_all_differenceInLevel_pctgAff1,
+                expansionJoint_all_differenceInLevel_pctgAff2:
+                  formdataa.expansionJoint_all_differenceInLevel_pctgAff2,
+                expansionJoint_all_differenceInLevel_remarks:
+                  formdataa.expansionJoint_all_differenceInLevel_remarks,
+                expansionJoint_all_differenceInLevel_rod:
+                  formdataa.expansionJoint_all_differenceInLevel_rod,
+                expansionJoint_all_waterLeak_tick:
+                  formdataa.expansionJoint_all_waterLeak_tick,
+                expansionJoint_all_waterLeak_severity:
+                  formdataa.expansionJoint_all_waterLeak_severity,
+                expansionJoint_all_waterLeak_pctgAff1:
+                  formdataa.expansionJoint_all_waterLeak_pctgAff1,
+                expansionJoint_all_waterLeak_pctgAff2:
+                  formdataa.expansionJoint_all_waterLeak_pctgAff2,
+                expansionJoint_all_waterLeak_remarks:
+                  formdataa.expansionJoint_all_waterLeak_remarks,
+                expansionJoint_all_waterLeak_rod:
+                  formdataa.expansionJoint_all_waterLeak_rod,
+                expansionJoint_all_crackingAtExpJoint_tick:
+                  formdataa.expansionJoint_all_crackingAtExpJoint_tick,
+                expansionJoint_all_crackingAtExpJoint_severity:
+                  formdataa.expansionJoint_all_crackingAtExpJoint_severity,
+                expansionJoint_all_crackingAtExpJoint_pctgAff1:
+                  formdataa.expansionJoint_all_crackingAtExpJoint_pctgAff1,
+                expansionJoint_all_crackingAtExpJoint_pctgAff2:
+                  formdataa.expansionJoint_all_crackingAtExpJoint_pctgAff2,
+                expansionJoint_all_crackingAtExpJoint_remarks:
+                  formdataa.expansionJoint_all_crackingAtExpJoint_remarks,
+                expansionJoint_all_crackingAtExpJoint_rod:
+                  formdataa.expansionJoint_all_crackingAtExpJoint_rod,
+                expansionJoint_all_rupture_tick:
+                  formdataa.expansionJoint_all_rupture_tick,
+                expansionJoint_all_rupture_severity:
+                  formdataa.expansionJoint_all_rupture_severity,
+                expansionJoint_all_rupture_pctgAff1:
+                  formdataa.expansionJoint_all_rupture_pctgAff1,
+                expansionJoint_all_rupture_pctgAff2:
+                  formdataa.expansionJoint_all_rupture_pctgAff2,
+                expansionJoint_all_rupture_remarks:
+                  formdataa.expansionJoint_all_rupture_remarks,
+                expansionJoint_all_rupture_rod:
+                  formdataa.expansionJoint_all_rupture_rod,
+                drainPipe_tick: formdataa.drainPipe_tick,
+                drainPipe_steel_tick: formdataa.drainPipe_steel_tick,
+                drainPipe_pvc_tick: formdataa.drainPipe_pvc_tick,
+                drainPipe_all_ratingOfMember:
+                  formdataa.drainPipe_all_ratingOfMember,
+                drainPipe_steelPVC_corrosionOfSteel_tick:
+                  formdataa.drainPipe_steelPVC_corrosionOfSteel_tick,
+                drainPipe_steelPVC_corrosionOfSteel_severity:
+                  formdataa.drainPipe_steelPVC_corrosionOfSteel_severity,
+                drainPipe_steelPVC_corrosionOfSteel_pctgAff1:
+                  formdataa.drainPipe_steelPVC_corrosionOfSteel_pctgAff1,
+                drainPipe_steelPVC_corrosionOfSteel_pctgAff2:
+                  formdataa.drainPipe_steelPVC_corrosionOfSteel_pctgAff2,
+                drainPipe_steelPVC_corrosionOfSteel_remarks:
+                  formdataa.drainPipe_steelPVC_corrosionOfSteel_remarks,
+                drainPipe_steelPVC_corrosionOfSteel_rod:
+                  formdataa.drainPipe_steelPVC_corrosionOfSteel_rod,
+                drainPipe_steelPVC_blockedDrainage_tick:
+                  formdataa.drainPipe_steelPVC_blockedDrainage_tick,
+                drainPipe_steelPVC_blockedDrainage_severity:
+                  formdataa.drainPipe_steelPVC_blockedDrainage_severity,
+                drainPipe_steelPVC_blockedDrainage_pctgAff1:
+                  formdataa.drainPipe_steelPVC_blockedDrainage_pctgAff1,
+                drainPipe_steelPVC_blockedDrainage_pctgAff2:
+                  formdataa.drainPipe_steelPVC_blockedDrainage_pctgAff2,
+                drainPipe_steelPVC_blockedDrainage_remarks:
+                  formdataa.drainPipe_steelPVC_blockedDrainage_remarks,
+                drainPipe_steelPVC_blockedDrainage_rod:
+                  formdataa.drainPipe_steelPVC_blockedDrainage_rod,
+                drainPipe_steelPVC_waterLeak_tick:
+                  formdataa.drainPipe_steelPVC_waterLeak_tick,
+                drainPipe_steelPVC_waterLeak_severity:
+                  formdataa.drainPipe_steelPVC_waterLeak_severity,
+                drainPipe_steelPVC_waterLeak_pctgAff1:
+                  formdataa.drainPipe_steelPVC_waterLeak_pctgAff1,
+                drainPipe_steelPVC_waterLeak_pctgAff2:
+                  formdataa.drainPipe_steelPVC_waterLeak_pctgAff2,
+                drainPipe_steelPVC_waterLeak_remarks:
+                  formdataa.drainPipe_steelPVC_waterLeak_remarks,
+                drainPipe_steelPVC_waterLeak_rod:
+                  formdataa.drainPipe_steelPVC_waterLeak_rod,
+                drainPipe_steelPVC_inadequatePipeLength_tick:
+                  formdataa.drainPipe_steelPVC_inadequatePipeLength_tick,
+                drainPipe_steelPVC_inadequatePipeLength_severity:
+                  formdataa.drainPipe_steelPVC_inadequatePipeLength_severity,
+                drainPipe_steelPVC_inadequatePipeLength_pctgAff1:
+                  formdataa.drainPipe_steelPVC_inadequatePipeLength_pctgAff1,
+                drainPipe_steelPVC_inadequatePipeLength_pctgAff2:
+                  formdataa.drainPipe_steelPVC_inadequatePipeLength_pctgAff2,
+                drainPipe_steelPVC_inadequatePipeLength_remarks:
+                  formdataa.drainPipe_steelPVC_inadequatePipeLength_remarks,
+                drainPipe_steelPVC_inadequatePipeLength_rod:
+                  formdataa.drainPipe_steelPVC_inadequatePipeLength_rod,
+                slopeProtection_tick: formdataa.slopeProtection_tick,
+                slopeProtection_rblePitching_tick:
+                  formdataa.slopeProtection_rblePitching_tick,
+                slopeProtection_gablons_tick:
+                  formdataa.slopeProtection_gablons_tick,
+                slopeProtection_others_tick:
+                  formdataa.slopeProtection_others_tick,
+                slopeProtection_all_ratingOfMember:
+                  formdataa.slopeProtection_all_ratingOfMember,
+                slopeProtection_all_scouring_tick:
+                  formdataa.slopeProtection_all_scouring_tick,
+                slopeProtection_all_scouring_severity:
+                  formdataa.slopeProtection_all_scouring_severity,
+                slopeProtection_all_scouring_pctgAff1:
+                  formdataa.slopeProtection_all_scouring_pctgAff1,
+                slopeProtection_all_scouring_remarks:
+                  formdataa.slopeProtection_all_scouring_remarks,
+                slopeProtection_all_scouring_rod:
+                  formdataa.slopeProtection_all_scouring_rod,
+                slopeProtection_all_erosion_tick:
+                  formdataa.slopeProtection_all_erosion_tick,
+                slopeProtection_all_erosion_severity:
+                  formdataa.slopeProtection_all_erosion_severity,
+                slopeProtection_all_erosion_pctgAff1:
+                  formdataa.slopeProtection_all_erosion_pctgAff1,
+                slopeProtection_all_erosion_pctgAff2:
+                  formdataa.slopeProtection_all_erosion_pctgAff2,
+                slopeProtection_all_erosion_remarks:
+                  formdataa.slopeProtection_all_erosion_remarks,
+                slopeProtection_all_erosion_rod:
+                  formdataa.slopeProtection_all_erosion_rod,
+                slopeProtection_all_materialLoss_tick:
+                  formdataa.slopeProtection_all_materialLoss_tick,
+                slopeProtection_all_materialLoss_severity:
+                  formdataa.slopeProtection_all_materialLoss_severity,
+                slopeProtection_all_materialLoss_pctgAff1:
+                  formdataa.slopeProtection_all_materialLoss_pctgAff1,
+                slopeProtection_all_materialLoss_pctgAff2:
+                  formdataa.slopeProtection_all_materialLoss_pctgAff2,
+                slopeProtection_all_materialLoss_remarks:
+                  formdataa.slopeProtection_all_materialLoss_remarks,
+                slopeProtection_all_materialLoss_rod:
+                  formdataa.slopeProtection_all_materialLoss_rod,
+                slopeProtection_all_blank_name:
+                  formdataa.slopeProtection_all_blank_name,
+                slopeProtection_all_blank_tick:
+                  formdataa.slopeProtection_all_blank_tick,
+                slopeProtection_all_blank_severity:
+                  formdataa.slopeProtection_all_blank_severity,
+                slopeProtection_all_blank_pctgAff1:
+                  formdataa.slopeProtection_all_blank_pctgAff1,
+                slopeProtection_all_blank_pctgAff2:
+                  formdataa.slopeProtection_all_blank_pctgAff2,
+                slopeProtection_all_blank_remarks:
+                  formdataa.slopeProtection_all_blank_remarks,
+                slopeProtection_all_blank_rod:
+                  formdataa.slopeProtection_all_blank_rod,
+                hydraulicCapacity_inadequateOpening_ratingOfMember:
+                  formdataa.hydraulicCapacity_inadequateOpening_ratingOfMember,
+                hydraulicCapacity_inadequateOpening_tick:
+                  formdataa.hydraulicCapacity_inadequateOpening_tick,
+                hydraulicCapacity_inadequateOpening_severity:
+                  formdataa.hydraulicCapacity_inadequateOpening_severity,
+                hydraulicCapacity_inadequateOpening_pctgAff1:
+                  formdataa.hydraulicCapacity_inadequateOpening_pctgAff1,
+                hydraulicCapacity_inadequateOpening_remarks:
+                  formdataa.hydraulicCapacity_inadequateOpening_remarks,
+                hydraulicCapacity_inadequateOpening_rod:
+                  formdataa.hydraulicCapacity_inadequateOpening_rod,
+                allComponentsInspected: formdataa.allComponentsInspected,
+              },
+            });
+
+            //IF UPDATE bridgeformtwo SUCCESS
+            if (UPDATE_formdata_2) {
+              return NextResponse.json({
+                success: true,
+                message: "Data updated successfully to database",
+              });
+            }
+            //IF UPDATE bridgeformtwo FAIL
+            else {
+            }
+
+            // console.log(CREATE_formdata_2);
+          } catch (error) {
+            console.log("error bridgeformtwo: ", error);
+          }
+        } else {
+        }
       }
       // IF UPDATE bridgeformone FAIL
       else {
@@ -1150,10 +1586,6 @@ export async function POST(
       //IF INSERT bridgeformone SUCCESS
       if (CREATE_formdata) {
         try {
-          console.log(
-            `${formdataa.bearing_steelAndRubberAndOthers_ratingOfMember}`
-          );
-
           //INSERT bridgeformtwo
           const CREATE_formdata_2 = await prisma.bridgeformtwo.create({
             data: {
@@ -1177,7 +1609,6 @@ export async function POST(
                 formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_remarks,
               bearing_steelAndRubberAndOthers_corrosionOfSteel_rod:
                 formdataa.bearing_steelAndRubberAndOthers_corrosionOfSteel_rod,
-              // (47) C - Bearing | M - Steel, Rubber, and Others | T - Loose Connections
               bearing_steelAndRubberAndOthers_looseConnections_tick:
                 formdataa.bearing_steelAndRubberAndOthers_looseConnections_tick,
               bearing_steelAndRubberAndOthers_looseConnections_severity:
@@ -1190,7 +1621,6 @@ export async function POST(
                 formdataa.bearing_steelAndRubberAndOthers_looseConnections_remarks,
               bearing_steelAndRubberAndOthers_looseConnections_rod:
                 formdataa.bearing_steelAndRubberAndOthers_looseConnections_rod,
-              // (48) C - Bearing | M - Steel, Rubber, and Others | T - Pending Water
               bearing_steelAndRubberAndOthers_pendingWater_tick:
                 formdataa.bearing_steelAndRubberAndOthers_pendingWater_tick,
               bearing_steelAndRubberAndOthers_pendingWater_severity:
@@ -1201,7 +1631,6 @@ export async function POST(
                 formdataa.bearing_steelAndRubberAndOthers_pendingWater_remarks,
               bearing_steelAndRubberAndOthers_pendingWater_rod:
                 formdataa.bearing_steelAndRubberAndOthers_pendingWater_rod,
-              // (49) C - Bearing | M - Steel, Rubber, and Others | T - Debris/Vegetation
               bearing_steelAndRubberAndOthers_debrisOrVegetation_tick:
                 formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_tick,
               bearing_steelAndRubberAndOthers_debrisOrVegetation_severity:
@@ -1212,7 +1641,6 @@ export async function POST(
                 formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_remarks,
               bearing_steelAndRubberAndOthers_debrisOrVegetation_rod:
                 formdataa.bearing_steelAndRubberAndOthers_debrisOrVegetation_rod,
-              // (50) C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Bulging
               bearing_steelAndRubberAndOthers_abnormalBulging_tick:
                 formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_tick,
               bearing_steelAndRubberAndOthers_abnormalBulging_severity:
@@ -1223,7 +1651,6 @@ export async function POST(
                 formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_remarks,
               bearing_steelAndRubberAndOthers_abnormalBulging_rod:
                 formdataa.bearing_steelAndRubberAndOthers_abnormalBulging_rod,
-              // (51) C - Bearing | M - Steel, Rubber, and Others | T - Abnormal Displacement
               bearing_steelAndRubberAndOthers_abnormalDisplacement_tick:
                 formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_tick,
               bearing_steelAndRubberAndOthers_abnormalDisplacement_severity:
@@ -1236,18 +1663,12 @@ export async function POST(
                 formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_remarks,
               bearing_steelAndRubberAndOthers_abnormalDisplacement_rod:
                 formdataa.bearing_steelAndRubberAndOthers_abnormalDisplacement_rod,
-              // C - Parapet
               parapet_tick: formdataa.parapet_tick,
-              // C - Parapet | M - Steel
               parapet_steel_tick: formdataa.parapet_steel_tick,
-              // C - Parapet | M - Rubber
               parapet_concrete_tick: formdataa.parapet_concrete_tick,
-              // C - Parapet | M - Others
               parapet_others_tick: formdataa.parapet_others_tick,
-              // C - Parapet | M - Concrete And Masonry (Rating of Member)
               parapet_steelAndConcreteAndOthers_ratingOfMember:
                 formdataa.parapet_steelAndConcreteAndOthers_ratingOfMember,
-              // (52) C - Parapet | M - Steel, Concrete, and Others | T - Corrosion of Steel
               parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick:
                 formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick,
               parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity:
@@ -1260,7 +1681,6 @@ export async function POST(
                 formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_remarks,
               parapet_steelAndConcreteAndOthers_corrosionOfSteel_rod:
                 formdataa.parapet_steelAndConcreteAndOthers_corrosionOfSteel_rod,
-              // (53) C - Parapet | M - Steel, Concrete, and Others | T - Cracks at Concrete
               parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick:
                 formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick,
               parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity:
@@ -1271,7 +1691,6 @@ export async function POST(
                 formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_remarks,
               parapet_steelAndConcreteAndOthers_cracksAtConcrete_rod:
                 formdataa.parapet_steelAndConcreteAndOthers_cracksAtConcrete_rod,
-              // (54) C - Parapet | M - Steel, Concrete, and Others | T - Spalling
               parapet_steelAndConcreteAndOthers_spalling_tick:
                 formdataa.parapet_steelAndConcreteAndOthers_spalling_tick,
               parapet_steelAndConcreteAndOthers_spalling_severity:
@@ -1284,7 +1703,6 @@ export async function POST(
                 formdataa.parapet_steelAndConcreteAndOthers_spalling_remarks,
               parapet_steelAndConcreteAndOthers_spalling_rod:
                 formdataa.parapet_steelAndConcreteAndOthers_spalling_rod,
-              // (55) C - Parapet | M - Steel, Concrete, and Others | T - Impact Damage
               parapet_steelAndConcreteAndOthers_impactDamage_tick:
                 formdataa.parapet_steelAndConcreteAndOthers_impactDamage_tick,
               parapet_steelAndConcreteAndOthers_impactDamage_severity:
@@ -1297,7 +1715,6 @@ export async function POST(
                 formdataa.parapet_steelAndConcreteAndOthers_impactDamage_remarks,
               parapet_steelAndConcreteAndOthers_impactDamage_rod:
                 formdataa.parapet_steelAndConcreteAndOthers_impactDamage_rod,
-              // (56) C - Parapet | M - Steel, Concrete, and Others | T - Loose Connections
               parapet_steelAndConcreteAndOthers_looseConnections_tick:
                 formdataa.parapet_steelAndConcreteAndOthers_looseConnections_tick,
               parapet_steelAndConcreteAndOthers_looseConnections_severity:
@@ -1310,16 +1727,11 @@ export async function POST(
                 formdataa.parapet_steelAndConcreteAndOthers_looseConnections_remarks,
               parapet_steelAndConcreteAndOthers_looseConnections_rod:
                 formdataa.parapet_steelAndConcreteAndOthers_looseConnections_rod,
-              // C - Surfacing
               surfacing__tick: formdataa.surfacing__tick,
-              // C - Surfacing | M - Asphalt
               surfacing_asphalt_tick: formdataa.surfacing_asphalt_tick,
-              // C - Surfacing | M - Concrete
               surfacing_concrete_tick: formdataa.surfacing_concrete_tick,
-              // C - Surfacing | M - Asphalt And Concrete (Rating of Member)
               surfacing_asphaltAndConcrete_ratingOfMember:
                 formdataa.surfacing_asphaltAndConcrete_ratingOfMember,
-              // (57) C - Surfacing | M - Steel, Concrete, and Others | T - Pot-holes
               surfacing_asphaltAndConcrete_potHoles_tick:
                 formdataa.surfacing_asphaltAndConcrete_potHoles_tick,
               surfacing_asphaltAndConcrete_potHoles_severity:
@@ -1332,7 +1744,6 @@ export async function POST(
                 formdataa.surfacing_asphaltAndConcrete_potHoles_remarks,
               surfacing_asphaltAndConcrete_potHoles_rod:
                 formdataa.surfacing_asphaltAndConcrete_potHoles_rod,
-              // (58) C - Surfacing | M - Steel, Concrete, and Others | T - Wheel Track Rutting
               surfacing_asphaltAndConcrete_wheelTrackRutting_tick:
                 formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_tick,
               surfacing_asphaltAndConcrete_wheelTrackRutting_severity:
@@ -1345,7 +1756,6 @@ export async function POST(
                 formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_remarks,
               surfacing_asphaltAndConcrete_wheelTrackRutting_rod:
                 formdataa.surfacing_asphaltAndConcrete_wheelTrackRutting_rod,
-              // (59) C - Surfacing | M - Steel, Concrete, and Others | T - Loss of Bond & Delamination
               surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick:
                 formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick,
               surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity:
@@ -1358,7 +1768,6 @@ export async function POST(
                 formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_remarks,
               surfacing_asphaltAndConcrete_lostOfBondAndDelamination_rod:
                 formdataa.surfacing_asphaltAndConcrete_lostOfBondAndDelamination_rod,
-              // (60) C - Surfacing | M - Steel, Concrete, and Others | T - Rippling
               surfacing_asphaltAndConcrete_rippling_tick:
                 formdataa.surfacing_asphaltAndConcrete_rippling_tick,
               surfacing_asphaltAndConcrete_rippling_severity:
@@ -1369,7 +1778,6 @@ export async function POST(
                 formdataa.surfacing_asphaltAndConcrete_rippling_remarks,
               surfacing_asphaltAndConcrete_rippling_rod:
                 formdataa.surfacing_asphaltAndConcrete_rippling_rod,
-              // (61) C - Surfacing | M - Steel, Concrete, and Others | T - Pavement Crack
               surfacing_asphaltAndConcrete_pavementCrack_tick:
                 formdataa.surfacing_asphaltAndConcrete_pavementCrack_tick,
               surfacing_asphaltAndConcrete_pavementCrack_severity:
@@ -1380,25 +1788,17 @@ export async function POST(
                 formdataa.surfacing_asphaltAndConcrete_pavementCrack_remarks,
               surfacing_asphaltAndConcrete_pavementCrack_rod:
                 formdataa.surfacing_asphaltAndConcrete_pavementCrack_rod,
-              // C - Expansion Joint
               expansionJoint__tick: formdataa.expansionJoint__tick,
-              // C - Expansion Joint | M - Asp. Plug
               expansionJoint_aspPlug_tick:
                 formdataa.expansionJoint_aspPlug_tick,
-              // C - Expansion Joint | M - Elastomeric
               expansionJoint_elastomeric_tick:
                 formdataa.expansionJoint_elastomeric_tick,
-              // C - Expansion Joint | M - Comp Seal
               expansionJoint_compSeal_tick:
                 formdataa.expansionJoint_compSeal_tick,
-              // C - Expansion Joint | M - Buried
               expansionJoint_buried_tick: formdataa.expansionJoint_buried_tick,
-              // C - Expansion Joint | M - Others
               expansionJoint_others_tick: formdataa.expansionJoint_others_tick,
-              // C - Expansion Joint | M - All (Rating of Member)
               expansionJoint_all_ratingOfMember:
                 formdataa.expansionJoint_all_ratingOfMember,
-              // (62) C - Expansion Joint | M - Alls | T - Abnormal Spacing
               expansionJoint_all_abnormalSpacing_tick:
                 formdataa.expansionJoint_all_abnormalSpacing_tick,
               expansionJoint_all_abnormalSpacing_severity:
@@ -1409,7 +1809,6 @@ export async function POST(
                 formdataa.expansionJoint_all_abnormalSpacing_remarks,
               expansionJoint_all_abnormalSpacing_rod:
                 formdataa.expansionJoint_all_abnormalSpacing_rod,
-              // (63) C - Expansion Joint | M - Alls | T - Difference in Level
               expansionJoint_all_differenceInLevel_tick:
                 formdataa.expansionJoint_all_differenceInLevel_tick,
               expansionJoint_all_differenceInLevel_severity:
@@ -1422,7 +1821,6 @@ export async function POST(
                 formdataa.expansionJoint_all_differenceInLevel_remarks,
               expansionJoint_all_differenceInLevel_rod:
                 formdataa.expansionJoint_all_differenceInLevel_rod,
-              // (64) C - Expansion Joint | M - Alls | T - Water Leak
               expansionJoint_all_waterLeak_tick:
                 formdataa.expansionJoint_all_waterLeak_tick,
               expansionJoint_all_waterLeak_severity:
@@ -1435,7 +1833,6 @@ export async function POST(
                 formdataa.expansionJoint_all_waterLeak_remarks,
               expansionJoint_all_waterLeak_rod:
                 formdataa.expansionJoint_all_waterLeak_rod,
-              // (65) C - Expansion Joint | M - Alls | T - Cracking at Exp. Joint
               expansionJoint_all_crackingAtExpJoint_tick:
                 formdataa.expansionJoint_all_crackingAtExpJoint_tick,
               expansionJoint_all_crackingAtExpJoint_severity:
@@ -1448,7 +1845,6 @@ export async function POST(
                 formdataa.expansionJoint_all_crackingAtExpJoint_remarks,
               expansionJoint_all_crackingAtExpJoint_rod:
                 formdataa.expansionJoint_all_crackingAtExpJoint_rod,
-              // (66) C - Expansion Joint | M - Alls | T - Rupture
               expansionJoint_all_rupture_tick:
                 formdataa.expansionJoint_all_rupture_tick,
               expansionJoint_all_rupture_severity:
@@ -1461,16 +1857,11 @@ export async function POST(
                 formdataa.expansionJoint_all_rupture_remarks,
               expansionJoint_all_rupture_rod:
                 formdataa.expansionJoint_all_rupture_rod,
-              // C - Drain Pipe
               drainPipe_tick: formdataa.drainPipe_tick,
-              // C - Drain Pipe | M - Steel
               drainPipe_steel_tick: formdataa.drainPipe_steel_tick,
-              // C - Drain Pipe | M - PVC
               drainPipe_pvc_tick: formdataa.drainPipe_pvc_tick,
-              // C - Expansion Joint | M - All (Rating of Member)
               drainPipe_all_ratingOfMember:
                 formdataa.drainPipe_all_ratingOfMember,
-              // (67) C - Drain Pipe | M - Steel and PVC | T - Corrosion of Steel
               drainPipe_steelPVC_corrosionOfSteel_tick:
                 formdataa.drainPipe_steelPVC_corrosionOfSteel_tick,
               drainPipe_steelPVC_corrosionOfSteel_severity:
@@ -1483,7 +1874,6 @@ export async function POST(
                 formdataa.drainPipe_steelPVC_corrosionOfSteel_remarks,
               drainPipe_steelPVC_corrosionOfSteel_rod:
                 formdataa.drainPipe_steelPVC_corrosionOfSteel_rod,
-              // (68) C - Drain Pipe | M - Steel and PVC | T - Blocked Drainage
               drainPipe_steelPVC_blockedDrainage_tick:
                 formdataa.drainPipe_steelPVC_blockedDrainage_tick,
               drainPipe_steelPVC_blockedDrainage_severity:
@@ -1593,15 +1983,21 @@ export async function POST(
             },
           });
 
+          //IF INSERT bridgeformtwo SUCCESS
+          if (CREATE_formdata_2) {
+            return NextResponse.json({
+              success: true,
+              message: "Data saved successfully to database",
+            });
+          }
+          //IF INSERT bridgeformtwo FAIL
+          else {
+          }
+
           // console.log(CREATE_formdata_2);
         } catch (error) {
           console.log("error bridgeformtwo: ", error);
         }
-
-        return NextResponse.json({
-          success: true,
-          message: "Data saved successfully to database",
-        });
       }
       //IF INSERT bridgeformone FAIL
       else {
