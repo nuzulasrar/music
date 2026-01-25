@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "@/components/Modal";
 import Link from "next/link";
 
-const page = ({ params }) => {
+const page = ({ params }: any) => {
   const { projectID, page } = params;
 
   const [editCheck, setEditCheck] = useState(false);
@@ -110,7 +110,7 @@ const page = ({ params }) => {
         {/* sadsadsa {JSON.stringify(thisArr)} */}
         {thisArr &&
           thisArr.length > 0 &&
-          thisArr.map((item, index) => (
+          thisArr.map((item: any, index: any) => (
             <div className="mb-4">
               <p>{item}</p>
             </div>

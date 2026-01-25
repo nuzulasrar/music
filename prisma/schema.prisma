@@ -901,6 +901,7 @@ model Bridgeuploadedfiles {
   projectBridgeId    Int
   projectbridge      ProjectBridge    @relation(fields: [projectBridgeId], references: [id])
 
+  position          Int    @default(0) 
   filename          String    @db.Text
   filetype      String    @db.Text
   categorytype      String    @db.Text

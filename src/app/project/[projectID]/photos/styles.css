@@ -1,0 +1,46 @@
+/* styles.css */
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .bottom-space1 {
+    margin-bottom: 50px;
+  }
+
+  .font-th-1 {
+    font-size: 10px;
+  }
+
+  /* h1 {
+    font-size: 40px;
+  } */
+
+  /* General approach for most modern browsers */
+  body {
+    overflow: hidden !important;
+  }
+
+  /* Specific rules for WebKit-based browsers (Chrome, Safari, Opera, new Edge) */
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Specific rule for Firefox */
+  body {
+    scrollbar-width: none !important;
+  }
+
+  /* Specific rule for IE and old Edge */
+  body {
+    -ms-overflow-style: none !important;
+  }
+}
+
+table {
+  border: 2px solid black;
+}
+th,
+td {
+  border: 1px solid black;
+}

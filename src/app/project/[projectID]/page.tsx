@@ -373,7 +373,7 @@ const page = ({ params }: any) => {
       fd.append(`files${index}`, thisarray[index]);
     });
 
-    fd.append(`id`, data[0]?.id);
+    fd.append(`id`, data.id);
 
     try {
       const response = await fetch("/api/uploadtemplate", {
@@ -403,7 +403,7 @@ const page = ({ params }: any) => {
       fd.append(`files${index}`, thisarray[index]);
     });
 
-    fd.append(`id`, data[0]?.id);
+    fd.append(`id`, data.id);
 
     try {
       const response = await fetch("/api/uploadtemplatepdf", {
@@ -412,6 +412,8 @@ const page = ({ params }: any) => {
       });
 
       const json = await response.json();
+
+      console.log("JSON: ", JSON.stringify(json, null, 2));
 
       if (json.success) {
         window.location.reload();
@@ -845,7 +847,7 @@ const page = ({ params }: any) => {
       </div>
       <div className="w-full mb-4">
         <h1 className="font-bold text-center">ROUTINE CONDITION INSPECTION</h1>
-        <p className="font-bold text-center">Summary Report Form</p>
+        <p className="font-bold text-center">- Summary Report Form -</p>
         <div className="mt-4">
           <p className="font-semibold mb-1">Location Data:</p>
           <table className="w-full mb-3">
@@ -2546,10 +2548,17 @@ const page = ({ params }: any) => {
         </div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full mb-4">
         <button className="bg-blue-500 px-6 py-2 rounded-lg">
           <Link href={`/project/${projectID}/formpage/1`}>
             <p className="text-white">Form Pages</p>
+          </Link>
+        </button>
+      </div>
+      <div className="w-full">
+        <button className="bg-blue-500 px-6 py-2 rounded-lg">
+          <Link href={`/project/${projectID}/photos`}>
+            <p className="text-white">Photos</p>
           </Link>
         </button>
       </div>
