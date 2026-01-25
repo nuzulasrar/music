@@ -1,80 +1,81 @@
-'use client'
-import React, { useState } from 'react'
+"use client";
+import React, { useState } from "react";
 
 interface ModalInterface {
-  pressCancel: (option: boolean) => void
-  pressCreate: () => void
+  pressCancel: (option: boolean) => void;
+  pressCreate: () => void;
 }
 
 const Modal: any = ({ pressCancel, pressCreate }: any) => {
-  const [projectName, setProjectName] = useState('')
-  const [projectType, setProjectType] = useState('')
+  const [projectName, setProjectName] = useState("");
+  const [projectType, setProjectType] = useState("");
 
   const [locationData, setLocationData] = useState({
-    route_no: '',
-    bridge_name: '',
-    structure_no: '',
-    district: '',
-    state: '',
-  })
+    route_no: "",
+    bridge_name: "",
+    structure_no: "",
+    district: "",
+    state: "",
+  });
   const [bridgeType, setBridgeType] = useState({
-    system_type: '',
-    deck_type: '',
-    abutment_type: '',
-    pier_type: '',
-  })
+    system_type: "",
+    deck_type: "",
+    abutment_type: "",
+    pier_type: "",
+  });
 
   const [structureData, setStructureData] = useState({
-    road_width: '',
-    bridge_width: '',
-    skew_angle: '',
-    no_span: '',
-    spans: '',
-    bridge_length: '',
-    year_build: '',
-    year_repair: '',
-  })
+    road_width: "",
+    bridge_width: "",
+    skew_angle: "",
+    no_span: "",
+    spans: "",
+    bridge_length: "",
+    year_build: "",
+    year_repair: "",
+  });
 
   const handleLocationDataChange = (name: string, value: string) => {
-    setLocationData({ ...locationData, [name]: value })
-  }
+    setLocationData({ ...locationData, [name]: value });
+  };
   const handleBridgeTypeChange = (name: string, value: string) => {
-    setBridgeType({ ...bridgeType, [name]: value })
-  }
+    setBridgeType({ ...bridgeType, [name]: value });
+  };
   const handleStructureDataChange = (name: string, value: string) => {
-    setStructureData({ ...structureData, [name]: value })
-  }
+    setStructureData({ ...structureData, [name]: value });
+  };
 
   const postProject = async () => {
     try {
-      const response = await fetch('/api/project', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/project", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           projectName,
           projectType,
           location_data: locationData,
+          bridgeType: bridgeType,
           structured_data: structureData,
         }),
-      })
+      });
 
-      const result = await response.json()
-      console.log(JSON.stringify(result))
+      const result = await response.json();
+      console.log(JSON.stringify(result, null, 2));
 
       if (result.success) {
-        alert(result.msg)
-        pressCancel && pressCancel(false)
-        pressCreate && pressCreate()
+        alert(result.msg);
+        pressCancel && pressCancel(false);
+        pressCreate && pressCreate();
       } else {
-        alert(result.error)
+        alert(result.error);
       }
 
       // alert(JSON.stringify(result));
     } catch (error) {
-      console.log(error)
+      console.log(error);
       // throw new Error(error);
     }
-  }
+  };
 
   return (
     <div
@@ -90,8 +91,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
           <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
             <form
               onSubmit={(e) => {
-                e.preventDefault()
-                if (projectName && projectType) postProject()
+                e.preventDefault();
+                if (projectName && projectType) postProject();
               }}
             >
               <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
@@ -128,7 +129,6 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                               >
                                 <option value="">Select One</option>
                                 <option value="Bridge">Bridge</option>
-                                <option value="Toll">Toll Plaza</option>
                               </select>
                             </td>
                           </tr>
@@ -144,8 +144,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={locationData.route_no}
                                 onChange={(e) =>
                                   handleLocationDataChange(
-                                    'route_no',
-                                    e.target.value
+                                    "route_no",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -161,8 +161,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={locationData.bridge_name}
                                 onChange={(e) =>
                                   handleLocationDataChange(
-                                    'bridge_name',
-                                    e.target.value
+                                    "bridge_name",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -178,8 +178,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={locationData.structure_no}
                                 onChange={(e) =>
                                   handleLocationDataChange(
-                                    'structure_no',
-                                    e.target.value
+                                    "structure_no",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -195,8 +195,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={locationData.district}
                                 onChange={(e) =>
                                   handleLocationDataChange(
-                                    'district',
-                                    e.target.value
+                                    "district",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -212,8 +212,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={locationData.state}
                                 onChange={(e) =>
                                   handleLocationDataChange(
-                                    'state',
-                                    e.target.value
+                                    "state",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -232,8 +232,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={bridgeType.system_type}
                                 onChange={(e) =>
                                   handleBridgeTypeChange(
-                                    'system_type',
-                                    e.target.value
+                                    "system_type",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -249,8 +249,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={bridgeType.deck_type}
                                 onChange={(e) =>
                                   handleBridgeTypeChange(
-                                    'deck_type',
-                                    e.target.value
+                                    "deck_type",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -266,8 +266,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={bridgeType.abutment_type}
                                 onChange={(e) =>
                                   handleBridgeTypeChange(
-                                    'abutment_type',
-                                    e.target.value
+                                    "abutment_type",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -283,8 +283,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={bridgeType.pier_type}
                                 onChange={(e) =>
                                   handleBridgeTypeChange(
-                                    'pier_type',
-                                    e.target.value
+                                    "pier_type",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -303,8 +303,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.road_width}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'road_width',
-                                    e.target.value
+                                    "road_width",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -320,8 +320,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.bridge_width}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'bridge_width',
-                                    e.target.value
+                                    "bridge_width",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -337,8 +337,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.skew_angle}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'skew_angle',
-                                    e.target.value
+                                    "skew_angle",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -354,8 +354,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.no_span}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'no_span',
-                                    e.target.value
+                                    "no_span",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -371,8 +371,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.spans}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'spans',
-                                    e.target.value
+                                    "spans",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -388,8 +388,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.bridge_length}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'bridge_length',
-                                    e.target.value
+                                    "bridge_length",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -405,8 +405,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.year_build}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'year_build',
-                                    e.target.value
+                                    "year_build",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -422,8 +422,8 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
                                 value={structureData.year_repair}
                                 onChange={(e) =>
                                   handleStructureDataChange(
-                                    'year_repair',
-                                    e.target.value
+                                    "year_repair",
+                                    e.target.value,
                                   )
                                 }
                                 className="border border-gray-300 rounded-md h-[35px] pl-2"
@@ -456,7 +456,7 @@ const Modal: any = ({ pressCancel, pressCreate }: any) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

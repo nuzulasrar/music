@@ -49,7 +49,7 @@ const page = ({ params }: any) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data), // your array
+        body: JSON.stringify({ projectID: projectID, photosData: data }), // your array
       });
 
       const result = await response.json();
