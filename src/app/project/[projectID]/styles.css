@@ -1,5 +1,9 @@
 /* styles.css */
 @media print {
+  p {
+    font-size: 10px;
+  }
+
   .no-print {
     display: none;
   }

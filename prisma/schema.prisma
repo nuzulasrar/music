@@ -133,6 +133,7 @@ model ProjectBridge {
   previousInspectionDate           String    @db.Text
   signature           String    @db.Text
   createdAt       DateTime  @default(now())
+  updatedBy       String?    @db.Text
   updatedAt       DateTime  @updatedAt
   Bridgeformone Bridgeformone[]
   Bridgeuploadedfiles Bridgeuploadedfiles[]

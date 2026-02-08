@@ -33,6 +33,17 @@ const page = ({ params }: any) => {
     b_pierType: "",
   });
 
+  const [structureData, setStructureData] = useState<any>({
+    s_roadWidth: "",
+    s_bridgeWidth: "",
+    s_skewAngle: "",
+    s_noOfSpan: "",
+    s_spans: "",
+    s_yearBuilt: "",
+    s_bridgeLength: "",
+    s_yearRepaired: "",
+  });
+
   const [c0, setC0] = useState({
     main: false,
     one: false,
@@ -180,6 +191,17 @@ const page = ({ params }: any) => {
           b_deckType: result.data.b_deckType,
           b_abutmentType: result.data.b_abutmentType,
           b_pierType: result.data.b_pierType,
+        });
+
+        setStructureData({
+          s_roadWidth: result.data.s_roadWidth,
+          s_bridgeWidth: result.data.s_bridgeWidth,
+          s_skewAngle: result.data.s_skewAngle,
+          s_noOfSpan: result.data.s_noOfSpan,
+          s_spans: result.data.s_spans,
+          s_yearBuilt: result.data.s_yearBuilt,
+          s_bridgeLength: result.data.s_bridgeLength,
+          s_yearRepaired: result.data.s_yearRepaired,
         });
 
         setC0({
@@ -424,6 +446,125 @@ const page = ({ params }: any) => {
       console.log(error.message);
       // throw error;
     }
+  };
+
+  const handleUpdateData = async () => {
+    const response = await fetch("/api/projectdetails", {
+      method: "PUT",
+      body: JSON.stringify({
+        projectID: Number(id),
+        formdataa: JSON.stringify({
+          projectID: Number(id),
+          formdataa: {
+            l_routeNo: locationData.l_routeNo,
+            l_structureNo: locationData.l_structureNo,
+            l_riverOrBridgeName: locationData.l_riverOrBridgeName,
+            l_district: locationData.l_district,
+            l_state: locationData.l_state,
+            b_systemType: bridgeData.b_systemType,
+            b_deckType: bridgeData.b_deckType,
+            b_abutmentType: bridgeData.b_abutmentType,
+            b_pierType: bridgeData.b_pierType,
+            s_roadWidth: inputRefs.current,
+            s_bridgeWidth: inputRefs.current,
+            s_skewAngle: inputRefs.current,
+            s_noOfSpan: inputRefs.current,
+            s_spans: inputRefs.current,
+            s_yearBuilt: inputRefs.current,
+            s_bridgeLength: inputRefs.current,
+            s_yearRepaired: inputRefs.current,
+            beamGirder_tick: tickBG.beamGirder,
+            beamGirder_steel_tick: tickBG.steel,
+            beamGirder_pconcrete_tick: tickBG.pConcrete,
+            beamGirder_rconcrete_tick: tickBG.rConcrete,
+            beamGirder_oldRating: inputRefs.current,
+            beamGirder_newRating: inputRefs.current,
+            beamGirder_majorDamages: inputRefs.current,
+            beamGirder_maintenanceWorkRequired: inputRefs.current,
+            deckSlab_tick: tickDS.beamGirder,
+            deckSlab_steel_tick: tickDS.beamGirder,
+            deckSlab_concrete_tick: tickDS.beamGirder,
+            deckSlab_oldRating: inputRefs.current,
+            deckSlab_newRating: inputRefs.current,
+            deckSlab_majorDamages: inputRefs.current,
+            deckSlab_maintenanceWorkRequired: inputRefs.current,
+            pier_tick: tickPier.beamGirder,
+            pier_concrete_tick: tickPier.beamGirder,
+            pier_masonry_tick: tickPier.beamGirder,
+            pier_oldRating: inputRefs.current,
+            pier_newRating: inputRefs.current,
+            pier_majorDamages: inputRefs.current,
+            pier_maintenanceWorkRequired: inputRefs.current,
+            abutment_tick: tickAbutment.beamGirder,
+            abutment_concrete_tick: tickAbutment.beamGirder,
+            abutment_masonry_tick: tickAbutment.beamGirder,
+            abutment_oldRating: inputRefs.current,
+            abutment_newRating: inputRefs.current,
+            abutment_majorDamages: inputRefs.current,
+            abutment_maintenanceWorkRequired: inputRefs.current,
+            bearing_tick: tickBearing.beamGirder,
+            bearing_steel_tick: tickBearing.beamGirder,
+            bearing_rubber_tick: tickBearing.beamGirder,
+            bearing_oldRating: inputRefs.current,
+            bearing_newRating: inputRefs.current,
+            bearing_majorDamages: inputRefs.current,
+            bearing_maintenanceWorkRequired: inputRefs.current,
+            drainpipe_tick: tickDP.beamGirder,
+            drainpipe_steel_tick: tickDP.beamGirder,
+            drainpipe_pvc_tick: tickDP.beamGirder,
+            drainpipe_oldRating: inputRefs.current,
+            drainpipe_newRating: inputRefs.current,
+            drainpipe_majorDamages: inputRefs.current,
+            drainpipe_maintenanceWorkRequired: inputRefs.current,
+            parapet_tick: tickParapet.beamGirder,
+            parapet_steel_tick: tickParapet.beamGirder,
+            parapet_concrete_tick: tickParapet.beamGirder,
+            parapet_others_tick: tickParapet.beamGirder,
+            parapet_oldRating: inputRefs.current,
+            parapet_newRating: inputRefs.current,
+            parapet_majorDamages: inputRefs.current,
+            parapet_maintenanceWorkRequired: inputRefs.current,
+            surfacing_tick: tickSurfacing.beamGirder,
+            surfacing_asphalt_tick: tickSurfacing.beamGirder,
+            surfacing_concrete_tick: tickSurfacing.beamGirder,
+            surfacing_oldRating: inputRefs.current,
+            surfacing_newRating: inputRefs.current,
+            surfacing_majorDamages: inputRefs.current,
+            surfacing_maintenanceWorkRequired: inputRefs.current,
+            expansionJoint_tick: tickEJ.beamGirder,
+            expansionJoint_asphaltPlug_tick: tickEJ.beamGirder,
+            expansionJoint_elastomeric_tick: tickEJ.beamGirder,
+            expansionJoint_others_tick: tickEJ.beamGirder,
+            expansionJoint_oldRating: inputRefs.current,
+            expansionJoint_newRating: inputRefs.current,
+            expansionJoint_majorDamages: inputRefs.current,
+            expansionJoint_maintenanceWorkRequired: inputRefs.current,
+            slopeProtection_tick: tickSP.beamGirder,
+            slopeProtection_rubblePitching_tick: tickSP.beamGirder,
+            slopeProtection_gabions_tick: tickSP.beamGirder,
+            slopeProtection_others_tick: tickSP.beamGirder,
+            slopeProtection_oldRating: inputRefs.current,
+            slopeProtection_newRating: inputRefs.current,
+            slopeProtection_majorDamages: inputRefs.current,
+            slopeProtection_maintenanceWorkRequired: inputRefs.current,
+            culvert_tick: tickCulvert.beamGirder,
+            culvert_steel_tick: tickCulvert.beamGirder,
+            culvert_concrete_tick: tickCulvert.beamGirder,
+            culvert_masonry_tick: tickCulvert.beamGirder,
+            culvert_oldRating: inputRefs.current,
+            culvert_newRating: inputRefs.current,
+            culvert_majorDamages: inputRefs.current,
+            culvert_maintenanceWorkRequired: inputRefs.current,
+            inspectorComment: inputRefs.current,
+            detailedInspection: tickIC,
+            noOfPages: inputRefs.current,
+            nameOfInspector: inputRefs.current,
+            inspectionDate: inputRefs.current,
+            previousInspectionDate: inputRefs.current,
+          },
+        }),
+      }),
+    });
   };
 
   const [editForm, setEditForm] = useState(0);
@@ -768,7 +909,6 @@ const page = ({ params }: any) => {
     // );
 
     thisdata[index].formdata = JSON.stringify(thisMaterial);
-    //balik
 
     updateForm(thisdata[index].formdata, thisdata[index].id);
     // console.log(thisdata[index]);
@@ -841,6 +981,14 @@ const page = ({ params }: any) => {
                 <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                 <p className="ml-3">{editCheck ? "Edit Mode" : "View Mode"}</p>
               </label>
+              <div className="mt-6">
+                <button
+                  className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
+                  onClick={handleUpdateData}
+                >
+                  UPDATE INFORMATION
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1060,6 +1208,194 @@ const page = ({ params }: any) => {
                       />
                     ) : (
                       bridgeData.b_pierType
+                    )}
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p className="font-semibold mb-1">Structure Data:</p>
+          <table className="w-full mb-3">
+            <tbody>
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p className="">Road Width: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_roadWidth}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_roadWidth: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_roadWidth
+                    )}
+                  </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="">Bridge Width: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_bridgeWidth}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_bridgeWidth: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_bridgeWidth
+                    )}
+                  </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="">Skew Angle: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_skewAngle}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_skewAngle: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_skewAngle
+                    )}
+                  </p>
+                </td>
+              </tr>
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p className="">No. of Span: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_noOfSpan}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_noOfSpan: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_noOfSpan
+                    )}
+                  </p>
+                </td>
+                <td rowSpan={2} className="border border-black p-2">
+                  <p className="">Span(s): </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_spans}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_spans: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_spans
+                    )}
+                  </p>
+                </td>
+                <td rowSpan={2} className="border border-black p-2">
+                  <p className="">Year Built: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_yearBuilt}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_yearBuilt: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_yearBuilt
+                    )}
+                  </p>
+                </td>
+              </tr>
+              <tr className="border border-black">
+                <td className="border border-black p-2">
+                  <p className="">Bridge Length: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_bridgeLength}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_bridgeLength: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_bridgeLength
+                    )}
+                  </p>
+                </td>
+                <td rowSpan={2} className="border border-black p-2">
+                  <p className="">Year Repaired: </p>
+                </td>
+                <td className="border border-black p-2">
+                  <p className="font-bold">
+                    {editCheck ? (
+                      <textarea
+                        className="w-full text-center"
+                        value={structureData.s_yearRepaired}
+                        onChange={(e) =>
+                          setStructureData({
+                            ...structureData,
+                            s_yearRepaired: e.target.value,
+                          })
+                        }
+                        style={{ height: 100 }}
+                      />
+                    ) : (
+                      structureData.s_yearRepaired
                     )}
                   </p>
                 </td>
@@ -2548,14 +2884,14 @@ const page = ({ params }: any) => {
         </div>
       </div>
 
-      <div className="w-full mb-4">
+      <div className="w-full mb-4 no-print">
         <button className="bg-blue-500 px-6 py-2 rounded-lg">
           <Link href={`/project/${projectID}/formpage/1`}>
             <p className="text-white">Form Pages</p>
           </Link>
         </button>
       </div>
-      <div className="w-full">
+      <div className="w-full no-print">
         <button className="bg-blue-500 px-6 py-2 rounded-lg">
           <Link href={`/project/${projectID}/photos`}>
             <p className="text-white">Photos</p>

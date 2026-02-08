@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
 
-  const [email, setEmail] = useState("nuzulasrar@gmail.com");
-  const [password, setPassword] = useState("abc123");
+  const [email, setEmail] = useState("admin@gmail.com");
+  const [password, setPassword] = useState("@dmin123");
 
   const login = async () => {
     try {
@@ -27,6 +27,7 @@ export default function Home() {
         console.log(JSON.stringify(result, null, 2));
         if (result.success) {
           localStorage.setItem("sessionToken", result.token);
+          localStorage.setItem("name", result.userData.name);
           router.push("/project");
         }
       } else {
