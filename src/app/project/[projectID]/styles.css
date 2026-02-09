@@ -1,7 +1,9 @@
 /* styles.css */
 @media print {
-  p {
-    font-size: 10px;
+  p,
+  span,
+  div {
+    font-size: 16px;
   }
 
   .no-print {

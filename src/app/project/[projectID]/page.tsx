@@ -134,31 +134,40 @@ const page = ({ params }: any) => {
   const [maintenanceHydraulic, setMaintenanceHydraulic] = useState("");
 
   const [maxOldRating, setMaxOldRating] = useState<any>({
-    c0: 0,
-    c1: 0,
-    c2: 0,
-    c3: 0,
-    c4: 0,
-    c5: 0,
-    c6: 0,
-    c7: 0,
-    c8: 0,
-    c9: 0,
-    c10: 0,
+    c0: "0",
+    c1: "0",
+    c2: "0",
+    c3: "0",
+    c4: "0",
+    c5: "0",
+    c6: "0",
+    c7: "0",
+    c8: "0",
+    c9: "0",
+    c10: "0",
   });
 
   const [maxNewRating, setMaxNewRating] = useState<any>({
-    c0: 0,
-    c1: 0,
-    c2: 0,
-    c3: 0,
-    c4: 0,
-    c5: 0,
-    c6: 0,
-    c7: 0,
-    c8: 0,
-    c9: 0,
-    c10: 0,
+    c0: "0",
+    c1: "0",
+    c2: "0",
+    c3: "0",
+    c4: "0",
+    c5: "0",
+    c6: "0",
+    c7: "0",
+    c8: "0",
+    c9: "0",
+    c10: "0",
+  });
+
+  const [additionalData, setAdditionalData] = useState({
+    inspectorComment: "",
+    detailedInspection: "",
+    noOfPages: "",
+    nameOfInspector: "",
+    inspectionDate: "",
+    previousInspectionDate: "",
   });
 
   const getSubmittedForms = async () => {
@@ -304,62 +313,97 @@ const page = ({ params }: any) => {
         );
         setMaintenanceHydraulic(result.data.culvert_maintenanceWorkRequired);
         setMaxOldRating({
-          c0: result.data.beamGirder_oldRating
-            ? result.data.beamGirder_oldRating
-            : 0,
-          c1: result.data.deckSlab_oldRating
-            ? result.data.deckSlab_oldRating
-            : 0,
-          c2: result.data.pier_oldRating ? result.data.pier_oldRating : 0,
-          c3: result.data.abutment_oldRating
-            ? result.data.abutment_oldRating
-            : 0,
-          c4: result.data.bearing_oldRating ? result.data.bearing_oldRating : 0,
-          c5: result.data.drainpipe_oldRating
-            ? result.data.drainpipe_oldRating
-            : 0,
-          c6: result.data.parapet_oldRating ? result.data.parapet_oldRating : 0,
-          c7: result.data.surfacing_oldRating
-            ? result.data.surfacing_oldRating
-            : 0,
-          c8: result.data.expansionJoint_oldRating
-            ? result.data.expansionJoint_oldRating
-            : 0,
-          c9: result.data.slopeProtection_oldRating
-            ? result.data.slopeProtection_oldRating
-            : 0,
-          c10: result.data.culvert_oldRating
-            ? result.data.culvert_oldRating
-            : 0,
+          c0: result.data.beamGirder_oldRating,
+          c1: result.data.deckSlab_oldRating,
+          c2: result.data.pier_oldRating,
+          c3: result.data.abutment_oldRating,
+          c4: result.data.bearing_oldRating,
+          c5: result.data.drainpipe_oldRating,
+          c6: result.data.parapet_oldRating,
+          c7: result.data.surfacing_oldRating,
+          c8: result.data.expansionJoint_oldRating,
+          c9: result.data.slopeProtection_oldRating,
+          c10: result.data.culvert_oldRating,
         });
         setMaxNewRating({
-          c0: result.data.beamGirder_newRating
-            ? result.data.beamGirder_newRating
-            : 0,
-          c1: result.data.deckSlab_newRating
-            ? result.data.deckSlab_newRating
-            : 0,
-          c2: result.data.pier_newRating ? result.data.pier_newRating : 0,
-          c3: result.data.abutment_newRating
-            ? result.data.abutment_newRating
-            : 0,
-          c4: result.data.bearing_newRating ? result.data.bearing_newRating : 0,
-          c5: result.data.drainpipe_newRating
-            ? result.data.drainpipe_newRating
-            : 0,
-          c6: result.data.parapet_newRating ? result.data.parapet_newRating : 0,
-          c7: result.data.surfacing_newRating
-            ? result.data.surfacing_newRating
-            : 0,
-          c8: result.data.expansionJoint_newRating
-            ? result.data.expansionJoint_newRating
-            : 0,
-          c9: result.data.slopeProtection_newRating
-            ? result.data.slopeProtection_newRating
-            : 0,
-          c10: result.data.culvert_newRating
-            ? result.data.culvert_newRating
-            : 0,
+          c0: result.data.beamGirder_newRating,
+          c1: result.data.deckSlab_newRating,
+          c2: result.data.pier_newRating,
+          c3: result.data.abutment_newRating,
+          c4: result.data.bearing_newRating,
+          c5: result.data.drainpipe_newRating,
+          c6: result.data.parapet_newRating,
+          c7: result.data.surfacing_newRating,
+          c8: result.data.expansionJoint_newRating,
+          c9: result.data.slopeProtection_newRating,
+          c10: result.data.culvert_newRating,
+        });
+        // setMaxOldRating({
+        //   c0: result.data.beamGirder_oldRating
+        //     ? result.data.beamGirder_oldRating
+        //     : 0,
+        //   c1: result.data.deckSlab_oldRating
+        //     ? result.data.deckSlab_oldRating
+        //     : 0,
+        //   c2: result.data.pier_oldRating ? result.data.pier_oldRating : 0,
+        //   c3: result.data.abutment_oldRating
+        //     ? result.data.abutment_oldRating
+        //     : 0,
+        //   c4: result.data.bearing_oldRating ? result.data.bearing_oldRating : 0,
+        //   c5: result.data.drainpipe_oldRating
+        //     ? result.data.drainpipe_oldRating
+        //     : 0,
+        //   c6: result.data.parapet_oldRating ? result.data.parapet_oldRating : 0,
+        //   c7: result.data.surfacing_oldRating
+        //     ? result.data.surfacing_oldRating
+        //     : 0,
+        //   c8: result.data.expansionJoint_oldRating
+        //     ? result.data.expansionJoint_oldRating
+        //     : 0,
+        //   c9: result.data.slopeProtection_oldRating
+        //     ? result.data.slopeProtection_oldRating
+        //     : 0,
+        //   c10: result.data.culvert_oldRating
+        //     ? result.data.culvert_oldRating
+        //     : 0,
+        // });
+        // setMaxNewRating({
+        //   c0: result.data.beamGirder_newRating
+        //     ? result.data.beamGirder_newRating
+        //     : 0,
+        //   c1: result.data.deckSlab_newRating
+        //     ? result.data.deckSlab_newRating
+        //     : 0,
+        //   c2: result.data.pier_newRating ? result.data.pier_newRating : 0,
+        //   c3: result.data.abutment_newRating
+        //     ? result.data.abutment_newRating
+        //     : 0,
+        //   c4: result.data.bearing_newRating ? result.data.bearing_newRating : 0,
+        //   c5: result.data.drainpipe_newRating
+        //     ? result.data.drainpipe_newRating
+        //     : 0,
+        //   c6: result.data.parapet_newRating ? result.data.parapet_newRating : 0,
+        //   c7: result.data.surfacing_newRating
+        //     ? result.data.surfacing_newRating
+        //     : 0,
+        //   c8: result.data.expansionJoint_newRating
+        //     ? result.data.expansionJoint_newRating
+        //     : 0,
+        //   c9: result.data.slopeProtection_newRating
+        //     ? result.data.slopeProtection_newRating
+        //     : 0,
+        //   c10: result.data.culvert_newRating
+        //     ? result.data.culvert_newRating
+        //     : 0,
+        // });
+
+        setAdditionalData({
+          inspectorComment: result.data.inspectorComment,
+          detailedInspection: result.data.detailedInspection,
+          noOfPages: result.data.noOfPages,
+          nameOfInspector: result.data.nameOfInspector,
+          inspectionDate: result.data.inspectionDate,
+          previousInspectionDate: result.data.previousInspectionDate,
         });
         setData(result.data);
       }
@@ -417,44 +461,48 @@ const page = ({ params }: any) => {
   };
 
   const handleUploadPDF = async () => {
-    const fd = new FormData();
+    if (selectedFiles.length > 0) {
+      const fd = new FormData();
 
-    let thisarray = [...selectedFiles];
+      let thisarray = [...selectedFiles];
 
-    thisarray.forEach((item, index) => {
-      fd.append(`files${index}`, thisarray[index]);
-    });
-
-    fd.append(`id`, data.id);
-
-    try {
-      const response = await fetch("/api/uploadtemplatepdf", {
-        method: "post",
-        body: fd,
+      thisarray.forEach((item, index) => {
+        fd.append(`files${index}`, thisarray[index]);
       });
 
-      const json = await response.json();
+      fd.append(`id`, data.id);
 
-      console.log("JSON: ", JSON.stringify(json, null, 2));
+      try {
+        const response = await fetch("/api/uploadtemplatepdf", {
+          method: "post",
+          body: fd,
+        });
 
-      if (json.success) {
-        window.location.reload();
-      } else {
-        alert("fail to upload image");
+        const json = await response.json();
+
+        console.log("JSON: ", JSON.stringify(json, null, 2));
+
+        if (json.success) {
+          alert("Photo has been uploaded");
+          window.location.reload();
+        } else {
+          alert("fail to upload image");
+        }
+      } catch (error: any) {
+        console.log(error.message);
+        // throw error;
       }
-    } catch (error: any) {
-      console.log(error.message);
-      // throw error;
+    } else {
+      alert("Please select a photo");
     }
   };
 
   const handleUpdateData = async () => {
-    const response = await fetch("/api/projectdetails", {
-      method: "PUT",
-      body: JSON.stringify({
-        projectID: Number(id),
-        formdataa: JSON.stringify({
-          projectID: Number(id),
+    try {
+      const response = await fetch("/api/projectdetails", {
+        method: "PUT",
+        body: JSON.stringify({
+          projectID: Number(projectID),
           formdataa: {
             l_routeNo: locationData.l_routeNo,
             l_structureNo: locationData.l_structureNo,
@@ -465,106 +513,117 @@ const page = ({ params }: any) => {
             b_deckType: bridgeData.b_deckType,
             b_abutmentType: bridgeData.b_abutmentType,
             b_pierType: bridgeData.b_pierType,
-            s_roadWidth: inputRefs.current,
-            s_bridgeWidth: inputRefs.current,
-            s_skewAngle: inputRefs.current,
-            s_noOfSpan: inputRefs.current,
-            s_spans: inputRefs.current,
-            s_yearBuilt: inputRefs.current,
-            s_bridgeLength: inputRefs.current,
-            s_yearRepaired: inputRefs.current,
-            beamGirder_tick: tickBG.beamGirder,
-            beamGirder_steel_tick: tickBG.steel,
-            beamGirder_pconcrete_tick: tickBG.pConcrete,
-            beamGirder_rconcrete_tick: tickBG.rConcrete,
-            beamGirder_oldRating: inputRefs.current,
-            beamGirder_newRating: inputRefs.current,
-            beamGirder_majorDamages: inputRefs.current,
-            beamGirder_maintenanceWorkRequired: inputRefs.current,
-            deckSlab_tick: tickDS.beamGirder,
-            deckSlab_steel_tick: tickDS.beamGirder,
-            deckSlab_concrete_tick: tickDS.beamGirder,
-            deckSlab_oldRating: inputRefs.current,
-            deckSlab_newRating: inputRefs.current,
-            deckSlab_majorDamages: inputRefs.current,
-            deckSlab_maintenanceWorkRequired: inputRefs.current,
-            pier_tick: tickPier.beamGirder,
-            pier_concrete_tick: tickPier.beamGirder,
-            pier_masonry_tick: tickPier.beamGirder,
-            pier_oldRating: inputRefs.current,
-            pier_newRating: inputRefs.current,
-            pier_majorDamages: inputRefs.current,
-            pier_maintenanceWorkRequired: inputRefs.current,
-            abutment_tick: tickAbutment.beamGirder,
-            abutment_concrete_tick: tickAbutment.beamGirder,
-            abutment_masonry_tick: tickAbutment.beamGirder,
-            abutment_oldRating: inputRefs.current,
-            abutment_newRating: inputRefs.current,
-            abutment_majorDamages: inputRefs.current,
-            abutment_maintenanceWorkRequired: inputRefs.current,
-            bearing_tick: tickBearing.beamGirder,
-            bearing_steel_tick: tickBearing.beamGirder,
-            bearing_rubber_tick: tickBearing.beamGirder,
-            bearing_oldRating: inputRefs.current,
-            bearing_newRating: inputRefs.current,
-            bearing_majorDamages: inputRefs.current,
-            bearing_maintenanceWorkRequired: inputRefs.current,
-            drainpipe_tick: tickDP.beamGirder,
-            drainpipe_steel_tick: tickDP.beamGirder,
-            drainpipe_pvc_tick: tickDP.beamGirder,
-            drainpipe_oldRating: inputRefs.current,
-            drainpipe_newRating: inputRefs.current,
-            drainpipe_majorDamages: inputRefs.current,
-            drainpipe_maintenanceWorkRequired: inputRefs.current,
-            parapet_tick: tickParapet.beamGirder,
-            parapet_steel_tick: tickParapet.beamGirder,
-            parapet_concrete_tick: tickParapet.beamGirder,
-            parapet_others_tick: tickParapet.beamGirder,
-            parapet_oldRating: inputRefs.current,
-            parapet_newRating: inputRefs.current,
-            parapet_majorDamages: inputRefs.current,
-            parapet_maintenanceWorkRequired: inputRefs.current,
-            surfacing_tick: tickSurfacing.beamGirder,
-            surfacing_asphalt_tick: tickSurfacing.beamGirder,
-            surfacing_concrete_tick: tickSurfacing.beamGirder,
-            surfacing_oldRating: inputRefs.current,
-            surfacing_newRating: inputRefs.current,
-            surfacing_majorDamages: inputRefs.current,
-            surfacing_maintenanceWorkRequired: inputRefs.current,
-            expansionJoint_tick: tickEJ.beamGirder,
-            expansionJoint_asphaltPlug_tick: tickEJ.beamGirder,
-            expansionJoint_elastomeric_tick: tickEJ.beamGirder,
-            expansionJoint_others_tick: tickEJ.beamGirder,
-            expansionJoint_oldRating: inputRefs.current,
-            expansionJoint_newRating: inputRefs.current,
-            expansionJoint_majorDamages: inputRefs.current,
-            expansionJoint_maintenanceWorkRequired: inputRefs.current,
-            slopeProtection_tick: tickSP.beamGirder,
-            slopeProtection_rubblePitching_tick: tickSP.beamGirder,
-            slopeProtection_gabions_tick: tickSP.beamGirder,
-            slopeProtection_others_tick: tickSP.beamGirder,
-            slopeProtection_oldRating: inputRefs.current,
-            slopeProtection_newRating: inputRefs.current,
-            slopeProtection_majorDamages: inputRefs.current,
-            slopeProtection_maintenanceWorkRequired: inputRefs.current,
-            culvert_tick: tickCulvert.beamGirder,
-            culvert_steel_tick: tickCulvert.beamGirder,
-            culvert_concrete_tick: tickCulvert.beamGirder,
-            culvert_masonry_tick: tickCulvert.beamGirder,
-            culvert_oldRating: inputRefs.current,
-            culvert_newRating: inputRefs.current,
-            culvert_majorDamages: inputRefs.current,
-            culvert_maintenanceWorkRequired: inputRefs.current,
-            inspectorComment: inputRefs.current,
-            detailedInspection: tickIC,
-            noOfPages: inputRefs.current,
-            nameOfInspector: inputRefs.current,
-            inspectionDate: inputRefs.current,
-            previousInspectionDate: inputRefs.current,
+            s_roadWidth: structureData.s_roadWidth,
+            s_bridgeWidth: structureData.s_bridgeWidth,
+            s_skewAngle: structureData.s_skewAngle,
+            s_noOfSpan: structureData.s_noOfSpan,
+            s_spans: structureData.s_spans,
+            s_yearBuilt: structureData.s_yearBuilt,
+            s_bridgeLength: structureData.s_bridgeLength,
+            s_yearRepaired: structureData.s_yearRepaired,
+            beamGirder_tick: c0.main,
+            beamGirder_steel_tick: c0.one,
+            beamGirder_pconcrete_tick: c0.two,
+            beamGirder_rconcrete_tick: c0.three,
+            beamGirder_oldRating: maxOldRating.c0,
+            beamGirder_newRating: maxNewRating.c0,
+            beamGirder_majorDamages: majorDamageBeam,
+            beamGirder_maintenanceWorkRequired: maintenanceBeam,
+            deckSlab_tick: c1.main,
+            deckSlab_steel_tick: c1.one,
+            deckSlab_concrete_tick: c1.two,
+            deckSlab_oldRating: maxOldRating.c1,
+            deckSlab_newRating: maxNewRating.c1,
+            deckSlab_majorDamages: majorDamageDeck,
+            deckSlab_maintenanceWorkRequired: maintenanceDeck,
+            pier_tick: c2.main,
+            pier_concrete_tick: c2.one,
+            pier_masonry_tick: c2.two,
+            pier_oldRating: maxOldRating.c2,
+            pier_newRating: maxNewRating.c2,
+            pier_majorDamages: majorDamagePier,
+            pier_maintenanceWorkRequired: maintenancePier,
+            abutment_tick: c3.main,
+            abutment_concrete_tick: c3.one,
+            abutment_masonry_tick: c3.two,
+            abutment_oldRating: maxOldRating.c3,
+            abutment_newRating: maxNewRating.c3,
+            abutment_majorDamages: majorDamageAbutment,
+            abutment_maintenanceWorkRequired: maintenanceAbutment,
+            bearing_tick: c4.main,
+            bearing_steel_tick: c4.one,
+            bearing_rubber_tick: c4.two,
+            bearing_oldRating: maxOldRating.c4,
+            bearing_newRating: maxNewRating.c4,
+            bearing_majorDamages: majorDamageBearing,
+            bearing_maintenanceWorkRequired: maintenanceBearing,
+            drainpipe_tick: c5.main,
+            drainpipe_steel_tick: c5.one,
+            drainpipe_pvc_tick: c5.two,
+            drainpipe_oldRating: maxOldRating.c5,
+            drainpipe_newRating: maxNewRating.c5,
+            drainpipe_majorDamages: majorDamageDrainpipe,
+            drainpipe_maintenanceWorkRequired: maintenanceDrainpipe,
+            parapet_tick: c6.main,
+            parapet_steel_tick: c6.one,
+            parapet_concrete_tick: c6.two,
+            parapet_others_tick: c6.three,
+            parapet_oldRating: maxOldRating.c6,
+            parapet_newRating: maxNewRating.c6,
+            parapet_majorDamages: majorDamageParapet,
+            parapet_maintenanceWorkRequired: maintenanceParapet,
+            surfacing_tick: c7.main,
+            surfacing_asphalt_tick: c7.one,
+            surfacing_concrete_tick: c7.two,
+            surfacing_oldRating: maxOldRating.c7,
+            surfacing_newRating: maxNewRating.c7,
+            surfacing_majorDamages: majorDamageSurfacing,
+            surfacing_maintenanceWorkRequired: maintenanceSurfacing,
+            expansionJoint_tick: c8.main,
+            expansionJoint_asphaltPlug_tick: c8.one,
+            expansionJoint_elastomeric_tick: c8.two,
+            expansionJoint_others_tick: c8.three,
+            expansionJoint_oldRating: maxOldRating.c8,
+            expansionJoint_newRating: maxNewRating.c8,
+            expansionJoint_majorDamages: majorDamageExpansionJoint,
+            expansionJoint_maintenanceWorkRequired: maintenanceExpansionJoint,
+            slopeProtection_tick: c9.main,
+            slopeProtection_rubblePitching_tick: c9.one,
+            slopeProtection_gabions_tick: c9.two,
+            slopeProtection_others_tick: c9.three,
+            slopeProtection_oldRating: maxOldRating.c9,
+            slopeProtection_newRating: maxNewRating.c9,
+            slopeProtection_majorDamages: majorDamageSlopeProtection,
+            slopeProtection_maintenanceWorkRequired: maintenanceSlopeProtection,
+            culvert_tick: c10.main,
+            culvert_steel_tick: c10.one,
+            culvert_concrete_tick: c10.two,
+            culvert_masonry_tick: c10.three,
+            culvert_oldRating: maxOldRating.c10,
+            culvert_newRating: maxNewRating.c10,
+            culvert_majorDamages: majorDamageHydraulic,
+            culvert_maintenanceWorkRequired: maintenanceHydraulic,
+            inspectorComment: additionalData.inspectorComment,
+            detailedInspection: additionalData.detailedInspection,
+            noOfPages: additionalData.noOfPages,
+            nameOfInspector: additionalData.nameOfInspector,
+            inspectionDate: additionalData.inspectionDate,
+            previousInspectionDate: additionalData.previousInspectionDate,
           },
         }),
-      }),
-    });
+      });
+
+      const result = await response.json();
+      console.log("result data", JSON.stringify(result));
+
+      if (result?.success) {
+        alert("Information has successfully updated.");
+      } else {
+        alert("Information to update. Please contact IT.");
+      }
+    } catch (error) {
+      alert("Information to update. Please contact IT.");
+    }
   };
 
   const [editForm, setEditForm] = useState(0);
@@ -925,30 +984,8 @@ const page = ({ params }: any) => {
         <div className="flex flex-row items-center w-full">
           <div className="w-1/2 flex flex-row items-center mb-6 no-print">
             <div className="w-8/12 flex-row justify-between items-center">
-              <div className="flex-row justify-between items-center mb-4">
-                <p className="font-bold mb-2 no-print">
-                  Add Defect Mapping (Image)
-                </p>
-                <input
-                  className="flex h-9 w-10/12  rounded-md border border-input 
-              bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm 
-              file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                  id="picture"
-                  name="picture"
-                  type="file"
-                  multiple
-                  onChange={handleFileChange}
-                />
-                <button
-                  className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
-                  onClick={handleUpload}
-                >
-                  Upload Image {JSON.stringify(selectedFiles)}
-                </button>
-              </div>
-
               <div className="flex-row justify-between items-center">
-                <p className="font-bold mb-2">Add Defect Mapping (PDF)</p>
+                <p className="font-bold mb-2">Add Defect Photo</p>
                 <input
                   className="flex h-9 w-10/12  rounded-md border border-input 
               bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm 
@@ -963,7 +1000,7 @@ const page = ({ params }: any) => {
                   className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
                   onClick={handleUploadPDF}
                 >
-                  Upload PDF {JSON.stringify(selectedFiles)}
+                  Upload PDF
                 </button>
               </div>
             </div>
@@ -1454,20 +1491,15 @@ const page = ({ params }: any) => {
                       editCheck ? setC0({ ...c0, main: !c0.main }) : null;
                     }}
                     className="flex flex-row justify-start items-center"
+                    style={{ cursor: editCheck ? "pointer" : "unset" }}
                   >
-                    {c0.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c0.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Beam/Girder</p>
+                    ] Beam/Girder
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1477,19 +1509,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c0.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Steel</p>
+                    [
+                    {c0.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Steel
                   </div>
                   <div
                     onClick={() => {
@@ -1497,19 +1519,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c0.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">P. Concrete</p>
+                    [
+                    {c0.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] P. Concrete
                   </div>
                   <div
                     onClick={() => {
@@ -1517,19 +1529,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c0.three && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c0.three ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p className="text-center">R. Concrete</p>
+                    ] R. Concrete
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1595,19 +1601,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c1.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c1.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Deck/Slab</p>
+                    ] Deck/Slab
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1617,19 +1617,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c1.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Steel</p>
+                    [
+                    {c1.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Steel
                   </div>
                   <div
                     onClick={() => {
@@ -1637,19 +1627,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c1.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Concrete</p>
+                    [
+                    {c1.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Concrete
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1715,19 +1695,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c2.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c2.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Pier</p>
+                    ] Pier
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1737,19 +1711,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c2.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Concrete</p>
+                    [
+                    {c2.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Concrete
                   </div>
                   <div
                     onClick={() => {
@@ -1757,19 +1721,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c2.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Masonry</p>
+                    [
+                    {c2.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Masonry
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1835,19 +1789,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c3.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c3.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Abutment</p>
+                    ] Abutment
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1857,19 +1805,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c3.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Concrete</p>
+                    [
+                    {c3.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Concrete
                   </div>
                   <div
                     onClick={() => {
@@ -1877,19 +1815,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c3.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Masonry</p>
+                    [
+                    {c3.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Masonry
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1955,19 +1883,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c4.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c4.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Bearing</p>
+                    ] Bearing
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -1977,19 +1899,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c4.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Steel</p>
+                    [
+                    {c4.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Steel
                   </div>
                   <div
                     onClick={() => {
@@ -1997,19 +1909,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c4.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Rubber</p>
+                    [
+                    {c4.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Rubber
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2075,19 +1977,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c5.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c5.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Drainpipe</p>
+                    ] Drainpipe
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2097,19 +1993,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c5.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Steel</p>
+                    [
+                    {c5.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Steel
                   </div>
                   <div
                     onClick={() => {
@@ -2117,19 +2003,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c5.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">PVC</p>
+                    [
+                    {c5.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] PVC
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2195,19 +2071,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c6.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c6.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Parapet</p>
+                    ] Parapet
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2217,19 +2087,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c6.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Steel</p>
+                    [
+                    {c6.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Steel
                   </div>
                   <div
                     onClick={() => {
@@ -2237,19 +2097,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c6.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Concrete</p>
+                    [
+                    {c6.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Concrete
                   </div>
                   <div
                     onClick={() => {
@@ -2257,19 +2107,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c6.three && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c6.three ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p className="text-center">Others</p>
+                    ] Others
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2335,19 +2179,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c7.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c7.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Surfacing</p>
+                    ] Surfacing
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2357,19 +2195,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c7.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Asphalt</p>
+                    [
+                    {c7.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Asphalt
                   </div>
                   <div
                     onClick={() => {
@@ -2377,19 +2205,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c7.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Concrete</p>
+                    [
+                    {c7.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Concrete
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2455,19 +2273,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c8.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c8.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Expansion Joint</p>
+                    ] Expansion Joint
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2477,19 +2289,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c8.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Asphaltic Plug</p>
+                    [
+                    {c8.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Asphaltic Plug
                   </div>
                   <div
                     onClick={() => {
@@ -2497,19 +2299,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c8.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Elastomeric</p>
+                    [
+                    {c8.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Elastomeric
                   </div>
                   <div
                     onClick={() => {
@@ -2517,19 +2309,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c8.three && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c8.three ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p className="text-center">Others</p>
+                    ] Others
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2599,19 +2385,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c9.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c9.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Slope Protection</p>
+                    ] Slope Protection
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2621,19 +2401,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c9.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Rubble Pitching</p>
+                    [
+                    {c9.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Rubble Pitching
                   </div>
                   <div
                     onClick={() => {
@@ -2641,19 +2411,9 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c9.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
-                    )}
-                    <p className="text-center">Gabions</p>
+                    [
+                    {c9.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                    ] Gabions
                   </div>
                   <div
                     onClick={() => {
@@ -2661,19 +2421,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c9.three && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c9.three ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p className="text-center">Others</p>
+                    ] Others
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2743,19 +2497,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-start items-center"
                   >
-                    {c10.main && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c10.main ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p>Culvert</p>
+                    ] Culvert
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2765,19 +2513,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c10.one && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c10.one ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p className="text-center">Steel</p>
+                    ] Steel
                   </div>
                   <div
                     onClick={() => {
@@ -2785,19 +2527,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c10.two && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c10.two ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p className="text-center">Concrete</p>
+                    ] Concrete
                   </div>
                   <div
                     onClick={() => {
@@ -2805,19 +2541,13 @@ const page = ({ params }: any) => {
                     }}
                     className="flex flex-row justify-normal items-center"
                   >
-                    {c10.three && (
-                      <Image
-                        src="/check.png"
-                        alt=""
-                        width={15}
-                        height={15}
-                        style={{
-                          alignSelf: "center",
-                        }}
-                        className="mx-auto print:w-[5px] print:h-[5px]"
-                      />
+                    [
+                    {c10.three ? (
+                      <span>&#10003;</span>
+                    ) : (
+                      <span>&nbsp;&nbsp;</span>
                     )}
-                    <p className="text-center">Masonry</p>
+                    ] Masonry
                   </div>
                 </td>
                 <td className="border border-black p-2">
@@ -2876,6 +2606,176 @@ const page = ({ params }: any) => {
                     />
                   ) : (
                     <p className="text-center">{maintenanceHydraulic}</p>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td className="border-r-0 p-2">
+                  <p className="underline">Inspector's Comment</p>
+                </td>
+                <td colSpan={5} className="border-l-0 px-2">
+                  {editCheck ? (
+                    <input
+                      value={additionalData.inspectorComment}
+                      type="text"
+                      className="w-full border-b border-b-black px-2"
+                      onChange={(e) =>
+                        setAdditionalData({
+                          ...additionalData,
+                          inspectorComment: e.target.value,
+                        })
+                      }
+                    />
+                  ) : (
+                    <p className="underline">
+                      {additionalData.inspectorComment}
+                    </p>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td className="border-r-0 p-2">
+                  <p>Detailed Inspection: </p>
+                </td>
+                <td colSpan={3} className="border-l-0 p-2">
+                  <div className="flex flex-row items-center">
+                    <div
+                      className="mr-4"
+                      onClick={() => {
+                        setAdditionalData({
+                          ...additionalData,
+                          detailedInspection: true,
+                        });
+                      }}
+                    >
+                      [
+                      {additionalData.detailedInspection ? (
+                        <span>&#10003;</span>
+                      ) : (
+                        <span>&nbsp;&nbsp;</span>
+                      )}
+                      ] Required
+                    </div>
+                    <div
+                      onClick={() => {
+                        setAdditionalData({
+                          ...additionalData,
+                          detailedInspection: false,
+                        });
+                      }}
+                    >
+                      [
+                      {!additionalData.detailedInspection ? (
+                        <span>&#10003;</span>
+                      ) : (
+                        <span>&nbsp;&nbsp;</span>
+                      )}
+                      ] Not Required
+                    </div>
+                  </div>
+                </td>
+                <td className="p-2">
+                  <p>No. of Pages:</p>
+                </td>
+                <td className="p-2">
+                  {editCheck ? (
+                    <textarea
+                      className="w-full text-center"
+                      value={additionalData.noOfPages}
+                      onChange={(e) =>
+                        setAdditionalData({
+                          ...additionalData,
+                          noOfPages: e.target.value,
+                        })
+                      }
+                      style={{ height: 100 }}
+                    />
+                  ) : (
+                    additionalData.noOfPages
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <p>Name of Inspector: </p>
+                </td>
+                <td colSpan={3} className="p-2">
+                  {editCheck ? (
+                    <textarea
+                      className="w-full text-center"
+                      value={additionalData.nameOfInspector}
+                      onChange={(e) =>
+                        setAdditionalData({
+                          ...additionalData,
+                          nameOfInspector: e.target.value,
+                        })
+                      }
+                      style={{ height: 100 }}
+                    />
+                  ) : (
+                    additionalData.nameOfInspector
+                  )}
+                </td>
+                <td className="p-2">
+                  <p>Inspection Date: </p>
+                </td>
+                <td className="p-2">
+                  {editCheck ? (
+                    <textarea
+                      className="w-full text-center"
+                      value={additionalData.inspectionDate}
+                      onChange={(e) =>
+                        setAdditionalData({
+                          ...additionalData,
+                          inspectionDate: e.target.value,
+                        })
+                      }
+                      style={{ height: 100 }}
+                    />
+                  ) : (
+                    additionalData.inspectionDate
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td className="p-2">
+                  <p>Signature: </p>
+                </td>
+                <td colSpan={3} className="p-2">
+                  {/* {editCheck ? (
+                    <textarea
+                      className="w-full text-center"
+                      value={additionalData.nameOfInspector}
+                      onChange={(e) =>
+                        setAdditionalData({
+                          ...additionalData,
+                          nameOfInspector: e.target.value,
+                        })
+                      }
+                      style={{ height: 100 }}
+                    />
+                  ) : (
+                    additionalData.nameOfInspector
+                  )} */}
+                </td>
+                <td className="p-2">
+                  <p>Previous Inspection Date: </p>
+                </td>
+                <td className="p-2">
+                  {editCheck ? (
+                    <textarea
+                      className="w-full text-center"
+                      value={additionalData.previousInspectionDate}
+                      onChange={(e) =>
+                        setAdditionalData({
+                          ...additionalData,
+                          previousInspectionDate: e.target.value,
+                        })
+                      }
+                      style={{ height: 100 }}
+                    />
+                  ) : (
+                    additionalData.previousInspectionDate
                   )}
                 </td>
               </tr>
