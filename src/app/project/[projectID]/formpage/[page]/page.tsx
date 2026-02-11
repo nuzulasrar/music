@@ -1042,7 +1042,50 @@ const page = ({ params }: any) => {
     r14rod: null,
   });
 
-  const handleUpdateEditor = () => {};
+  const handleUpdateEditor = () => {
+    // ...editorMode,
+    // type: "p",
+    // compNo: "1",
+    // rowNo: "1",
+    // mat: "Corrosion of Steel",
+    // value: c1.r1p
+
+    if (editorMode.type === "p") {
+      if (editorMode.compNo == "1") {
+        if (editorMode.rowNo == "1") {
+          setC1({ ...c1, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC1({ ...c1, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC1({ ...c1, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC1({ ...c1, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC1({ ...c1, r5p: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC1({ ...c1, r6p: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC1({ ...c1, r7p: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC1({ ...c1, r8p: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC1({ ...c1, r9p: editorMode.value });
+        } else if (editorMode.rowNo == "10") {
+          setC1({ ...c1, r10p: editorMode.value });
+        } else if (editorMode.rowNo == "11") {
+          setC1({ ...c1, r11p: editorMode.value });
+        } else if (editorMode.rowNo == "12") {
+          setC1({ ...c1, r12p: editorMode.value });
+        } else if (editorMode.rowNo == "13") {
+          setC1({ ...c1, r13p: editorMode.value });
+        } else if (editorMode.rowNo == "14") {
+          setC1({ ...c1, r14p: editorMode.value });
+        }
+      }
+    }
+
+    setIsModalOpen(false);
+  };
 
   const getForm = async () => {
     try {

@@ -1000,7 +1000,7 @@ const page = ({ params }: any) => {
                   className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
                   onClick={handleUploadPDF}
                 >
-                  Upload PDF
+                  Upload Photo
                 </button>
               </div>
             </div>

@@ -7,7 +7,7 @@ export async function GET(request: any) {
   try {
     const READ_uploaded_files = await prisma.bridgeuploadedfiles.findMany({
       orderBy: {
-        position: "desc",
+        position: "asc",
       },
     });
 
