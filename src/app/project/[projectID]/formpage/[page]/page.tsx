@@ -1081,6 +1081,148 @@ const page = ({ params }: any) => {
         } else if (editorMode.rowNo == "14") {
           setC1({ ...c1, r14p: editorMode.value });
         }
+      } else if (editorMode.compNo == "2") {
+        if (editorMode.rowNo == "1") {
+          setC2({ ...c2, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC2({ ...c2, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC2({ ...c2, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC2({ ...c2, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC2({ ...c2, r5p: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC2({ ...c2, r6p: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC2({ ...c2, r7p: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC2({ ...c2, r8p: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC2({ ...c2, r9p: editorMode.value });
+        } else if (editorMode.rowNo == "10") {
+          setC2({ ...c2, r10p: editorMode.value });
+        } else if (editorMode.rowNo == "11") {
+          setC2({ ...c2, r11p: editorMode.value });
+        } else if (editorMode.rowNo == "12") {
+          setC2({ ...c2, r12p: editorMode.value });
+        } else if (editorMode.rowNo == "13") {
+          setC2({ ...c2, r13p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "3") {
+        if (editorMode.rowNo == "1") {
+          setC3({ ...c3, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC3({ ...c3, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC3({ ...c3, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC3({ ...c3, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC3({ ...c3, r5p: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC3({ ...c3, r6p: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC3({ ...c3, r7p: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC3({ ...c3, r8p: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC3({ ...c3, r9p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "4") {
+        if (editorMode.rowNo == "1") {
+          setC4({ ...c4, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC4({ ...c4, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC4({ ...c4, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC4({ ...c4, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC4({ ...c4, r5p: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC4({ ...c4, r6p: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC4({ ...c4, r7p: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC4({ ...c4, r8p: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC4({ ...c4, r9p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "5") {
+        if (editorMode.rowNo == "1") {
+          setC5({ ...c5, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC5({ ...c5, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC5({ ...c5, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC5({ ...c5, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC5({ ...c5, r5p: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC5({ ...c5, r6p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "6") {
+        if (editorMode.rowNo == "1") {
+          setC6({ ...c6, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC6({ ...c6, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC6({ ...c6, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC6({ ...c6, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC6({ ...c6, r5p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "7") {
+        if (editorMode.rowNo == "1") {
+          setC7({ ...c7, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC7({ ...c7, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC7({ ...c7, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC7({ ...c7, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC7({ ...c7, r5p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "8") {
+        if (editorMode.rowNo == "1") {
+          setC8({ ...c8, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC8({ ...c8, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC8({ ...c8, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC8({ ...c8, r4p: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC8({ ...c8, r5p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "9") {
+        if (editorMode.rowNo == "1") {
+          setC9({ ...c9, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC9({ ...c9, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC9({ ...c9, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC9({ ...c9, r4p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "10") {
+        if (editorMode.rowNo == "1") {
+          setC10({ ...c10, r1p: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC10({ ...c10, r2p: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC10({ ...c10, r3p: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC10({ ...c10, r4p: editorMode.value });
+        }
+      } else if (editorMode.compNo == "11") {
+        if (editorMode.rowNo == "1") {
+          setC11({ ...c11, r1p: editorMode.value });
+        }
       }
     }
 
@@ -10365,7 +10507,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Loose Connections",
                       value: c5.r2p,
                     });
@@ -10390,7 +10532,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Loose Connections",
                       value: c5.r2r,
                     });
@@ -10415,7 +10557,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Loose Connections",
                       value: c5.r2rod,
                     });
@@ -10558,7 +10700,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Pending Water",
                       value: c5.r3p,
                     });
@@ -10583,7 +10725,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Pending Water",
                       value: c5.r3r,
                     });
@@ -10608,7 +10750,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Pending Water",
                       value: c5.r3rod,
                     });
@@ -10751,7 +10893,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Debris/Vegetation",
                       value: c5.r4p,
                     });
@@ -10776,7 +10918,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Debris/Vegetation",
                       value: c5.r4r,
                     });
@@ -10801,7 +10943,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Debris/Vegetation",
                       value: c5.r4rod,
                     });
@@ -10944,7 +11086,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Abnormal Bulging",
                       value: c5.r5p,
                     });
@@ -10969,7 +11111,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Abnormal Bulging",
                       value: c5.r5r,
                     });
@@ -10994,7 +11136,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Abnormal Bulging",
                       value: c5.r5rod,
                     });
@@ -11137,7 +11279,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Abnormal Displacement",
                       value: c5.r6p,
                     });
@@ -11162,7 +11304,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Abnormal Displacement",
                       value: c5.r6r,
                     });
@@ -11187,7 +11329,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "5",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Abnormal Displacement",
                       value: c5.r6rod,
                     });
@@ -11554,7 +11696,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c6.r2p,
                     });
@@ -11579,7 +11721,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c6.r2r,
                     });
@@ -11604,7 +11746,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c6.r2rod,
                     });
@@ -11747,7 +11889,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Spalling",
                       value: c6.r3p,
                     });
@@ -11772,7 +11914,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Spalling",
                       value: c6.r3r,
                     });
@@ -11797,7 +11939,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Spalling",
                       value: c6.r3rod,
                     });
@@ -11940,7 +12082,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Impact Damage",
                       value: c6.r4p,
                     });
@@ -11965,7 +12107,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Impact Damage",
                       value: c6.r4r,
                     });
@@ -11990,7 +12132,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Impact Damage",
                       value: c6.r4rod,
                     });
@@ -12133,7 +12275,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Loose Connections",
                       value: c6.r5p,
                     });
@@ -12158,7 +12300,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Loose Connections",
                       value: c6.r5r,
                     });
@@ -12183,7 +12325,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "6",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Loose Connections",
                       value: c6.r5rod,
                     });
@@ -12550,7 +12692,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "wHEEL tRACK rUTTING",
                       value: c7.r2p,
                     });
@@ -12575,7 +12717,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "wHEEL tRACK rUTTING",
                       value: c7.r2r,
                     });
@@ -12600,7 +12742,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "wHEEL tRACK rUTTING",
                       value: c7.r2rod,
                     });
@@ -12745,7 +12887,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Loss of Bond and Delamination",
                       value: c7.r3p,
                     });
@@ -12770,7 +12912,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Loss of Bond and Delamination",
                       value: c7.r3r,
                     });
@@ -12795,7 +12937,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Loss of Bond and Delamination",
                       value: c7.r3rod,
                     });
@@ -12938,7 +13080,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Rippling",
                       value: c7.r4p,
                     });
@@ -12963,7 +13105,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Rippling",
                       value: c7.r4r,
                     });
@@ -12988,7 +13130,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Rippling",
                       value: c7.r4rod,
                     });
@@ -13131,7 +13273,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Pavement Crack",
                       value: c7.r5p,
                     });
@@ -13156,7 +13298,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Pavement Crack",
                       value: c7.r5r,
                     });
@@ -13181,7 +13323,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "7",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Pavement Crack",
                       value: c7.r5rod,
                     });
@@ -13548,7 +13690,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Difference in Level",
                       value: c8.r2p,
                     });
@@ -13573,7 +13715,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Difference in Level",
                       value: c8.r2r,
                     });
@@ -13598,7 +13740,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Difference in Level",
                       value: c8.r2rod,
                     });
@@ -13741,7 +13883,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Water Leak",
                       value: c8.r3p,
                     });
@@ -13766,7 +13908,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Water Leak",
                       value: c8.r3r,
                     });
@@ -13791,7 +13933,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Water Leak",
                       value: c8.r3rod,
                     });
@@ -13936,7 +14078,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Cracking at Exp. Joint",
                       value: c8.r4p,
                     });
@@ -13961,7 +14103,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Cracking at Exp. Joint",
                       value: c8.r4r,
                     });
@@ -13986,7 +14128,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Cracking at Exp. Joint",
                       value: c8.r4rod,
                     });
@@ -14129,7 +14271,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Rupture",
                       value: c8.r5p,
                     });
@@ -14154,7 +14296,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Rupture",
                       value: c8.r5r,
                     });
@@ -14179,7 +14321,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "8",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Rupture",
                       value: c8.r5rod,
                     });
@@ -14546,7 +14688,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Blocked Drainage",
                       value: c9.r2p,
                     });
@@ -14571,7 +14713,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Blocked Drainage",
                       value: c9.r2r,
                     });
@@ -14596,7 +14738,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Blocked Drainage",
                       value: c9.r2rod,
                     });
@@ -14739,7 +14881,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Water Leak",
                       value: c9.r3p,
                     });
@@ -14764,7 +14906,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Water Leak",
                       value: c9.r3r,
                     });
@@ -14789,7 +14931,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Water Leak",
                       value: c9.r3rod,
                     });
@@ -14934,7 +15076,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "No/Inadequate Pipe Length",
                       value: c9.r4p,
                     });
@@ -14959,7 +15101,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "No/Inadequate Pipe Length",
                       value: c9.r4r,
                     });
@@ -14984,7 +15126,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "9",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "No/Inadequate Pipe Length",
                       value: c9.r4rod,
                     });
@@ -15351,7 +15493,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Erosion",
                       value: c10.r2p,
                     });
@@ -15376,7 +15518,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Erosion",
                       value: c10.r2r,
                     });
@@ -15401,7 +15543,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Erosion",
                       value: c10.r2rod,
                     });
@@ -15546,7 +15688,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Material Loss / Disintegration",
                       value: c10.r3p,
                     });
@@ -15571,7 +15713,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Material Loss / Disintegration",
                       value: c10.r3r,
                     });
@@ -15596,7 +15738,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Material Loss / Disintegration",
                       value: c10.r3rod,
                     });
@@ -15739,7 +15881,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "",
                       value: c10.r4p,
                     });
@@ -15764,7 +15906,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "",
                       value: c10.r4r,
                     });
@@ -15789,7 +15931,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "10",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "",
                       value: c10.r4rod,
                     });
@@ -15816,7 +15958,7 @@ const page = ({ params }: any) => {
             <td className="font-semibold text-center text-[12px]">38</td>{" "}
             <td className="justify-center items-center">
               {" "}
-              {c11.r4d && (
+              {c11.r1d && (
                 <Image
                   src="/check.png"
                   alt=""
@@ -15828,7 +15970,7 @@ const page = ({ params }: any) => {
             </td>{" "}
             <td className="justify-center items-center">
               {" "}
-              {!c11.r4d && (
+              {!c11.r1d && (
                 <Image
                   src="/check.png"
                   alt=""
@@ -15841,16 +15983,16 @@ const page = ({ params }: any) => {
             {/* severity */}{" "}
             <td
               onClick={() => {
-                if (editCheck && c11.r4s == 1) {
-                  setC11({ ...c11, r4s: 0, r4d: false });
-                } else if (editCheck && c11.r4s != 1) {
-                  setC11({ ...c11, r4s: 1, r4d: true });
+                if (editCheck && c11.r1s == 1) {
+                  setC11({ ...c11, r1s: 0, r1d: false });
+                } else if (editCheck && c11.r1s != 1) {
+                  setC11({ ...c11, r1s: 1, r1d: true });
                 }
               }}
               className="justify-center items-center"
             >
               {" "}
-              {c11.r4s == 1 && (
+              {c11.r1s == 1 && (
                 <Image
                   src="/check.png"
                   alt=""
@@ -15862,16 +16004,16 @@ const page = ({ params }: any) => {
             </td>{" "}
             <td
               onClick={() => {
-                if (editCheck && c11.r4s == 2) {
-                  setC11({ ...c11, r4s: 0, r4d: false });
-                } else if (editCheck && c11.r4s != 2) {
-                  setC11({ ...c11, r4s: 2, r4d: true });
+                if (editCheck && c11.r1s == 2) {
+                  setC11({ ...c11, r1s: 0, r1d: false });
+                } else if (editCheck && c11.r1s != 2) {
+                  setC11({ ...c11, r1s: 2, r1d: true });
                 }
               }}
               className="justify-center items-center"
             >
               {" "}
-              {c11.r4s == 2 && (
+              {c11.r1s == 2 && (
                 <Image
                   src="/check.png"
                   alt=""
@@ -15883,16 +16025,16 @@ const page = ({ params }: any) => {
             </td>{" "}
             <td
               onClick={() => {
-                if (editCheck && c11.r4s == 3) {
-                  setC11({ ...c11, r4s: 0, r4d: false });
-                } else if (editCheck && c11.r4s != 3) {
-                  setC11({ ...c11, r4s: 3, r4d: true });
+                if (editCheck && c11.r1s == 3) {
+                  setC11({ ...c11, r1s: 0, r1d: false });
+                } else if (editCheck && c11.r1s != 3) {
+                  setC11({ ...c11, r1s: 3, r1d: true });
                 }
               }}
               className="justify-center items-center"
             >
               {" "}
-              {c11.r4s == 3 && (
+              {c11.r1s == 3 && (
                 <Image
                   src="/check.png"
                   alt=""
@@ -15904,16 +16046,16 @@ const page = ({ params }: any) => {
             </td>{" "}
             <td
               onClick={() => {
-                if (editCheck && c11.r4s == 4) {
-                  setC11({ ...c11, r4s: 0, r4d: false });
-                } else if (editCheck && c11.r4s != 4) {
-                  setC11({ ...c11, r4s: 4, r4d: true });
+                if (editCheck && c11.r1s == 4) {
+                  setC11({ ...c11, r1s: 0, r1d: false });
+                } else if (editCheck && c11.r1s != 4) {
+                  setC11({ ...c11, r1s: 4, r1d: true });
                 }
               }}
               className="justify-center items-center"
             >
               {" "}
-              {c11.r4s == 4 && (
+              {c11.r1s == 4 && (
                 <Image
                   src="/check.png"
                   alt=""
@@ -15939,7 +16081,7 @@ const page = ({ params }: any) => {
                       compNo: "11",
                       rowNo: "1",
                       mat: "Inadequate Opening",
-                      value: c11.r4p,
+                      value: c11.r1p,
                     });
                     setIsModalOpen(true);
                   }}
@@ -15949,7 +16091,7 @@ const page = ({ params }: any) => {
                   Edit{" "}
                 </button>
               ) : (
-                c11.r4p
+                c11.r1p
               )}{" "}
             </td>{" "}
             {/* remarks */}{" "}
@@ -15964,7 +16106,7 @@ const page = ({ params }: any) => {
                       compNo: "11",
                       rowNo: "1",
                       mat: "Inadequate Opening",
-                      value: c11.r4r,
+                      value: c11.r1r,
                     });
                     setIsModalOpen(true);
                   }}
@@ -15974,7 +16116,7 @@ const page = ({ params }: any) => {
                   Edit{" "}
                 </button>
               ) : (
-                c11.r4r
+                c11.r1r
               )}{" "}
             </td>{" "}
             {/* rod */}{" "}
@@ -15989,7 +16131,7 @@ const page = ({ params }: any) => {
                       compNo: "11",
                       rowNo: "1",
                       mat: "Inadequate Opening",
-                      value: c11.r4rod,
+                      value: c11.r1rod,
                     });
                     setIsModalOpen(true);
                   }}
@@ -15999,7 +16141,7 @@ const page = ({ params }: any) => {
                   Edit{" "}
                 </button>
               ) : (
-                c11.r4rod
+                c11.r1rod
               )}{" "}
             </td>
             {/* rom */}
