@@ -42,3 +42,7 @@ th,
 td {
   border: 1px solid black;
 }
+
+td {
+  padding: 1px;
+}

@@ -33,6 +33,8 @@ const page = ({ params }: any) => {
     date: "",
   });
 
+  const [allComponentsInspected, setAllComponentsInspected] = useState(false);
+
   const [c1, setC1] = useState<any>({
     main: false,
     one: false,
@@ -1224,6 +1226,404 @@ const page = ({ params }: any) => {
           setC11({ ...c11, r1p: editorMode.value });
         }
       }
+    } else if (editorMode.type === "r") {
+      if (editorMode.compNo == "1") {
+        if (editorMode.rowNo == "1") {
+          setC1({ ...c1, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC1({ ...c1, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC1({ ...c1, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC1({ ...c1, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC1({ ...c1, r5r: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC1({ ...c1, r6r: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC1({ ...c1, r7r: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC1({ ...c1, r8r: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC1({ ...c1, r9r: editorMode.value });
+        } else if (editorMode.rowNo == "10") {
+          setC1({ ...c1, r10r: editorMode.value });
+        } else if (editorMode.rowNo == "11") {
+          setC1({ ...c1, r11r: editorMode.value });
+        } else if (editorMode.rowNo == "12") {
+          setC1({ ...c1, r12r: editorMode.value });
+        } else if (editorMode.rowNo == "13") {
+          setC1({ ...c1, r13r: editorMode.value });
+        } else if (editorMode.rowNo == "14") {
+          setC1({ ...c1, r14r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "2") {
+        if (editorMode.rowNo == "1") {
+          setC2({ ...c2, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC2({ ...c2, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC2({ ...c2, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC2({ ...c2, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC2({ ...c2, r5r: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC2({ ...c2, r6r: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC2({ ...c2, r7r: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC2({ ...c2, r8r: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC2({ ...c2, r9r: editorMode.value });
+        } else if (editorMode.rowNo == "10") {
+          setC2({ ...c2, r10r: editorMode.value });
+        } else if (editorMode.rowNo == "11") {
+          setC2({ ...c2, r11r: editorMode.value });
+        } else if (editorMode.rowNo == "12") {
+          setC2({ ...c2, r12r: editorMode.value });
+        } else if (editorMode.rowNo == "13") {
+          setC2({ ...c2, r13r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "3") {
+        if (editorMode.rowNo == "1") {
+          setC3({ ...c3, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC3({ ...c3, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC3({ ...c3, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC3({ ...c3, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC3({ ...c3, r5r: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC3({ ...c3, r6r: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC3({ ...c3, r7r: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC3({ ...c3, r8r: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC3({ ...c3, r9r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "4") {
+        if (editorMode.rowNo == "1") {
+          setC4({ ...c4, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC4({ ...c4, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC4({ ...c4, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC4({ ...c4, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC4({ ...c4, r5r: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC4({ ...c4, r6r: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC4({ ...c4, r7r: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC4({ ...c4, r8r: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC4({ ...c4, r9r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "5") {
+        if (editorMode.rowNo == "1") {
+          setC5({ ...c5, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC5({ ...c5, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC5({ ...c5, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC5({ ...c5, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC5({ ...c5, r5r: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC5({ ...c5, r6r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "6") {
+        if (editorMode.rowNo == "1") {
+          setC6({ ...c6, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC6({ ...c6, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC6({ ...c6, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC6({ ...c6, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC6({ ...c6, r5r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "7") {
+        if (editorMode.rowNo == "1") {
+          setC7({ ...c7, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC7({ ...c7, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC7({ ...c7, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC7({ ...c7, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC7({ ...c7, r5r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "8") {
+        if (editorMode.rowNo == "1") {
+          setC8({ ...c8, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC8({ ...c8, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC8({ ...c8, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC8({ ...c8, r4r: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC8({ ...c8, r5r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "9") {
+        if (editorMode.rowNo == "1") {
+          setC9({ ...c9, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC9({ ...c9, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC9({ ...c9, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC9({ ...c9, r4r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "10") {
+        if (editorMode.rowNo == "1") {
+          setC10({ ...c10, r1r: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC10({ ...c10, r2r: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC10({ ...c10, r3r: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC10({ ...c10, r4r: editorMode.value });
+        }
+      } else if (editorMode.compNo == "11") {
+        if (editorMode.rowNo == "1") {
+          setC11({ ...c11, r1r: editorMode.value });
+        }
+      }
+    } else if (editorMode.type === "rod") {
+      if (editorMode.compNo == "1") {
+        if (editorMode.rowNo == "1") {
+          setC1({ ...c1, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC1({ ...c1, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC1({ ...c1, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC1({ ...c1, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC1({ ...c1, r5rod: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC1({ ...c1, r6rod: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC1({ ...c1, r7rod: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC1({ ...c1, r8rod: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC1({ ...c1, r9rod: editorMode.value });
+        } else if (editorMode.rowNo == "10") {
+          setC1({ ...c1, r10rod: editorMode.value });
+        } else if (editorMode.rowNo == "11") {
+          setC1({ ...c1, r11rod: editorMode.value });
+        } else if (editorMode.rowNo == "12") {
+          setC1({ ...c1, r12rod: editorMode.value });
+        } else if (editorMode.rowNo == "13") {
+          setC1({ ...c1, r13rod: editorMode.value });
+        } else if (editorMode.rowNo == "14") {
+          setC1({ ...c1, r14rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "2") {
+        if (editorMode.rowNo == "1") {
+          setC2({ ...c2, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC2({ ...c2, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC2({ ...c2, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC2({ ...c2, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC2({ ...c2, r5rod: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC2({ ...c2, r6rod: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC2({ ...c2, r7rod: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC2({ ...c2, r8rod: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC2({ ...c2, r9rod: editorMode.value });
+        } else if (editorMode.rowNo == "10") {
+          setC2({ ...c2, r10rod: editorMode.value });
+        } else if (editorMode.rowNo == "11") {
+          setC2({ ...c2, r11rod: editorMode.value });
+        } else if (editorMode.rowNo == "12") {
+          setC2({ ...c2, r12rod: editorMode.value });
+        } else if (editorMode.rowNo == "13") {
+          setC2({ ...c2, r13rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "3") {
+        if (editorMode.rowNo == "1") {
+          setC3({ ...c3, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC3({ ...c3, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC3({ ...c3, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC3({ ...c3, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC3({ ...c3, r5rod: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC3({ ...c3, r6rod: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC3({ ...c3, r7rod: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC3({ ...c3, r8rod: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC3({ ...c3, r9rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "4") {
+        if (editorMode.rowNo == "1") {
+          setC4({ ...c4, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC4({ ...c4, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC4({ ...c4, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC4({ ...c4, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC4({ ...c4, r5rod: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC4({ ...c4, r6rod: editorMode.value });
+        } else if (editorMode.rowNo == "7") {
+          setC4({ ...c4, r7rod: editorMode.value });
+        } else if (editorMode.rowNo == "8") {
+          setC4({ ...c4, r8rod: editorMode.value });
+        } else if (editorMode.rowNo == "9") {
+          setC4({ ...c4, r9rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "5") {
+        if (editorMode.rowNo == "1") {
+          setC5({ ...c5, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC5({ ...c5, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC5({ ...c5, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC5({ ...c5, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC5({ ...c5, r5rod: editorMode.value });
+        } else if (editorMode.rowNo == "6") {
+          setC5({ ...c5, r6rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "6") {
+        if (editorMode.rowNo == "1") {
+          setC6({ ...c6, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC6({ ...c6, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC6({ ...c6, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC6({ ...c6, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC6({ ...c6, r5rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "7") {
+        if (editorMode.rowNo == "1") {
+          setC7({ ...c7, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC7({ ...c7, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC7({ ...c7, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC7({ ...c7, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC7({ ...c7, r5rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "8") {
+        if (editorMode.rowNo == "1") {
+          setC8({ ...c8, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC8({ ...c8, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC8({ ...c8, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC8({ ...c8, r4rod: editorMode.value });
+        } else if (editorMode.rowNo == "5") {
+          setC8({ ...c8, r5rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "9") {
+        if (editorMode.rowNo == "1") {
+          setC9({ ...c9, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC9({ ...c9, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC9({ ...c9, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC9({ ...c9, r4rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "10") {
+        if (editorMode.rowNo == "1") {
+          setC10({ ...c10, r1rod: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC10({ ...c10, r2rod: editorMode.value });
+        } else if (editorMode.rowNo == "3") {
+          setC10({ ...c10, r3rod: editorMode.value });
+        } else if (editorMode.rowNo == "4") {
+          setC10({ ...c10, r4rod: editorMode.value });
+        }
+      } else if (editorMode.compNo == "11") {
+        if (editorMode.rowNo == "1") {
+          setC11({ ...c11, r1rod: editorMode.value });
+        }
+      }
+    } else if (editorMode.type === "rom") {
+      if (editorMode.compNo == "1") {
+        if (editorMode.rowNo == "1") {
+          setC1({ ...c1, rom1: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC1({ ...c1, rom2: editorMode.value });
+        }
+      } else if (editorMode.compNo == "2") {
+        if (editorMode.rowNo == "1") {
+          setC2({ ...c2, rom1: editorMode.value });
+        } else if (editorMode.rowNo == "2") {
+          setC2({ ...c2, rom2: editorMode.value });
+        }
+      } else if (editorMode.compNo == "3") {
+        if (editorMode.rowNo == "1") {
+          setC3({ ...c3, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "4") {
+        if (editorMode.rowNo == "1") {
+          setC4({ ...c4, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "5") {
+        if (editorMode.rowNo == "1") {
+          setC5({ ...c5, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "6") {
+        if (editorMode.rowNo == "1") {
+          setC6({ ...c6, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "7") {
+        if (editorMode.rowNo == "1") {
+          setC7({ ...c7, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "8") {
+        if (editorMode.rowNo == "1") {
+          setC8({ ...c8, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "9") {
+        if (editorMode.rowNo == "1") {
+          setC9({ ...c9, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "10") {
+        if (editorMode.rowNo == "1") {
+          setC10({ ...c10, rom1: editorMode.value });
+        }
+      } else if (editorMode.compNo == "11") {
+        if (editorMode.rowNo == "1") {
+          setC11({ ...c11, rom1: editorMode.value });
+        }
+      }
     }
 
     setIsModalOpen(false);
@@ -1351,7 +1751,9 @@ const page = ({ params }: any) => {
           r14rod: result.dataa.beamGirder_pAndRConcrete_abnormalMovement_rod,
         });
 
-        setData(result.dataa);
+        setAllComponentsInspected(result.dataa2.allComponentsInspected);
+
+        setData({ ...data, ...result.dataa, ...result.dataa2 });
       }
     } catch (error) {
       console.log(error);
@@ -1522,11 +1924,33 @@ const page = ({ params }: any) => {
           {/* START BG */}
           {/* bG row1 */}
           <tr>
-            <td rowSpan={15} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={15}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC1({ ...c1, main: !c1.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c1.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               BEAM/GIRDER (PRIMARY)
             </td>
             <td rowSpan={7} className="font-bold text-center text-[12px]">
-              Steel
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC1({ ...c1, one: !c1.one });
+                  }
+                }}
+              >
+                [{c1.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Steel
             </td>
             <td className="font-semibold text-[12px]">Corrosion of Steel</td>
             <td className="font-semibold text-center text-[12px]">1</td>
@@ -2841,8 +3265,17 @@ const page = ({ params }: any) => {
           </tr>
           {/* bG material 2 */}
           <tr>
-            <td rowSpan={8} className="font-bold text-[12px]">
-              P. Concrete R. Concrete
+            <td rowSpan={8} className="font-bold text-center text-[12px]">
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC1({ ...c1, two: !c1.two });
+                  }
+                }}
+              >
+                [{c1.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; P. Concrete <br /> R. Concrete
             </td>
           </tr>
           {/* bG row8 */}
@@ -6562,7 +6995,11 @@ const page = ({ params }: any) => {
               )}
             </td>
             {/* percentage */}{" "}
-            <td colSpan={2} className="text-center text-[10px]">
+            <td className="text-center text-[12px]">
+              {" "}
+              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+            </td>{" "}
+            <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -6961,12 +7398,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -6975,7 +7408,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c3.r2p,
                     });
@@ -7000,7 +7433,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c3.r2r,
                     });
@@ -7025,7 +7458,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c3.r2rod,
                     });
@@ -7168,7 +7601,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Delamination",
                       value: c3.r3p,
                     });
@@ -7193,7 +7626,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Delamination",
                       value: c3.r3r,
                     });
@@ -7218,7 +7651,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Delamination",
                       value: c3.r3rod,
                     });
@@ -7361,7 +7794,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Spalling",
                       value: c3.r4p,
                     });
@@ -7386,7 +7819,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Spalling",
                       value: c3.r4r,
                     });
@@ -7411,7 +7844,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Spalling",
                       value: c3.r4rod,
                     });
@@ -7545,7 +7978,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {
+                data.abutment_concreteAndMasonry_corrosionOfReinforcement_pctgAff1
+              }{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -7556,7 +7991,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Corrosion of Reinforcement",
                       value: c3.r5p,
                     });
@@ -7581,7 +8016,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Corrosion of Reinforcement",
                       value: c3.r5r,
                     });
@@ -7606,7 +8041,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Corrosion of Reinforcement",
                       value: c3.r5rod,
                     });
@@ -7749,7 +8184,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Wear/Abrasion",
                       value: c3.r6p,
                     });
@@ -7774,7 +8209,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Wear/Abrasion",
                       value: c3.r6r,
                     });
@@ -7799,7 +8234,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Wear/Abrasion",
                       value: c3.r6rod,
                     });
@@ -7944,7 +8379,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "7",
                       mat: "Material Deterioration",
                       value: c3.r7p,
                     });
@@ -7969,7 +8404,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "7",
                       mat: "Material Deterioration",
                       value: c3.r7r,
                     });
@@ -7994,7 +8429,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "7",
                       mat: "Material Deterioration",
                       value: c3.r7rod,
                     });
@@ -8123,12 +8558,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -8137,7 +8568,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "8",
                       mat: "Tilt/Settlement",
                       value: c3.r8p,
                     });
@@ -8162,7 +8593,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "8",
                       mat: "Tilt/Settlement",
                       value: c3.r8r,
                     });
@@ -8187,7 +8618,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "8",
                       mat: "Tilt/Settlement",
                       value: c3.r8rod,
                     });
@@ -8316,12 +8747,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -8330,7 +8757,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "9",
                       mat: "Scouring",
                       value: c3.r9p,
                     });
@@ -8355,7 +8782,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "9",
                       mat: "Scouring",
                       value: c3.r9r,
                     });
@@ -8380,7 +8807,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "3",
-                      rowNo: "1",
+                      rowNo: "9",
                       mat: "Scouring",
                       value: c3.r9rod,
                     });
@@ -8721,12 +9148,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -8735,7 +9158,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c4.r2p,
                     });
@@ -8760,7 +9183,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c4.r2r,
                     });
@@ -8785,7 +9208,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "2",
                       mat: "Cracks at Concrete",
                       value: c4.r2rod,
                     });
@@ -8928,7 +9351,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Delamination",
                       value: c4.r3p,
                     });
@@ -8953,7 +9376,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Delamination",
                       value: c4.r3r,
                     });
@@ -8978,7 +9401,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "3",
                       mat: "Delamination",
                       value: c4.r3rod,
                     });
@@ -9121,7 +9544,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Spalling",
                       value: c4.r4p,
                     });
@@ -9146,7 +9569,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Spalling",
                       value: c4.r4r,
                     });
@@ -9171,7 +9594,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "4",
                       mat: "Spalling",
                       value: c4.r4rod,
                     });
@@ -9305,7 +9728,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {
+                data.pierNo_concreteAndMasonry_corrosionOfReinforcement_pctgAff1
+              }{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -9316,7 +9741,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Corrosion of Reinforcement",
                       value: c4.r5p,
                     });
@@ -9341,7 +9766,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Corrosion of Reinforcement",
                       value: c4.r5r,
                     });
@@ -9366,7 +9791,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "5",
                       mat: "Corrosion of Reinforcement",
                       value: c4.r5rod,
                     });
@@ -9509,7 +9934,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Wear/Abrasion",
                       value: c4.r6p,
                     });
@@ -9534,7 +9959,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Wear/Abrasion",
                       value: c4.r6r,
                     });
@@ -9559,7 +9984,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "6",
                       mat: "Wear/Abrasion",
                       value: c4.r6rod,
                     });
@@ -9704,7 +10129,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "7",
                       mat: "Material Deterioration",
                       value: c4.r7p,
                     });
@@ -9729,7 +10154,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "7",
                       mat: "Material Deterioration",
                       value: c4.r7r,
                     });
@@ -9754,7 +10179,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "7",
                       mat: "Material Deterioration",
                       value: c4.r7rod,
                     });
@@ -9883,12 +10308,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -9897,7 +10318,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "8",
                       mat: "Tilt/Settlement",
                       value: c4.r8p,
                     });
@@ -9922,7 +10343,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "8",
                       mat: "Tilt/Settlement",
                       value: c4.r8r,
                     });
@@ -9947,7 +10368,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "8",
                       mat: "Tilt/Settlement",
                       value: c4.r8rod,
                     });
@@ -10076,12 +10497,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -10090,7 +10507,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "p",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "9",
                       mat: "Scouring",
                       value: c4.r9p,
                     });
@@ -10115,7 +10532,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "r",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "9",
                       mat: "Scouring",
                       value: c4.r9r,
                     });
@@ -10140,7 +10557,7 @@ const page = ({ params }: any) => {
                       ...editorMode,
                       type: "rod",
                       compNo: "4",
-                      rowNo: "1",
+                      rowNo: "9",
                       mat: "Scouring",
                       value: c4.r9rod,
                     });
@@ -10496,7 +10913,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {
+                data.bearing_steelAndRubberAndOthers_looseConnections_pctgAff1
+              }{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -10686,12 +11105,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -10879,12 +11294,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -11072,12 +11483,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -11469,7 +11876,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {
+                data.parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff1
+              }{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -11682,12 +12091,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -12071,7 +12476,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {
+                data.parapet_steelAndConcreteAndOthers_impactDamage_pctgAff1
+              }{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -12264,7 +12671,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {
+                data.parapet_steelAndConcreteAndOthers_looseConnections_pctgAff1
+              }{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -12693,7 +13102,7 @@ const page = ({ params }: any) => {
                       type: "p",
                       compNo: "7",
                       rowNo: "2",
-                      mat: "wHEEL tRACK rUTTING",
+                      mat: "Wheel Track Rutting",
                       value: c7.r2p,
                     });
                     setIsModalOpen(true);
@@ -12718,7 +13127,7 @@ const page = ({ params }: any) => {
                       type: "r",
                       compNo: "7",
                       rowNo: "2",
-                      mat: "wHEEL tRACK rUTTING",
+                      mat: "Wheel Track Rutting",
                       value: c7.r2r,
                     });
                     setIsModalOpen(true);
@@ -12743,7 +13152,7 @@ const page = ({ params }: any) => {
                       type: "rod",
                       compNo: "7",
                       rowNo: "2",
-                      mat: "wHEEL tRACK rUTTING",
+                      mat: "Wheel Track Rutting",
                       value: c7.r2rod,
                     });
                     setIsModalOpen(true);
@@ -13066,12 +13475,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -13259,12 +13664,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -13460,12 +13861,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -13679,7 +14076,7 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {data.expansionJoint_all_differenceInLevel_pctgAff1}{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -14067,7 +14464,7 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {data.expansionJoint_all_crackingAtExpJoint_pctgAff1}{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -14260,7 +14657,7 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {data.expansionJoint_all_rupture_pctgAff1}{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -14677,7 +15074,7 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {data.drainPipe_steelPVC_blockedDrainage_pctgAff1}{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -15065,7 +15462,7 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
+              {data.drainPipe_steelPVC_inadequatePipeLength_pctgAff1}{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -15263,12 +15660,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -15868,10 +16261,7 @@ const page = ({ params }: any) => {
               )}{" "}
             </td>{" "}
             {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            <td className="text-center text-[12px] invisible">A</td>
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -16065,12 +16455,8 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
-            <td className="text-center text-[10px]">
+            {/* percentage */}
+            <td colSpan={2} className="text-center text-[10px]">
               {" "}
               {editCheck ? (
                 <button
@@ -16171,8 +16557,56 @@ const page = ({ params }: any) => {
           {/* END HC */}
         </tbody>
       </table>
-
+      <p className="self-start text-[12px]">
+        * Legend: A=Area, N=Numbers, L=Length
+      </p>
+      <table className="mt-4">
+        <tbody>
+          <tr>
+            <td rowSpan={2} className="p-1 text-[14px] font-bold">
+              Have all the components been inspected?
+            </td>
+            <td className="p-1 font-bold text-[12px]">YES</td>
+            <td className="p-1 font-bold text-[12px]">NO</td>
+          </tr>
+          <tr>
+            <td
+              onClick={() => {
+                if (editCheck) setAllComponentsInspected(true);
+              }}
+              className="justify-center items-center p-1"
+            >
+              {allComponentsInspected && (
+                <Image
+                  src="/check.png"
+                  alt=""
+                  width={10}
+                  height={10}
+                  style={{ alignSelf: "center", margin: "0 auto" }}
+                />
+              )}
+            </td>
+            <td
+              onClick={() => {
+                if (editCheck) setAllComponentsInspected(false);
+              }}
+              className="p-1"
+            >
+              {!allComponentsInspected && (
+                <Image
+                  src="/check.png"
+                  alt=""
+                  width={10}
+                  height={10}
+                  style={{ alignSelf: "center", margin: "0 auto" }}
+                />
+              )}
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <EditModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <p>{JSON.stringify(editorMode)}</p>
         <p className="font-bold text-black mb-2">
           {editorMode.compNo == "1"
             ? "BEAM/GIRDER"
