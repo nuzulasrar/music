@@ -1751,6 +1751,441 @@ const page = ({ params }: any) => {
           r14rod: result.dataa.beamGirder_pAndRConcrete_abnormalMovement_rod,
         });
 
+        setC2({
+          ...c2,
+          main: result.dataa.deckSlab_tick,
+          one: result.dataa.deckSlab_steel_tick,
+          two: result.dataa.deckSlab_concrete_tick,
+
+          rom1: result.dataa.deckSlab_steel_ratingOfMember,
+
+          r1d: result.dataa.deckSlab_steel_corrosionOfSteel_tick,
+          r1s: result.dataa.deckSlab_steel_corrosionOfSteel_severity,
+          r1p: result.dataa.deckSlab_steel_corrosionOfSteel_pctgAff2,
+          r1r: result.dataa.deckSlab_steel_corrosionOfSteel_remarks,
+          r1rod: result.dataa.deckSlab_steel_corrosionOfSteel_rod,
+
+          r2d: result.dataa.deckSlab_steel_fractureAtSteel_tick,
+          r2s: result.dataa.deckSlab_steel_fractureAtSteel_severity,
+          r2p: result.dataa.deckSlab_steel_fractureAtSteel_pctgAff1,
+          r2r: result.dataa.deckSlab_steel_fractureAtSteel_remarks,
+          r2rod: result.dataa.deckSlab_steel_fractureAtSteel_rod,
+
+          r3d: result.dataa.deckSlab_steel_looseConnections_tick,
+          r3s: result.dataa.deckSlab_steel_looseConnections_severity,
+          r3p: result.dataa.deckSlab_steel_looseConnections_pctgAff2,
+          r3r: result.dataa.deckSlab_steel_looseConnections_remarks,
+          r3rod: result.dataa.deckSlab_steel_looseConnections_rod,
+
+          r4d: result.dataa.deckSlab_steel_perManentDeformations_tick,
+          r4s: result.dataa.deckSlab_steel_perManentDeformations_severity,
+          r4p: result.dataa.deckSlab_steel_perManentDeformations_pctgAff1,
+          r4r: result.dataa.deckSlab_steel_perManentDeformations_remarks,
+          r4rod: result.dataa.deckSlab_steel_perManentDeformations_rod,
+
+          r5d: result.dataa.deckSlab_steel_waterLeak_tick,
+          r5s: result.dataa.deckSlab_steel_waterLeak_severity,
+          r5p: result.dataa.deckSlab_steel_waterLeak_pctgAff2,
+          r5r: result.dataa.deckSlab_steel_waterLeak_remarks,
+          r5rod: result.dataa.deckSlab_steel_waterLeak_rod,
+
+          r6d: result.dataa.deckSlab_steel_abnormalMovement_tick,
+          r6s: result.dataa.deckSlab_steel_abnormalMovement_severity,
+          r6p: result.dataa.deckSlab_steel_abnormalMovement_pctgAff1,
+          r6r: result.dataa.deckSlab_steel_abnormalMovement_remarks,
+          r6rod: result.dataa.deckSlab_steel_abnormalMovement_rod,
+
+          r7d: result.dataa.deckSlab_steel_abnormalNoise_tick,
+          r7s: result.dataa.deckSlab_steel_abnormalNoise_severity,
+          r7p: result.dataa.deckSlab_steel_abnormalNoise_pctgAff1,
+          r7r: result.dataa.deckSlab_steel_abnormalNoise_remarks,
+          r7rod: result.dataa.deckSlab_steel_abnormalNoise_rod,
+
+          r8d: result.dataa.deckSlab_concrete_surfaceDefect_tick,
+          r8s: result.dataa.deckSlab_concrete_surfaceDefect_severity,
+          r8p: result.dataa.deckSlab_concrete_abnormalNoise_pctgAff2,
+          r8r: result.dataa.deckSlab_concrete_surfaceDefect_remarks,
+          r8rod: result.dataa.deckSlab_concrete_surfaceDefect_rod,
+
+          r9d: result.dataa.deckSlab_concrete_cracksAtConcrete_tick,
+          r9s: result.dataa.deckSlab_concrete_cracksAtConcrete_severity,
+          r9p: result.dataa.deckSlab_concrete_cracksAtConcrete_pctgAff1,
+          r9r: result.dataa.deckSlab_concrete_cracksAtConcrete_remarks,
+          r9rod: result.dataa.deckSlab_concrete_cracksAtConcrete_rod,
+
+          r10d: result.dataa.deckSlab_concrete_delamination_tick,
+          r10s: result.dataa.deckSlab_concrete_delamination_severity,
+          r10p: result.dataa.deckSlab_concrete_delamination_pctgAff2,
+          r10r: result.dataa.deckSlab_concrete_delamination_remarks,
+          r10rod: result.dataa.deckSlab_concrete_delamination_rod,
+
+          r11d: result.dataa.deckSlab_concrete_spalling_tick,
+          r11s: result.dataa.deckSlab_concrete_spalling_severity,
+          r11p: result.dataa.deckSlab_concrete_spalling_pctgAff2,
+          r11r: result.dataa.deckSlab_concrete_spalling_remarks,
+          r11rod: result.dataa.deckSlab_concrete_spalling_rod,
+
+          r12d: result.dataa.deckSlab_concrete_corrosionOfReinforcement_tick,
+          r12s: result.dataa
+            .deckSlab_concrete_corrosionOfReinforcement_severity,
+          r12p: result.dataa
+            .deckSlab_concrete_corrosionOfReinforcement_pctgAff2,
+          r12r: result.dataa.deckSlab_concrete_corrosionOfReinforcement_remarks,
+          r12rod: result.dataa.deckSlab_concrete_corrosionOfReinforcement_rod,
+
+          r13d: result.dataa.deckSlab_concrete_waterLeakOrFreeLime_tick,
+          r13s: result.dataa.deckSlab_concrete_waterLeakOrFreeLime_severity,
+          r13p: result.dataa.deckSlab_concrete_waterLeakOrFreeLime_pctgAff2,
+          r13r: result.dataa.deckSlab_concrete_waterLeakOrFreeLime_remarks,
+          r13rod: result.dataa.deckSlab_concrete_waterLeakOrFreeLime_rod,
+        });
+
+        setC3({
+          ...c3,
+          main: result.dataa.abutment_tick,
+          one: result.dataa.abutment_concrete_tick,
+          two: result.dataa.abutment_masonry_tick,
+
+          rom1: result.dataa.abutment_concreteAndMasonry_ratingOfMember,
+
+          r1d: result.dataa.abutment_concreteAndMasonry_surfaceDefect_tick,
+          r1s: result.dataa.abutment_concreteAndMasonry_surfaceDefect_severity,
+          r1p: result.dataa.abutment_concreteAndMasonry_surfaceDefect_pctgAff2,
+          r1r: result.dataa.abutment_concreteAndMasonry_surfaceDefect_remarks,
+          r1rod: result.dataa.abutment_concreteAndMasonry_surfaceDefect_rod,
+
+          r2d: result.dataa.abutment_concreteAndMasonry_cracksAtConcrete_tick,
+          r2s: result.dataa
+            .abutment_concreteAndMasonry_cracksAtConcrete_severity,
+          r2p: result.dataa
+            .abutment_concreteAndMasonry_cracksAtConcrete_pctgAff1,
+          r2r: result.dataa
+            .abutment_concreteAndMasonry_cracksAtConcrete_remarks,
+          r2rod: result.dataa.abutment_concreteAndMasonry_cracksAtConcrete_rod,
+
+          r3d: result.dataa.abutment_concreteAndMasonry_delamination_tick,
+          r3s: result.dataa.abutment_concreteAndMasonry_delamination_severity,
+          r3p: result.dataa.abutment_concreteAndMasonry_delamination_pctgAff2,
+          r3r: result.dataa.abutment_concreteAndMasonry_delamination_remarks,
+          r3rod: result.dataa.abutment_concreteAndMasonry_delamination_rod,
+
+          r4d: result.dataa.abutment_concreteAndMasonry_spalling_tick,
+          r4s: result.dataa.abutment_concreteAndMasonry_spalling_severity,
+          r4p: result.dataa.abutment_concreteAndMasonry_spalling_pctgAff2,
+          r4r: result.dataa.abutment_concreteAndMasonry_spalling_remarks,
+          r4rod: result.dataa.abutment_concreteAndMasonry_spalling_rod,
+
+          r5d: result.dataa
+            .abutment_concreteAndMasonry_corrosionOfReinforcement_tick,
+          r5s: result.dataa
+            .abutment_concreteAndMasonry_corrosionOfReinforcement_severity,
+          r5p: result.dataa
+            .abutment_concreteAndMasonry_corrosionOfReinforcement_pctgAff2,
+          r5r: result.dataa
+            .abutment_concreteAndMasonry_corrosionOfReinforcement_remarks,
+          r5rod:
+            result.dataa
+              .abutment_concreteAndMasonry_corrosionOfReinforcement_rod,
+
+          r6d: result.dataa.abutment_concreteAndMasonry_wearOrAbrasion_tick,
+          r6s: result.dataa.abutment_concreteAndMasonry_wearOrAbrasion_severity,
+          r6p: result.dataa.abutment_concreteAndMasonry_wearOrAbrasion_pctgAff2,
+          r6r: result.dataa.abutment_concreteAndMasonry_wearOrAbrasion_remarks,
+          r6rod: result.dataa.abutment_concreteAndMasonry_wearOrAbrasion_rod,
+
+          r7d: result.dataa
+            .abutment_concreteAndMasonry_materialDeterioration_tick,
+          r7s: result.dataa
+            .abutment_concreteAndMasonry_materialDeterioration_severity,
+          r7p: result.dataa
+            .abutment_concreteAndMasonry_materialDeterioration_pctgAff2,
+          r7r: result.dataa
+            .abutment_concreteAndMasonry_materialDeterioration_remarks,
+          r7rod:
+            result.dataa.abutment_concreteAndMasonry_materialDeterioration_rod,
+
+          r8d: result.dataa.abutment_concreteAndMasonry_tiltOrSettlement_tick,
+          r8s: result.dataa
+            .abutment_concreteAndMasonry_tiltOrSettlement_severity,
+          r8p: result.dataa
+            .abutment_concreteAndMasonry_tiltOrSettlement_pctgAff1,
+          r8r: result.dataa
+            .abutment_concreteAndMasonry_tiltOrSettlement_remarks,
+          r8rod: result.dataa.abutment_concreteAndMasonry_tiltOrSettlement_rod,
+
+          r9d: result.dataa.abutment_concreteAndMasonry_scouring_tick,
+          r9s: result.dataa.abutment_concreteAndMasonry_scouring_severity,
+          r9p: result.dataa.abutment_concreteAndMasonry_scouring_pctgAff1,
+          r9r: result.dataa.abutment_concreteAndMasonry_scouring_remarks,
+          r9rod: result.dataa.abutment_concreteAndMasonry_scouring_rod,
+        });
+
+        setC4({
+          ...c4,
+          main: result.dataa.pierNo__tick,
+          one: result.dataa.pierNo_concrete_tick,
+          two: result.dataa.pierNo_masonry_tick,
+
+          rom1: result.dataa.pierNo_concreteAndMasonry_ratingOfMember,
+
+          r1d: result.dataa.pierNo_concreteAndMasonry_surfaceDefect_tick,
+          r1s: result.dataa.pierNo_concreteAndMasonry_surfaceDefect_severity,
+          r1p: result.dataa.pierNo_concreteAndMasonry_surfaceDefect_pctgAff2,
+          r1r: result.dataa.pierNo_concreteAndMasonry_surfaceDefect_remarks,
+          r1rod: result.dataa.pierNo_concreteAndMasonry_surfaceDefect_rod,
+
+          r2d: result.dataa.pierNo_concreteAndMasonry_cracksAtConcrete_tick,
+          r2s: result.dataa.pierNo_concreteAndMasonry_cracksAtConcrete_severity,
+          r2p: result.dataa.pierNo_concreteAndMasonry_cracksAtConcrete_pctgAff1,
+          r2r: result.dataa.pierNo_concreteAndMasonry_cracksAtConcrete_remarks,
+          r2rod: result.dataa.pierNo_concreteAndMasonry_cracksAtConcrete_rod,
+
+          r3d: result.dataa.pierNo_concreteAndMasonry_delamination_tick,
+          r3s: result.dataa.pierNo_concreteAndMasonry_delamination_severity,
+          r3p: result.dataa.pierNo_concreteAndMasonry_delamination_pctgAff2,
+          r3r: result.dataa.pierNo_concreteAndMasonry_delamination_remarks,
+          r3rod: result.dataa.pierNo_concreteAndMasonry_delamination_rod,
+
+          r4d: result.dataa.pierNo_concreteAndMasonry_spalling_tick,
+          r4s: result.dataa.pierNo_concreteAndMasonry_spalling_severity,
+          r4p: result.dataa.pierNo_concreteAndMasonry_spalling_pctgAff2,
+          r4r: result.dataa.pierNo_concreteAndMasonry_spalling_remarks,
+          r4rod: result.dataa.pierNo_concreteAndMasonry_spalling_rod,
+
+          r5d: result.dataa
+            .pierNo_concreteAndMasonry_corrosionOfReinforcement_tick,
+          r5s: result.dataa
+            .pierNo_concreteAndMasonry_corrosionOfReinforcement_severity,
+          r5p: result.dataa
+            .pierNo_concreteAndMasonry_corrosionOfReinforcement_pctgAff2,
+          r5r: result.dataa
+            .pierNo_concreteAndMasonry_corrosionOfReinforcement_remarks,
+          r5rod:
+            result.dataa.pierNo_concreteAndMasonry_corrosionOfReinforcement_rod,
+
+          r6d: result.dataa.pierNo_concreteAndMasonry_wearOrAbrasion_tick,
+          r6s: result.dataa.pierNo_concreteAndMasonry_wearOrAbrasion_severity,
+          r6p: result.dataa.pierNo_concreteAndMasonry_wearOrAbrasion_pctgAff2,
+          r6r: result.dataa.pierNo_concreteAndMasonry_wearOrAbrasion_remarks,
+          r6rod: result.dataa.pierNo_concreteAndMasonry_wearOrAbrasion_rod,
+
+          r7d: result.dataa
+            .pierNo_concreteAndMasonry_materialDeterioration_tick,
+          r7s: result.dataa
+            .pierNo_concreteAndMasonry_materialDeterioration_severity,
+          r7p: result.dataa
+            .pierNo_concreteAndMasonry_materialDeterioration_pctgAff2,
+          r7r: result.dataa
+            .pierNo_concreteAndMasonry_materialDeterioration_remarks,
+          r7rod:
+            result.dataa.pierNo_concreteAndMasonry_materialDeterioration_rod,
+
+          r8d: result.dataa.pierNo_concreteAndMasonry_tiltOrSettlement_tick,
+          r8s: result.dataa.pierNo_concreteAndMasonry_tiltOrSettlement_severity,
+          r8p: result.dataa.pierNo_concreteAndMasonry_tiltOrSettlement_pctgAff1,
+          r8r: result.dataa.pierNo_concreteAndMasonry_tiltOrSettlement_remarks,
+          r8rod: result.dataa.pierNo_concreteAndMasonry_tiltOrSettlement_rod,
+
+          r9d: result.dataa.pierNo_concreteAndMasonry_scouring_tick,
+          r9s: result.dataa.pierNo_concreteAndMasonry_scouring_severity,
+          r9p: result.dataa.pierNo_concreteAndMasonry_scouring_pctgAff1,
+          r9r: result.dataa.pierNo_concreteAndMasonry_scouring_remarks,
+          r9rod: result.dataa.pierNo_concreteAndMasonry_scouring_rod,
+        });
+
+        setC5({
+          ...c5,
+          main: result.dataa2.bearing_tick,
+          one: result.dataa2.bearing_steel_tick,
+          two: result.dataa2.bearing_rubber_tick,
+          three: result.dataa2.bearing_others_tick,
+
+          rom1: result.dataa2.bearing_steelAndRubberAndOthers_ratingOfMember,
+
+          r1d: result.dataa2
+            .bearing_steelAndRubberAndOthers_corrosionOfSteel_tick,
+          r1s: result.dataa2
+            .bearing_steelAndRubberAndOthers_corrosionOfSteel_severity,
+          r1p: result.dataa2
+            .bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff2,
+          r1r: result.dataa2
+            .bearing_steelAndRubberAndOthers_corrosionOfSteel_remarks,
+          r1rod:
+            result.dataa2.bearing_steelAndRubberAndOthers_corrosionOfSteel_rod,
+
+          r2d: result.dataa2
+            .bearing_steelAndRubberAndOthers_looseConnections_tick,
+          r2s: result.dataa2
+            .bearing_steelAndRubberAndOthers_looseConnections_severity,
+          r2p: result.dataa2
+            .bearing_steelAndRubberAndOthers_looseConnections_pctgAff2,
+          r2r: result.dataa2
+            .bearing_steelAndRubberAndOthers_looseConnections_remarks,
+          r2rod:
+            result.dataa2.bearing_steelAndRubberAndOthers_looseConnections_rod,
+
+          r3d: result.dataa2.bearing_steelAndRubberAndOthers_pendingWater_tick,
+          r3s: result.dataa2
+            .bearing_steelAndRubberAndOthers_pendingWater_severity,
+          r3p: result.dataa2
+            .bearing_steelAndRubberAndOthers_pendingWater_pctgAff1,
+          r3r: result.dataa2
+            .bearing_steelAndRubberAndOthers_pendingWater_remarks,
+          r3rod: result.dataa2.bearing_steelAndRubberAndOthers_pendingWater_rod,
+
+          r4d: result.dataa2
+            .bearing_steelAndRubberAndOthers_debrisOrVegetation_tick,
+          r4s: result.dataa2
+            .bearing_steelAndRubberAndOthers_debrisOrVegetation_severity,
+          r4p: result.dataa2
+            .bearing_steelAndRubberAndOthers_debrisOrVegetation_pctgAff1,
+          r4r: result.dataa2
+            .bearing_steelAndRubberAndOthers_debrisOrVegetation_remarks,
+          r4rod:
+            result.dataa2
+              .bearing_steelAndRubberAndOthers_debrisOrVegetation_rod,
+
+          r5d: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalBulging_tick,
+          r5s: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalBulging_severity,
+          r5p: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalBulging_pctgAff1,
+          r5r: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalBulging_remarks,
+          r5rod:
+            result.dataa2.bearing_steelAndRubberAndOthers_abnormalBulging_rod,
+
+          r6d: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalDisplacement_tick,
+          r6s: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalDisplacement_severity,
+          r6p: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff2,
+          r6r: result.dataa2
+            .bearing_steelAndRubberAndOthers_abnormalDisplacement_remarks,
+          r6rod:
+            result.dataa2
+              .bearing_steelAndRubberAndOthers_abnormalDisplacement_rod,
+        });
+
+        setC6({
+          ...c6,
+          main: result.dataa2.parapet_tick,
+          one: result.dataa2.parapet_steel_tick,
+          two: result.dataa2.parapet_concrete_tick,
+          three: result.dataa2.parapet_others_tick,
+
+          rom1: result.dataa2.parapet_steelAndConcreteAndOthers_ratingOfMember,
+
+          r1d: result.dataa2
+            .parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick,
+          r1s: result.dataa2
+            .parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity,
+          r1p: result.dataa2
+            .parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff2,
+          r1r: result.dataa2
+            .parapet_steelAndConcreteAndOthers_corrosionOfSteel_remarks,
+          r1rod:
+            result.dataa2
+              .parapet_steelAndConcreteAndOthers_corrosionOfSteel_rod,
+
+          r2d: result.dataa2
+            .parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick,
+          r2s: result.dataa2
+            .parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity,
+          r2p: result.dataa2
+            .parapet_steelAndConcreteAndOthers_cracksAtConcrete_pctgAff1,
+          r2r: result.dataa2
+            .parapet_steelAndConcreteAndOthers_cracksAtConcrete_remarks,
+          r2rod:
+            result.dataa2
+              .parapet_steelAndConcreteAndOthers_cracksAtConcrete_rod,
+
+          r3d: result.dataa2.parapet_steelAndConcreteAndOthers_spalling_tick,
+          r3s: result.dataa2
+            .parapet_steelAndConcreteAndOthers_spalling_severity,
+          r3p: result.dataa2
+            .parapet_steelAndConcreteAndOthers_spalling_pctgAff2,
+          r3r: result.dataa2.parapet_steelAndConcreteAndOthers_spalling_remarks,
+          r3rod: result.dataa2.parapet_steelAndConcreteAndOthers_spalling_rod,
+
+          r4d: result.dataa2
+            .parapet_steelAndConcreteAndOthers_impactDamage_tick,
+          r4s: result.dataa2
+            .parapet_steelAndConcreteAndOthers_impactDamage_severity,
+          r4p: result.dataa2
+            .parapet_steelAndConcreteAndOthers_impactDamage_pctgAff2,
+          r4r: result.dataa2
+            .parapet_steelAndConcreteAndOthers_impactDamage_remarks,
+          r4rod:
+            result.dataa2.parapet_steelAndConcreteAndOthers_impactDamage_rod,
+
+          r5d: result.dataa2
+            .parapet_steelAndConcreteAndOthers_looseConnections_tick,
+          r5s: result.dataa2
+            .parapet_steelAndConcreteAndOthers_looseConnections_severity,
+          r5p: result.dataa2
+            .parapet_steelAndConcreteAndOthers_looseConnections_pctgAff2,
+          r5r: result.dataa2
+            .parapet_steelAndConcreteAndOthers_looseConnections_remarks,
+          r5rod:
+            result.dataa2
+              .parapet_steelAndConcreteAndOthers_looseConnections_rod,
+        });
+
+        setC7({
+          ...c7,
+          main: result.dataa2.surfacing__tick,
+          one: result.dataa2.surfacing_asphalt_tick,
+          two: result.dataa2.surfacing_concrete_tick,
+
+          rom1: result.dataa2.surfacing_asphaltAndConcrete_ratingOfMember,
+
+          r1d: result.dataa2.surfacing_asphaltAndConcrete_potHoles_tick,
+          r1s: result.dataa2.surfacing_asphaltAndConcrete_potHoles_severity,
+          r1p: result.dataa2.surfacing_asphaltAndConcrete_potHoles_pctgAff2,
+          r1r: result.dataa2.surfacing_asphaltAndConcrete_potHoles_remarks,
+          r1rod: result.dataa2.surfacing_asphaltAndConcrete_potHoles_rod,
+
+          r2d: result.dataa2
+            .surfacing_asphaltAndConcrete_wheelTrackRutting_tick,
+          r2s: result.dataa2
+            .surfacing_asphaltAndConcrete_wheelTrackRutting_severity,
+          r2p: result.dataa2
+            .surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff2,
+          r2r: result.dataa2
+            .surfacing_asphaltAndConcrete_wheelTrackRutting_remarks,
+          r2rod:
+            result.dataa2.surfacing_asphaltAndConcrete_wheelTrackRutting_rod,
+
+          r3d: result.dataa2
+            .surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick,
+          r3s: result.dataa2
+            .surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity,
+          r3p: result.dataa2
+            .surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff2,
+          r3r: result.dataa2
+            .surfacing_asphaltAndConcrete_lostOfBondAndDelamination_remarks,
+          r3rod:
+            result.dataa2
+              .surfacing_asphaltAndConcrete_lostOfBondAndDelamination_rod,
+
+          r4d: result.dataa2.surfacing_asphaltAndConcrete_rippling_tick,
+          r4s: result.dataa2.surfacing_asphaltAndConcrete_rippling_severity,
+          r4p: result.dataa2.surfacing_asphaltAndConcrete_rippling_pctgAff1,
+          r4r: result.dataa2.surfacing_asphaltAndConcrete_rippling_remarks,
+          r4rod: result.dataa2.surfacing_asphaltAndConcrete_rippling_rod,
+
+          r5d: result.dataa2.surfacing_asphaltAndConcrete_pavementCrack_tick,
+          r5s: result.dataa2
+            .surfacing_asphaltAndConcrete_pavementCrack_severity,
+          r5p: result.dataa2
+            .surfacing_asphaltAndConcrete_pavementCrack_pctgAff1,
+          r5r: result.dataa2.surfacing_asphaltAndConcrete_pavementCrack_remarks,
+          r5rod: result.dataa2.surfacing_asphaltAndConcrete_pavementCrack_rod,
+        });
+
         setAllComponentsInspected(result.dataa2.allComponentsInspected);
 
         setData({ ...data, ...result.dataa, ...result.dataa2 });
