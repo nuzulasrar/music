@@ -684,6 +684,8 @@ const page = ({ params }: any) => {
     one: false,
     two: false,
     three: false,
+    four: false,
+    five: false,
     rom1: "",
     rom2: "",
     r1d: null,
@@ -2186,6 +2188,126 @@ const page = ({ params }: any) => {
           r5rod: result.dataa2.surfacing_asphaltAndConcrete_pavementCrack_rod,
         });
 
+        setC8({
+          ...c8,
+          main: result.dataa2.expansionJoint__tick,
+          one: result.dataa2.expansionJoint_aspPlug_tick,
+          two: result.dataa2.expansionJoint_elastomeric_tick,
+          three: result.dataa2.expansionJoint_compSeal_tick,
+          four: result.dataa2.expansionJoint_buried_tick,
+          five: result.dataa2.expansionJoint_others_tick,
+
+          rom1: result.dataa2.expansionJoint_all_ratingOfMember,
+
+          r1d: result.dataa2.expansionJoint_all_abnormalSpacing_tick,
+          r1s: result.dataa2.expansionJoint_all_abnormalSpacing_severity,
+          r1p: result.dataa2.expansionJoint_all_abnormalSpacing_pctgAff1,
+          r1r: result.dataa2.expansionJoint_all_abnormalSpacing_remarks,
+          r1rod: result.dataa2.expansionJoint_all_abnormalSpacing_rod,
+
+          r2d: result.dataa2.expansionJoint_all_differenceInLevel_tick,
+          r2s: result.dataa2.expansionJoint_all_differenceInLevel_severity,
+          r2p: result.dataa2.expansionJoint_all_differenceInLevel_pctgAff2,
+          r2r: result.dataa2.expansionJoint_all_differenceInLevel_remarks,
+          r2rod: result.dataa2.expansionJoint_all_differenceInLevel_rod,
+
+          r3d: result.dataa2.expansionJoint_all_waterLeak_tick,
+          r3s: result.dataa2.expansionJoint_all_waterLeak_severity,
+          r3p: result.dataa2.expansionJoint_all_waterLeak_pctgAff2,
+          r3r: result.dataa2.expansionJoint_all_waterLeak_remarks,
+          r3rod: result.dataa2.expansionJoint_all_waterLeak_rod,
+
+          r4d: result.dataa2.expansionJoint_all_crackingAtExpJoint_tick,
+          r4s: result.dataa2.expansionJoint_all_crackingAtExpJoint_severity,
+          r4p: result.dataa2.expansionJoint_all_crackingAtExpJoint_pctgAff2,
+          r4r: result.dataa2.expansionJoint_all_crackingAtExpJoint_remarks,
+          r4rod: result.dataa2.expansionJoint_all_crackingAtExpJoint_rod,
+
+          r5d: result.dataa2.expansionJoint_all_rupture_tick,
+          r5s: result.dataa2.expansionJoint_all_rupture_severity,
+          r5p: result.dataa2.expansionJoint_all_rupture_pctgAff2,
+          r5r: result.dataa2.expansionJoint_all_rupture_remarks,
+          r5rod: result.dataa2.expansionJoint_all_rupture_rod,
+        });
+
+        setC9({
+          ...c9,
+          main: result.dataa2.drainPipe_tick,
+          one: result.dataa2.drainPipe_steel_tick,
+          two: result.dataa2.drainPipe_pvc_tick,
+
+          rom1: result.dataa2.drainPipe_all_ratingOfMember,
+
+          r1d: result.dataa2.drainPipe_steelPVC_corrosionOfSteel_tick,
+          r1s: result.dataa2.drainPipe_steelPVC_corrosionOfSteel_severity,
+          r1p: result.dataa2.drainPipe_steelPVC_corrosionOfSteel_pctgAff2,
+          r1r: result.dataa2.drainPipe_steelPVC_corrosionOfSteel_remarks,
+          r1rod: result.dataa2.drainPipe_steelPVC_corrosionOfSteel_rod,
+
+          r2d: result.dataa2.drainPipe_steelPVC_blockedDrainage_tick,
+          r2s: result.dataa2.drainPipe_steelPVC_blockedDrainage_severity,
+          r2p: result.dataa2.drainPipe_steelPVC_blockedDrainage_pctgAff2,
+          r2r: result.dataa2.drainPipe_steelPVC_blockedDrainage_remarks,
+          r2rod: result.dataa2.drainPipe_steelPVC_blockedDrainage_rod,
+
+          r3d: result.dataa2.drainPipe_steelPVC_waterLeak_tick,
+          r3s: result.dataa2.drainPipe_steelPVC_waterLeak_severity,
+          r3p: result.dataa2.drainPipe_steelPVC_waterLeak_pctgAff2,
+          r3r: result.dataa2.drainPipe_steelPVC_waterLeak_remarks,
+          r3rod: result.dataa2.drainPipe_steelPVC_waterLeak_rod,
+
+          r4d: result.dataa2.drainPipe_steelPVC_inadequatePipeLength_tick,
+          r4s: result.dataa2.drainPipe_steelPVC_inadequatePipeLength_severity,
+          r4p: result.dataa2.drainPipe_steelPVC_inadequatePipeLength_pctgAff2,
+          r4r: result.dataa2.drainPipe_steelPVC_inadequatePipeLength_remarks,
+          r4rod: result.dataa2.drainPipe_steelPVC_inadequatePipeLength_rod,
+        });
+
+        setC10({
+          ...c10,
+          main: result.dataa2.slopeProtection_tick,
+          one: result.dataa2.slopeProtection_rblePitching_tick,
+          two: result.dataa2.slopeProtection_gablons_tick,
+          three: result.dataa2.slopeProtection_others_tick,
+
+          rom1: result.dataa2.slopeProtection_all_ratingOfMember,
+
+          r1d: result.dataa2.slopeProtection_all_scouring_tick,
+          r1s: result.dataa2.slopeProtection_all_scouring_severity,
+          r1p: result.dataa2.slopeProtection_all_scouring_pctgAff1,
+          r1r: result.dataa2.slopeProtection_all_scouring_remarks,
+          r1rod: result.dataa2.slopeProtection_all_scouring_rod,
+
+          r2d: result.dataa2.slopeProtection_all_erosion_tick,
+          r2s: result.dataa2.slopeProtection_all_erosion_severity,
+          r2p: result.dataa2.slopeProtection_all_erosion_pctgAff2,
+          r2r: result.dataa2.slopeProtection_all_erosion_remarks,
+          r2rod: result.dataa2.slopeProtection_all_erosion_rod,
+
+          r3d: result.dataa2.slopeProtection_all_materialLoss_tick,
+          r3s: result.dataa2.slopeProtection_all_materialLoss_severity,
+          r3p: result.dataa2.slopeProtection_all_materialLoss_pctgAff2,
+          r3r: result.dataa2.slopeProtection_all_materialLoss_remarks,
+          r3rod: result.dataa2.slopeProtection_all_materialLoss_rod,
+
+          r4d: result.dataa2.slopeProtection_all_blank_tick,
+          r4s: result.dataa2.slopeProtection_all_blank_severity,
+          r4p: result.dataa2.slopeProtection_all_blank_pctgAff2,
+          r4r: result.dataa2.slopeProtection_all_blank_remarks,
+          r4rod: result.dataa2.slopeProtection_all_blank_rod,
+        });
+
+        setC11({
+          ...c11,
+          rom1: result.dataa2
+            .hydraulicCapacity_inadequateOpening_ratingOfMember,
+
+          r1d: result.dataa2.hydraulicCapacity_inadequateOpening_tick,
+          r1s: result.dataa2.hydraulicCapacity_inadequateOpening_severity,
+          r1p: result.dataa2.hydraulicCapacity_inadequateOpening_pctgAff1,
+          r1r: result.dataa2.hydraulicCapacity_inadequateOpening_remarks,
+          r1rod: result.dataa2.hydraulicCapacity_inadequateOpening_rod,
+        });
         setAllComponentsInspected(result.dataa2.allComponentsInspected);
 
         setData({ ...data, ...result.dataa, ...result.dataa2 });
