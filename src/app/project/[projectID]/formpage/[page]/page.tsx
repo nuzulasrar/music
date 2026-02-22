@@ -22,6 +22,8 @@ const page = ({ params }: any) => {
 
   const [data, setData] = useState<any>([]);
 
+  const [inDB, setInDB] = useState(false);
+
   const [spanNo, setSpanNo] = useState("");
 
   const [formData, setFormData] = useState({
@@ -1635,11 +1637,13 @@ const page = ({ params }: any) => {
     try {
       const response = await fetch(`/api/getform/${projectID}/${page}`);
 
-      if (!response.ok) {
-        alert("Failed to fetch data");
-      }
-
       const result = await response.json();
+
+      if (response.status == "404") {
+        setInDB(false);
+      } else if (response.status == "200") {
+        setInDB(true);
+      }
       if (result.dataa) {
         setFormData({
           ...formData,
@@ -2328,19 +2332,33 @@ const page = ({ params }: any) => {
       // style={{ width: "100%", height: "100%" }}
     >
       <div className="w-full">
-        <div className="w-1/2 flex flex-row items-center mb-6 no-print">
-          <div className="w-8/12">
-            <p className="font-bold mb-2">Edit</p>
-            <label className="inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                checked={editCheck}
-                onChange={() => setEditCheck(!editCheck)}
-                className="sr-only peer"
-              />
-              <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-              <p className="ml-3">{editCheck ? "Edit Mode" : "View Mode"}</p>
-            </label>
+        <div className="w-full flex flex-row">
+          <div className="w-1/2 flex flex-row items-center mb-6 no-print">
+            <div className="w-8/12">
+              <p className="font-bold mb-2">Edit</p>
+              <label className="inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={editCheck}
+                  onChange={() => setEditCheck(!editCheck)}
+                  className="sr-only peer"
+                />
+                <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                <p className="ml-3">{editCheck ? "Edit Mode" : "View Mode"}</p>
+              </label>
+            </div>
+          </div>
+          <div className="w-1/2 flex flex-row items-center mb-6 no-print">
+            <p
+              className="font-semibold p-2"
+              style={{
+                backgroundColor: inDB
+                  ? "oklch(79.2% 0.209 151.711)"
+                  : "oklch(80.8% 0.114 19.571)",
+              }}
+            >
+              {inDB ? "Available in Database" : "Not Available in Database"}
+            </p>
           </div>
         </div>
         <div className="flex flex-row justify-end items-center">
