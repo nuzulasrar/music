@@ -2322,6 +2322,516 @@ const page = ({ params }: any) => {
     }
   };
 
+  const handleUpdateForm = () => {
+    //balik
+    // pageOfSpan: header.pageOfSpan,
+    // routeNo: header.routeNo,
+    // structNo: header.structNo,
+    // bridgeName: header.bridgeName,
+    // nameOfInspector: header.nameOfInspector,
+    // date: header.date,
+    const formdataa = {
+      page: Number(page),
+      projectBridgeId: Number(id),
+      beamGirder_tick: c1.main,
+      beamGirder_steel_tick: c1.one,
+      beamGirder_steel_ratingOfMember: c1.rom1,
+      beamGirder_steel_corrosionOfSteel_tick: c1.r1d,
+      beamGirder_steel_corrosionOfSteel_severity: c1.r1s,
+      beamGirder_steel_corrosionOfSteel_pctgAff1: "A",
+      beamGirder_steel_corrosionOfSteel_pctgAff2: c1.r1p,
+      beamGirder_steel_corrosionOfSteel_remarks: c1.r1r,
+      beamGirder_steel_corrosionOfSteel_rod: c1.r1rod,
+      beamGirder_steel_fractureAtSteel_tick: c1.r2d,
+      beamGirder_steel_fractureAtSteel_severity: c1.r2s,
+      beamGirder_steel_fractureAtSteel_pctgAff1: c1.r2p,
+      beamGirder_steel_fractureAtSteel_remarks: c1.r2r,
+      beamGirder_steel_fractureAtSteel_rod: c1.r2rod,
+      beamGirder_steel_looseConnections_tick: c1.r3d,
+      beamGirder_steel_looseConnections_severity: c1.r3s,
+      beamGirder_steel_looseConnections_pctgAff1: "N",
+      beamGirder_steel_looseConnections_pctgAff2: c1.r3p,
+      beamGirder_steel_looseConnections_remarks: c1.r3r,
+      beamGirder_steel_looseConnections_rod: c1.r3rod,
+      beamGirder_steel_perManentDeformations_tick: c1.r4d,
+      beamGirder_steel_perManentDeformations_severity: c1.r4s,
+      beamGirder_steel_perManentDeformations_pctgAff1: c1.r4p,
+      beamGirder_steel_perManentDeformations_remarks: c1.r4r,
+      beamGirder_steel_perManentDeformations_rod: c1.r4rod,
+      beamGirder_steel_paintDeterioration_tick: c1.r5d,
+      beamGirder_steel_paintDeterioration_severity: c1.r5s,
+      beamGirder_steel_paintDeterioration_pctgAff1: "A",
+      beamGirder_steel_paintDeterioration_pctgAff2: c1.r5p,
+      beamGirder_steel_paintDeterioration_remarks: c1.r5r,
+      beamGirder_steel_paintDeterioration_rod: c1.r5rod,
+      beamGirder_steel_abnormalVibration_tick: c1.r6d,
+      beamGirder_steel_abnormalVibration_severity: c1.r6s,
+      beamGirder_steel_abnormalVibration_pctgAff1: c1.r6p,
+      beamGirder_steel_abnormalVibration_remarks: c1.r6r,
+      beamGirder_steel_abnormalVibration_rod: c1.r6rod,
+      beamGirder_steel_abnormalNoise_tick: c1.r7d,
+      beamGirder_steel_abnormalNoise_severity: c1.r7s,
+      beamGirder_steel_abnormalNoise_pctgAff1: c1.r7p,
+      beamGirder_steel_abnormalNoise_remarks: c1.r7r,
+      beamGirder_steel_abnormalNoise_rod: c1.r7rod,
+      beamGirder_pConcrete_tick: c1.two,
+      beamGirder_rConcrete_tick: c1.three,
+      beamGirder_pAndRConcrete_ratingOfMember: c1.rom2,
+      beamGirder_pAndRConcrete_surfaceDefect_tick: c1.r8d,
+      beamGirder_pAndRConcrete_surfaceDefect_severity: c1.r8s,
+      beamGirder_pAndRConcrete_surfaceDefect_pctgAff1: "A",
+      beamGirder_pAndRConcrete_surfaceDefect_pctgAff2: c1.r8p,
+      beamGirder_pAndRConcrete_surfaceDefect_remarks: c1.r8r,
+      beamGirder_pAndRConcrete_surfaceDefect_rod: c1.r8rod,
+      beamGirder_pAndRConcrete_cracksAtConcrete_tick: c1.r9d,
+      beamGirder_pAndRConcrete_cracksAtConcrete_severity: c1.r9s,
+      beamGirder_pAndRConcrete_cracksAtConcrete_pctgAff1: c1.r9p,
+      beamGirder_pAndRConcrete_cracksAtConcrete_remarks: c1.r9r,
+      beamGirder_pAndRConcrete_cracksAtConcrete_rod: c1.r9rod,
+      beamGirder_pAndRConcrete_delamination_tick: c1.r10d,
+      beamGirder_pAndRConcrete_delamination_severity: c1.r10s,
+      beamGirder_pAndRConcrete_delamination_pctgAff1: "A",
+      beamGirder_pAndRConcrete_delamination_pctgAff2: c1.r10p,
+      beamGirder_pAndRConcrete_delamination_remarks: c1.r10r,
+      beamGirder_pAndRConcrete_delamination_rod: c1.r10rod,
+      beamGirder_pAndRConcrete_spalling_tick: c1.r11d,
+      beamGirder_pAndRConcrete_spalling_severity: c1.r11s,
+      beamGirder_pAndRConcrete_spalling_pctgAff1: "A",
+      beamGirder_pAndRConcrete_spalling_pctgAff2: c1.r11p,
+      beamGirder_pAndRConcrete_spalling_remarks: c1.r11r,
+      beamGirder_pAndRConcrete_spalling_rod: c1.r11rod,
+      beamGirder_pAndRConcrete_corrossionOfReinforcement_tick: c1.r12d,
+      beamGirder_pAndRConcrete_corrossionOfReinforcement_severity: c1.r12s,
+      beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff1: "L",
+      beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff2: c1.r12p,
+      beamGirder_pAndRConcrete_corrossionOfReinforcement_remarks: c1.r12r,
+      beamGirder_pAndRConcrete_corrossionOfReinforcement_rod: c1.r12rod,
+      beamGirder_pAndRConcrete_abnormalVibration_tick: c1.r13d,
+      beamGirder_pAndRConcrete_abnormalVibration_severity: c1.r13s,
+      beamGirder_pAndRConcrete_abnormalVibration_pctgAff1: c1.r13p,
+      beamGirder_pAndRConcrete_abnormalVibration_remarks: c1.r13r,
+      beamGirder_pAndRConcrete_abnormalVibration_rod: c1.r13rod,
+      beamGirder_pAndRConcrete_abnormalMovement_tick: c1.r14d,
+      beamGirder_pAndRConcrete_abnormalMovement_severity: c1.r14s,
+      beamGirder_pAndRConcrete_abnormalMovement_pctgAff1: c1.r14p,
+      beamGirder_pAndRConcrete_abnormalMovement_remarks: c1.r14r,
+      beamGirder_pAndRConcrete_abnormalMovement_rod: c1.r14rod,
+
+      deckSlab_tick: c2.main,
+      deckSlab_steel_tick: c2.one,
+      deckSlab_steel_ratingOfMember: c2.rom1,
+      deckSlab_steel_corrosionOfSteel_tick: c2.r1d,
+      deckSlab_steel_corrosionOfSteel_severity: c2.r1s,
+      deckSlab_steel_corrosionOfSteel_pctgAff1: "A",
+      deckSlab_steel_corrosionOfSteel_pctgAff2: c2.r1p,
+      deckSlab_steel_corrosionOfSteel_remarks: c2.r1r,
+      deckSlab_steel_corrosionOfSteel_rod: c2.r1rod,
+      deckSlab_steel_fractureAtSteel_tick: c2.r2d,
+      deckSlab_steel_fractureAtSteel_severity: c2.r2s,
+      deckSlab_steel_fractureAtSteel_pctgAff1: c2.r2p,
+      deckSlab_steel_fractureAtSteel_remarks: c2.r2r,
+      deckSlab_steel_fractureAtSteel_rod: c2.r2rod,
+      deckSlab_steel_looseConnections_tick: c2.r3d,
+      deckSlab_steel_looseConnections_severity: c2.r3s,
+      deckSlab_steel_looseConnections_pctgAff1: "N",
+      deckSlab_steel_looseConnections_pctgAff2: c2.r3p,
+      deckSlab_steel_looseConnections_remarks: c2.r3r,
+      deckSlab_steel_looseConnections_rod: c2.r3rod,
+      deckSlab_steel_perManentDeformations_tick: c2.r4d,
+      deckSlab_steel_perManentDeformations_severity: c2.r4s,
+      deckSlab_steel_perManentDeformations_pctgAff1: c2.r4p,
+      deckSlab_steel_perManentDeformations_remarks: c2.r4r,
+      deckSlab_steel_perManentDeformations_rod: c2.r4rod,
+      deckSlab_steel_waterLeak_tick: c2.r5d,
+      deckSlab_steel_waterLeak_severity: c2.r5s,
+      deckSlab_steel_waterLeak_pctgAff1: "A",
+      deckSlab_steel_waterLeak_pctgAff2: c2.r5p,
+      deckSlab_steel_waterLeak_remarks: c2.r5r,
+      deckSlab_steel_waterLeak_rod: c2.r5rod,
+      deckSlab_steel_abnormalMovement_tick: c2.r6d,
+      deckSlab_steel_abnormalMovement_severity: c2.r6s,
+      deckSlab_steel_abnormalMovement_pctgAff1: c2.r6p,
+      deckSlab_steel_abnormalMovement_remarks: c2.r6r,
+      deckSlab_steel_abnormalMovement_rod: c2.r6rod,
+      deckSlab_steel_abnormalNoise_tick: c2.r7d,
+      deckSlab_steel_abnormalNoise_severity: c2.r7s,
+      deckSlab_steel_abnormalNoise_pctgAff1: c2.r7p,
+      deckSlab_steel_abnormalNoise_remarks: c2.r7r,
+      deckSlab_steel_abnormalNoise_rod: c2.r7rod,
+      deckSlab_concrete_tick: c2.two,
+      deckSlab_concrete_surfaceDefect_tick: c2.r8d,
+      deckSlab_concrete_surfaceDefect_severity: c2.r8s,
+      deckSlab_concrete_surfaceDefect_pctgAff1: "A",
+      deckSlab_concrete_surfaceDefect_pctgAff2: c2.r8p,
+      deckSlab_concrete_surfaceDefect_remarks: c2.r8r,
+      deckSlab_concrete_surfaceDefect_rod: c2.r8rod,
+      deckSlab_concrete_cracksAtConcrete_tick: c2.r9d,
+      deckSlab_concrete_cracksAtConcrete_severity: c2.r9s,
+      deckSlab_concrete_cracksAtConcrete_pctgAff1: c2.r9p,
+      deckSlab_concrete_cracksAtConcrete_remarks: c2.r9r,
+      deckSlab_concrete_cracksAtConcrete_rod: c2.r9rod,
+      deckSlab_concrete_delamination_tick: c2.r10d,
+      deckSlab_concrete_delamination_severity: c2.r10s,
+      deckSlab_concrete_delamination_pctgAff1: "A",
+      deckSlab_concrete_delamination_pctgAff2: c2.r10p,
+      deckSlab_concrete_delamination_remarks: c2.r10r,
+      deckSlab_concrete_delamination_rod: c2.r10rod,
+      deckSlab_concrete_spalling_tick: c2.r11d,
+      deckSlab_concrete_spalling_severity: c2.r11s,
+      deckSlab_concrete_spalling_pctgAff1: "A",
+      deckSlab_concrete_spalling_pctgAff2: c2.r11p,
+      deckSlab_concrete_spalling_remarks: c2.r11r,
+      deckSlab_concrete_spalling_rod: c2.r11rod,
+      deckSlab_concrete_corrosionOfReinforcement_tick: c2.r12d,
+      deckSlab_concrete_corrosionOfReinforcement_severity: c2.r12s,
+      deckSlab_concrete_corrosionOfReinforcement_pctgAff1: "L",
+      deckSlab_concrete_corrosionOfReinforcement_pctgAff2: c2.r12p,
+      deckSlab_concrete_corrosionOfReinforcement_remarks: c2.r12r,
+      deckSlab_concrete_corrosionOfReinforcement_rod: c2.r12rod,
+      deckSlab_concrete_waterLeakOrFreeLime_tick: c2.r13d,
+      deckSlab_concrete_waterLeakOrFreeLime_severity: c2.r13s,
+      deckSlab_concrete_waterLeakOrFreeLime_pctgAff1: "A",
+      deckSlab_concrete_waterLeakOrFreeLime_pctgAff2: c2.r13p,
+      deckSlab_concrete_waterLeakOrFreeLime_remarks: c2.r13r,
+      deckSlab_concrete_waterLeakOrFreeLime_rod: c2.r13rod,
+
+      abutment_tick: c3.main,
+      abutment_concrete_tick: c3.one,
+      abutment_masonry_tick: c3.two,
+      abutment_concreteAndMasonry_ratingOfMember: c3.rom1,
+      abutment_concreteAndMasonry_surfaceDefect_tick: c3.r1d,
+      abutment_concreteAndMasonry_surfaceDefect_severity: c3.r1s,
+      abutment_concreteAndMasonry_surfaceDefect_pctgAff1: "A",
+      abutment_concreteAndMasonry_surfaceDefect_pctgAff2: c3.r1p,
+      abutment_concreteAndMasonry_surfaceDefect_remarks: c3.r1r,
+      abutment_concreteAndMasonry_surfaceDefect_rod: c3.r1rod,
+      abutment_concreteAndMasonry_cracksAtConcrete_tick: c3.r2d,
+      abutment_concreteAndMasonry_cracksAtConcrete_severity: c3.r2s,
+      abutment_concreteAndMasonry_cracksAtConcrete_pctgAff1: c3.r2p,
+      abutment_concreteAndMasonry_cracksAtConcrete_remarks: c3.r2r,
+      abutment_concreteAndMasonry_cracksAtConcrete_rod: c3.r2rod,
+      abutment_concreteAndMasonry_delamination_tick: c3.r3d,
+      abutment_concreteAndMasonry_delamination_severity: c3.r3s,
+      abutment_concreteAndMasonry_delamination_pctgAff1: "A",
+      abutment_concreteAndMasonry_delamination_pctgAff2: c3.r3p,
+      abutment_concreteAndMasonry_delamination_remarks: c3.r3r,
+      abutment_concreteAndMasonry_delamination_rod: c3.r3rod,
+      abutment_concreteAndMasonry_spalling_tick: c3.r4d,
+      abutment_concreteAndMasonry_spalling_severity: c3.r4s,
+      abutment_concreteAndMasonry_spalling_pctgAff1: "A",
+      abutment_concreteAndMasonry_spalling_pctgAff2: c3.r4p,
+      abutment_concreteAndMasonry_spalling_remarks: c3.r4r,
+      abutment_concreteAndMasonry_spalling_rod: c3.r4rod,
+      abutment_concreteAndMasonry_corrosionOfReinforcement_tick: c3.r5d,
+      abutment_concreteAndMasonry_corrosionOfReinforcement_severity: c3.r5s,
+      abutment_concreteAndMasonry_corrosionOfReinforcement_pctgAff1: "L",
+      abutment_concreteAndMasonry_corrosionOfReinforcement_pctgAff2: c3.r5p,
+      abutment_concreteAndMasonry_corrosionOfReinforcement_remarks: c3.r5r,
+      abutment_concreteAndMasonry_corrosionOfReinforcement_rod: c3.r5rod,
+      abutment_concreteAndMasonry_wearOrAbrasion_tick: c3.r6d,
+      abutment_concreteAndMasonry_wearOrAbrasion_severity: c3.r6s,
+      abutment_concreteAndMasonry_wearOrAbrasion_pctgAff1: "A",
+      abutment_concreteAndMasonry_wearOrAbrasion_pctgAff2: c3.r6p,
+      abutment_concreteAndMasonry_wearOrAbrasion_remarks: c3.r6r,
+      abutment_concreteAndMasonry_wearOrAbrasion_rod: c3.r6rod,
+      abutment_concreteAndMasonry_materialDeterioration_tick: c3.r7d,
+      abutment_concreteAndMasonry_materialDeterioration_severity: c3.r7s,
+      abutment_concreteAndMasonry_materialDeterioration_pctgAff1: "A",
+      abutment_concreteAndMasonry_materialDeterioration_pctgAff2: c3.r7p,
+      abutment_concreteAndMasonry_materialDeterioration_remarks: c3.r7r,
+      abutment_concreteAndMasonry_materialDeterioration_rod: c3.r7rod,
+      abutment_concreteAndMasonry_tiltOrSettlement_tick: c3.r8d,
+      abutment_concreteAndMasonry_tiltOrSettlement_severity: c3.r8s,
+      abutment_concreteAndMasonry_tiltOrSettlement_pctgAff1: c3.r8p,
+      abutment_concreteAndMasonry_tiltOrSettlement_remarks: c3.r8r,
+      abutment_concreteAndMasonry_tiltOrSettlement_rod: c3.r8rod,
+      abutment_concreteAndMasonry_scouring_tick: c3.r9d,
+      abutment_concreteAndMasonry_scouring_severity: c3.r9s,
+      abutment_concreteAndMasonry_scouring_pctgAff1: c3.r9p,
+      abutment_concreteAndMasonry_scouring_remarks: c3.r9r,
+      abutment_concreteAndMasonry_scouring_rod: c3.r9rod,
+
+      pierNo__tick: c4.main,
+      pierNo_number: "",
+      pierNo_concrete_tick: c4.one,
+      pierNo_masonry_tick: c4.two,
+      pierNo_concreteAndMasonry_ratingOfMember: c4.rom1,
+      pierNo_concreteAndMasonry_surfaceDefect_tick: c4.r1d,
+      pierNo_concreteAndMasonry_surfaceDefect_severity: c4.r1s,
+      pierNo_concreteAndMasonry_surfaceDefect_pctgAff1: "A",
+      pierNo_concreteAndMasonry_surfaceDefect_pctgAff2: c4.r1p,
+      pierNo_concreteAndMasonry_surfaceDefect_remarks: c4.r1r,
+      pierNo_concreteAndMasonry_surfaceDefect_rod: c4.r1rod,
+      pierNo_concreteAndMasonry_cracksAtConcrete_tick: c4.r2d,
+      pierNo_concreteAndMasonry_cracksAtConcrete_severity: c4.r2s,
+      pierNo_concreteAndMasonry_cracksAtConcrete_pctgAff1: c4.r2p,
+      pierNo_concreteAndMasonry_cracksAtConcrete_remarks: c4.r2r,
+      pierNo_concreteAndMasonry_cracksAtConcrete_rod: c4.r2rod,
+      pierNo_concreteAndMasonry_delamination_tick: c4.r3d,
+      pierNo_concreteAndMasonry_delamination_severity: c4.r3s,
+      pierNo_concreteAndMasonry_delamination_pctgAff1: "A",
+      pierNo_concreteAndMasonry_delamination_pctgAff2: c4.r3p,
+      pierNo_concreteAndMasonry_delamination_remarks: c4.r3r,
+      pierNo_concreteAndMasonry_delamination_rod: c4.r3rod,
+      pierNo_concreteAndMasonry_spalling_tick: c4.r4d,
+      pierNo_concreteAndMasonry_spalling_severity: c4.r4s,
+      pierNo_concreteAndMasonry_spalling_pctgAff1: "A",
+      pierNo_concreteAndMasonry_spalling_pctgAff2: c4.r4p,
+      pierNo_concreteAndMasonry_spalling_remarks: c4.r4r,
+      pierNo_concreteAndMasonry_spalling_rod: c4.r4rod,
+      pierNo_concreteAndMasonry_corrosionOfReinforcement_tick: c4.r5d,
+      pierNo_concreteAndMasonry_corrosionOfReinforcement_severity: c4.r5s,
+      pierNo_concreteAndMasonry_corrosionOfReinforcement_pctgAff1: "L",
+      pierNo_concreteAndMasonry_corrosionOfReinforcement_pctgAff2: c4.r5p,
+      pierNo_concreteAndMasonry_corrosionOfReinforcement_remarks: c4.r5r,
+      pierNo_concreteAndMasonry_corrosionOfReinforcement_rod: c4.r5rod,
+      pierNo_concreteAndMasonry_wearOrAbrasion_tick: c4.r6d,
+      pierNo_concreteAndMasonry_wearOrAbrasion_severity: c4.r6s,
+      pierNo_concreteAndMasonry_wearOrAbrasion_pctgAff1: "A",
+      pierNo_concreteAndMasonry_wearOrAbrasion_pctgAff2: c4.r6p,
+      pierNo_concreteAndMasonry_wearOrAbrasion_remarks: c4.r6r,
+      pierNo_concreteAndMasonry_wearOrAbrasion_rod: c4.r6rod,
+      pierNo_concreteAndMasonry_materialDeterioration_tick: c4.r7d,
+      pierNo_concreteAndMasonry_materialDeterioration_severity: c4.r7s,
+      pierNo_concreteAndMasonry_materialDeterioration_pctgAff1: "A",
+      pierNo_concreteAndMasonry_materialDeterioration_pctgAff2: c4.r7p,
+      pierNo_concreteAndMasonry_materialDeterioration_remarks: c4.r7r,
+      pierNo_concreteAndMasonry_materialDeterioration_rod: c4.r7rod,
+      pierNo_concreteAndMasonry_tiltOrSettlement_tick: c4.r8d,
+      pierNo_concreteAndMasonry_tiltOrSettlement_severity: c4.r8s,
+      pierNo_concreteAndMasonry_tiltOrSettlement_pctgAff1: c4.r8p,
+      pierNo_concreteAndMasonry_tiltOrSettlement_remarks: c4.r8r,
+      pierNo_concreteAndMasonry_tiltOrSettlement_rod: c4.r8rod,
+      pierNo_concreteAndMasonry_scouring_tick: c4.r9d,
+      pierNo_concreteAndMasonry_scouring_severity: c4.r9s,
+      pierNo_concreteAndMasonry_scouring_pctgAff1: c4.r9p,
+      pierNo_concreteAndMasonry_scouring_remarks: c4.r9r,
+      pierNo_concreteAndMasonry_scouring_rod: c4.r9rod,
+
+      bearing_tick: c5.main,
+      bearing_steel_tick: c5.one,
+      bearing_rubber_tick: c5.two,
+      bearing_others_tick: c5.three,
+      bearing_steelAndRubberAndOthers_ratingOfMember: c5.rom1,
+      bearing_steelAndRubberAndOthers_corrosionOfSteel_tick: c5.r1d,
+      bearing_steelAndRubberAndOthers_corrosionOfSteel_severity: c5.r1s,
+      bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff1: "A",
+      bearing_steelAndRubberAndOthers_corrosionOfSteel_pctgAff2: c5.r1p,
+      bearing_steelAndRubberAndOthers_corrosionOfSteel_remarks: c5.r1r,
+      bearing_steelAndRubberAndOthers_corrosionOfSteel_rod: c5.r1rod,
+      bearing_steelAndRubberAndOthers_looseConnections_tick: c5.r2d,
+      bearing_steelAndRubberAndOthers_looseConnections_severity: c5.r2s,
+      bearing_steelAndRubberAndOthers_looseConnections_pctgAff1: "N",
+      bearing_steelAndRubberAndOthers_looseConnections_pctgAff2: c5.r2p,
+      bearing_steelAndRubberAndOthers_looseConnections_remarks: c5.r2r,
+      bearing_steelAndRubberAndOthers_looseConnections_rod: c5.r2rod,
+      bearing_steelAndRubberAndOthers_pendingWater_tick: c5.r3d,
+      bearing_steelAndRubberAndOthers_pendingWater_severity: c5.r3s,
+      bearing_steelAndRubberAndOthers_pendingWater_pctgAff1: c5.r3p,
+      bearing_steelAndRubberAndOthers_pendingWater_remarks: c5.r3r,
+      bearing_steelAndRubberAndOthers_pendingWater_rod: c5.r3rod,
+      bearing_steelAndRubberAndOthers_debrisOrVegetation_tick: c5.r4d,
+      bearing_steelAndRubberAndOthers_debrisOrVegetation_severity: c5.r4s,
+      bearing_steelAndRubberAndOthers_debrisOrVegetation_pctgAff1: c5.r4p,
+      bearing_steelAndRubberAndOthers_debrisOrVegetation_remarks: c5.r4r,
+      bearing_steelAndRubberAndOthers_debrisOrVegetation_rod: c5.r4rod,
+      bearing_steelAndRubberAndOthers_abnormalBulging_tick: c5.r5d,
+      bearing_steelAndRubberAndOthers_abnormalBulging_severity: c5.r5s,
+      bearing_steelAndRubberAndOthers_abnormalBulging_pctgAff1: c5.r5p,
+      bearing_steelAndRubberAndOthers_abnormalBulging_remarks: c5.r5r,
+      bearing_steelAndRubberAndOthers_abnormalBulging_rod: c5.r5rod,
+      bearing_steelAndRubberAndOthers_abnormalDisplacement_tick: c5.r6d,
+      bearing_steelAndRubberAndOthers_abnormalDisplacement_severity: c5.r6s,
+      bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff1: "A",
+      bearing_steelAndRubberAndOthers_abnormalDisplacement_pctgAff2: c5.r6p,
+      bearing_steelAndRubberAndOthers_abnormalDisplacement_remarks: c5.r6r,
+      bearing_steelAndRubberAndOthers_abnormalDisplacement_rod: c5.r6rod,
+
+      parapet__tick: c6.main,
+      parapet_steel_tick: c6.one,
+      parapet_concrete_tick: c6.two,
+      parapet_others_tick: c6.three,
+      parapet_steelAndConcreteAndOthers_ratingOfMember: c6.rom1,
+      parapet_steelAndConcreteAndOthers_corrosionOfSteel_tick: c6.r1d,
+      parapet_steelAndConcreteAndOthers_corrosionOfSteel_severity: c6.r1s,
+      parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff1: "L/N",
+      parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff2: c6.r1p,
+      parapet_steelAndConcreteAndOthers_corrosionOfSteel_remarks: c6.r1r,
+      parapet_steelAndConcreteAndOthers_corrosionOfSteel_rod: c6.r1rod,
+      parapet_steelAndConcreteAndOthers_cracksAtConcrete_tick: c6.r2d,
+      parapet_steelAndConcreteAndOthers_cracksAtConcrete_severity: c6.r2s,
+      parapet_steelAndConcreteAndOthers_cracksAtConcrete_pctgAff1: c6.r2p,
+      parapet_steelAndConcreteAndOthers_cracksAtConcrete_remarks: c6.r2r,
+      parapet_steelAndConcreteAndOthers_cracksAtConcrete_rod: c6.r2rod,
+      parapet_steelAndConcreteAndOthers_spalling_tick: c6.r3d,
+      parapet_steelAndConcreteAndOthers_spalling_severity: c6.r3s,
+      parapet_steelAndConcreteAndOthers_spalling_pctgAff1: "A",
+      parapet_steelAndConcreteAndOthers_spalling_pctgAff2: c6.r3p,
+      parapet_steelAndConcreteAndOthers_spalling_remarks: c6.r3r,
+      parapet_steelAndConcreteAndOthers_spalling_rod: c6.r3rod,
+      parapet_steelAndConcreteAndOthers_impactDamage_tick: c6.r4d,
+      parapet_steelAndConcreteAndOthers_impactDamage_severity: c6.r4s,
+      parapet_steelAndConcreteAndOthers_impactDamage_pctgAff1: "L",
+      parapet_steelAndConcreteAndOthers_impactDamage_pctgAff2: c6.r4p,
+      parapet_steelAndConcreteAndOthers_impactDamage_remarks: c6.r4r,
+      parapet_steelAndConcreteAndOthers_impactDamage_rod: c6.r4rod,
+      parapet_steelAndConcreteAndOthers_looseConnections_tick: c6.r5d,
+      parapet_steelAndConcreteAndOthers_looseConnections_severity: c6.r5s,
+      parapet_steelAndConcreteAndOthers_looseConnections_pctgAff1: "N",
+      parapet_steelAndConcreteAndOthers_looseConnections_pctgAff2: c6.r5p,
+      parapet_steelAndConcreteAndOthers_looseConnections_remarks: c6.r5r,
+      parapet_steelAndConcreteAndOthers_looseConnections_rod: c6.r5rod,
+
+      surfacing__tick: c7.main,
+      surfacing_asphalt_tick: c7.one,
+      surfacing_concrete_tick: c7.two,
+      surfacing_asphaltAndConcrete_ratingOfMember: c7.rom1,
+      surfacing_asphaltAndConcrete_potHoles_tick: c7.r1d,
+      surfacing_asphaltAndConcrete_potHoles_severity: c7.r1s,
+      surfacing_asphaltAndConcrete_potHoles_pctgAff1: "A",
+      surfacing_asphaltAndConcrete_potHoles_pctgAff2: c7.r1p,
+      surfacing_asphaltAndConcrete_potHoles_remarks: c7.r1r,
+      surfacing_asphaltAndConcrete_potHoles_rod: c7.r1rod,
+      surfacing_asphaltAndConcrete_wheelTrackRutting_tick: c7.r2d,
+      surfacing_asphaltAndConcrete_wheelTrackRutting_severity: c7.r2s,
+      surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff1: "A",
+      surfacing_asphaltAndConcrete_wheelTrackRutting_pctgAff2: c7.r2p,
+      surfacing_asphaltAndConcrete_wheelTrackRutting_remarks: c7.r2r,
+      surfacing_asphaltAndConcrete_wheelTrackRutting_rod: c7.r2rod,
+      surfacing_asphaltAndConcrete_lostOfBondAndDelamination_tick: c7.r3d,
+      surfacing_asphaltAndConcrete_lostOfBondAndDelamination_severity: c7.r3s,
+      surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff1: "A",
+      surfacing_asphaltAndConcrete_lostOfBondAndDelamination_pctgAff2: c7.r3p,
+      surfacing_asphaltAndConcrete_lostOfBondAndDelamination_remarks: c7.r3r,
+      surfacing_asphaltAndConcrete_lostOfBondAndDelamination_rod: c7.r3rod,
+      surfacing_asphaltAndConcrete_rippling_tick: c7.r4d,
+      surfacing_asphaltAndConcrete_rippling_severity: c7.r4s,
+      surfacing_asphaltAndConcrete_rippling_pctgAff1: c7.r4p,
+      surfacing_asphaltAndConcrete_rippling_remarks: c7.r4r,
+      surfacing_asphaltAndConcrete_rippling_rod: c7.r4rod,
+      surfacing_asphaltAndConcrete_pavementCrack_tick: c7.r5d,
+      surfacing_asphaltAndConcrete_pavementCrack_severity: c7.r5s,
+      surfacing_asphaltAndConcrete_pavementCrack_pctgAff1: c7.r5p,
+      surfacing_asphaltAndConcrete_pavementCrack_remarks: c7.r5r,
+      surfacing_asphaltAndConcrete_pavementCrack_rod: c7.r5rod,
+
+      expansionJoint__tick: c8.main,
+      expansionJoint_aspPlug_tick: c8.one,
+      expansionJoint_elastomeric_tick: c8.two,
+      expansionJoint_compSeal_tick: c8.three,
+      expansionJoint_buried_tick: c8.four,
+      expansionJoint_others_tick: c8.five,
+      expansionJoint_all_ratingOfMember: c8.rom1,
+      expansionJoint_all_abnormalSpacing_tick: c8.r1d,
+      expansionJoint_all_abnormalSpacing_severity: c8.r1s,
+      expansionJoint_all_abnormalSpacing_pctgAff1: c8.r1p,
+      expansionJoint_all_abnormalSpacing_remarks: c8.r1r,
+      expansionJoint_all_abnormalSpacing_rod: c8.r1rod,
+      expansionJoint_all_differenceInLevel_tick: c8.r2d,
+      expansionJoint_all_differenceInLevel_severity: c8.r2s,
+      expansionJoint_all_differenceInLevel_pctgAff1: "L",
+      expansionJoint_all_differenceInLevel_pctgAff2: c8.r2p,
+      expansionJoint_all_differenceInLevel_remarks: c8.r2r,
+      expansionJoint_all_differenceInLevel_rod: c8.r2rod,
+      expansionJoint_all_waterLeak_tick: c8.r3d,
+      expansionJoint_all_waterLeak_severity: c8.r3s,
+      expansionJoint_all_waterLeak_pctgAff1: "A",
+      expansionJoint_all_waterLeak_pctgAff2: c8.r3p,
+      expansionJoint_all_waterLeak_remarks: c8.r3r,
+      expansionJoint_all_waterLeak_rod: c8.r3rod,
+      expansionJoint_all_crackingAtExpJoint_tick: c8.r4d,
+      expansionJoint_all_crackingAtExpJoint_severity: c8.r4s,
+      expansionJoint_all_crackingAtExpJoint_pctgAff1: "L",
+      expansionJoint_all_crackingAtExpJoint_pctgAff2: c8.r4p,
+      expansionJoint_all_crackingAtExpJoint_remarks: c8.r4r,
+      expansionJoint_all_crackingAtExpJoint_rod: c8.r4rod,
+      expansionJoint_all_rupture_tick: c8.r5d,
+      expansionJoint_all_rupture_severity: c8.r5s,
+      expansionJoint_all_rupture_pctgAff1: "L",
+      expansionJoint_all_rupture_pctgAff2: c8.r5p,
+      expansionJoint_all_rupture_remarks: c8.r5r,
+      expansionJoint_all_rupture_rod: c8.r5rod,
+
+      drainPipe_tick: c9.main,
+      drainPipe_steel_tick: c9.one,
+      drainPipe_pvc_tick: c9.two,
+      drainPipe_all_ratingOfMember: c9.rom1,
+      drainPipe_steelPVC_corrosionOfSteel_tick: c9.r1d,
+      drainPipe_steelPVC_corrosionOfSteel_severity: c9.r1s,
+      drainPipe_steelPVC_corrosionOfSteel_pctgAff1: "A",
+      drainPipe_steelPVC_corrosionOfSteel_pctgAff2: c9.r1p,
+      drainPipe_steelPVC_corrosionOfSteel_remarks: c9.r1r,
+      drainPipe_steelPVC_corrosionOfSteel_rod: c9.r1rod,
+      drainPipe_steelPVC_blockedDrainage_tick: c9.r2d,
+      drainPipe_steelPVC_blockedDrainage_severity: c9.r2s,
+      drainPipe_steelPVC_blockedDrainage_pctgAff1: "N",
+      drainPipe_steelPVC_blockedDrainage_pctgAff2: c9.r2p,
+      drainPipe_steelPVC_blockedDrainage_remarks: c9.r2r,
+      drainPipe_steelPVC_blockedDrainage_rod: c9.r2rod,
+      drainPipe_steelPVC_waterLeak_tick: c9.r3d,
+      drainPipe_steelPVC_waterLeak_severity: c9.r3s,
+      drainPipe_steelPVC_waterLeak_pctgAff1: "A",
+      drainPipe_steelPVC_waterLeak_pctgAff2: c9.r3p,
+      drainPipe_steelPVC_waterLeak_remarks: c9.r3r,
+      drainPipe_steelPVC_waterLeak_rod: c9.r3rod,
+      drainPipe_steelPVC_inadequatePipeLength_tick: c9.r4d,
+      drainPipe_steelPVC_inadequatePipeLength_severity: c9.r4s,
+      drainPipe_steelPVC_inadequatePipeLength_pctgAff1: "N",
+      drainPipe_steelPVC_inadequatePipeLength_pctgAff2: c9.r4p,
+      drainPipe_steelPVC_inadequatePipeLength_remarks: c9.r4r,
+      drainPipe_steelPVC_inadequatePipeLength_rod: c9.r4rod,
+
+      slopeProtection_tick: c10.main,
+      slopeProtection_rblePitching_tick: c10.one,
+      slopeProtection_gablons_tick: c10.two,
+      slopeProtection_others_tick: c10.three,
+      slopeProtection_all_ratingOfMember: c10.rom1,
+      slopeProtection_all_scouring_tick: c10.r1d,
+      slopeProtection_all_scouring_severity: c10.r1s,
+      slopeProtection_all_scouring_pctgAff1: c10.r1p,
+      slopeProtection_all_scouring_remarks: c10.r1r,
+      slopeProtection_all_scouring_rod: c10.r1rod,
+      slopeProtection_all_erosion_tick: c10.r2d,
+      slopeProtection_all_erosion_severity: c10.r2s,
+      slopeProtection_all_erosion_pctgAff1: "A",
+      slopeProtection_all_erosion_pctgAff2: c10.r2p,
+      slopeProtection_all_erosion_remarks: c10.r2r,
+      slopeProtection_all_erosion_rod: c10.r2rod,
+      slopeProtection_all_materialLoss_tick: c10.r3d,
+      slopeProtection_all_materialLoss_severity: c10.r3s,
+      slopeProtection_all_materialLoss_pctgAff1: "A",
+      slopeProtection_all_materialLoss_pctgAff2: c10.r3p,
+      slopeProtection_all_materialLoss_remarks: c10.r3r,
+      slopeProtection_all_materialLoss_rod: c10.r3rod,
+      slopeProtection_all_blank_name: "",
+      slopeProtection_all_blank_tick: c10.r4d,
+      slopeProtection_all_blank_severity: c10.r4s,
+      slopeProtection_all_blank_pctgAff1: "",
+      slopeProtection_all_blank_pctgAff2: c10.r4p,
+      slopeProtection_all_blank_remarks: c10.r4r,
+      slopeProtection_all_blank_rod: c10.r4rod,
+
+      hydraulicCapacity_inadequateOpening_ratingOfMember: c11.main,
+      hydraulicCapacity_inadequateOpening_tick: c11.r1d,
+      hydraulicCapacity_inadequateOpening_severity: c11.r1s,
+      hydraulicCapacity_inadequateOpening_pctgAff1: c11.r1p,
+      hydraulicCapacity_inadequateOpening_remarks: c11.r1r,
+      hydraulicCapacity_inadequateOpening_rod: c11.r1rod,
+
+      allComponentsInspected: allComponentsInspected,
+    };
+
+    const response = await fetch(`/api/getform/${projectID}/${page}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formdataa),
+    });
+
+    const result = await response.json();
+
+    console.log("update result: ", JSON.stringify(result, null, 2));
+  };
+
   useEffect(() => {
     getForm();
   }, []);
@@ -2350,7 +2860,7 @@ const page = ({ params }: any) => {
           </div>
           <div className="w-1/2 flex flex-row items-center mb-6 no-print">
             <p
-              className="font-semibold p-2"
+              className="font-semibold p-2 mb-2"
               style={{
                 backgroundColor: inDB
                   ? "oklch(79.2% 0.209 151.711)"
@@ -2359,6 +2869,12 @@ const page = ({ params }: any) => {
             >
               {inDB ? "Available in Database" : "Not Available in Database"}
             </p>
+            <button
+              className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
+              onClick={handleUpdateForm}
+            >
+              Update
+            </button>
           </div>
         </div>
         <div className="flex flex-row justify-end items-center">
@@ -2634,7 +3150,9 @@ const page = ({ params }: any) => {
             </td>
             {/* percentage */}
             <td className="text-center text-[12px]">
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}
+              {data.beamGirder_steel_corrosionOfSteel_pctgAff1
+                ? data.beamGirder_steel_corrosionOfSteel_pctgAff1
+                : "A"}
             </td>
             <td className="text-center text-[10px]">
               {editCheck ? (
@@ -3021,7 +3539,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_looseConnections_pctgAff1}{" "}
+              {data.beamGirder_steel_looseConnections_pctgAff1
+                ? data.beamGirder_steel_looseConnections_pctgAff1
+                : "N"}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -3393,7 +3913,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_steel_paintDeterioration_pctgAff1}{" "}
+              {data.beamGirder_steel_paintDeterioration_pctgAff1
+                ? data.beamGirder_steel_paintDeterioration_pctgAff1
+                : "A"}{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -3963,7 +4485,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_pAndRConcrete_surfaceDefect_pctgAff1}{" "}
+              {data.beamGirder_pAndRConcrete_surfaceDefect_pctgAff1
+                ? data.beamGirder_pAndRConcrete_surfaceDefect_pctgAff1
+                : "A"}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -4356,7 +4880,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_pAndRConcrete_delamination_pctgAff1}{" "}
+              {data.beamGirder_pAndRConcrete_delamination_pctgAff1
+                ? data.beamGirder_pAndRConcrete_delamination_pctgAff1
+                : "A"}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -4543,7 +5069,9 @@ const page = ({ params }: any) => {
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
               {" "}
-              {data.beamGirder_pAndRConcrete_spalling_pctgAff1}{" "}
+              {data.beamGirder_pAndRConcrete_spalling_pctgAff1
+                ? data.beamGirder_pAndRConcrete_spalling_pctgAff1
+                : "A"}{" "}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -4731,10 +5259,9 @@ const page = ({ params }: any) => {
             </td>
             {/* percentage */}{" "}
             <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff1
-              }{" "}
+              {data.beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff1
+                ? data.beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff1
+                : "L"}
             </td>{" "}
             <td className="text-center text-[10px]">
               {" "}
@@ -5295,9 +5822,7 @@ const page = ({ params }: any) => {
               )}
             </td>
             {/* percentage */}
-            <td className="text-center text-[12px]">
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}
-            </td>
+            <td className="text-center text-[12px]">A</td>
             <td className="text-center text-[10px]">
               {editCheck ? (
                 <button
@@ -5680,11 +6205,7 @@ const page = ({ params }: any) => {
                 />
               )}
             </td>
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_looseConnections_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">N</td>
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -6052,11 +6573,7 @@ const page = ({ params }: any) => {
                 />
               )}
             </td>
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_paintDeterioration_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -6611,11 +7128,7 @@ const page = ({ params }: any) => {
                 />
               )}
             </td>
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_pAndRConcrete_surfaceDefect_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -7004,11 +7517,7 @@ const page = ({ params }: any) => {
                 />
               )}
             </td>
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_pAndRConcrete_delamination_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -7191,11 +7700,7 @@ const page = ({ params }: any) => {
                 />
               )}
             </td>
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_pAndRConcrete_spalling_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -7380,13 +7885,7 @@ const page = ({ params }: any) => {
                 />
               )}
             </td>
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.beamGirder_pAndRConcrete_corrossionOfReinforcement_pctgAff1
-              }{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -7569,11 +8068,7 @@ const page = ({ params }: any) => {
                 />
               )}
             </td>
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -7765,9 +8260,7 @@ const page = ({ params }: any) => {
               )}
             </td>
             {/* percentage */}
-            <td className="text-center text-[12px]">
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}
-            </td>
+            <td className="text-center text-[12px]">A</td>
             <td className="text-center text-[10px]">
               {editCheck ? (
                 <button
@@ -8162,11 +8655,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -8355,11 +8844,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -8550,13 +9035,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.abutment_concreteAndMasonry_corrosionOfReinforcement_pctgAff1
-              }{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -8745,11 +9224,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -8940,11 +9415,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -9515,9 +9986,7 @@ const page = ({ params }: any) => {
               )}
             </td>
             {/* percentage */}
-            <td className="text-center text-[12px]">
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}
-            </td>
+            <td className="text-center text-[12px]">A</td>
             <td className="text-center text-[10px]">
               {editCheck ? (
                 <button
@@ -9912,11 +10381,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -10105,11 +10570,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -10300,13 +10761,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.pierNo_concreteAndMasonry_corrosionOfReinforcement_pctgAff1
-              }{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -10495,11 +10950,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -10690,11 +11141,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -11269,11 +11716,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -11485,13 +11928,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.bearing_steelAndRubberAndOthers_looseConnections_pctgAff1
-              }{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">N</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -12247,11 +12684,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -12448,13 +12881,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.parapet_steelAndConcreteAndOthers_corrosionOfSteel_pctgAff1
-              }{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L/N</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -12855,11 +13282,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -13048,13 +13471,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.parapet_steelAndConcreteAndOthers_impactDamage_pctgAff1
-              }{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -13243,13 +13660,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {
-                data.parapet_steelAndConcreteAndOthers_looseConnections_pctgAff1
-              }{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">N</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -13446,11 +13857,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -13662,11 +14069,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -13857,11 +14260,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -14648,11 +15047,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.expansionJoint_all_differenceInLevel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -14841,11 +15236,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -15036,11 +15427,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.expansionJoint_all_crackingAtExpJoint_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -15229,11 +15616,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.expansionJoint_all_rupture_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">L</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -15430,11 +15813,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -15646,11 +16025,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.drainPipe_steelPVC_blockedDrainage_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">N</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -15839,11 +16214,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -16034,11 +16405,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.drainPipe_steelPVC_inadequatePipeLength_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">N</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -16447,11 +16814,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
@@ -16642,11 +17005,7 @@ const page = ({ params }: any) => {
                 />
               )}{" "}
             </td>{" "}
-            {/* percentage */}{" "}
-            <td className="text-center text-[12px]">
-              {" "}
-              {data.beamGirder_steel_corrosionOfSteel_pctgAff1}{" "}
-            </td>{" "}
+            {/* percentage */} <td className="text-center text-[12px]">A</td>{" "}
             <td className="text-center text-[10px]">
               {" "}
               {editCheck ? (
