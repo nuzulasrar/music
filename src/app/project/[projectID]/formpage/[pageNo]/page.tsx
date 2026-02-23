@@ -7,7 +7,7 @@ import "./styles.css";
 import EditModal from "@/components/EditModal";
 
 const page = ({ params }: any) => {
-  const { projectID, page } = params;
+  const { projectID, pageNo } = params;
 
   const [editCheck, setEditCheck] = useState(false);
 
@@ -1635,7 +1635,7 @@ const page = ({ params }: any) => {
 
   const getForm = async () => {
     try {
-      const response = await fetch(`/api/getform/${projectID}/${page}`);
+      const response = await fetch(`/api/getform/${projectID}/${pageNo}`);
 
       const result = await response.json();
 
@@ -2322,7 +2322,7 @@ const page = ({ params }: any) => {
     }
   };
 
-  const handleUpdateForm = () => {
+  const handleUpdateForm = async () => {
     //balik
     // pageOfSpan: header.pageOfSpan,
     // routeNo: header.routeNo,
@@ -2331,8 +2331,8 @@ const page = ({ params }: any) => {
     // nameOfInspector: header.nameOfInspector,
     // date: header.date,
     const formdataa = {
-      page: Number(page),
-      projectBridgeId: Number(id),
+      page: Number(pageNo),
+      projectBridgeId: Number(projectID),
       beamGirder_tick: c1.main,
       beamGirder_steel_tick: c1.one,
       beamGirder_steel_ratingOfMember: c1.rom1,
@@ -2811,7 +2811,7 @@ const page = ({ params }: any) => {
       slopeProtection_all_blank_remarks: c10.r4r,
       slopeProtection_all_blank_rod: c10.r4rod,
 
-      hydraulicCapacity_inadequateOpening_ratingOfMember: c11.main,
+      hydraulicCapacity_inadequateOpening_ratingOfMember: c11.rom1,
       hydraulicCapacity_inadequateOpening_tick: c11.r1d,
       hydraulicCapacity_inadequateOpening_severity: c11.r1s,
       hydraulicCapacity_inadequateOpening_pctgAff1: c11.r1p,
@@ -2821,15 +2821,19 @@ const page = ({ params }: any) => {
       allComponentsInspected: allComponentsInspected,
     };
 
-    const response = await fetch(`/api/getform/${projectID}/${page}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formdataa),
-    });
-
-    const result = await response.json();
-
-    console.log("update result: ", JSON.stringify(result, null, 2));
+    try {
+      const response = await fetch(`/api/getform/${projectID}/${pageNo}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formdataa: formdataa,
+        }),
+      });
+      const result = await response.json();
+      console.log("update result: ", JSON.stringify(result, null, 2));
+    } catch (error) {
+      console.log("errorrr: ", JSON.stringify(error, null, 2));
+    }
   };
 
   useEffect(() => {
@@ -2869,6 +2873,7 @@ const page = ({ params }: any) => {
             >
               {inDB ? "Available in Database" : "Not Available in Database"}
             </p>
+            <p>{pageNo}</p>
             <button
               className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
               onClick={handleUpdateForm}

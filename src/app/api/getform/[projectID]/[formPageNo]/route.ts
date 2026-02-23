@@ -48,6 +48,8 @@ export async function POST(
   const { projectID, formPageNo } = params;
   const { formdataa } = await request.json();
 
+  console.log(projectID, formPageNo);
+
   try {
     //FIND IF bridgeformone EXIST
     const formdata = await prisma.bridgeformone.findFirst({
@@ -59,6 +61,7 @@ export async function POST(
 
     //IF bridgeformone EXIST
     if (formdata) {
+      console.log("a");
       //UPDATE bridgeformone
       const UPDATE_formdata = await prisma.bridgeformone.update({
         where: {
@@ -1043,6 +1046,8 @@ export async function POST(
     }
     //IF bridgeformone DONT EXIST
     else {
+      console.log("b");
+
       //INSERT bridgeformone
       const CREATE_formdata = await prisma.bridgeformone.create({
         data: {
