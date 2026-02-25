@@ -131,7 +131,7 @@ const page = ({ params }: any) => {
                 <img
                   src={`/uploads/${item.filename}`}
                   alt=""
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: 1200, height: 840, objectFit: "contain" }}
                   className="mx-auto"
                 />
               </td>

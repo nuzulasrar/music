@@ -9,10 +9,10 @@ const SECRET_KEY = process.env.JWT_SECRET;
 
 export async function GET(request: any) {
   try {
-    var hashedPassword = CryptoJS.MD5("@CulvertPPSB26").toString();
+    var hashedPassword = CryptoJS.MD5("@BridgePPSB26").toString();
 
     //START create a new session token
-    const token = jwt.sign({ username: "adminculvert@gmail.com" }, SECRET_KEY, {
+    const token = jwt.sign({ username: "adminbridge@gmail.com" }, SECRET_KEY, {
       expiresIn: "1h",
     });
     //ENDcreate a new session token
@@ -28,7 +28,7 @@ export async function GET(request: any) {
     // });
     const createUser = await prisma.user.create({
       data: {
-        email: "adminculvert@gmail.com",
+        email: "adminbridge@gmail.com",
         name: "Admin",
         password: hashedPassword,
         sessionToken: token,
