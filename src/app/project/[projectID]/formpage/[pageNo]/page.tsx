@@ -1637,11 +1637,13 @@ const page = ({ params }: any) => {
     try {
       const response = await fetch(`/api/getform/${projectID}/${pageNo}`);
 
+      console.log("responsee: ", JSON.stringify(response));
+
       const result = await response.json();
 
-      if (response.status == "404") {
+      if (response.status == 404) {
         setInDB(false);
-      } else if (response.status == "200") {
+      } else if (response.status == 200) {
         setInDB(true);
       }
       if (result.dataa) {
@@ -2330,9 +2332,22 @@ const page = ({ params }: any) => {
     // bridgeName: header.bridgeName,
     // nameOfInspector: header.nameOfInspector,
     // date: header.date,
+    // projectBridgeId: Number(projectID),
+    // projectbridgees: {
+    //     create: Number(projectID),
+    //      connectOrCreate: ProjectBridgeCreateOrConnectWithoutBridgeformoneInput,
+    //      connect: ProjectBridgeWhereUniqueInput
+    //    }
     const formdataa = {
       page: Number(pageNo),
       projectBridgeId: Number(projectID),
+      pageOfSpan: formData.pageOfSpan,
+      routeNo: formData.routeNo,
+      structNo: formData.structNo,
+      bridgeName: formData.bridgeName,
+      nameOfInspector: formData.nameOfInspector,
+      date: formData.date,
+
       beamGirder_tick: c1.main,
       beamGirder_steel_tick: c1.one,
       beamGirder_steel_ratingOfMember: c1.rom1,
@@ -2462,7 +2477,7 @@ const page = ({ params }: any) => {
       deckSlab_concrete_surfaceDefect_tick: c2.r8d,
       deckSlab_concrete_surfaceDefect_severity: c2.r8s,
       deckSlab_concrete_surfaceDefect_pctgAff1: "A",
-      deckSlab_concrete_surfaceDefect_pctgAff2: c2.r8p,
+      deckSlab_concrete_abnormalNoise_pctgAff2: c2.r8p,
       deckSlab_concrete_surfaceDefect_remarks: c2.r8r,
       deckSlab_concrete_surfaceDefect_rod: c2.r8rod,
       deckSlab_concrete_cracksAtConcrete_tick: c2.r9d,
@@ -2607,7 +2622,6 @@ const page = ({ params }: any) => {
       pierNo_concreteAndMasonry_scouring_pctgAff1: c4.r9p,
       pierNo_concreteAndMasonry_scouring_remarks: c4.r9r,
       pierNo_concreteAndMasonry_scouring_rod: c4.r9rod,
-
       bearing_tick: c5.main,
       bearing_steel_tick: c5.one,
       bearing_rubber_tick: c5.two,

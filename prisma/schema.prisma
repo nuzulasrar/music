@@ -145,7 +145,7 @@ model Bridgeformone {
   page          Int       @db.Int
 
   projectBridgeId    Int
-  projectbridge      ProjectBridge    @relation(fields: [projectBridgeId], references: [id])
+  projectbridgees      ProjectBridge    @relation(fields: [projectBridgeId], references: [id])
 
   pageOfSpan          String    @db.Text
   routeNo      String    @db.Text
