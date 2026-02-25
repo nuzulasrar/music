@@ -9,7 +9,7 @@ import EditModal from "@/components/EditModal";
 const page = ({ params }: any) => {
   const { projectID, pageNo } = params;
 
-  const [editCheck, setEditCheck] = useState(true);
+  const [editCheck, setEditCheck] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editorMode, setEditorMode] = useState({
