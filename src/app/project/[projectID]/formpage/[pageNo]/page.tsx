@@ -9,7 +9,7 @@ import EditModal from "@/components/EditModal";
 const page = ({ params }: any) => {
   const { projectID, pageNo } = params;
 
-  const [editCheck, setEditCheck] = useState(false);
+  const [editCheck, setEditCheck] = useState(true);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editorMode, setEditorMode] = useState({
@@ -2844,9 +2844,16 @@ const page = ({ params }: any) => {
         }),
       });
       const result = await response.json();
+      if (result.success) {
+        alert("Form data updated successfully!");
+        window.location.reload();
+      } else {
+        alert("Failed to update form data.");
+      }
       console.log("update result: ", JSON.stringify(result, null, 2));
     } catch (error) {
       console.log("errorrr: ", JSON.stringify(error, null, 2));
+      alert("Failed to update form data.");
     }
   };
 
@@ -2862,18 +2869,42 @@ const page = ({ params }: any) => {
       <div className="w-full">
         <div className="w-full flex flex-row">
           <div className="w-1/2 flex flex-row items-center mb-6 no-print">
-            <div className="w-8/12">
-              <p className="font-bold mb-2">Edit</p>
-              <label className="inline-flex items-center cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={editCheck}
-                  onChange={() => setEditCheck(!editCheck)}
-                  className="sr-only peer"
-                />
-                <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                <p className="ml-3">{editCheck ? "Edit Mode" : "View Mode"}</p>
-              </label>
+            <div className="w-full flex flex-row items-center">
+              <div className="mr-4">
+                <p className="font-bold mb-2">Edit</p>
+                <label className="inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={editCheck}
+                    onChange={() => setEditCheck(!editCheck)}
+                    className="sr-only peer"
+                  />
+                  <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                  <p className="ml-3">
+                    {editCheck ? "Edit Mode" : "View Mode"}
+                  </p>
+                </label>
+              </div>
+              <div className="flex flex-row items-center mt-4">
+                <button
+                  onClick={() => {
+                    window.location.href = `/project/${projectID}/formpage/${Number(pageNo) + 1}`;
+                  }}
+                  className="bg-blue-500 text-white font-bold px-6 py-3 rounded-xl mt-4"
+                >
+                  Page Up
+                </button>
+                <button
+                  onClick={() => {
+                    if (Number(pageNo) != 1)
+                      window.location.href = `/project/${projectID}/formpage/${Number(pageNo) - 1}`;
+                    else alert("This is the first page!");
+                  }}
+                  className="bg-blue-500 text-white font-bold px-6 py-3 rounded-xl mt-4"
+                >
+                  Page Down
+                </button>
+              </div>
             </div>
           </div>
           <div className="w-1/2 flex flex-row items-center mb-6 no-print">
@@ -2887,9 +2918,8 @@ const page = ({ params }: any) => {
             >
               {inDB ? "Available in Database" : "Not Available in Database"}
             </p>
-            <p>{pageNo}</p>
             <button
-              className="bg-blue-400 text-white font-bold px-6 py-3 rounded-xl ml-3"
+              className="bg-blue-500 text-white font-bold px-6 py-3 rounded-xl ml-3"
               onClick={handleUpdateForm}
             >
               Update
@@ -2897,7 +2927,7 @@ const page = ({ params }: any) => {
           </div>
         </div>
         <div className="flex flex-row justify-end items-center">
-          <p className="font-bold text-[12px]">Page 1 of SPAN: </p>
+          <p className="font-bold text-[12px]">Page {pageNo} of SPAN: </p>
           {editCheck ? (
             <input
               value={formData.pageOfSpan}
@@ -4391,7 +4421,18 @@ const page = ({ params }: any) => {
               >
                 [{c1.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
               </span>{" "}
-              &nbsp; P. Concrete <br /> R. Concrete
+              &nbsp; P. Concrete
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC1({ ...c1, three: !c1.three });
+                  }
+                }}
+              >
+                [{c1.three ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; R. Concrete
             </td>
           </tr>
           {/* bG row8 */}
@@ -5729,11 +5770,33 @@ const page = ({ params }: any) => {
           {/* START DS */}
           {/* dS row1 */}
           <tr>
-            <td rowSpan={14} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={14}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC2({ ...c2, main: !c2.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c2.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               DECK SLAB (Primary)
             </td>
             <td rowSpan={7} className="font-bold text-center text-[12px]">
-              Steel
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC2({ ...c2, one: !c2.one });
+                  }
+                }}
+              >
+                [{c2.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Steel
             </td>
             <td className="font-semibold text-[12px]">Corrosion of Steel</td>
             <td className="font-semibold text-center text-[12px]">1</td>
@@ -7037,7 +7100,26 @@ const page = ({ params }: any) => {
           {/* bG material 2 */}
           <tr>
             <td rowSpan={7} className="font-bold text-[12px]">
-              P. Concrete R. Concrete
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC2({ ...c2, two: !c2.two });
+                  }
+                }}
+              >
+                [{c2.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; P. Concrete <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC2({ ...c2, three: !c2.three });
+                  }
+                }}
+              >
+                [{c2.three ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; R. Concrete
             </td>
           </tr>
           {/* dS row8 */}
@@ -8167,11 +8249,44 @@ const page = ({ params }: any) => {
           {/* START Abutment */}
           {/* Abutment row1 */}
           <tr>
-            <td rowSpan={9} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={9}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC3({ ...c3, main: !c3.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c3.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               ABUTMENT (Primary)
             </td>
             <td rowSpan={9} className="font-bold text-center text-[12px]">
-              Concrete Masonry
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC3({ ...c3, one: !c3.one });
+                  }
+                }}
+              >
+                [{c3.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Concrete
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC3({ ...c3, two: !c3.two });
+                  }
+                }}
+              >
+                [{c3.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Masonry
             </td>
             <td className="font-semibold text-[12px]">Surface Defect</td>
             <td className="font-semibold text-center text-[12px]">11</td>
@@ -9892,11 +10007,44 @@ const page = ({ params }: any) => {
           {/* START Pier */}
           {/* Pier row1 */}
           <tr>
-            <td rowSpan={9} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={9}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC4({ ...c4, main: !c4.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c4.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               PIER NO. (Primary)
             </td>
             <td rowSpan={9} className="font-bold text-center text-[12px]">
-              Concrete Masonry
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC4({ ...c4, one: !c4.one });
+                  }
+                }}
+              >
+                [{c4.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Concrete
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC4({ ...c4, two: !c4.two });
+                  }
+                }}
+              >
+                [{c4.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Masonry
             </td>
 
             <td className="font-semibold text-[12px]">Surface Defect</td>
@@ -11618,11 +11766,55 @@ const page = ({ params }: any) => {
           {/* START Bearing */}
           {/* Bearing row1 */}
           <tr>
-            <td rowSpan={6} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={6}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC5({ ...c5, main: !c5.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c5.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               BEARING (Primary)
             </td>
             <td rowSpan={6} className="font-bold text-center text-[12px]">
-              Steel Rubber Others
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC5({ ...c5, one: !c5.one });
+                  }
+                }}
+              >
+                [{c5.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Steel
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC5({ ...c5, two: !c5.two });
+                  }
+                }}
+              >
+                [{c5.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Rubber
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC5({ ...c5, three: !c5.three });
+                  }
+                }}
+              >
+                [{c5.three ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Others
             </td>
             <td className="font-semibold text-[12px]">Corrosion of Steel</td>{" "}
             <td className="font-semibold text-center text-[12px]">1</td>{" "}
@@ -12783,11 +12975,55 @@ const page = ({ params }: any) => {
           {/* START Parapet */}
           {/* Parapet row1 */}
           <tr>
-            <td rowSpan={5} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={5}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC6({ ...c6, main: !c6.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c6.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               PARAPET (Secondary)
             </td>
             <td rowSpan={5} className="font-bold text-center text-[12px]">
-              Steel Concrete Others
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC6({ ...c6, one: !c6.one });
+                  }
+                }}
+              >
+                [{c6.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Steel
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC6({ ...c6, two: !c6.two });
+                  }
+                }}
+              >
+                [{c6.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Concrete
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC6({ ...c6, three: !c6.three });
+                  }
+                }}
+              >
+                [{c6.three ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Others
             </td>
             <td className="font-semibold text-[12px]">Corrosion of Steel</td>{" "}
             <td className="font-semibold text-center text-[12px]">1</td>{" "}
@@ -13759,11 +13995,44 @@ const page = ({ params }: any) => {
           {/* START Surfacing */}
           {/* Surfacing row1 */}
           <tr>
-            <td rowSpan={5} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={5}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC7({ ...c7, main: !c7.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c7.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               SURFACING (Secondary)
             </td>
             <td rowSpan={5} className="font-bold text-center text-[12px]">
-              Asphalt Concrete
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC7({ ...c7, one: !c7.one });
+                  }
+                }}
+              >
+                [{c7.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Asphalt
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC7({ ...c7, two: !c7.two });
+                  }
+                }}
+              >
+                [{c7.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp;Concrete
             </td>
             <td className="font-semibold text-[12px]">Pot-holes</td>{" "}
             <td className="font-semibold text-center text-[12px]">23</td>{" "}
@@ -14737,11 +15006,77 @@ const page = ({ params }: any) => {
           {/* START EJ */}
           {/* EJ row1 */}
           <tr>
-            <td rowSpan={5} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={5}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC8({ ...c8, main: !c8.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c8.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               EXPANSION JOINT (Secondary)
             </td>
             <td rowSpan={5} className="font-bold text-center text-[12px]">
-              Asp Plug Elastomeric Comp. Seal Buried Others
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC8({ ...c8, one: !c8.one });
+                  }
+                }}
+              >
+                [{c8.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Asp Plug
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC8({ ...c8, two: !c8.two });
+                  }
+                }}
+              >
+                [{c8.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Elastomeric
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC8({ ...c8, three: !c8.three });
+                  }
+                }}
+              >
+                [{c8.three ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Comp. Seal
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC8({ ...c8, four: !c8.four });
+                  }
+                }}
+              >
+                [{c8.four ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp;Buried
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC8({ ...c8, five: !c8.five });
+                  }
+                }}
+              >
+                [{c8.five ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Others
             </td>
             <td className="font-semibold text-[12px]">Abnormal Spacing</td>{" "}
             <td className="font-semibold text-center text-[12px]">29</td>{" "}
@@ -15715,11 +16050,44 @@ const page = ({ params }: any) => {
           {/* START Drainpipe */}
           {/* Drainpipe row1 */}
           <tr>
-            <td rowSpan={4} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={4}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC9({ ...c9, main: !c9.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c9.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               DRAINPIPES (Secondary)
             </td>
             <td rowSpan={4} className="font-bold text-center text-[12px]">
-              Steel PVC
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC9({ ...c9, one: !c9.one });
+                  }
+                }}
+              >
+                [{c9.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; Steel
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC9({ ...c9, two: !c9.two });
+                  }
+                }}
+              >
+                [{c9.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp; PVC
             </td>
             <td className="font-semibold text-[12px]">Corrosion of Steel</td>{" "}
             <td className="font-semibold text-center text-[12px]">1</td>{" "}
@@ -16504,11 +16872,56 @@ const page = ({ params }: any) => {
           {/* START SP */}
           {/* SP row1 */}
           <tr>
-            <td rowSpan={4} className="font-bold text-center text-[12px]">
+            <td
+              rowSpan={4}
+              className="font-bold text-center text-[12px] relative"
+            >
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC10({ ...c10, main: !c10.main });
+                  }
+                }}
+                className="absolute top-3 left-2"
+              >
+                [{c10.main ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>
               Slope Protection / River Bank (Secondary)
             </td>
             <td rowSpan={4} className="font-bold text-center text-[12px]">
-              Rble. Pitching Gabions Others
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC10({ ...c10, one: !c10.one });
+                  }
+                }}
+              >
+                [{c10.one ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp;Rble. Pitching
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC10({ ...c10, two: !c10.two });
+                  }
+                }}
+              >
+                [{c10.two ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}]
+              </span>{" "}
+              &nbsp;Gabions
+              <br />
+              <span
+                onClick={() => {
+                  if (editCheck) {
+                    setC10({ ...c10, three: !c10.three });
+                  }
+                }}
+              >
+                [{c10.three ? <span>&#10003;</span> : <span>&nbsp;&nbsp;</span>}
+                ]
+              </span>{" "}
+              &nbsp;Others
             </td>
             <td className="font-semibold text-[12px]">Scouring</td>{" "}
             <td className="font-semibold text-center text-[12px]">17</td>{" "}
@@ -17559,7 +17972,7 @@ const page = ({ params }: any) => {
         </tbody>
       </table>
       <EditModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <p>{JSON.stringify(editorMode)}</p>
+        {/* <p>{JSON.stringify(editorMode)}</p> */}
         <p className="font-bold text-black mb-2">
           {editorMode.compNo == "1"
             ? "BEAM/GIRDER"
